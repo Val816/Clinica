@@ -73,11 +73,22 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.vb">
+    <Compile Include="Crear Cuenta.Designer.vb">
+      <DependentUpon>Crear Cuenta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Crear Cuenta.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.vb">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <Compile Include="Inicio de sesion.Designer.vb">
+      <DependentUpon>Inicio de sesion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Inicio de sesion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu Principal.Designer.vb">
+      <DependentUpon>Menu Principal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Menu Principal.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -97,8 +108,14 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <EmbeddedResource Include="Crear Cuenta.resx">
+      <DependentUpon>Crear Cuenta.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inicio de sesion.resx">
+      <DependentUpon>Inicio de sesion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu Principal.resx">
+      <DependentUpon>Menu Principal.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
