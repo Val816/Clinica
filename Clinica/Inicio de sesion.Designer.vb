@@ -28,7 +28,7 @@ Partial Class Inicio_de_sesion
 		Me.Label3 = New System.Windows.Forms.Label()
 		Me.Label4 = New System.Windows.Forms.Label()
 		Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
-		Me.LinkLabel2 = New System.Windows.Forms.LinkLabel()
+		Me.linkCrearCuenta = New System.Windows.Forms.LinkLabel()
 		Me.PictureBox1 = New System.Windows.Forms.PictureBox()
 		Me.txtCorreo = New System.Windows.Forms.TextBox()
 		Me.txtContraseña = New System.Windows.Forms.TextBox()
@@ -94,18 +94,18 @@ Partial Class Inicio_de_sesion
 		Me.LinkLabel1.TabStop = True
 		Me.LinkLabel1.Text = "Recuperar Cuenta"
 		'
-		'LinkLabel2
+		'linkCrearCuenta
 		'
-		Me.LinkLabel2.ActiveLinkColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
-		Me.LinkLabel2.AutoSize = True
-		Me.LinkLabel2.LinkColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
-		Me.LinkLabel2.Location = New System.Drawing.Point(394, 452)
-		Me.LinkLabel2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-		Me.LinkLabel2.Name = "LinkLabel2"
-		Me.LinkLabel2.Size = New System.Drawing.Size(69, 13)
-		Me.LinkLabel2.TabIndex = 8
-		Me.LinkLabel2.TabStop = True
-		Me.LinkLabel2.Text = "Crear Cuenta"
+		Me.linkCrearCuenta.ActiveLinkColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
+		Me.linkCrearCuenta.AutoSize = True
+		Me.linkCrearCuenta.LinkColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
+		Me.linkCrearCuenta.Location = New System.Drawing.Point(394, 452)
+		Me.linkCrearCuenta.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+		Me.linkCrearCuenta.Name = "linkCrearCuenta"
+		Me.linkCrearCuenta.Size = New System.Drawing.Size(69, 13)
+		Me.linkCrearCuenta.TabIndex = 8
+		Me.linkCrearCuenta.TabStop = True
+		Me.linkCrearCuenta.Text = "Crear Cuenta"
 		'
 		'PictureBox1
 		'
@@ -151,7 +151,7 @@ Partial Class Inicio_de_sesion
 		Me.Controls.Add(Me.txtContraseña)
 		Me.Controls.Add(Me.txtCorreo)
 		Me.Controls.Add(Me.PictureBox1)
-		Me.Controls.Add(Me.LinkLabel2)
+		Me.Controls.Add(Me.linkCrearCuenta)
 		Me.Controls.Add(Me.LinkLabel1)
 		Me.Controls.Add(Me.Label4)
 		Me.Controls.Add(Me.Label3)
@@ -171,7 +171,7 @@ Partial Class Inicio_de_sesion
     Friend WithEvents Label3 As Label
 	Friend WithEvents Label4 As Label
 	Friend WithEvents LinkLabel1 As LinkLabel
-	Friend WithEvents LinkLabel2 As LinkLabel
+	Friend WithEvents linkCrearCuenta As LinkLabel
 	Friend WithEvents PictureBox1 As PictureBox
 	Friend WithEvents txtCorreo As TextBox
 	Friend WithEvents txtContraseña As TextBox
