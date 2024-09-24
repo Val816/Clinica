@@ -6,6 +6,9 @@ Public Class Crear_Cuenta
     ' Evento del botón "Continuar"
     Private Sub btnContinuar_Click(sender As Object, e As EventArgs) Handles btnContinuar.Click
         ' Obtener los valores ingresados en los TextBox
+        Dim nombre As String = txtNombre.Text
+        Dim apellidoP As String = txtApellidoP.Text
+        Dim apellidoM As String = txtApellidoM.Text
         Dim correo As String = txtCorreo.Text
         Dim contraseña As String = txtContraseña.Text
         Dim confirmarContraseña As String = txtConfirmarContraseña.Text
@@ -17,13 +20,13 @@ Public Class Crear_Cuenta
         End If
 
         ' Validar que los campos no estén vacíos
-        If String.IsNullOrEmpty(correo) Or String.IsNullOrEmpty(contraseña) Then
+        If String.IsNullOrEmpty(nombre) Or String.IsNullOrEmpty(apellidoP) Or String.IsNullOrEmpty(apellidoM) Or String.IsNullOrEmpty(correo) Or String.IsNullOrEmpty(contraseña) Then
             MessageBox.Show("Por favor, completa todos los campos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Return
         End If
 
         ' Llamar a la función para guardar el usuario
-        If CrearCuenta(correo, contraseña) Then
+        If CrearCuenta(nombre, apellidoP, apellidoM, correo, contraseña) Then
             MessageBox.Show("Cuenta creada exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information)
             ' Aquí puedes agregar el código para redirigir a la pantalla de inicio de sesión
             Me.Close() ' Cierra el formulario actual
@@ -33,7 +36,7 @@ Public Class Crear_Cuenta
     End Sub
 
     ' Función para crear una cuenta en la base de datos
-    Private Function CrearCuenta(correo As String, contraseña As String) As Boolean
+    Private Function CrearCuenta(nombre As String, apellidoP As String, apellidoM As String, correo As String, contraseña As String) As Boolean
         Dim resultado As Boolean = False
 
         ' Crear una conexión con la base de datos
@@ -54,10 +57,13 @@ Public Class Crear_Cuenta
                     End If
                 End Using
 
-                '' Crear el comando SQL para insertar el nuevo usuario, sin incluir el campo auto-incremental "idUsuario"
-                Dim query As String = "INSERT INTO Usuario (Correo, Contraseña) VALUES (@correo, @contraseña)"
+                ' Crear el comando SQL para insertar el nuevo usuario, incluyendo nombre y apellidos
+                Dim query As String = "INSERT INTO Usuario (nombreU, ApellidoP, ApellidoM, Correo, Contraseña) VALUES (@nombre, @apellidoP, @apellidoM, @correo, @contraseña)"
                 Using command As New MySqlCommand(query, connection)
                     ' Agregar los parámetros
+                    command.Parameters.AddWithValue("@nombre", nombre)
+                    command.Parameters.AddWithValue("@apellidoP", apellidoP)
+                    command.Parameters.AddWithValue("@apellidoM", apellidoM)
                     command.Parameters.AddWithValue("@correo", correo)
                     command.Parameters.AddWithValue("@contraseña", contraseña)
 
