@@ -13,10 +13,12 @@ Public Class Inicio_de_sesion
 
 		' Llamar a la función para verificar el inicio de sesión
 		If VerificarCredenciales(correo, contraseña) Then
-			MessageBox.Show("Inicio de sesión exitoso.")
-			' Aquí puedes agregar el código para abrir la siguiente ventana o formulario
+			Dim menuForm As New Menu_Principal()
+			Me.Hide() ' Oculta el formulario de inicio de sesión
+			menuForm.Show() ' Muestra el formulario del menú principal
 		Else
-			MessageBox.Show("Correo o contraseña incorrectos.")
+			' Si la validación falla, muestra un mensaje de error
+			MessageBox.Show("Usuario o contraseña incorrectos.")
 		End If
 	End Sub
 

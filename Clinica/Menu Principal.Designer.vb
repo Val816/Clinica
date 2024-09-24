@@ -22,244 +22,261 @@ Partial Class Menu_Principal
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Menu_Principal))
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.Panel4 = New System.Windows.Forms.Panel()
-        Me.Panel5 = New System.Windows.Forms.Panel()
-        Me.Panel6 = New System.Windows.Forms.Panel()
-        Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
-        Me.LinkLabel2 = New System.Windows.Forms.LinkLabel()
-        Me.LinkLabel3 = New System.Windows.Forms.LinkLabel()
-        Me.LinkLabel4 = New System.Windows.Forms.LinkLabel()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
-        Me.Panel1.SuspendLayout()
-        Me.Panel2.SuspendLayout()
-        Me.Panel3.SuspendLayout()
-        Me.Panel4.SuspendLayout()
-        Me.Panel5.SuspendLayout()
-        Me.Panel6.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.SuspendLayout()
-        '
-        'Panel1
-        '
-        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(197, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(165, Byte), Integer))
-        Me.Panel1.Controls.Add(Me.Label1)
-        Me.Panel1.Location = New System.Drawing.Point(-1, 12)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1271, 150)
-        Me.Panel1.TabIndex = 0
-        '
-        'Panel2
-        '
-        Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(197, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(165, Byte), Integer))
-        Me.Panel2.Controls.Add(Me.Button1)
-        Me.Panel2.Location = New System.Drawing.Point(-1, 672)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1271, 150)
-        Me.Panel2.TabIndex = 1
-        '
-        'Label1
-        '
-        Me.Label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 25.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(477, 45)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(357, 60)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Menú Principal"
-        '
-        'Button1
-        '
-        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.Button1.FlatAppearance.BorderColor = System.Drawing.Color.Black
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(985, 69)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(165, 37)
-        Me.Button1.TabIndex = 0
-        Me.Button1.Text = "Cerrar Sesión"
-        Me.Button1.UseVisualStyleBackColor = False
-        '
-        'Panel3
-        '
-        Me.Panel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(129, Byte), Integer), CType(CType(199, Byte), Integer), CType(CType(132, Byte), Integer))
-        Me.Panel3.Controls.Add(Me.PictureBox1)
-        Me.Panel3.Controls.Add(Me.LinkLabel1)
-        Me.Panel3.Location = New System.Drawing.Point(88, 213)
-        Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(200, 186)
-        Me.Panel3.TabIndex = 2
-        '
-        'Panel4
-        '
-        Me.Panel4.BackColor = System.Drawing.Color.FromArgb(CType(CType(129, Byte), Integer), CType(CType(199, Byte), Integer), CType(CType(132, Byte), Integer))
-        Me.Panel4.Controls.Add(Me.PictureBox2)
-        Me.Panel4.Controls.Add(Me.LinkLabel2)
-        Me.Panel4.Location = New System.Drawing.Point(367, 438)
-        Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(200, 186)
-        Me.Panel4.TabIndex = 3
-        '
-        'Panel5
-        '
-        Me.Panel5.BackColor = System.Drawing.Color.FromArgb(CType(CType(129, Byte), Integer), CType(CType(199, Byte), Integer), CType(CType(132, Byte), Integer))
-        Me.Panel5.Controls.Add(Me.PictureBox3)
-        Me.Panel5.Controls.Add(Me.LinkLabel3)
-        Me.Panel5.Location = New System.Drawing.Point(678, 213)
-        Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(200, 186)
-        Me.Panel5.TabIndex = 4
-        '
-        'Panel6
-        '
-        Me.Panel6.BackColor = System.Drawing.Color.FromArgb(CType(CType(129, Byte), Integer), CType(CType(199, Byte), Integer), CType(CType(132, Byte), Integer))
-        Me.Panel6.Controls.Add(Me.PictureBox4)
-        Me.Panel6.Controls.Add(Me.LinkLabel4)
-        Me.Panel6.Location = New System.Drawing.Point(962, 438)
-        Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(200, 186)
-        Me.Panel6.TabIndex = 5
-        '
-        'LinkLabel1
-        '
-        Me.LinkLabel1.ActiveLinkColor = System.Drawing.Color.Black
-        Me.LinkLabel1.AutoSize = True
-        Me.LinkLabel1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LinkLabel1.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline
-        Me.LinkLabel1.LinkColor = System.Drawing.Color.Black
-        Me.LinkLabel1.Location = New System.Drawing.Point(21, 150)
-        Me.LinkLabel1.Name = "LinkLabel1"
-        Me.LinkLabel1.Size = New System.Drawing.Size(145, 25)
-        Me.LinkLabel1.TabIndex = 6
-        Me.LinkLabel1.TabStop = True
-        Me.LinkLabel1.Text = "Registro de cita"
-        '
-        'LinkLabel2
-        '
-        Me.LinkLabel2.ActiveLinkColor = System.Drawing.Color.Black
-        Me.LinkLabel2.AutoSize = True
-        Me.LinkLabel2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LinkLabel2.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline
-        Me.LinkLabel2.LinkColor = System.Drawing.Color.Black
-        Me.LinkLabel2.Location = New System.Drawing.Point(23, 149)
-        Me.LinkLabel2.Name = "LinkLabel2"
-        Me.LinkLabel2.Size = New System.Drawing.Size(152, 25)
-        Me.LinkLabel2.TabIndex = 7
-        Me.LinkLabel2.TabStop = True
-        Me.LinkLabel2.Text = "Consulta de cita"
-        '
-        'LinkLabel3
-        '
-        Me.LinkLabel3.ActiveLinkColor = System.Drawing.Color.Black
-        Me.LinkLabel3.AutoSize = True
-        Me.LinkLabel3.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LinkLabel3.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline
-        Me.LinkLabel3.LinkColor = System.Drawing.Color.Black
-        Me.LinkLabel3.Location = New System.Drawing.Point(63, 150)
-        Me.LinkLabel3.Name = "LinkLabel3"
-        Me.LinkLabel3.Size = New System.Drawing.Size(81, 25)
-        Me.LinkLabel3.TabIndex = 8
-        Me.LinkLabel3.TabStop = True
-        Me.LinkLabel3.Text = "Historial"
-        '
-        'LinkLabel4
-        '
-        Me.LinkLabel4.ActiveLinkColor = System.Drawing.Color.Black
-        Me.LinkLabel4.AutoSize = True
-        Me.LinkLabel4.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LinkLabel4.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline
-        Me.LinkLabel4.LinkColor = System.Drawing.Color.Black
-        Me.LinkLabel4.Location = New System.Drawing.Point(58, 149)
-        Me.LinkLabel4.Name = "LinkLabel4"
-        Me.LinkLabel4.Size = New System.Drawing.Size(87, 25)
-        Me.LinkLabel4.TabIndex = 8
-        Me.LinkLabel4.TabStop = True
-        Me.LinkLabel4.Text = "Informes"
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(14, 13)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(170, 125)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox1.TabIndex = 6
-        Me.PictureBox1.TabStop = False
-        '
-        'PictureBox2
-        '
-        Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
-        Me.PictureBox2.Location = New System.Drawing.Point(61, 21)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(78, 125)
-        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox2.TabIndex = 8
-        Me.PictureBox2.TabStop = False
-        '
-        'PictureBox3
-        '
-        Me.PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), System.Drawing.Image)
-        Me.PictureBox3.Location = New System.Drawing.Point(40, 13)
-        Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(128, 125)
-        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox3.TabIndex = 9
-        Me.PictureBox3.TabStop = False
-        '
-        'PictureBox4
-        '
-        Me.PictureBox4.Image = CType(resources.GetObject("PictureBox4.Image"), System.Drawing.Image)
-        Me.PictureBox4.Location = New System.Drawing.Point(33, 21)
-        Me.PictureBox4.Name = "PictureBox4"
-        Me.PictureBox4.Size = New System.Drawing.Size(128, 125)
-        Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox4.TabIndex = 9
-        Me.PictureBox4.TabStop = False
-        '
-        'Menu_Principal
-        '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
-        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1282, 821)
-        Me.Controls.Add(Me.Panel6)
-        Me.Controls.Add(Me.Panel5)
-        Me.Controls.Add(Me.Panel4)
-        Me.Controls.Add(Me.Panel3)
-        Me.Controls.Add(Me.Panel2)
-        Me.Controls.Add(Me.Panel1)
-        Me.Name = "Menu_Principal"
-        Me.Text = "Menu_Principal"
-        Me.Panel1.ResumeLayout(False)
-        Me.Panel2.ResumeLayout(False)
-        Me.Panel3.ResumeLayout(False)
-        Me.Panel3.PerformLayout()
-        Me.Panel4.ResumeLayout(False)
-        Me.Panel4.PerformLayout()
-        Me.Panel5.ResumeLayout(False)
-        Me.Panel5.PerformLayout()
-        Me.Panel6.ResumeLayout(False)
-        Me.Panel6.PerformLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.ResumeLayout(False)
+		Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Menu_Principal))
+		Me.Panel1 = New System.Windows.Forms.Panel()
+		Me.Label1 = New System.Windows.Forms.Label()
+		Me.Panel2 = New System.Windows.Forms.Panel()
+		Me.Button1 = New System.Windows.Forms.Button()
+		Me.Panel3 = New System.Windows.Forms.Panel()
+		Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+		Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
+		Me.Panel4 = New System.Windows.Forms.Panel()
+		Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+		Me.LinkLabel2 = New System.Windows.Forms.LinkLabel()
+		Me.Panel5 = New System.Windows.Forms.Panel()
+		Me.PictureBox3 = New System.Windows.Forms.PictureBox()
+		Me.LinkLabel3 = New System.Windows.Forms.LinkLabel()
+		Me.Panel6 = New System.Windows.Forms.Panel()
+		Me.PictureBox4 = New System.Windows.Forms.PictureBox()
+		Me.LinkLabel4 = New System.Windows.Forms.LinkLabel()
+		Me.Panel1.SuspendLayout()
+		Me.Panel2.SuspendLayout()
+		Me.Panel3.SuspendLayout()
+		CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+		Me.Panel4.SuspendLayout()
+		CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+		Me.Panel5.SuspendLayout()
+		CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
+		Me.Panel6.SuspendLayout()
+		CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
+		Me.SuspendLayout()
+		'
+		'Panel1
+		'
+		Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(197, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(165, Byte), Integer))
+		Me.Panel1.Controls.Add(Me.Label1)
+		Me.Panel1.Location = New System.Drawing.Point(-1, 8)
+		Me.Panel1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+		Me.Panel1.Name = "Panel1"
+		Me.Panel1.Size = New System.Drawing.Size(847, 98)
+		Me.Panel1.TabIndex = 0
+		'
+		'Label1
+		'
+		Me.Label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+		Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 25.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.Label1.Location = New System.Drawing.Point(318, 29)
+		Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+		Me.Label1.Name = "Label1"
+		Me.Label1.Size = New System.Drawing.Size(238, 39)
+		Me.Label1.TabIndex = 0
+		Me.Label1.Text = "Menú Principal"
+		'
+		'Panel2
+		'
+		Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(197, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(165, Byte), Integer))
+		Me.Panel2.Controls.Add(Me.Button1)
+		Me.Panel2.Location = New System.Drawing.Point(-1, 437)
+		Me.Panel2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+		Me.Panel2.Name = "Panel2"
+		Me.Panel2.Size = New System.Drawing.Size(847, 98)
+		Me.Panel2.TabIndex = 1
+		'
+		'Button1
+		'
+		Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(128, Byte), Integer))
+		Me.Button1.FlatAppearance.BorderColor = System.Drawing.Color.Black
+		Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+		Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.Button1.Location = New System.Drawing.Point(657, 45)
+		Me.Button1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+		Me.Button1.Name = "Button1"
+		Me.Button1.Size = New System.Drawing.Size(110, 24)
+		Me.Button1.TabIndex = 0
+		Me.Button1.Text = "Cerrar Sesión"
+		Me.Button1.UseVisualStyleBackColor = False
+		'
+		'Panel3
+		'
+		Me.Panel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(129, Byte), Integer), CType(CType(199, Byte), Integer), CType(CType(132, Byte), Integer))
+		Me.Panel3.Controls.Add(Me.PictureBox1)
+		Me.Panel3.Controls.Add(Me.LinkLabel1)
+		Me.Panel3.Location = New System.Drawing.Point(59, 138)
+		Me.Panel3.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+		Me.Panel3.Name = "Panel3"
+		Me.Panel3.Size = New System.Drawing.Size(133, 121)
+		Me.Panel3.TabIndex = 2
+		'
+		'PictureBox1
+		'
+		Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+		Me.PictureBox1.Location = New System.Drawing.Point(9, 8)
+		Me.PictureBox1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+		Me.PictureBox1.Name = "PictureBox1"
+		Me.PictureBox1.Size = New System.Drawing.Size(113, 81)
+		Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+		Me.PictureBox1.TabIndex = 6
+		Me.PictureBox1.TabStop = False
+		'
+		'LinkLabel1
+		'
+		Me.LinkLabel1.ActiveLinkColor = System.Drawing.Color.Black
+		Me.LinkLabel1.AutoSize = True
+		Me.LinkLabel1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.LinkLabel1.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline
+		Me.LinkLabel1.LinkColor = System.Drawing.Color.Black
+		Me.LinkLabel1.Location = New System.Drawing.Point(14, 98)
+		Me.LinkLabel1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+		Me.LinkLabel1.Name = "LinkLabel1"
+		Me.LinkLabel1.Size = New System.Drawing.Size(107, 17)
+		Me.LinkLabel1.TabIndex = 6
+		Me.LinkLabel1.TabStop = True
+		Me.LinkLabel1.Text = "Registro de cita"
+		'
+		'Panel4
+		'
+		Me.Panel4.BackColor = System.Drawing.Color.FromArgb(CType(CType(129, Byte), Integer), CType(CType(199, Byte), Integer), CType(CType(132, Byte), Integer))
+		Me.Panel4.Controls.Add(Me.PictureBox2)
+		Me.Panel4.Controls.Add(Me.LinkLabel2)
+		Me.Panel4.Location = New System.Drawing.Point(245, 285)
+		Me.Panel4.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+		Me.Panel4.Name = "Panel4"
+		Me.Panel4.Size = New System.Drawing.Size(133, 121)
+		Me.Panel4.TabIndex = 3
+		'
+		'PictureBox2
+		'
+		Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
+		Me.PictureBox2.Location = New System.Drawing.Point(41, 14)
+		Me.PictureBox2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+		Me.PictureBox2.Name = "PictureBox2"
+		Me.PictureBox2.Size = New System.Drawing.Size(52, 81)
+		Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+		Me.PictureBox2.TabIndex = 8
+		Me.PictureBox2.TabStop = False
+		'
+		'LinkLabel2
+		'
+		Me.LinkLabel2.ActiveLinkColor = System.Drawing.Color.Black
+		Me.LinkLabel2.AutoSize = True
+		Me.LinkLabel2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.LinkLabel2.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline
+		Me.LinkLabel2.LinkColor = System.Drawing.Color.Black
+		Me.LinkLabel2.Location = New System.Drawing.Point(15, 97)
+		Me.LinkLabel2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+		Me.LinkLabel2.Name = "LinkLabel2"
+		Me.LinkLabel2.Size = New System.Drawing.Size(109, 17)
+		Me.LinkLabel2.TabIndex = 7
+		Me.LinkLabel2.TabStop = True
+		Me.LinkLabel2.Text = "Consulta de cita"
+		'
+		'Panel5
+		'
+		Me.Panel5.BackColor = System.Drawing.Color.FromArgb(CType(CType(129, Byte), Integer), CType(CType(199, Byte), Integer), CType(CType(132, Byte), Integer))
+		Me.Panel5.Controls.Add(Me.PictureBox3)
+		Me.Panel5.Controls.Add(Me.LinkLabel3)
+		Me.Panel5.Location = New System.Drawing.Point(452, 138)
+		Me.Panel5.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+		Me.Panel5.Name = "Panel5"
+		Me.Panel5.Size = New System.Drawing.Size(133, 121)
+		Me.Panel5.TabIndex = 4
+		'
+		'PictureBox3
+		'
+		Me.PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), System.Drawing.Image)
+		Me.PictureBox3.Location = New System.Drawing.Point(27, 8)
+		Me.PictureBox3.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+		Me.PictureBox3.Name = "PictureBox3"
+		Me.PictureBox3.Size = New System.Drawing.Size(85, 81)
+		Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+		Me.PictureBox3.TabIndex = 9
+		Me.PictureBox3.TabStop = False
+		'
+		'LinkLabel3
+		'
+		Me.LinkLabel3.ActiveLinkColor = System.Drawing.Color.Black
+		Me.LinkLabel3.AutoSize = True
+		Me.LinkLabel3.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.LinkLabel3.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline
+		Me.LinkLabel3.LinkColor = System.Drawing.Color.Black
+		Me.LinkLabel3.Location = New System.Drawing.Point(42, 98)
+		Me.LinkLabel3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+		Me.LinkLabel3.Name = "LinkLabel3"
+		Me.LinkLabel3.Size = New System.Drawing.Size(59, 17)
+		Me.LinkLabel3.TabIndex = 8
+		Me.LinkLabel3.TabStop = True
+		Me.LinkLabel3.Text = "Historial"
+		'
+		'Panel6
+		'
+		Me.Panel6.BackColor = System.Drawing.Color.FromArgb(CType(CType(129, Byte), Integer), CType(CType(199, Byte), Integer), CType(CType(132, Byte), Integer))
+		Me.Panel6.Controls.Add(Me.PictureBox4)
+		Me.Panel6.Controls.Add(Me.LinkLabel4)
+		Me.Panel6.Location = New System.Drawing.Point(641, 285)
+		Me.Panel6.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+		Me.Panel6.Name = "Panel6"
+		Me.Panel6.Size = New System.Drawing.Size(133, 121)
+		Me.Panel6.TabIndex = 5
+		'
+		'PictureBox4
+		'
+		Me.PictureBox4.Image = CType(resources.GetObject("PictureBox4.Image"), System.Drawing.Image)
+		Me.PictureBox4.Location = New System.Drawing.Point(22, 14)
+		Me.PictureBox4.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+		Me.PictureBox4.Name = "PictureBox4"
+		Me.PictureBox4.Size = New System.Drawing.Size(85, 81)
+		Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+		Me.PictureBox4.TabIndex = 9
+		Me.PictureBox4.TabStop = False
+		'
+		'LinkLabel4
+		'
+		Me.LinkLabel4.ActiveLinkColor = System.Drawing.Color.Black
+		Me.LinkLabel4.AutoSize = True
+		Me.LinkLabel4.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.LinkLabel4.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline
+		Me.LinkLabel4.LinkColor = System.Drawing.Color.Black
+		Me.LinkLabel4.Location = New System.Drawing.Point(39, 97)
+		Me.LinkLabel4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+		Me.LinkLabel4.Name = "LinkLabel4"
+		Me.LinkLabel4.Size = New System.Drawing.Size(62, 17)
+		Me.LinkLabel4.TabIndex = 8
+		Me.LinkLabel4.TabStop = True
+		Me.LinkLabel4.Text = "Informes"
+		'
+		'Menu_Principal
+		'
+		Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+		Me.ClientSize = New System.Drawing.Size(843, 525)
+		Me.Controls.Add(Me.Panel6)
+		Me.Controls.Add(Me.Panel5)
+		Me.Controls.Add(Me.Panel4)
+		Me.Controls.Add(Me.Panel3)
+		Me.Controls.Add(Me.Panel2)
+		Me.Controls.Add(Me.Panel1)
+		Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+		Me.Name = "Menu_Principal"
+		Me.Text = "Menu_Principal"
+		Me.Panel1.ResumeLayout(False)
+		Me.Panel2.ResumeLayout(False)
+		Me.Panel3.ResumeLayout(False)
+		Me.Panel3.PerformLayout()
+		CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+		Me.Panel4.ResumeLayout(False)
+		Me.Panel4.PerformLayout()
+		CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+		Me.Panel5.ResumeLayout(False)
+		Me.Panel5.PerformLayout()
+		CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
+		Me.Panel6.ResumeLayout(False)
+		Me.Panel6.PerformLayout()
+		CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
+		Me.ResumeLayout(False)
 
-    End Sub
+	End Sub
 
-    Friend WithEvents Panel1 As Panel
+	Friend WithEvents Panel1 As Panel
     Friend WithEvents Label1 As Label
     Friend WithEvents Panel2 As Panel
     Friend WithEvents Button1 As Button
