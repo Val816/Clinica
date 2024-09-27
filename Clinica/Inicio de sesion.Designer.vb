@@ -27,7 +27,7 @@ Partial Class Inicio_de_sesion
 		Me.Label2 = New System.Windows.Forms.Label()
 		Me.Label3 = New System.Windows.Forms.Label()
 		Me.Label4 = New System.Windows.Forms.Label()
-		Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
+		Me.linkRecuperarCuenta = New System.Windows.Forms.LinkLabel()
 		Me.linkCrearCuenta = New System.Windows.Forms.LinkLabel()
 		Me.PictureBox1 = New System.Windows.Forms.PictureBox()
 		Me.txtCorreo = New System.Windows.Forms.TextBox()
@@ -81,18 +81,18 @@ Partial Class Inicio_de_sesion
 		Me.Label4.TabIndex = 4
 		Me.Label4.Text = "Contraseña"
 		'
-		'LinkLabel1
+		'linkRecuperarCuenta
 		'
-		Me.LinkLabel1.ActiveLinkColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
-		Me.LinkLabel1.AutoSize = True
-		Me.LinkLabel1.LinkColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
-		Me.LinkLabel1.Location = New System.Drawing.Point(388, 426)
-		Me.LinkLabel1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-		Me.LinkLabel1.Name = "LinkLabel1"
-		Me.LinkLabel1.Size = New System.Drawing.Size(94, 13)
-		Me.LinkLabel1.TabIndex = 7
-		Me.LinkLabel1.TabStop = True
-		Me.LinkLabel1.Text = "Recuperar Cuenta"
+		Me.linkRecuperarCuenta.ActiveLinkColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
+		Me.linkRecuperarCuenta.AutoSize = True
+		Me.linkRecuperarCuenta.LinkColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
+		Me.linkRecuperarCuenta.Location = New System.Drawing.Point(388, 426)
+		Me.linkRecuperarCuenta.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+		Me.linkRecuperarCuenta.Name = "linkRecuperarCuenta"
+		Me.linkRecuperarCuenta.Size = New System.Drawing.Size(94, 13)
+		Me.linkRecuperarCuenta.TabIndex = 7
+		Me.linkRecuperarCuenta.TabStop = True
+		Me.linkRecuperarCuenta.Text = "Recuperar Cuenta"
 		'
 		'linkCrearCuenta
 		'
@@ -152,7 +152,7 @@ Partial Class Inicio_de_sesion
 		Me.Controls.Add(Me.txtCorreo)
 		Me.Controls.Add(Me.PictureBox1)
 		Me.Controls.Add(Me.linkCrearCuenta)
-		Me.Controls.Add(Me.LinkLabel1)
+		Me.Controls.Add(Me.linkRecuperarCuenta)
 		Me.Controls.Add(Me.Label4)
 		Me.Controls.Add(Me.Label3)
 		Me.Controls.Add(Me.Label2)
@@ -170,7 +170,7 @@ Partial Class Inicio_de_sesion
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
 	Friend WithEvents Label4 As Label
-	Friend WithEvents LinkLabel1 As LinkLabel
+	Friend WithEvents linkRecuperarCuenta As LinkLabel
 	Friend WithEvents linkCrearCuenta As LinkLabel
 	Friend WithEvents PictureBox1 As PictureBox
 	Friend WithEvents txtCorreo As TextBox

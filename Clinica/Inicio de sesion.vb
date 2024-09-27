@@ -63,4 +63,15 @@ Public Class Inicio_de_sesion
 		' Ocultar el formulario actual (Inicio de Sesión)
 		Me.Hide()
 	End Sub
+
+	Private Sub linkRecuperarCuenta_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles linkRecuperarCuenta.LinkClicked
+		' Crear una nueva instancia del formulario Crear Cuenta
+		Dim RecuperarContraseñaForm As New Recuperar_Contraseña
+
+		' Mostrar el formulario de Crear Cuenta
+		RecuperarContraseñaForm.Show()
+
+		' Ocultar el formulario actual (Inicio de Sesión)
+		Me.Hide()
+	End Sub
 End Class
