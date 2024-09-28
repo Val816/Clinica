@@ -137,10 +137,22 @@
     <Compile Include="Consulta de Cita.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Consulta Médica.Designer.vb">
+      <DependentUpon>Consulta Médica.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Consulta Médica.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Crear Cuenta.Designer.vb">
       <DependentUpon>Crear Cuenta.vb</DependentUpon>
     </Compile>
     <Compile Include="Crear Cuenta.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Desparacitación.Designer.vb">
+      <DependentUpon>Desparacitación.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Desparacitación.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Inicio de sesion.Designer.vb">
@@ -182,13 +194,25 @@
     <Compile Include="Registro de Cita.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Registro de Mascota.Designer.vb">
+      <DependentUpon>Registro de Mascota.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Registro de Mascota.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Consulta de Cita.resx">
       <DependentUpon>Consulta de Cita.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Consulta Médica.resx">
+      <DependentUpon>Consulta Médica.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Crear Cuenta.resx">
       <DependentUpon>Crear Cuenta.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Desparacitación.resx">
+      <DependentUpon>Desparacitación.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Inicio de sesion.resx">
       <DependentUpon>Inicio de sesion.vb</DependentUpon>
@@ -207,6 +231,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Registro de Cita.resx">
       <DependentUpon>Registro de Cita.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Registro de Mascota.resx">
+      <DependentUpon>Registro de Mascota.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

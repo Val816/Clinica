@@ -113,4 +113,7 @@ Public Class Consulta_de_Cita
             ' Me.Close() ' Cerrar el formulario actual si es necesario
         End Sub
 
+    Private Sub Panel4_Paint(sender As Object, e As PaintEventArgs) Handles Panel4.Paint
+
+    End Sub
 End Class
