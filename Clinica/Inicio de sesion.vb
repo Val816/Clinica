@@ -54,22 +54,19 @@ Public Class Inicio_de_sesion
 		Return resultado
 	End Function
 	Private Sub linkCrearCuenta_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles linkCrearCuenta.LinkClicked
-		' Crear una nueva instancia del formulario Crear Cuenta
 		Dim crearCuentaForm As New Crear_Cuenta
-
-		' Mostrar el formulario de Crear Cuenta
 		crearCuentaForm.Show()
-
-		' Ocultar el formulario actual (Inicio de Sesión)
 		Me.Hide()
 	End Sub
 
 	Private Sub linkRecuperarCuenta_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles linkRecuperarCuenta.LinkClicked
-		' Crear una nueva instancia del formulario Crear Cuenta
 		Dim RecuperarContraseñaForm As New Recuperar_Contraseña
 		RecuperarContraseñaForm.Show()
-
-		' Ocultar el formulario actual (Inicio de Sesión)
 		Me.Hide()
 	End Sub
+
+	Private Sub btnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
+		Application.Exit()
+	End Sub
+
 End Class

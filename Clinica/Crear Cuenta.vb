@@ -1,4 +1,5 @@
 ﻿Imports MySql.Data.MySqlClient
+
 Public Class Crear_Cuenta
     ' Cadena de conexión, ajústala según tu configuración
     Dim connectionString As String = "Server=localhost;Database=veterinaria;User Id=root;Password=root;"
@@ -28,7 +29,10 @@ Public Class Crear_Cuenta
         ' Llamar a la función para guardar el usuario
         If CrearCuenta(nombre, apellidoP, apellidoM, correo, contraseña) Then
             MessageBox.Show("Cuenta creada exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            ' Aquí puedes agregar el código para redirigir a la pantalla de inicio de sesión
+
+            ' Redirigir a la pantalla de inicio de sesión después de crear la cuenta
+            Dim inicioSesionForm As New Inicio_de_sesion
+            inicioSesionForm.Show() ' Muestra la ventana de inicio de sesión
             Me.Close() ' Cierra el formulario actual
         Else
             MessageBox.Show("Hubo un error al crear la cuenta.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -57,7 +61,7 @@ Public Class Crear_Cuenta
                     End If
                 End Using
 
-                ' Crear el comando SQL para insertar el nuevo usuario, incluyendo nombre y apellidos
+                ' Crear el comando SQL para insertar el nuevo usuario
                 Dim query As String = "INSERT INTO Usuario (nombreU, ApellidoP, ApellidoM, Correo, Contraseña) VALUES (@nombre, @apellidoP, @apellidoM, @correo, @contraseña)"
                 Using command As New MySqlCommand(query, connection)
                     ' Agregar los parámetros
@@ -83,13 +87,9 @@ Public Class Crear_Cuenta
         Return resultado
     End Function
 
-    ' Evento del botón "Atrás" para regresar al formulario de inicio de sesión
     Private Sub btnAtras_Click(sender As Object, e As EventArgs) Handles btnAtras.Click
-        ' Mostrar el formulario de inicio de sesión
         Dim inicioSesionForm As New Inicio_de_sesion
         inicioSesionForm.Show()
-
-        ' Cerrar el formulario actual
         Me.Close()
     End Sub
 End Class

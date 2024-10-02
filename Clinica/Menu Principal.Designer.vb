@@ -32,6 +32,7 @@ Partial Class Menu_Principal
 		Me.PictureBox1 = New System.Windows.Forms.PictureBox()
 		Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
 		Me.Panel4 = New System.Windows.Forms.Panel()
+		Me.btnConsulta = New System.Windows.Forms.Button()
 		Me.PictureBox2 = New System.Windows.Forms.PictureBox()
 		Me.LinkLabel2 = New System.Windows.Forms.LinkLabel()
 		Me.Panel5 = New System.Windows.Forms.Panel()
@@ -40,7 +41,7 @@ Partial Class Menu_Principal
 		Me.Panel6 = New System.Windows.Forms.Panel()
 		Me.PictureBox4 = New System.Windows.Forms.PictureBox()
 		Me.LinkLabel4 = New System.Windows.Forms.LinkLabel()
-		Me.btnConsulta = New System.Windows.Forms.Button()
+		Me.btnMascota = New System.Windows.Forms.Button()
 		Me.Panel1.SuspendLayout()
 		Me.Panel2.SuspendLayout()
 		Me.btnRegistro.SuspendLayout()
@@ -158,6 +159,15 @@ Partial Class Menu_Principal
 		Me.Panel4.Size = New System.Drawing.Size(133, 121)
 		Me.Panel4.TabIndex = 3
 		'
+		'btnConsulta
+		'
+		Me.btnConsulta.Location = New System.Drawing.Point(29, 97)
+		Me.btnConsulta.Name = "btnConsulta"
+		Me.btnConsulta.Size = New System.Drawing.Size(75, 23)
+		Me.btnConsulta.TabIndex = 9
+		Me.btnConsulta.Text = "Consulta"
+		Me.btnConsulta.UseVisualStyleBackColor = True
+		'
 		'PictureBox2
 		'
 		Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
@@ -258,20 +268,21 @@ Partial Class Menu_Principal
 		Me.LinkLabel4.TabStop = True
 		Me.LinkLabel4.Text = "Informes"
 		'
-		'btnConsulta
+		'btnMascota
 		'
-		Me.btnConsulta.Location = New System.Drawing.Point(71, 84)
-		Me.btnConsulta.Name = "btnConsulta"
-		Me.btnConsulta.Size = New System.Drawing.Size(75, 23)
-		Me.btnConsulta.TabIndex = 9
-		Me.btnConsulta.Text = "Consulta"
-		Me.btnConsulta.UseVisualStyleBackColor = True
+		Me.btnMascota.Location = New System.Drawing.Point(263, 233)
+		Me.btnMascota.Name = "btnMascota"
+		Me.btnMascota.Size = New System.Drawing.Size(115, 23)
+		Me.btnMascota.TabIndex = 6
+		Me.btnMascota.Text = "Registro de Mascota"
+		Me.btnMascota.UseVisualStyleBackColor = True
 		'
 		'Menu_Principal
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-		Me.ClientSize = New System.Drawing.Size(843, 487)
+		Me.ClientSize = New System.Drawing.Size(843, 522)
+		Me.Controls.Add(Me.btnMascota)
 		Me.Controls.Add(Me.Panel6)
 		Me.Controls.Add(Me.Panel5)
 		Me.Controls.Add(Me.Panel4)
@@ -317,4 +328,5 @@ Partial Class Menu_Principal
     Friend WithEvents PictureBox4 As PictureBox
 	Friend WithEvents btnRegistroCita As Button
 	Friend WithEvents btnConsulta As Button
+	Friend WithEvents btnMascota As Button
 End Class

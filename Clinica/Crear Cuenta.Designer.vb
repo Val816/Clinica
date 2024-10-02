@@ -27,6 +27,12 @@ Partial Class Crear_Cuenta
 		Me.Panel2 = New System.Windows.Forms.Panel()
 		Me.btnAtras = New System.Windows.Forms.Button()
 		Me.Panel3 = New System.Windows.Forms.Panel()
+		Me.txtNombre = New System.Windows.Forms.TextBox()
+		Me.Label7 = New System.Windows.Forms.Label()
+		Me.txtApellidoP = New System.Windows.Forms.TextBox()
+		Me.Label6 = New System.Windows.Forms.Label()
+		Me.txtApellidoM = New System.Windows.Forms.TextBox()
+		Me.Label5 = New System.Windows.Forms.Label()
 		Me.btnContinuar = New System.Windows.Forms.Button()
 		Me.txtConfirmarContraseña = New System.Windows.Forms.TextBox()
 		Me.txtContraseña = New System.Windows.Forms.TextBox()
@@ -34,12 +40,6 @@ Partial Class Crear_Cuenta
 		Me.Label4 = New System.Windows.Forms.Label()
 		Me.Label3 = New System.Windows.Forms.Label()
 		Me.Label2 = New System.Windows.Forms.Label()
-		Me.txtApellidoM = New System.Windows.Forms.TextBox()
-		Me.Label5 = New System.Windows.Forms.Label()
-		Me.txtApellidoP = New System.Windows.Forms.TextBox()
-		Me.Label6 = New System.Windows.Forms.Label()
-		Me.txtNombre = New System.Windows.Forms.TextBox()
-		Me.Label7 = New System.Windows.Forms.Label()
 		Me.Panel1.SuspendLayout()
 		Me.Panel2.SuspendLayout()
 		Me.Panel3.SuspendLayout()
@@ -113,6 +113,72 @@ Partial Class Crear_Cuenta
 		Me.Panel3.Name = "Panel3"
 		Me.Panel3.Size = New System.Drawing.Size(673, 285)
 		Me.Panel3.TabIndex = 3
+		'
+		'txtNombre
+		'
+		Me.txtNombre.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+		Me.txtNombre.Location = New System.Drawing.Point(315, 8)
+		Me.txtNombre.Margin = New System.Windows.Forms.Padding(2)
+		Me.txtNombre.Multiline = True
+		Me.txtNombre.Name = "txtNombre"
+		Me.txtNombre.Size = New System.Drawing.Size(315, 29)
+		Me.txtNombre.TabIndex = 12
+		Me.txtNombre.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+		'
+		'Label7
+		'
+		Me.Label7.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+		Me.Label7.Location = New System.Drawing.Point(51, 8)
+		Me.Label7.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+		Me.Label7.Name = "Label7"
+		Me.Label7.Size = New System.Drawing.Size(238, 29)
+		Me.Label7.TabIndex = 11
+		Me.Label7.Text = "Nombre:"
+		Me.Label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+		'
+		'txtApellidoP
+		'
+		Me.txtApellidoP.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+		Me.txtApellidoP.Location = New System.Drawing.Point(315, 46)
+		Me.txtApellidoP.Margin = New System.Windows.Forms.Padding(2)
+		Me.txtApellidoP.Multiline = True
+		Me.txtApellidoP.Name = "txtApellidoP"
+		Me.txtApellidoP.Size = New System.Drawing.Size(315, 29)
+		Me.txtApellidoP.TabIndex = 10
+		Me.txtApellidoP.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+		'
+		'Label6
+		'
+		Me.Label6.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+		Me.Label6.Location = New System.Drawing.Point(51, 46)
+		Me.Label6.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+		Me.Label6.Name = "Label6"
+		Me.Label6.Size = New System.Drawing.Size(238, 29)
+		Me.Label6.TabIndex = 9
+		Me.Label6.Text = "Apellido Paterno:"
+		Me.Label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+		'
+		'txtApellidoM
+		'
+		Me.txtApellidoM.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+		Me.txtApellidoM.Location = New System.Drawing.Point(315, 87)
+		Me.txtApellidoM.Margin = New System.Windows.Forms.Padding(2)
+		Me.txtApellidoM.Multiline = True
+		Me.txtApellidoM.Name = "txtApellidoM"
+		Me.txtApellidoM.Size = New System.Drawing.Size(315, 29)
+		Me.txtApellidoM.TabIndex = 8
+		Me.txtApellidoM.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+		'
+		'Label5
+		'
+		Me.Label5.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+		Me.Label5.Location = New System.Drawing.Point(51, 87)
+		Me.Label5.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+		Me.Label5.Name = "Label5"
+		Me.Label5.Size = New System.Drawing.Size(238, 29)
+		Me.Label5.TabIndex = 7
+		Me.Label5.Text = "Apellido Materno:"
+		Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
 		'
 		'btnContinuar
 		'
@@ -193,72 +259,6 @@ Partial Class Crear_Cuenta
 		Me.Label2.TabIndex = 0
 		Me.Label2.Text = "Ingresa tu correo electrónico: "
 		Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-		'
-		'txtApellidoM
-		'
-		Me.txtApellidoM.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-		Me.txtApellidoM.Location = New System.Drawing.Point(315, 87)
-		Me.txtApellidoM.Margin = New System.Windows.Forms.Padding(2)
-		Me.txtApellidoM.Multiline = True
-		Me.txtApellidoM.Name = "txtApellidoM"
-		Me.txtApellidoM.Size = New System.Drawing.Size(315, 29)
-		Me.txtApellidoM.TabIndex = 8
-		Me.txtApellidoM.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-		'
-		'Label5
-		'
-		Me.Label5.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-		Me.Label5.Location = New System.Drawing.Point(51, 87)
-		Me.Label5.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-		Me.Label5.Name = "Label5"
-		Me.Label5.Size = New System.Drawing.Size(238, 29)
-		Me.Label5.TabIndex = 7
-		Me.Label5.Text = "Apellido Materno:"
-		Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-		'
-		'txtApellidoP
-		'
-		Me.txtApellidoP.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-		Me.txtApellidoP.Location = New System.Drawing.Point(315, 46)
-		Me.txtApellidoP.Margin = New System.Windows.Forms.Padding(2)
-		Me.txtApellidoP.Multiline = True
-		Me.txtApellidoP.Name = "txtApellidoP"
-		Me.txtApellidoP.Size = New System.Drawing.Size(315, 29)
-		Me.txtApellidoP.TabIndex = 10
-		Me.txtApellidoP.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-		'
-		'Label6
-		'
-		Me.Label6.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-		Me.Label6.Location = New System.Drawing.Point(51, 46)
-		Me.Label6.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-		Me.Label6.Name = "Label6"
-		Me.Label6.Size = New System.Drawing.Size(238, 29)
-		Me.Label6.TabIndex = 9
-		Me.Label6.Text = "Apellido Paterno:"
-		Me.Label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-		'
-		'txtNombre
-		'
-		Me.txtNombre.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-		Me.txtNombre.Location = New System.Drawing.Point(315, 8)
-		Me.txtNombre.Margin = New System.Windows.Forms.Padding(2)
-		Me.txtNombre.Multiline = True
-		Me.txtNombre.Name = "txtNombre"
-		Me.txtNombre.Size = New System.Drawing.Size(315, 29)
-		Me.txtNombre.TabIndex = 12
-		Me.txtNombre.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-		'
-		'Label7
-		'
-		Me.Label7.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-		Me.Label7.Location = New System.Drawing.Point(51, 8)
-		Me.Label7.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-		Me.Label7.Name = "Label7"
-		Me.Label7.Size = New System.Drawing.Size(238, 29)
-		Me.Label7.TabIndex = 11
-		Me.Label7.Text = "Nombre:"
-		Me.Label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
 		'
 		'Crear_Cuenta
 		'

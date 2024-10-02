@@ -1,56 +1,62 @@
-﻿Imports System.Data.SqlClient
+﻿Imports MySql.Data.MySqlClient
 
 Public Class Recuperar_Contraseña
-    Private Sub btnIngresar_Click(sender As Object, e As EventArgs) Handles btnIngresar.Click
+    ' Conexión a la base de datos
+    Private connectionString As String = "Server=localhost;Database=veterinaria;User Id=root;Password=root;"
+
+    ' Evento al presionar el botón "Cambiar Contraseña"
+    Private Sub btnCambiarContraseña_Click(sender As Object, e As EventArgs) Handles btnCambiarContraseña.Click
         ' Verificar que los campos no estén vacíos
-        If txtCorreo.Text = "" Or txtNuevaContrasena.Text = "" Or txtConfirmarContrasena.Text = "" Then
-            MessageBox.Show("Por favor, completa todos los campos.")
+        If String.IsNullOrEmpty(txtCorreo.Text) Or String.IsNullOrEmpty(txtNuevaContraseña.Text) Or String.IsNullOrEmpty(txtConfirmaContraseña.Text) Then
+            MessageBox.Show("Por favor, complete todos los campos.", "Campos Vacíos", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Return
         End If
 
-        ' Verificar que las contraseñas coincidan
-        If txtNuevaContrasena.Text <> txtConfirmarContrasena.Text Then
-            MessageBox.Show("Las contraseñas no coinciden.")
+        ' Verificar que la nueva contraseña y la confirmación coincidan
+        If txtNuevaContraseña.Text <> txtConfirmaContraseña.Text Then
+            MessageBox.Show("Las contraseñas no coinciden. Por favor, verifique.", "Error de Contraseña", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Return
         End If
 
-        ' Conexión a la base de datos (ajusta la cadena de conexión según corresponda)
-        Using conn As New SqlConnection("Server=localhost;Database=veterinaria;User Id=root;Password=root;")
-            ' Verificar si el correo electrónico existe en la base de datos
-            Dim query As String = "SELECT idUsuario FROM Usuario WHERE Correo = @Correo"
-            Using cmd As New SqlCommand(query, conn)
-                cmd.Parameters.AddWithValue("@Correo", txtCorreo.Text)
+        ' Actualizar la contraseña si el correo existe en la base de datos
+        Dim queryVerificarCorreo As String = "SELECT COUNT(*) FROM Usuario WHERE Correo = @Correo"
+        Dim queryActualizarContraseña As String = "UPDATE Usuario SET Contraseña = @NuevaContraseña WHERE Correo = @Correo"
 
-                conn.Open()
-                Dim result = cmd.ExecuteScalar()
+        Using connection As New MySqlConnection(connectionString)
+            connection.Open()
 
-                If result IsNot Nothing Then
-                    ' Si el correo existe, actualizar la contraseña
-                    Dim updateQuery As String = "UPDATE Usuario SET Contraseña = @NuevaContrasena WHERE Correo = @Correo"
-                    Using updateCmd As New SqlCommand(updateQuery, conn)
-                        updateCmd.Parameters.AddWithValue("@NuevaContrasena", txtNuevaContrasena.Text)
-                        updateCmd.Parameters.AddWithValue("@Correo", txtCorreo.Text)
+            ' Verificar si el correo existe
+            Using verificarCmd As New MySqlCommand(queryVerificarCorreo, connection)
+                verificarCmd.Parameters.AddWithValue("@Correo", txtCorreo.Text)
 
-                        updateCmd.ExecuteNonQuery()
-                        MessageBox.Show("Contraseña actualizada exitosamente.")
+                Dim count As Integer = Convert.ToInt32(verificarCmd.ExecuteScalar())
+
+                If count = 0 Then
+                    MessageBox.Show("El correo no existe. Por favor, verifique.", "Correo no encontrado", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Else
+                    ' Actualizar la contraseña
+                    Using actualizarCmd As New MySqlCommand(queryActualizarContraseña, connection)
+                        actualizarCmd.Parameters.AddWithValue("@NuevaContraseña", txtNuevaContraseña.Text)
+                        actualizarCmd.Parameters.AddWithValue("@Correo", txtCorreo.Text)
+
+                        actualizarCmd.ExecuteNonQuery()
+                        MessageBox.Show("La contraseña ha sido cambiada correctamente.", "Cambio Exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
                         ' Redirigir al formulario de inicio de sesión
-                        Dim inicioSesionForm As New Inicio_de_sesion()
-                        inicioSesionForm.Show()
-                        Me.Close() ' Cierra el formulario de recuperación de cuenta
+                        Dim formLogin As New Inicio_de_sesion()
+                        formLogin.Show()
+                        Me.Close()
                     End Using
-                Else
-                    ' Si el correo no existe, mostrar un mensaje
-                    MessageBox.Show("El correo electrónico no está registrado.")
                 End If
             End Using
         End Using
     End Sub
 
-    Private Sub LimpiarCampos()
-            txtCorreo.Text = ""
-            txtNuevaContrasena.Text = ""
-            txtConfirmarContrasena.Text = ""
-        End Sub
-    End Class
-
+    ' Botón para regresar a la ventana de inicio de sesión
+    Private Sub btnRegresar_Click(sender As Object, e As EventArgs) Handles btnRegresar.Click
+        ' Abrir el formulario de inicio de sesión y cerrar el actual
+        Dim formLogin As New Inicio_de_sesion()
+        formLogin.Show()
+        Me.Close()
+    End Sub
+End Class

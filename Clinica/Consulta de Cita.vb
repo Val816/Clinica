@@ -1,119 +1,127 @@
-﻿Imports System.Data.SqlClient
+﻿Imports MySql.Data.MySqlClient
+
 Public Class Consulta_de_Cita
+    ' Cadena de conexión, ajusta según tu configuración
+    Dim connectionString As String = "Server=localhost;Database=veterinaria;User Id=root;Password=root;"
 
+    ' Evento para buscar una cita por celular, nombre, mascota, fecha y hora
     Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
-            ' Consulta SQL para buscar la cita según el nombre del cliente y la mascota
-            Dim query As String = "SELECT fecha, hora FROM Cita WHERE nomCliente = @nomCliente AND nomMasc = @nomMasc"
+        Dim celular As String = txtCelular.Text
+        Dim nombre As String = txtNombre.Text
+        Dim mascota As String = txtNombreMascota.Text
+        Dim fecha As Date = dtpFecha.Value ' Suponiendo que dtpFecha es el DateTimePicker
+        Dim hora As String = txtHora.Text ' Suponiendo que txtHora es el TextBox para la hora
 
-        ' Conexión a la base de datos
-        Using conn As New SqlConnection("Server=localhost;Database=veterinaria;User Id=root;Password=root;")
-            Using cmd As New SqlCommand(query, conn)
-                ' Asignar parámetros a la consulta
-                cmd.Parameters.AddWithValue("@nomCliente", txtNombreTutor.Text)
-                cmd.Parameters.AddWithValue("@nomMasc", txtNombreMascota.Text)
+        ' Validar que al menos uno de los campos relevantes esté lleno
+        If String.IsNullOrEmpty(celular) AndAlso String.IsNullOrEmpty(nombre) AndAlso fecha = DateTimePicker.MinimumDateTime Then
+            MessageBox.Show("Por favor, ingresa un número de celular, nombre o selecciona una fecha para buscar la cita.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return
+        End If
 
-                ' Abrir la conexión
-                conn.Open()
+        ' Llamar a la función para buscar la cita
+        BuscarCita(celular, nombre, mascota, fecha, hora)
+    End Sub
 
-                ' Ejecutar la consulta y leer los resultados
-                Using reader As SqlDataReader = cmd.ExecuteReader()
-                    If reader.Read() Then
-                        ' Si se encuentra la cita, asignar la fecha al DateTimePicker
-                        dateFecha.Value = DateTime.Parse(reader("fecha").ToString())
+    ' Función para buscar la cita en la base de datos y mostrarla en el DataGridView
+    Private Sub BuscarCita(celular As String, nombre As String, mascota As String, fecha As Date, hora As String)
+        Using connection As New MySqlConnection(connectionString)
+            Try
+                connection.Open()
 
-                        ' Asignar la hora al TextBox
-                        txtHora.Text = reader("hora").ToString()
+                ' Convertir el celular en número antes de pasar a la consulta
+                Dim celularNumerico As Long
+                Dim query As String = "SELECT * FROM Cita WHERE (celular = @celular OR nomCliente LIKE @nombre OR nomMasc LIKE @mascota) AND (fecha = @fecha OR @fecha IS NULL)"
 
-                        ' Habilitar el botón de continuar
-                        btnContinuar.Enabled = True
+                Using command As New MySqlCommand(query, connection)
+                    ' Solo asignar el valor del celular si no está vacío
+                    If Not String.IsNullOrEmpty(celular) AndAlso Long.TryParse(celular, celularNumerico) Then
+                        command.Parameters.AddWithValue("@celular", celularNumerico)
                     Else
-                        ' Si no se encuentra cita, mostrar mensaje y limpiar los campos
-                        MessageBox.Show("No se encontró ninguna cita.")
-                        btnContinuar.Enabled = False
-                        LimpiarCampos()
+                        command.Parameters.AddWithValue("@celular", DBNull.Value)
+                    End If
+
+                    command.Parameters.AddWithValue("@nombre", "%" & nombre & "%")
+                    command.Parameters.AddWithValue("@mascota", "%" & mascota & "%")
+                    command.Parameters.AddWithValue("@fecha", If(fecha = DateTimePicker.MinimumDateTime, DBNull.Value, fecha.Date))
+
+                    Dim adapter As New MySqlDataAdapter(command)
+                    Dim table As New DataTable()
+                    adapter.Fill(table)
+
+                    ' Si hay resultados, mostrarlos en el DataGridView
+                    If table.Rows.Count > 0 Then
+                        dgvCitaProgramada.DataSource = table
+                    Else
+                        MessageBox.Show("No se encontró ninguna cita con esos datos.", "No encontrado", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     End If
                 End Using
-            End Using
+            Catch ex As Exception
+                MessageBox.Show("Error al conectar con la base de datos: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End Try
         End Using
     End Sub
 
-        ' Botón para limpiar todos los campos del formulario
-        Private Sub btnLimpiar_Click(sender As Object, e As EventArgs) Handles btnLimpiar.Click
-            LimpiarCampos()
-        End Sub
-
-        ' Función para limpiar los campos del formulario
-        Private Sub LimpiarCampos()
-            txtNombreTutor.Text = ""
-            txtTelefono.Text = ""
-            txtNombreMascota.Text = ""
-            txtHora.Text = ""
-            dateFecha.Value = DateTime.Now
-        End Sub
-
-        ' Botón para eliminar la cita
-        Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
-            ' Verificar si hay cita seleccionada
-            If txtNombreTutor.Text = "" Or txtNombreMascota.Text = "" Then
-                MessageBox.Show("Por favor, busque una cita antes de eliminar.")
-                Return
-            End If
+    ' Evento para eliminar una cita seleccionada del DataGridView
+    Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
+        If dgvCitaProgramada.SelectedRows.Count > 0 Then
+            ' Obtener el ID de la cita seleccionada
+            Dim idCita As Integer = Convert.ToInt32(dgvCitaProgramada.SelectedRows(0).Cells("idCita").Value)
 
             ' Confirmar eliminación
-            If MessageBox.Show("¿Está seguro de que desea eliminar esta cita?", "Confirmar eliminación", MessageBoxButtons.YesNo) = DialogResult.Yes Then
-                ' Consulta SQL para eliminar la cita
-                Dim query As String = "DELETE FROM Cita WHERE nomCliente = @nomCliente AND nomMasc = @nomMasc"
-
-                ' Conexión a la base de datos
-                Using conn As New SqlConnection("your_connection_string_here")
-                    Using cmd As New SqlCommand(query, conn)
-                        ' Asignar parámetros
-                        cmd.Parameters.AddWithValue("@nomCliente", txtNombreTutor.Text)
-                        cmd.Parameters.AddWithValue("@nomMasc", txtNombreMascota.Text)
-
-                        ' Abrir la conexión y ejecutar la eliminación
-                        conn.Open()
-                        cmd.ExecuteNonQuery()
-
-                        ' Limpiar los campos después de eliminar la cita
-                        LimpiarCampos()
-                        MessageBox.Show("Cita eliminada exitosamente.")
-                    End Using
-                End Using
+            Dim confirmacion As DialogResult = MessageBox.Show("¿Estás seguro de que deseas eliminar esta cita?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+            If confirmacion = DialogResult.Yes Then
+                EliminarCita(idCita)
             End If
-        End Sub
-
-        ' Botón para continuar con el registro de la mascota
-        Private Sub btnContinuar_Click(sender As Object, e As EventArgs) Handles btnContinuar.Click
-            ' Aquí redireccionarías al formulario de registro de la mascota
-            MessageBox.Show("Redirigiendo al registro de la mascota...")
-            ' Ejemplo: abrir otro formulario
-            ' Dim frmRegistroMascota As New FormRegistroMascota()
-            ' frmRegistroMascota.Show()
-            ' Me.Close() ' Cerrar el formulario actual si es necesario
-        End Sub
-
-        ' Botón para ir al registro de citas si no se encuentra ninguna
-        Private Sub btnIrRegistroCita_Click(sender As Object, e As EventArgs) Handles btnIrRegistroCita.Click
-            ' Aquí redireccionarías al formulario de registro de citas
-            MessageBox.Show("Redirigiendo al registro de citas...")
-        ' Ejemplo: abrir otro formulario
-        ' Dim frmRegistroCita As New FormRegistroCita()
-        ' frmRegistroCita.Show()
-        ' Me.Close()
+        Else
+            MessageBox.Show("Por favor, selecciona una cita para eliminar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+        End If
     End Sub
 
-        ' Botón para regresar al menú principal
-        Private Sub btnMenuPrincipal_Click(sender As Object, e As EventArgs) Handles btnMenuPrincipal.Click
-            ' Aquí redireccionarías al menú principal
-            MessageBox.Show("Redirigiendo al menú principal...")
-            ' Ejemplo: abrir otro formulario
-            ' Dim frmMenuPrincipal As New FormMenuPrincipal()
-            ' frmMenuPrincipal.Show()
-            ' Me.Close() ' Cerrar el formulario actual si es necesario
-        End Sub
+    ' Función para eliminar una cita de la base de datos
+    Private Sub EliminarCita(idCita As Integer)
+        Using connection As New MySqlConnection(connectionString)
+            Try
+                connection.Open()
 
-    Private Sub Panel4_Paint(sender As Object, e As PaintEventArgs) Handles Panel4.Paint
+                ' Consulta SQL para eliminar la cita
+                Dim query As String = "DELETE FROM Cita WHERE idCita = @idCita"
+                Using command As New MySqlCommand(query, connection)
+                    command.Parameters.AddWithValue("@idCita", idCita)
+                    Dim rowsAffected As Integer = command.ExecuteNonQuery()
 
+                    ' Si se eliminó la cita correctamente
+                    If rowsAffected > 0 Then
+                        MessageBox.Show("Cita eliminada exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                        ' Recargar el DataGridView después de eliminar
+                        btnBuscar.PerformClick()
+                    Else
+                        MessageBox.Show("Error al eliminar la cita.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    End If
+                End Using
+            Catch ex As Exception
+                MessageBox.Show("Error al conectar con la base de datos: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End Try
+        End Using
+    End Sub
+
+    ' Evento para redirigir al formulario de registro de citas
+    Private Sub btnAgregarCita_Click(sender As Object, e As EventArgs) Handles btnAgregarCita.Click
+        Dim registroCitaForm As New Registro_de_Cita
+        registroCitaForm.Show()
+        Me.Close()
+    End Sub
+
+    ' Evento para continuar al formulario de registro de mascota
+    Private Sub btnContinuarRegistroMascota_Click(sender As Object, e As EventArgs) Handles btnContinuarRegistroMascota.Click
+        Dim registroMascotaForm As New Registro_de_Mascota
+        registroMascotaForm.Show()
+        Me.Close()
+    End Sub
+
+    ' Evento para regresar al menú principal
+    Private Sub btnMenuPrincipal_Click(sender As Object, e As EventArgs) Handles btnMenuPrincipal.Click
+        Dim menuPrincipalForm As New Menu_Principal
+        menuPrincipalForm.Show()
+        Me.Close()
     End Sub
 End Class

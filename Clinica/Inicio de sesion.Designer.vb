@@ -33,6 +33,7 @@ Partial Class Inicio_de_sesion
 		Me.txtCorreo = New System.Windows.Forms.TextBox()
 		Me.txtContraseña = New System.Windows.Forms.TextBox()
 		Me.btnIngresar = New System.Windows.Forms.Button()
+		Me.btnSalir = New System.Windows.Forms.Button()
 		CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.SuspendLayout()
 		'
@@ -134,12 +135,21 @@ Partial Class Inicio_de_sesion
 		'
 		'btnIngresar
 		'
-		Me.btnIngresar.Location = New System.Drawing.Point(391, 379)
+		Me.btnIngresar.Location = New System.Drawing.Point(317, 379)
 		Me.btnIngresar.Name = "btnIngresar"
 		Me.btnIngresar.Size = New System.Drawing.Size(75, 23)
 		Me.btnIngresar.TabIndex = 12
 		Me.btnIngresar.Text = "Ingresar"
 		Me.btnIngresar.UseVisualStyleBackColor = True
+		'
+		'btnSalir
+		'
+		Me.btnSalir.Location = New System.Drawing.Point(446, 379)
+		Me.btnSalir.Name = "btnSalir"
+		Me.btnSalir.Size = New System.Drawing.Size(75, 23)
+		Me.btnSalir.TabIndex = 13
+		Me.btnSalir.Text = "Salir"
+		Me.btnSalir.UseVisualStyleBackColor = True
 		'
 		'Inicio_de_sesion
 		'
@@ -147,6 +157,7 @@ Partial Class Inicio_de_sesion
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
 		Me.BackColor = System.Drawing.SystemColors.ControlLightLight
 		Me.ClientSize = New System.Drawing.Size(851, 487)
+		Me.Controls.Add(Me.btnSalir)
 		Me.Controls.Add(Me.btnIngresar)
 		Me.Controls.Add(Me.txtContraseña)
 		Me.Controls.Add(Me.txtCorreo)
@@ -176,5 +187,5 @@ Partial Class Inicio_de_sesion
 	Friend WithEvents txtCorreo As TextBox
 	Friend WithEvents txtContraseña As TextBox
 	Friend WithEvents btnIngresar As Button
-
+	Friend WithEvents btnSalir As Button
 End Class

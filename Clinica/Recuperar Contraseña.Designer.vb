@@ -28,11 +28,12 @@ Partial Class Recuperar_Contraseña
 		Me.Label3 = New System.Windows.Forms.Label()
 		Me.txtCorreo = New System.Windows.Forms.TextBox()
 		Me.Label2 = New System.Windows.Forms.Label()
-		Me.txtNuevaContrasena = New System.Windows.Forms.TextBox()
+		Me.txtNuevaContraseña = New System.Windows.Forms.TextBox()
 		Me.Label4 = New System.Windows.Forms.Label()
-		Me.txtConfirmarContrasena = New System.Windows.Forms.TextBox()
-		Me.btnIngresar = New System.Windows.Forms.Button()
+		Me.txtConfirmaContraseña = New System.Windows.Forms.TextBox()
+		Me.btnCambiarContraseña = New System.Windows.Forms.Button()
 		Me.Label5 = New System.Windows.Forms.Label()
+		Me.btnRegresar = New System.Windows.Forms.Button()
 		CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.SuspendLayout()
 		'
@@ -41,7 +42,7 @@ Partial Class Recuperar_Contraseña
 		Me.Label1.AutoSize = True
 		Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
 		Me.Label1.ForeColor = System.Drawing.Color.Lime
-		Me.Label1.Location = New System.Drawing.Point(337, 18)
+		Me.Label1.Location = New System.Drawing.Point(260, 18)
 		Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
 		Me.Label1.Name = "Label1"
 		Me.Label1.Size = New System.Drawing.Size(143, 31)
@@ -51,8 +52,8 @@ Partial Class Recuperar_Contraseña
 		'PictureBox1
 		'
 		Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-		Me.PictureBox1.Location = New System.Drawing.Point(371, 59)
-		Me.PictureBox1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+		Me.PictureBox1.Location = New System.Drawing.Point(294, 59)
+		Me.PictureBox1.Margin = New System.Windows.Forms.Padding(2)
 		Me.PictureBox1.Name = "PictureBox1"
 		Me.PictureBox1.Size = New System.Drawing.Size(71, 117)
 		Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -63,7 +64,7 @@ Partial Class Recuperar_Contraseña
 		'
 		Me.Label3.AutoSize = True
 		Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.Label3.Location = New System.Drawing.Point(260, 226)
+		Me.Label3.Location = New System.Drawing.Point(183, 226)
 		Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
 		Me.Label3.Name = "Label3"
 		Me.Label3.Size = New System.Drawing.Size(124, 17)
@@ -72,7 +73,7 @@ Partial Class Recuperar_Contraseña
 		'
 		'txtCorreo
 		'
-		Me.txtCorreo.Location = New System.Drawing.Point(263, 255)
+		Me.txtCorreo.Location = New System.Drawing.Point(186, 255)
 		Me.txtCorreo.Name = "txtCorreo"
 		Me.txtCorreo.Size = New System.Drawing.Size(274, 20)
 		Me.txtCorreo.TabIndex = 12
@@ -81,77 +82,87 @@ Partial Class Recuperar_Contraseña
 		'
 		Me.Label2.AutoSize = True
 		Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.Label2.Location = New System.Drawing.Point(260, 297)
+		Me.Label2.Location = New System.Drawing.Point(183, 297)
 		Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
 		Me.Label2.Name = "Label2"
 		Me.Label2.Size = New System.Drawing.Size(128, 17)
 		Me.Label2.TabIndex = 13
 		Me.Label2.Text = "Nueva contraseña:"
 		'
-		'txtNuevaContrasena
+		'txtNuevaContraseña
 		'
-		Me.txtNuevaContrasena.Location = New System.Drawing.Point(263, 325)
-		Me.txtNuevaContrasena.Name = "txtNuevaContrasena"
-		Me.txtNuevaContrasena.Size = New System.Drawing.Size(274, 20)
-		Me.txtNuevaContrasena.TabIndex = 14
+		Me.txtNuevaContraseña.Location = New System.Drawing.Point(186, 325)
+		Me.txtNuevaContraseña.Name = "txtNuevaContraseña"
+		Me.txtNuevaContraseña.Size = New System.Drawing.Size(274, 20)
+		Me.txtNuevaContraseña.TabIndex = 14
 		'
 		'Label4
 		'
 		Me.Label4.AutoSize = True
 		Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.Label4.Location = New System.Drawing.Point(260, 367)
+		Me.Label4.Location = New System.Drawing.Point(183, 367)
 		Me.Label4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
 		Me.Label4.Name = "Label4"
 		Me.Label4.Size = New System.Drawing.Size(143, 17)
 		Me.Label4.TabIndex = 15
 		Me.Label4.Text = "Confirma contraseña:"
 		'
-		'txtConfirmarContrasena
+		'txtConfirmaContraseña
 		'
-		Me.txtConfirmarContrasena.Location = New System.Drawing.Point(263, 392)
-		Me.txtConfirmarContrasena.Name = "txtConfirmarContrasena"
-		Me.txtConfirmarContrasena.Size = New System.Drawing.Size(274, 20)
-		Me.txtConfirmarContrasena.TabIndex = 16
+		Me.txtConfirmaContraseña.Location = New System.Drawing.Point(186, 392)
+		Me.txtConfirmaContraseña.Name = "txtConfirmaContraseña"
+		Me.txtConfirmaContraseña.Size = New System.Drawing.Size(274, 20)
+		Me.txtConfirmaContraseña.TabIndex = 16
 		'
-		'btnIngresar
+		'btnCambiarContraseña
 		'
-		Me.btnIngresar.BackColor = System.Drawing.SystemColors.ActiveCaptionText
-		Me.btnIngresar.ForeColor = System.Drawing.SystemColors.ControlLightLight
-		Me.btnIngresar.Location = New System.Drawing.Point(367, 432)
-		Me.btnIngresar.Name = "btnIngresar"
-		Me.btnIngresar.Size = New System.Drawing.Size(75, 23)
-		Me.btnIngresar.TabIndex = 17
-		Me.btnIngresar.Text = "Ingresar"
-		Me.btnIngresar.UseVisualStyleBackColor = False
+		Me.btnCambiarContraseña.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+		Me.btnCambiarContraseña.ForeColor = System.Drawing.SystemColors.ControlLightLight
+		Me.btnCambiarContraseña.Location = New System.Drawing.Point(218, 433)
+		Me.btnCambiarContraseña.Name = "btnCambiarContraseña"
+		Me.btnCambiarContraseña.Size = New System.Drawing.Size(75, 23)
+		Me.btnCambiarContraseña.TabIndex = 17
+		Me.btnCambiarContraseña.Text = "Ingresar"
+		Me.btnCambiarContraseña.UseVisualStyleBackColor = False
 		'
 		'Label5
 		'
 		Me.Label5.AutoSize = True
 		Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.Label5.Location = New System.Drawing.Point(315, 188)
+		Me.Label5.Location = New System.Drawing.Point(238, 188)
 		Me.Label5.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
 		Me.Label5.Name = "Label5"
 		Me.Label5.Size = New System.Drawing.Size(187, 25)
 		Me.Label5.TabIndex = 18
 		Me.Label5.Text = "Recuperar Cuenta"
 		'
+		'btnRegresar
+		'
+		Me.btnRegresar.Location = New System.Drawing.Point(337, 433)
+		Me.btnRegresar.Name = "btnRegresar"
+		Me.btnRegresar.Size = New System.Drawing.Size(75, 23)
+		Me.btnRegresar.TabIndex = 19
+		Me.btnRegresar.Text = "Regresar"
+		Me.btnRegresar.UseVisualStyleBackColor = True
+		'
 		'Recuperar_Contraseña
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
 		Me.BackColor = System.Drawing.SystemColors.ButtonHighlight
-		Me.ClientSize = New System.Drawing.Size(849, 487)
+		Me.ClientSize = New System.Drawing.Size(647, 489)
+		Me.Controls.Add(Me.btnRegresar)
 		Me.Controls.Add(Me.Label5)
-		Me.Controls.Add(Me.btnIngresar)
-		Me.Controls.Add(Me.txtConfirmarContrasena)
+		Me.Controls.Add(Me.btnCambiarContraseña)
+		Me.Controls.Add(Me.txtConfirmaContraseña)
 		Me.Controls.Add(Me.Label4)
-		Me.Controls.Add(Me.txtNuevaContrasena)
+		Me.Controls.Add(Me.txtNuevaContraseña)
 		Me.Controls.Add(Me.Label2)
 		Me.Controls.Add(Me.txtCorreo)
 		Me.Controls.Add(Me.Label3)
 		Me.Controls.Add(Me.PictureBox1)
 		Me.Controls.Add(Me.Label1)
-		Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+		Me.Margin = New System.Windows.Forms.Padding(2)
 		Me.Name = "Recuperar_Contraseña"
 		Me.Text = "Recuperar_Contraseña"
 		Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
@@ -166,9 +177,10 @@ Partial Class Recuperar_Contraseña
     Friend WithEvents Label3 As Label
     Friend WithEvents txtCorreo As TextBox
     Friend WithEvents Label2 As Label
-    Friend WithEvents txtNuevaContrasena As TextBox
+    Friend WithEvents txtNuevaContraseña As TextBox
     Friend WithEvents Label4 As Label
-    Friend WithEvents txtConfirmarContrasena As TextBox
-    Friend WithEvents btnIngresar As Button
+    Friend WithEvents txtConfirmaContraseña As TextBox
+    Friend WithEvents btnCambiarContraseña As Button
     Friend WithEvents Label5 As Label
+	Friend WithEvents btnRegresar As Button
 End Class

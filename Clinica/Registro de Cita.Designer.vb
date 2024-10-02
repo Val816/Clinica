@@ -1,27 +1,27 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Registro_de_Cita
-    Inherits System.Windows.Forms.Form
+	Inherits System.Windows.Forms.Form
 
-    'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
-    Protected Overrides Sub Dispose(ByVal disposing As Boolean)
-        Try
-            If disposing AndAlso components IsNot Nothing Then
-                components.Dispose()
-            End If
-        Finally
-            MyBase.Dispose(disposing)
-        End Try
-    End Sub
+	'Form reemplaza a Dispose para limpiar la lista de componentes.
+	<System.Diagnostics.DebuggerNonUserCode()>
+	Protected Overrides Sub Dispose(ByVal disposing As Boolean)
+		Try
+			If disposing AndAlso components IsNot Nothing Then
+				components.Dispose()
+			End If
+		Finally
+			MyBase.Dispose(disposing)
+		End Try
+	End Sub
 
-    'Requerido por el Diseñador de Windows Forms
-    Private components As System.ComponentModel.IContainer
+	'Requerido por el Diseñador de Windows Forms
+	Private components As System.ComponentModel.IContainer
 
-    'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
-    'Se puede modificar usando el Diseñador de Windows Forms.  
-    'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
-    Private Sub InitializeComponent()
+	'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
+	'Se puede modificar usando el Diseñador de Windows Forms.  
+	'No lo modifique con el editor de código.
+	<System.Diagnostics.DebuggerStepThrough()>
+	Private Sub InitializeComponent()
 		Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Registro_de_Cita))
 		Me.Panel1 = New System.Windows.Forms.Panel()
 		Me.btnMenuPrincipal = New System.Windows.Forms.Button()
@@ -29,11 +29,16 @@ Partial Class Registro_de_Cita
 		Me.Panel2 = New System.Windows.Forms.Panel()
 		Me.btnContinuarRegistroMascota = New System.Windows.Forms.Button()
 		Me.Panel3 = New System.Windows.Forms.Panel()
+		Me.btnRegistrarCita = New System.Windows.Forms.Button()
+		Me.DateTimePickerFecha = New System.Windows.Forms.DateTimePicker()
+		Me.txtHora = New System.Windows.Forms.TextBox()
 		Me.txtEspecie = New System.Windows.Forms.TextBox()
-		Me.txtNombreMascota = New System.Windows.Forms.TextBox()
+		Me.Label8 = New System.Windows.Forms.Label()
+		Me.txtNomMascota = New System.Windows.Forms.TextBox()
 		Me.txtTelefono = New System.Windows.Forms.TextBox()
-		Me.txtApellidoTutor = New System.Windows.Forms.TextBox()
-		Me.txtNombreTutor = New System.Windows.Forms.TextBox()
+		Me.txtApellido = New System.Windows.Forms.TextBox()
+		Me.Label7 = New System.Windows.Forms.Label()
+		Me.txtNomCliente = New System.Windows.Forms.TextBox()
 		Me.TextBox1 = New System.Windows.Forms.TextBox()
 		Me.Label6 = New System.Windows.Forms.Label()
 		Me.Label5 = New System.Windows.Forms.Label()
@@ -41,19 +46,16 @@ Partial Class Registro_de_Cita
 		Me.Label3 = New System.Windows.Forms.Label()
 		Me.Label2 = New System.Windows.Forms.Label()
 		Me.Panel4 = New System.Windows.Forms.Panel()
-		Me.dtpFecha = New System.Windows.Forms.DateTimePicker()
-		Me.btnRegistrarCita = New System.Windows.Forms.Button()
-		Me.txtHora = New System.Windows.Forms.TextBox()
-		Me.Label8 = New System.Windows.Forms.Label()
-		Me.Label7 = New System.Windows.Forms.Label()
 		Me.PictureBox1 = New System.Windows.Forms.PictureBox()
 		Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+		Me.DataGridViewCitas = New System.Windows.Forms.DataGridView()
 		Me.Panel1.SuspendLayout()
 		Me.Panel2.SuspendLayout()
 		Me.Panel3.SuspendLayout()
 		Me.Panel4.SuspendLayout()
 		CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+		CType(Me.DataGridViewCitas, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.SuspendLayout()
 		'
 		'Panel1
@@ -115,77 +117,136 @@ Partial Class Registro_de_Cita
 		'Panel3
 		'
 		Me.Panel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(129, Byte), Integer), CType(CType(199, Byte), Integer), CType(CType(132, Byte), Integer))
+		Me.Panel3.Controls.Add(Me.btnRegistrarCita)
+		Me.Panel3.Controls.Add(Me.DateTimePickerFecha)
+		Me.Panel3.Controls.Add(Me.txtHora)
 		Me.Panel3.Controls.Add(Me.txtEspecie)
-		Me.Panel3.Controls.Add(Me.txtNombreMascota)
+		Me.Panel3.Controls.Add(Me.Label8)
+		Me.Panel3.Controls.Add(Me.txtNomMascota)
 		Me.Panel3.Controls.Add(Me.txtTelefono)
-		Me.Panel3.Controls.Add(Me.txtApellidoTutor)
-		Me.Panel3.Controls.Add(Me.txtNombreTutor)
+		Me.Panel3.Controls.Add(Me.txtApellido)
+		Me.Panel3.Controls.Add(Me.Label7)
+		Me.Panel3.Controls.Add(Me.txtNomCliente)
 		Me.Panel3.Controls.Add(Me.TextBox1)
 		Me.Panel3.Controls.Add(Me.Label6)
 		Me.Panel3.Controls.Add(Me.Label5)
 		Me.Panel3.Controls.Add(Me.Label4)
 		Me.Panel3.Controls.Add(Me.Label3)
 		Me.Panel3.Controls.Add(Me.Label2)
-		Me.Panel3.Location = New System.Drawing.Point(28, 123)
+		Me.Panel3.Location = New System.Drawing.Point(28, 114)
 		Me.Panel3.Margin = New System.Windows.Forms.Padding(2)
 		Me.Panel3.Name = "Panel3"
-		Me.Panel3.Size = New System.Drawing.Size(372, 272)
+		Me.Panel3.Size = New System.Drawing.Size(372, 281)
 		Me.Panel3.TabIndex = 3
+		'
+		'btnRegistrarCita
+		'
+		Me.btnRegistrarCita.BackColor = System.Drawing.Color.FromArgb(CType(CType(174, Byte), Integer), CType(CType(214, Byte), Integer), CType(CType(241, Byte), Integer))
+		Me.btnRegistrarCita.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+		Me.btnRegistrarCita.Location = New System.Drawing.Point(129, 240)
+		Me.btnRegistrarCita.Margin = New System.Windows.Forms.Padding(2)
+		Me.btnRegistrarCita.Name = "btnRegistrarCita"
+		Me.btnRegistrarCita.Size = New System.Drawing.Size(93, 25)
+		Me.btnRegistrarCita.TabIndex = 7
+		Me.btnRegistrarCita.Text = "Registrar cita"
+		Me.btnRegistrarCita.UseVisualStyleBackColor = False
+		'
+		'DateTimePickerFecha
+		'
+		Me.DateTimePickerFecha.Location = New System.Drawing.Point(141, 169)
+		Me.DateTimePickerFecha.Name = "DateTimePickerFecha"
+		Me.DateTimePickerFecha.Size = New System.Drawing.Size(200, 20)
+		Me.DateTimePickerFecha.TabIndex = 8
+		'
+		'txtHora
+		'
+		Me.txtHora.BackColor = System.Drawing.Color.Silver
+		Me.txtHora.BorderStyle = System.Windows.Forms.BorderStyle.None
+		Me.txtHora.Location = New System.Drawing.Point(141, 194)
+		Me.txtHora.Margin = New System.Windows.Forms.Padding(2)
+		Me.txtHora.Multiline = True
+		Me.txtHora.Name = "txtHora"
+		Me.txtHora.Size = New System.Drawing.Size(209, 27)
+		Me.txtHora.TabIndex = 6
 		'
 		'txtEspecie
 		'
 		Me.txtEspecie.BackColor = System.Drawing.Color.Silver
 		Me.txtEspecie.BorderStyle = System.Windows.Forms.BorderStyle.None
-		Me.txtEspecie.Location = New System.Drawing.Point(141, 222)
+		Me.txtEspecie.Location = New System.Drawing.Point(141, 129)
 		Me.txtEspecie.Margin = New System.Windows.Forms.Padding(2)
 		Me.txtEspecie.Multiline = True
 		Me.txtEspecie.Name = "txtEspecie"
 		Me.txtEspecie.Size = New System.Drawing.Size(209, 27)
 		Me.txtEspecie.TabIndex = 8
 		'
-		'txtNombreMascota
+		'Label8
 		'
-		Me.txtNombreMascota.BackColor = System.Drawing.Color.Silver
-		Me.txtNombreMascota.BorderStyle = System.Windows.Forms.BorderStyle.None
-		Me.txtNombreMascota.Location = New System.Drawing.Point(141, 174)
-		Me.txtNombreMascota.Margin = New System.Windows.Forms.Padding(2)
-		Me.txtNombreMascota.Multiline = True
-		Me.txtNombreMascota.Name = "txtNombreMascota"
-		Me.txtNombreMascota.Size = New System.Drawing.Size(209, 27)
-		Me.txtNombreMascota.TabIndex = 8
+		Me.Label8.BackColor = System.Drawing.Color.Silver
+		Me.Label8.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+		Me.Label8.Location = New System.Drawing.Point(26, 194)
+		Me.Label8.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+		Me.Label8.Name = "Label8"
+		Me.Label8.Size = New System.Drawing.Size(97, 27)
+		Me.Label8.TabIndex = 5
+		Me.Label8.Text = "Hora:"
+		Me.Label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+		'
+		'txtNomMascota
+		'
+		Me.txtNomMascota.BackColor = System.Drawing.Color.Silver
+		Me.txtNomMascota.BorderStyle = System.Windows.Forms.BorderStyle.None
+		Me.txtNomMascota.Location = New System.Drawing.Point(141, 97)
+		Me.txtNomMascota.Margin = New System.Windows.Forms.Padding(2)
+		Me.txtNomMascota.Multiline = True
+		Me.txtNomMascota.Name = "txtNomMascota"
+		Me.txtNomMascota.Size = New System.Drawing.Size(209, 27)
+		Me.txtNomMascota.TabIndex = 8
 		'
 		'txtTelefono
 		'
 		Me.txtTelefono.BackColor = System.Drawing.Color.Silver
 		Me.txtTelefono.BorderStyle = System.Windows.Forms.BorderStyle.None
-		Me.txtTelefono.Location = New System.Drawing.Point(141, 120)
+		Me.txtTelefono.Location = New System.Drawing.Point(141, 66)
 		Me.txtTelefono.Margin = New System.Windows.Forms.Padding(2)
 		Me.txtTelefono.Multiline = True
 		Me.txtTelefono.Name = "txtTelefono"
 		Me.txtTelefono.Size = New System.Drawing.Size(209, 27)
 		Me.txtTelefono.TabIndex = 7
 		'
-		'txtApellidoTutor
+		'txtApellido
 		'
-		Me.txtApellidoTutor.BackColor = System.Drawing.Color.Silver
-		Me.txtApellidoTutor.BorderStyle = System.Windows.Forms.BorderStyle.None
-		Me.txtApellidoTutor.Location = New System.Drawing.Point(141, 68)
-		Me.txtApellidoTutor.Margin = New System.Windows.Forms.Padding(2)
-		Me.txtApellidoTutor.Multiline = True
-		Me.txtApellidoTutor.Name = "txtApellidoTutor"
-		Me.txtApellidoTutor.Size = New System.Drawing.Size(209, 27)
-		Me.txtApellidoTutor.TabIndex = 6
+		Me.txtApellido.BackColor = System.Drawing.Color.Silver
+		Me.txtApellido.BorderStyle = System.Windows.Forms.BorderStyle.None
+		Me.txtApellido.Location = New System.Drawing.Point(141, 35)
+		Me.txtApellido.Margin = New System.Windows.Forms.Padding(2)
+		Me.txtApellido.Multiline = True
+		Me.txtApellido.Name = "txtApellido"
+		Me.txtApellido.Size = New System.Drawing.Size(209, 27)
+		Me.txtApellido.TabIndex = 6
 		'
-		'txtNombreTutor
+		'Label7
 		'
-		Me.txtNombreTutor.BackColor = System.Drawing.Color.Silver
-		Me.txtNombreTutor.BorderStyle = System.Windows.Forms.BorderStyle.None
-		Me.txtNombreTutor.Location = New System.Drawing.Point(141, 19)
-		Me.txtNombreTutor.Margin = New System.Windows.Forms.Padding(2)
-		Me.txtNombreTutor.Multiline = True
-		Me.txtNombreTutor.Name = "txtNombreTutor"
-		Me.txtNombreTutor.Size = New System.Drawing.Size(209, 27)
-		Me.txtNombreTutor.TabIndex = 5
+		Me.Label7.BackColor = System.Drawing.Color.Silver
+		Me.Label7.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+		Me.Label7.Location = New System.Drawing.Point(26, 162)
+		Me.Label7.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+		Me.Label7.Name = "Label7"
+		Me.Label7.Size = New System.Drawing.Size(97, 27)
+		Me.Label7.TabIndex = 1
+		Me.Label7.Text = "Fecha:"
+		Me.Label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+		'
+		'txtNomCliente
+		'
+		Me.txtNomCliente.BackColor = System.Drawing.Color.Silver
+		Me.txtNomCliente.BorderStyle = System.Windows.Forms.BorderStyle.None
+		Me.txtNomCliente.Location = New System.Drawing.Point(141, 5)
+		Me.txtNomCliente.Margin = New System.Windows.Forms.Padding(2)
+		Me.txtNomCliente.Multiline = True
+		Me.txtNomCliente.Name = "txtNomCliente"
+		Me.txtNomCliente.Size = New System.Drawing.Size(209, 27)
+		Me.txtNomCliente.TabIndex = 5
 		'
 		'TextBox1
 		'
@@ -200,7 +261,7 @@ Partial Class Registro_de_Cita
 		'
 		Me.Label6.BackColor = System.Drawing.Color.Silver
 		Me.Label6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-		Me.Label6.Location = New System.Drawing.Point(26, 222)
+		Me.Label6.Location = New System.Drawing.Point(26, 129)
 		Me.Label6.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
 		Me.Label6.Name = "Label6"
 		Me.Label6.Size = New System.Drawing.Size(97, 27)
@@ -212,7 +273,7 @@ Partial Class Registro_de_Cita
 		'
 		Me.Label5.BackColor = System.Drawing.Color.Silver
 		Me.Label5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-		Me.Label5.Location = New System.Drawing.Point(26, 174)
+		Me.Label5.Location = New System.Drawing.Point(26, 97)
 		Me.Label5.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
 		Me.Label5.Name = "Label5"
 		Me.Label5.Size = New System.Drawing.Size(97, 27)
@@ -224,7 +285,7 @@ Partial Class Registro_de_Cita
 		'
 		Me.Label4.BackColor = System.Drawing.Color.Silver
 		Me.Label4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-		Me.Label4.Location = New System.Drawing.Point(26, 120)
+		Me.Label4.Location = New System.Drawing.Point(26, 66)
 		Me.Label4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
 		Me.Label4.Name = "Label4"
 		Me.Label4.Size = New System.Drawing.Size(97, 27)
@@ -236,7 +297,7 @@ Partial Class Registro_de_Cita
 		'
 		Me.Label3.BackColor = System.Drawing.Color.Silver
 		Me.Label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-		Me.Label3.Location = New System.Drawing.Point(26, 68)
+		Me.Label3.Location = New System.Drawing.Point(26, 35)
 		Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
 		Me.Label3.Name = "Label3"
 		Me.Label3.Size = New System.Drawing.Size(97, 27)
@@ -248,7 +309,7 @@ Partial Class Registro_de_Cita
 		'
 		Me.Label2.BackColor = System.Drawing.Color.Silver
 		Me.Label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-		Me.Label2.Location = New System.Drawing.Point(26, 19)
+		Me.Label2.Location = New System.Drawing.Point(26, 5)
 		Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
 		Me.Label2.Name = "Label2"
 		Me.Label2.Size = New System.Drawing.Size(97, 27)
@@ -259,75 +320,17 @@ Partial Class Registro_de_Cita
 		'Panel4
 		'
 		Me.Panel4.BackColor = System.Drawing.Color.FromArgb(CType(CType(129, Byte), Integer), CType(CType(199, Byte), Integer), CType(CType(132, Byte), Integer))
-		Me.Panel4.Controls.Add(Me.dtpFecha)
-		Me.Panel4.Controls.Add(Me.btnRegistrarCita)
-		Me.Panel4.Controls.Add(Me.txtHora)
-		Me.Panel4.Controls.Add(Me.Label8)
-		Me.Panel4.Controls.Add(Me.Label7)
+		Me.Panel4.Controls.Add(Me.DataGridViewCitas)
 		Me.Panel4.Location = New System.Drawing.Point(455, 123)
 		Me.Panel4.Margin = New System.Windows.Forms.Padding(2)
 		Me.Panel4.Name = "Panel4"
 		Me.Panel4.Size = New System.Drawing.Size(372, 158)
 		Me.Panel4.TabIndex = 4
 		'
-		'dtpFecha
-		'
-		Me.dtpFecha.Location = New System.Drawing.Point(157, 26)
-		Me.dtpFecha.Name = "dtpFecha"
-		Me.dtpFecha.Size = New System.Drawing.Size(200, 20)
-		Me.dtpFecha.TabIndex = 8
-		'
-		'btnRegistrarCita
-		'
-		Me.btnRegistrarCita.BackColor = System.Drawing.Color.FromArgb(CType(CType(174, Byte), Integer), CType(CType(214, Byte), Integer), CType(CType(241, Byte), Integer))
-		Me.btnRegistrarCita.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-		Me.btnRegistrarCita.Location = New System.Drawing.Point(148, 114)
-		Me.btnRegistrarCita.Margin = New System.Windows.Forms.Padding(2)
-		Me.btnRegistrarCita.Name = "btnRegistrarCita"
-		Me.btnRegistrarCita.Size = New System.Drawing.Size(93, 25)
-		Me.btnRegistrarCita.TabIndex = 7
-		Me.btnRegistrarCita.Text = "Registrar cita"
-		Me.btnRegistrarCita.UseVisualStyleBackColor = False
-		'
-		'txtHora
-		'
-		Me.txtHora.BackColor = System.Drawing.Color.Silver
-		Me.txtHora.BorderStyle = System.Windows.Forms.BorderStyle.None
-		Me.txtHora.Location = New System.Drawing.Point(148, 68)
-		Me.txtHora.Margin = New System.Windows.Forms.Padding(2)
-		Me.txtHora.Multiline = True
-		Me.txtHora.Name = "txtHora"
-		Me.txtHora.Size = New System.Drawing.Size(209, 27)
-		Me.txtHora.TabIndex = 6
-		'
-		'Label8
-		'
-		Me.Label8.BackColor = System.Drawing.Color.Silver
-		Me.Label8.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-		Me.Label8.Location = New System.Drawing.Point(25, 68)
-		Me.Label8.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-		Me.Label8.Name = "Label8"
-		Me.Label8.Size = New System.Drawing.Size(97, 27)
-		Me.Label8.TabIndex = 5
-		Me.Label8.Text = "Hora:"
-		Me.Label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-		'
-		'Label7
-		'
-		Me.Label7.BackColor = System.Drawing.Color.Silver
-		Me.Label7.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-		Me.Label7.Location = New System.Drawing.Point(25, 19)
-		Me.Label7.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-		Me.Label7.Name = "Label7"
-		Me.Label7.Size = New System.Drawing.Size(97, 27)
-		Me.Label7.TabIndex = 1
-		Me.Label7.Text = "Fecha:"
-		Me.Label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-		'
 		'PictureBox1
 		'
 		Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-		Me.PictureBox1.Location = New System.Drawing.Point(401, 318)
+		Me.PictureBox1.Location = New System.Drawing.Point(418, 322)
 		Me.PictureBox1.Margin = New System.Windows.Forms.Padding(2)
 		Me.PictureBox1.Name = "PictureBox1"
 		Me.PictureBox1.Size = New System.Drawing.Size(203, 99)
@@ -345,6 +348,14 @@ Partial Class Registro_de_Cita
 		Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
 		Me.PictureBox2.TabIndex = 6
 		Me.PictureBox2.TabStop = False
+		'
+		'DataGridViewCitas
+		'
+		Me.DataGridViewCitas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+		Me.DataGridViewCitas.Location = New System.Drawing.Point(3, 3)
+		Me.DataGridViewCitas.Name = "DataGridViewCitas"
+		Me.DataGridViewCitas.Size = New System.Drawing.Size(366, 150)
+		Me.DataGridViewCitas.TabIndex = 0
 		'
 		'Registro_de_Cita
 		'
@@ -367,36 +378,37 @@ Partial Class Registro_de_Cita
 		Me.Panel3.ResumeLayout(False)
 		Me.Panel3.PerformLayout()
 		Me.Panel4.ResumeLayout(False)
-		Me.Panel4.PerformLayout()
 		CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
 		CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+		CType(Me.DataGridViewCitas, System.ComponentModel.ISupportInitialize).EndInit()
 		Me.ResumeLayout(False)
 
 	End Sub
 
 	Friend WithEvents Panel1 As Panel
-    Friend WithEvents btnMenuPrincipal As Button
-    Friend WithEvents Label1 As Label
-    Friend WithEvents Panel2 As Panel
-    Friend WithEvents Panel3 As Panel
-    Friend WithEvents Label2 As Label
-    Friend WithEvents Panel4 As Panel
-    Friend WithEvents Label4 As Label
-    Friend WithEvents Label3 As Label
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents Label6 As Label
-    Friend WithEvents Label5 As Label
-    Friend WithEvents txtNombreTutor As TextBox
-    Friend WithEvents txtEspecie As TextBox
-    Friend WithEvents txtNombreMascota As TextBox
-    Friend WithEvents txtTelefono As TextBox
-    Friend WithEvents txtApellidoTutor As TextBox
-    Friend WithEvents Label8 As Label
-    Friend WithEvents Label7 As Label
-    Friend WithEvents btnContinuarRegistroMascota As Button
+	Friend WithEvents btnMenuPrincipal As Button
+	Friend WithEvents Label1 As Label
+	Friend WithEvents Panel2 As Panel
+	Friend WithEvents Panel3 As Panel
+	Friend WithEvents Label2 As Label
+	Friend WithEvents Panel4 As Panel
+	Friend WithEvents Label4 As Label
+	Friend WithEvents Label3 As Label
+	Friend WithEvents TextBox1 As TextBox
+	Friend WithEvents Label6 As Label
+	Friend WithEvents Label5 As Label
+	Friend WithEvents txtNomCliente As TextBox
+	Friend WithEvents txtEspecie As TextBox
+	Friend WithEvents txtNomMascota As TextBox
+	Friend WithEvents txtTelefono As TextBox
+	Friend WithEvents txtApellido As TextBox
+	Friend WithEvents Label8 As Label
+	Friend WithEvents Label7 As Label
+	Friend WithEvents btnContinuarRegistroMascota As Button
 	Friend WithEvents btnRegistrarCita As Button
 	Friend WithEvents txtHora As TextBox
 	Friend WithEvents PictureBox1 As PictureBox
 	Friend WithEvents PictureBox2 As PictureBox
-	Friend WithEvents dtpFecha As DateTimePicker
+	Friend WithEvents DateTimePickerFecha As DateTimePicker
+	Friend WithEvents DataGridViewCitas As DataGridView
 End Class
