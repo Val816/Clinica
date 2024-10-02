@@ -82,4 +82,7 @@ Public Class Registro_de_Mascota
         frmMenuPrincipal.Show()
     End Sub
 
+    Private Sub txtNomMasc_TextChanged(sender As Object, e As EventArgs) Handles txtNomMasc.TextChanged
+
+    End Sub
 End Class
