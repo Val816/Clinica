@@ -61,23 +61,23 @@ Public Class Consulta_Médica
 
             Dim command As New MySqlCommand(query, connection)
 
-            ' Asignar valores de los ComboBox y TextBox a los parámetros de la consulta
-            command.Parameters.AddWithValue("@idDesparacitacion", ComboBoxDesparacitacion.SelectedValue)
-            command.Parameters.AddWithValue("@idVacunacion", ComboBoxVacuna.SelectedValue)
-            command.Parameters.AddWithValue("@idServicio", ComboBoxServicio.SelectedValue)
-                command.Parameters.AddWithValue("@temperatura", Convert.ToDouble(txtTemperatura.Text))
-                command.Parameters.AddWithValue("@pulso", txtPulso.Text)
-                command.Parameters.AddWithValue("@TLLC", txtTLLC.Text)
-                command.Parameters.AddWithValue("@estadoRep", txtEstadoRep.Text)
-                command.Parameters.AddWithValue("@frecCardi", txtFrecCardi.Text)
-                command.Parameters.AddWithValue("@frecResp", Convert.ToDouble(txtFrecResp.Text))
-                command.Parameters.AddWithValue("@observaciones", txtObservaciones.Text)
-                command.Parameters.AddWithValue("@receta", txtReceta.Text)
-                command.Parameters.AddWithValue("@costoCons", Convert.ToDouble(txtCosto.Text))
-                command.Parameters.AddWithValue("@condicionCorp", txtCondicionCorp.Text)
+            '' Asignar valores de los ComboBox y TextBox a los parámetros de la consulta
+            'command.Parameters.AddWithValue("@idDesparacitacion", ComboBoxDesparacitacion.SelectedValue)
+            'command.Parameters.AddWithValue("@idVacunacion", ComboBoxVacuna.SelectedValue)
+            'command.Parameters.AddWithValue("@idServicio", ComboBoxServicio.SelectedValue)
+            '    command.Parameters.AddWithValue("@temperatura", Convert.ToDouble(txtTemperatura.Text))
+            '    command.Parameters.AddWithValue("@pulso", txtPulso.Text)
+            '    command.Parameters.AddWithValue("@TLLC", txtTLLC.Text)
+            '    command.Parameters.AddWithValue("@estadoRep", txtEstadoRep.Text)
+            '    command.Parameters.AddWithValue("@frecCardi", txtFrecCardi.Text)
+            '    command.Parameters.AddWithValue("@frecResp", Convert.ToDouble(txtFrecResp.Text))
+            '    command.Parameters.AddWithValue("@observaciones", txtObservaciones.Text)
+            '    command.Parameters.AddWithValue("@receta", txtReceta.Text)
+            '    command.Parameters.AddWithValue("@costoCons", Convert.ToDouble(txtCosto.Text))
+            '    command.Parameters.AddWithValue("@condicionCorp", txtCondicionCorp.Text)
 
-                ' Ejecutar la consulta
-                command.ExecuteNonQuery()
+            ' Ejecutar la consulta
+            command.ExecuteNonQuery()
 
                 MessageBox.Show("Consulta registrada con éxito")
 

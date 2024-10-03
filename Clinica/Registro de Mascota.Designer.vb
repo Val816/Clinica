@@ -26,12 +26,13 @@ Partial Class Registro_de_Mascota
 		Me.btnCerrar = New System.Windows.Forms.Button()
 		Me.Label1 = New System.Windows.Forms.Label()
 		Me.Panel2 = New System.Windows.Forms.Panel()
-		Me.Button1 = New System.Windows.Forms.Button()
-		Me.btnGuardarContinuar = New System.Windows.Forms.Button()
+		Me.btnGuardar = New System.Windows.Forms.Button()
+		Me.btnContinuar = New System.Windows.Forms.Button()
 		Me.Label2 = New System.Windows.Forms.Label()
 		Me.txtNomMasc = New System.Windows.Forms.TextBox()
 		Me.Panel3 = New System.Windows.Forms.Panel()
 		Me.Panel4 = New System.Windows.Forms.Panel()
+		Me.ComboBox2 = New System.Windows.Forms.ComboBox()
 		Me.Label3 = New System.Windows.Forms.Label()
 		Me.Label4 = New System.Windows.Forms.Label()
 		Me.Label5 = New System.Windows.Forms.Label()
@@ -44,16 +45,15 @@ Partial Class Registro_de_Mascota
 		Me.txtCaracteristicas = New System.Windows.Forms.TextBox()
 		Me.ComboBoxServicios = New System.Windows.Forms.ComboBox()
 		Me.ComboBoxGenero = New System.Windows.Forms.ComboBox()
-		Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-		Me.ComboBox2 = New System.Windows.Forms.ComboBox()
-		Me.ComboBox3 = New System.Windows.Forms.ComboBox()
-		Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-		Me.ComboBox4 = New System.Windows.Forms.ComboBox()
+		Me.ComboBoxRaza = New System.Windows.Forms.ComboBox()
+		Me.ComboBoxEspecie = New System.Windows.Forms.ComboBox()
+		Me.DataGridMascotas = New System.Windows.Forms.DataGridView()
+		Me.ComboBoxTalla = New System.Windows.Forms.ComboBox()
 		Me.Panel1.SuspendLayout()
 		Me.Panel2.SuspendLayout()
 		Me.Panel3.SuspendLayout()
 		Me.Panel4.SuspendLayout()
-		CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+		CType(Me.DataGridMascotas, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.SuspendLayout()
 		'
 		'Panel1
@@ -93,37 +93,37 @@ Partial Class Registro_de_Mascota
 		'Panel2
 		'
 		Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(197, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(165, Byte), Integer))
-		Me.Panel2.Controls.Add(Me.Button1)
-		Me.Panel2.Controls.Add(Me.btnGuardarContinuar)
+		Me.Panel2.Controls.Add(Me.btnGuardar)
+		Me.Panel2.Controls.Add(Me.btnContinuar)
 		Me.Panel2.Location = New System.Drawing.Point(1, 456)
 		Me.Panel2.Margin = New System.Windows.Forms.Padding(2)
 		Me.Panel2.Name = "Panel2"
 		Me.Panel2.Size = New System.Drawing.Size(839, 75)
 		Me.Panel2.TabIndex = 4
 		'
-		'Button1
+		'btnGuardar
 		'
-		Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(174, Byte), Integer), CType(CType(214, Byte), Integer), CType(CType(241, Byte), Integer))
-		Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-		Me.Button1.Location = New System.Drawing.Point(561, 19)
-		Me.Button1.Margin = New System.Windows.Forms.Padding(2)
-		Me.Button1.Name = "Button1"
-		Me.Button1.Size = New System.Drawing.Size(93, 25)
-		Me.Button1.TabIndex = 5
-		Me.Button1.Text = "Guardar"
-		Me.Button1.UseVisualStyleBackColor = False
+		Me.btnGuardar.BackColor = System.Drawing.Color.FromArgb(CType(CType(174, Byte), Integer), CType(CType(214, Byte), Integer), CType(CType(241, Byte), Integer))
+		Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+		Me.btnGuardar.Location = New System.Drawing.Point(561, 19)
+		Me.btnGuardar.Margin = New System.Windows.Forms.Padding(2)
+		Me.btnGuardar.Name = "btnGuardar"
+		Me.btnGuardar.Size = New System.Drawing.Size(93, 25)
+		Me.btnGuardar.TabIndex = 5
+		Me.btnGuardar.Text = "Guardar"
+		Me.btnGuardar.UseVisualStyleBackColor = False
 		'
-		'btnGuardarContinuar
+		'btnContinuar
 		'
-		Me.btnGuardarContinuar.BackColor = System.Drawing.Color.FromArgb(CType(CType(236, Byte), Integer), CType(CType(129, Byte), Integer), CType(CType(174, Byte), Integer))
-		Me.btnGuardarContinuar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-		Me.btnGuardarContinuar.Location = New System.Drawing.Point(705, 19)
-		Me.btnGuardarContinuar.Margin = New System.Windows.Forms.Padding(2)
-		Me.btnGuardarContinuar.Name = "btnGuardarContinuar"
-		Me.btnGuardarContinuar.Size = New System.Drawing.Size(93, 25)
-		Me.btnGuardarContinuar.TabIndex = 6
-		Me.btnGuardarContinuar.Text = "Continuar"
-		Me.btnGuardarContinuar.UseVisualStyleBackColor = False
+		Me.btnContinuar.BackColor = System.Drawing.Color.FromArgb(CType(CType(236, Byte), Integer), CType(CType(129, Byte), Integer), CType(CType(174, Byte), Integer))
+		Me.btnContinuar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+		Me.btnContinuar.Location = New System.Drawing.Point(705, 19)
+		Me.btnContinuar.Margin = New System.Windows.Forms.Padding(2)
+		Me.btnContinuar.Name = "btnContinuar"
+		Me.btnContinuar.Size = New System.Drawing.Size(93, 25)
+		Me.btnContinuar.TabIndex = 6
+		Me.btnContinuar.Text = "Continuar"
+		Me.btnContinuar.UseVisualStyleBackColor = False
 		'
 		'Label2
 		'
@@ -168,6 +168,14 @@ Partial Class Registro_de_Mascota
 		Me.Panel4.Name = "Panel4"
 		Me.Panel4.Size = New System.Drawing.Size(73, 25)
 		Me.Panel4.TabIndex = 8
+		'
+		'ComboBox2
+		'
+		Me.ComboBox2.FormattingEnabled = True
+		Me.ComboBox2.Location = New System.Drawing.Point(200, 13)
+		Me.ComboBox2.Name = "ComboBox2"
+		Me.ComboBox2.Size = New System.Drawing.Size(121, 21)
+		Me.ComboBox2.TabIndex = 6
 		'
 		'Label3
 		'
@@ -308,45 +316,37 @@ Partial Class Registro_de_Mascota
 		Me.ComboBoxGenero.Size = New System.Drawing.Size(121, 21)
 		Me.ComboBoxGenero.TabIndex = 22
 		'
-		'ComboBox1
+		'ComboBoxRaza
 		'
-		Me.ComboBox1.FormattingEnabled = True
-		Me.ComboBox1.Location = New System.Drawing.Point(118, 166)
-		Me.ComboBox1.Name = "ComboBox1"
-		Me.ComboBox1.Size = New System.Drawing.Size(121, 21)
-		Me.ComboBox1.TabIndex = 23
+		Me.ComboBoxRaza.FormattingEnabled = True
+		Me.ComboBoxRaza.Location = New System.Drawing.Point(118, 166)
+		Me.ComboBoxRaza.Name = "ComboBoxRaza"
+		Me.ComboBoxRaza.Size = New System.Drawing.Size(121, 21)
+		Me.ComboBoxRaza.TabIndex = 23
 		'
-		'ComboBox2
+		'ComboBoxEspecie
 		'
-		Me.ComboBox2.FormattingEnabled = True
-		Me.ComboBox2.Location = New System.Drawing.Point(200, 13)
-		Me.ComboBox2.Name = "ComboBox2"
-		Me.ComboBox2.Size = New System.Drawing.Size(121, 21)
-		Me.ComboBox2.TabIndex = 6
+		Me.ComboBoxEspecie.FormattingEnabled = True
+		Me.ComboBoxEspecie.Location = New System.Drawing.Point(118, 133)
+		Me.ComboBoxEspecie.Name = "ComboBoxEspecie"
+		Me.ComboBoxEspecie.Size = New System.Drawing.Size(121, 21)
+		Me.ComboBoxEspecie.TabIndex = 24
 		'
-		'ComboBox3
+		'DataGridMascotas
 		'
-		Me.ComboBox3.FormattingEnabled = True
-		Me.ComboBox3.Location = New System.Drawing.Point(118, 133)
-		Me.ComboBox3.Name = "ComboBox3"
-		Me.ComboBox3.Size = New System.Drawing.Size(121, 21)
-		Me.ComboBox3.TabIndex = 24
+		Me.DataGridMascotas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+		Me.DataGridMascotas.Location = New System.Drawing.Point(417, 103)
+		Me.DataGridMascotas.Name = "DataGridMascotas"
+		Me.DataGridMascotas.Size = New System.Drawing.Size(397, 292)
+		Me.DataGridMascotas.TabIndex = 25
 		'
-		'DataGridView1
+		'ComboBoxTalla
 		'
-		Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-		Me.DataGridView1.Location = New System.Drawing.Point(417, 103)
-		Me.DataGridView1.Name = "DataGridView1"
-		Me.DataGridView1.Size = New System.Drawing.Size(397, 292)
-		Me.DataGridView1.TabIndex = 25
-		'
-		'ComboBox4
-		'
-		Me.ComboBox4.FormattingEnabled = True
-		Me.ComboBox4.Location = New System.Drawing.Point(118, 242)
-		Me.ComboBox4.Name = "ComboBox4"
-		Me.ComboBox4.Size = New System.Drawing.Size(121, 21)
-		Me.ComboBox4.TabIndex = 26
+		Me.ComboBoxTalla.FormattingEnabled = True
+		Me.ComboBoxTalla.Location = New System.Drawing.Point(118, 242)
+		Me.ComboBoxTalla.Name = "ComboBoxTalla"
+		Me.ComboBoxTalla.Size = New System.Drawing.Size(121, 21)
+		Me.ComboBoxTalla.TabIndex = 26
 		'
 		'Registro_de_Mascota
 		'
@@ -354,11 +354,11 @@ Partial Class Registro_de_Mascota
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
 		Me.BackColor = System.Drawing.SystemColors.ControlLightLight
 		Me.ClientSize = New System.Drawing.Size(839, 508)
-		Me.Controls.Add(Me.ComboBox4)
-		Me.Controls.Add(Me.DataGridView1)
+		Me.Controls.Add(Me.ComboBoxTalla)
+		Me.Controls.Add(Me.DataGridMascotas)
 		Me.Controls.Add(Me.Panel3)
-		Me.Controls.Add(Me.ComboBox3)
-		Me.Controls.Add(Me.ComboBox1)
+		Me.Controls.Add(Me.ComboBoxEspecie)
+		Me.Controls.Add(Me.ComboBoxRaza)
 		Me.Controls.Add(Me.ComboBoxGenero)
 		Me.Controls.Add(Me.ComboBoxServicios)
 		Me.Controls.Add(Me.txtCaracteristicas)
@@ -383,7 +383,7 @@ Partial Class Registro_de_Mascota
 		Me.Panel3.PerformLayout()
 		Me.Panel4.ResumeLayout(False)
 		Me.Panel4.PerformLayout()
-		CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+		CType(Me.DataGridMascotas, System.ComponentModel.ISupportInitialize).EndInit()
 		Me.ResumeLayout(False)
 		Me.PerformLayout()
 
@@ -393,8 +393,8 @@ Partial Class Registro_de_Mascota
     Friend WithEvents btnCerrar As Button
     Friend WithEvents Label1 As Label
     Friend WithEvents Panel2 As Panel
-    Friend WithEvents Button1 As Button
-    Friend WithEvents btnGuardarContinuar As Button
+    Friend WithEvents btnGuardar As Button
+    Friend WithEvents btnContinuar As Button
     Friend WithEvents Label2 As Label
     Friend WithEvents txtNomMasc As TextBox
     Friend WithEvents Panel3 As Panel
@@ -412,8 +412,8 @@ Partial Class Registro_de_Mascota
 	Friend WithEvents ComboBoxServicios As ComboBox
 	Friend WithEvents ComboBoxGenero As ComboBox
 	Friend WithEvents ComboBox2 As ComboBox
-	Friend WithEvents ComboBox1 As ComboBox
-	Friend WithEvents ComboBox3 As ComboBox
-	Friend WithEvents DataGridView1 As DataGridView
-	Friend WithEvents ComboBox4 As ComboBox
+	Friend WithEvents ComboBoxRaza As ComboBox
+	Friend WithEvents ComboBoxEspecie As ComboBox
+	Friend WithEvents DataGridMascotas As DataGridView
+	Friend WithEvents ComboBoxTalla As ComboBox
 End Class
