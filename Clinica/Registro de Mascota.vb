@@ -78,13 +78,14 @@ Public Class Registro_de_Mascota
 
     ' Llenar ComboBox de servicios
     Private Sub LlenarComboBoxServicios()
-        Dim query As String = "SELECT idServicio, nombreServicio FROM Servicio"
+        ComboBoxServicios.Items.Clear() ' Limpia los ítems previos para evitar duplicados
+        Dim query As String = "SELECT DISTINCT idServicio, nombre FROM Servicio"
         Using conn As New MySqlConnection("Server=localhost;Database=veterinaria;User Id=root;Password=root;")
             Using cmd As New MySqlCommand(query, conn)
                 conn.Open()
                 Dim reader As MySqlDataReader = cmd.ExecuteReader()
                 While reader.Read()
-                    ComboBoxServicios.Items.Add(New With {.Value = reader("idServicio"), .Text = reader("nombreServicio")})
+                    ComboBoxServicios.Items.Add(New With {.Value = reader("idServicio"), .Text = reader("nombre")})
                 End While
             End Using
         End Using
@@ -92,27 +93,45 @@ Public Class Registro_de_Mascota
         ComboBoxServicios.ValueMember = "Value"
     End Sub
 
+
     ' Guardar datos de la mascota
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
-        Dim query As String = "INSERT INTO Mascota (nomMasc, idEspecie, idRaza, peso, idTalla, edad, caracteristicas, idGenero) " &
+        Try
+            ' Comprobar si hay valores seleccionados en los ComboBox antes de continuar
+            If ComboBoxEspecie.SelectedItem Is Nothing OrElse ComboBoxRaza.SelectedItem Is Nothing OrElse
+           ComboBoxTalla.SelectedItem Is Nothing OrElse ComboBoxGenero.SelectedItem Is Nothing Then
+                MessageBox.Show("Debe seleccionar todos los campos.")
+                Return
+            End If
+
+            Dim query As String = "INSERT INTO Mascota (nomMasc, idEspecie, idRaza, peso, idTalla, edad, caracteristicas, idGenero) " &
                               "VALUES (@nomMasc, @idEspecie, @idRaza, @peso, @idTalla, @edad, @caracteristicas, @idGenero)"
-        Using conn As New MySqlConnection("Server=localhost;Database=veterinaria;User Id=root;Password=root;")
-            Using cmd As New MySqlCommand(query, conn)
-                conn.Open()
-                cmd.Parameters.AddWithValue("@nomMasc", txtNomMasc.Text)
-                cmd.Parameters.AddWithValue("@idEspecie", ComboBoxEspecie.SelectedItem.Value)
-                cmd.Parameters.AddWithValue("@idRaza", ComboBoxRaza.SelectedItem.Value)
-                cmd.Parameters.AddWithValue("@peso", Convert.ToDouble(txtPeso.Text))
-                cmd.Parameters.AddWithValue("@idTalla", ComboBoxTalla.SelectedItem.Value)
-                cmd.Parameters.AddWithValue("@edad", Convert.ToInt32(txtEdad.Text))
-                cmd.Parameters.AddWithValue("@caracteristicas", txtCaracteristicas.Text)
-                cmd.Parameters.AddWithValue("@idGenero", ComboBoxGenero.SelectedItem.Value)
-                cmd.ExecuteNonQuery()
+            Using conn As New MySqlConnection("Server=localhost;Database=veterinaria;User Id=root;Password=root;")
+                Using cmd As New MySqlCommand(query, conn)
+                    conn.Open()
+
+                    ' Agregar los parámetros para la consulta
+                    cmd.Parameters.AddWithValue("@nomMasc", txtNomMasc.Text)
+                    cmd.Parameters.AddWithValue("@idEspecie", ComboBoxEspecie.SelectedItem.Value)
+                    cmd.Parameters.AddWithValue("@idRaza", ComboBoxRaza.SelectedItem.Value)
+                    cmd.Parameters.AddWithValue("@peso", Convert.ToDouble(txtPeso.Text))
+                    cmd.Parameters.AddWithValue("@idTalla", ComboBoxTalla.SelectedItem.Value)
+                    cmd.Parameters.AddWithValue("@edad", Convert.ToInt32(txtEdad.Text))
+                    cmd.Parameters.AddWithValue("@caracteristicas", txtCaracteristicas.Text)
+                    cmd.Parameters.AddWithValue("@idGenero", ComboBoxGenero.SelectedItem.Value)
+
+                    ' Ejecutar la consulta
+                    cmd.ExecuteNonQuery()
+                End Using
             End Using
-        End Using
-        MessageBox.Show("Datos de la mascota guardados exitosamente.")
-        MostrarDatosMascota() ' Actualizar el DataGrid
+            MessageBox.Show("Datos de la mascota guardados exitosamente.")
+            MostrarDatosMascota() ' Actualizar el DataGrid
+        Catch ex As Exception
+            ' Mostrar mensaje de error con la descripción detallada del error
+            MessageBox.Show("Error al guardar los datos: " & ex.Message)
+        End Try
     End Sub
+
 
     ' Redirigir a la ventana del servicio seleccionado al presionar "Continuar"
     Private Sub btnContinuar_Click(sender As Object, e As EventArgs) Handles btnContinuar.Click
@@ -137,7 +156,12 @@ Public Class Registro_de_Mascota
 
     ' Mostrar datos de la mascota en un DataGrid de manera vertical
     Private Sub MostrarDatosMascota()
-        Dim query As String = "SELECT nomMasc, especie, raza, peso, talla, edad, caracteristicas FROM Mascota"
+        Dim query As String = "SELECT M.nomMasc, E.nombreEspecie, R.nombreRaza, M.peso, T.descripcion AS talla, M.edad, M.caracteristicas, G.descripcion AS genero " &
+                          "FROM Mascota M " &
+                          "JOIN Especie E ON M.idEspecie = E.idEspecie " &
+                          "JOIN Raza R ON M.idRaza = R.idRaza " &
+                          "JOIN Talla T ON M.idTalla = T.idTalla " &
+                          "JOIN Genero G ON M.idGenero = G.idGenero"
         Dim dt As New DataTable()
         Using conn As New MySqlConnection("Server=localhost;Database=veterinaria;User Id=root;Password=root;")
             Using cmd As New MySqlCommand(query, conn)
@@ -148,6 +172,7 @@ Public Class Registro_de_Mascota
             End Using
         End Using
     End Sub
+
 
     ' Botón para cerrar el formulario y regresar al menú
     Private Sub btnCerrar_Click(sender As Object, e As EventArgs) Handles btnCerrar.Click
