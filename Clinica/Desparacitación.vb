@@ -1,3 +1,7 @@
-﻿Public Class Desparacitación
+﻿Imports MySql.Data.MySqlClient
+
+Public Class Desparacitación
+
+
 
 End Class

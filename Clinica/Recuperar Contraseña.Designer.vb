@@ -165,7 +165,6 @@ Partial Class Recuperar_Contraseña
 		Me.Margin = New System.Windows.Forms.Padding(2)
 		Me.Name = "Recuperar_Contraseña"
 		Me.Text = "Recuperar_Contraseña"
-		Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
 		CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
 		Me.ResumeLayout(False)
 		Me.PerformLayout()

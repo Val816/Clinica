@@ -330,7 +330,6 @@ Partial Class Consulta_de_Cita
 		Me.Margin = New System.Windows.Forms.Padding(2)
 		Me.Name = "Consulta_de_Cita"
 		Me.Text = "Consulta_de_Cita"
-		Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
 		Me.Panel1.ResumeLayout(False)
 		Me.Panel2.ResumeLayout(False)
 		Me.Panel3.ResumeLayout(False)

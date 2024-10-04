@@ -377,7 +377,6 @@ Partial Class Registro_de_Mascota
 		Me.Margin = New System.Windows.Forms.Padding(2)
 		Me.Name = "Registro_de_Mascota"
 		Me.Text = "Registro_de_Mascota"
-		Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
 		Me.Panel1.ResumeLayout(False)
 		Me.Panel2.ResumeLayout(False)
 		Me.Panel3.ResumeLayout(False)

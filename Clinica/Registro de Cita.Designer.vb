@@ -46,16 +46,16 @@ Partial Class Registro_de_Cita
 		Me.Label3 = New System.Windows.Forms.Label()
 		Me.Label2 = New System.Windows.Forms.Label()
 		Me.Panel4 = New System.Windows.Forms.Panel()
+		Me.DataGridViewCitas = New System.Windows.Forms.DataGridView()
 		Me.PictureBox1 = New System.Windows.Forms.PictureBox()
 		Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-		Me.DataGridViewCitas = New System.Windows.Forms.DataGridView()
 		Me.Panel1.SuspendLayout()
 		Me.Panel2.SuspendLayout()
 		Me.Panel3.SuspendLayout()
 		Me.Panel4.SuspendLayout()
+		CType(Me.DataGridViewCitas, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
-		CType(Me.DataGridViewCitas, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.SuspendLayout()
 		'
 		'Panel1
@@ -327,6 +327,14 @@ Partial Class Registro_de_Cita
 		Me.Panel4.Size = New System.Drawing.Size(372, 158)
 		Me.Panel4.TabIndex = 4
 		'
+		'DataGridViewCitas
+		'
+		Me.DataGridViewCitas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+		Me.DataGridViewCitas.Location = New System.Drawing.Point(3, 3)
+		Me.DataGridViewCitas.Name = "DataGridViewCitas"
+		Me.DataGridViewCitas.Size = New System.Drawing.Size(366, 150)
+		Me.DataGridViewCitas.TabIndex = 0
+		'
 		'PictureBox1
 		'
 		Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
@@ -349,14 +357,6 @@ Partial Class Registro_de_Cita
 		Me.PictureBox2.TabIndex = 6
 		Me.PictureBox2.TabStop = False
 		'
-		'DataGridViewCitas
-		'
-		Me.DataGridViewCitas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-		Me.DataGridViewCitas.Location = New System.Drawing.Point(3, 3)
-		Me.DataGridViewCitas.Name = "DataGridViewCitas"
-		Me.DataGridViewCitas.Size = New System.Drawing.Size(366, 150)
-		Me.DataGridViewCitas.TabIndex = 0
-		'
 		'Registro_de_Cita
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -372,15 +372,14 @@ Partial Class Registro_de_Cita
 		Me.Margin = New System.Windows.Forms.Padding(2)
 		Me.Name = "Registro_de_Cita"
 		Me.Text = "Registro de Cita"
-		Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
 		Me.Panel1.ResumeLayout(False)
 		Me.Panel2.ResumeLayout(False)
 		Me.Panel3.ResumeLayout(False)
 		Me.Panel3.PerformLayout()
 		Me.Panel4.ResumeLayout(False)
+		CType(Me.DataGridViewCitas, System.ComponentModel.ISupportInitialize).EndInit()
 		CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
 		CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
-		CType(Me.DataGridViewCitas, System.ComponentModel.ISupportInitialize).EndInit()
 		Me.ResumeLayout(False)
 
 	End Sub
