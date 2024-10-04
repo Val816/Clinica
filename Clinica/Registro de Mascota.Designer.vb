@@ -83,7 +83,7 @@ Partial Class Registro_de_Mascota
 		'
 		Me.Label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
 		Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 25.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.Label1.Location = New System.Drawing.Point(306, 29)
+		Me.Label1.Location = New System.Drawing.Point(328, 29)
 		Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
 		Me.Label1.Name = "Label1"
 		Me.Label1.Size = New System.Drawing.Size(337, 39)
@@ -353,7 +353,7 @@ Partial Class Registro_de_Mascota
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
 		Me.BackColor = System.Drawing.SystemColors.ControlLightLight
-		Me.ClientSize = New System.Drawing.Size(839, 508)
+		Me.ClientSize = New System.Drawing.Size(837, 519)
 		Me.Controls.Add(Me.ComboBoxTalla)
 		Me.Controls.Add(Me.DataGridMascotas)
 		Me.Controls.Add(Me.Panel3)
@@ -373,6 +373,7 @@ Partial Class Registro_de_Mascota
 		Me.Controls.Add(Me.Panel4)
 		Me.Controls.Add(Me.Panel2)
 		Me.Controls.Add(Me.Panel1)
+		Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
 		Me.Margin = New System.Windows.Forms.Padding(2)
 		Me.Name = "Registro_de_Mascota"
 		Me.Text = "Registro_de_Mascota"

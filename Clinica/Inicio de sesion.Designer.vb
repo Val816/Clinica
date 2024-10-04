@@ -155,8 +155,8 @@ Partial Class Inicio_de_sesion
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-		Me.BackColor = System.Drawing.SystemColors.ControlLightLight
-		Me.ClientSize = New System.Drawing.Size(851, 487)
+		Me.BackColor = System.Drawing.SystemColors.ButtonHighlight
+		Me.ClientSize = New System.Drawing.Size(822, 501)
 		Me.Controls.Add(Me.btnSalir)
 		Me.Controls.Add(Me.btnIngresar)
 		Me.Controls.Add(Me.txtContraseña)
@@ -168,6 +168,7 @@ Partial Class Inicio_de_sesion
 		Me.Controls.Add(Me.Label3)
 		Me.Controls.Add(Me.Label2)
 		Me.Controls.Add(Me.Label1)
+		Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
 		Me.Margin = New System.Windows.Forms.Padding(2)
 		Me.Name = "Inicio_de_sesion"
 		Me.Text = "Inicio_de_sesion"

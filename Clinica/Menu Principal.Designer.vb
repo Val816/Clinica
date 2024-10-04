@@ -34,7 +34,6 @@ Partial Class Menu_Principal
 		Me.Panel4 = New System.Windows.Forms.Panel()
 		Me.btnConsulta = New System.Windows.Forms.Button()
 		Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-		Me.LinkLabel2 = New System.Windows.Forms.LinkLabel()
 		Me.Panel5 = New System.Windows.Forms.Panel()
 		Me.PictureBox3 = New System.Windows.Forms.PictureBox()
 		Me.LinkLabel3 = New System.Windows.Forms.LinkLabel()
@@ -42,6 +41,7 @@ Partial Class Menu_Principal
 		Me.PictureBox4 = New System.Windows.Forms.PictureBox()
 		Me.LinkLabel4 = New System.Windows.Forms.LinkLabel()
 		Me.btnMascota = New System.Windows.Forms.Button()
+		Me.ComboBox1 = New System.Windows.Forms.ComboBox()
 		Me.Panel1.SuspendLayout()
 		Me.Panel2.SuspendLayout()
 		Me.btnRegistro.SuspendLayout()
@@ -68,7 +68,7 @@ Partial Class Menu_Principal
 		'
 		Me.Label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
 		Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 25.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.Label1.Location = New System.Drawing.Point(318, 29)
+		Me.Label1.Location = New System.Drawing.Point(359, 31)
 		Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
 		Me.Label1.Name = "Label1"
 		Me.Label1.Size = New System.Drawing.Size(238, 39)
@@ -152,8 +152,7 @@ Partial Class Menu_Principal
 		Me.Panel4.BackColor = System.Drawing.Color.FromArgb(CType(CType(129, Byte), Integer), CType(CType(199, Byte), Integer), CType(CType(132, Byte), Integer))
 		Me.Panel4.Controls.Add(Me.btnConsulta)
 		Me.Panel4.Controls.Add(Me.PictureBox2)
-		Me.Panel4.Controls.Add(Me.LinkLabel2)
-		Me.Panel4.Location = New System.Drawing.Point(245, 285)
+		Me.Panel4.Location = New System.Drawing.Point(407, 138)
 		Me.Panel4.Margin = New System.Windows.Forms.Padding(2)
 		Me.Panel4.Name = "Panel4"
 		Me.Panel4.Size = New System.Drawing.Size(133, 121)
@@ -179,27 +178,12 @@ Partial Class Menu_Principal
 		Me.PictureBox2.TabIndex = 8
 		Me.PictureBox2.TabStop = False
 		'
-		'LinkLabel2
-		'
-		Me.LinkLabel2.ActiveLinkColor = System.Drawing.Color.Black
-		Me.LinkLabel2.AutoSize = True
-		Me.LinkLabel2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.LinkLabel2.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline
-		Me.LinkLabel2.LinkColor = System.Drawing.Color.Black
-		Me.LinkLabel2.Location = New System.Drawing.Point(15, 97)
-		Me.LinkLabel2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-		Me.LinkLabel2.Name = "LinkLabel2"
-		Me.LinkLabel2.Size = New System.Drawing.Size(109, 17)
-		Me.LinkLabel2.TabIndex = 7
-		Me.LinkLabel2.TabStop = True
-		Me.LinkLabel2.Text = "Consulta de cita"
-		'
 		'Panel5
 		'
 		Me.Panel5.BackColor = System.Drawing.Color.FromArgb(CType(CType(129, Byte), Integer), CType(CType(199, Byte), Integer), CType(CType(132, Byte), Integer))
 		Me.Panel5.Controls.Add(Me.PictureBox3)
 		Me.Panel5.Controls.Add(Me.LinkLabel3)
-		Me.Panel5.Location = New System.Drawing.Point(452, 138)
+		Me.Panel5.Location = New System.Drawing.Point(241, 291)
 		Me.Panel5.Margin = New System.Windows.Forms.Padding(2)
 		Me.Panel5.Name = "Panel5"
 		Me.Panel5.Size = New System.Drawing.Size(133, 121)
@@ -208,7 +192,7 @@ Partial Class Menu_Principal
 		'PictureBox3
 		'
 		Me.PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), System.Drawing.Image)
-		Me.PictureBox3.Location = New System.Drawing.Point(27, 8)
+		Me.PictureBox3.Location = New System.Drawing.Point(27, 15)
 		Me.PictureBox3.Margin = New System.Windows.Forms.Padding(2)
 		Me.PictureBox3.Name = "PictureBox3"
 		Me.PictureBox3.Size = New System.Drawing.Size(85, 81)
@@ -236,7 +220,7 @@ Partial Class Menu_Principal
 		Me.Panel6.BackColor = System.Drawing.Color.FromArgb(CType(CType(129, Byte), Integer), CType(CType(199, Byte), Integer), CType(CType(132, Byte), Integer))
 		Me.Panel6.Controls.Add(Me.PictureBox4)
 		Me.Panel6.Controls.Add(Me.LinkLabel4)
-		Me.Panel6.Location = New System.Drawing.Point(641, 285)
+		Me.Panel6.Location = New System.Drawing.Point(642, 138)
 		Me.Panel6.Margin = New System.Windows.Forms.Padding(2)
 		Me.Panel6.Name = "Panel6"
 		Me.Panel6.Size = New System.Drawing.Size(133, 121)
@@ -270,18 +254,27 @@ Partial Class Menu_Principal
 		'
 		'btnMascota
 		'
-		Me.btnMascota.Location = New System.Drawing.Point(263, 233)
+		Me.btnMascota.Location = New System.Drawing.Point(241, 236)
 		Me.btnMascota.Name = "btnMascota"
 		Me.btnMascota.Size = New System.Drawing.Size(115, 23)
 		Me.btnMascota.TabIndex = 6
 		Me.btnMascota.Text = "Registro de Mascota"
 		Me.btnMascota.UseVisualStyleBackColor = True
 		'
+		'ComboBox1
+		'
+		Me.ComboBox1.FormattingEnabled = True
+		Me.ComboBox1.Location = New System.Drawing.Point(514, 330)
+		Me.ComboBox1.Name = "ComboBox1"
+		Me.ComboBox1.Size = New System.Drawing.Size(121, 21)
+		Me.ComboBox1.TabIndex = 7
+		'
 		'Menu_Principal
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
 		Me.ClientSize = New System.Drawing.Size(843, 522)
+		Me.Controls.Add(Me.ComboBox1)
 		Me.Controls.Add(Me.btnMascota)
 		Me.Controls.Add(Me.Panel6)
 		Me.Controls.Add(Me.Panel5)
@@ -289,6 +282,7 @@ Partial Class Menu_Principal
 		Me.Controls.Add(Me.btnRegistro)
 		Me.Controls.Add(Me.Panel2)
 		Me.Controls.Add(Me.Panel1)
+		Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
 		Me.Margin = New System.Windows.Forms.Padding(2)
 		Me.Name = "Menu_Principal"
 		Me.Text = "Menu_Principal"
@@ -298,7 +292,6 @@ Partial Class Menu_Principal
 		Me.btnRegistro.PerformLayout()
 		CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
 		Me.Panel4.ResumeLayout(False)
-		Me.Panel4.PerformLayout()
 		CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
 		Me.Panel5.ResumeLayout(False)
 		Me.Panel5.PerformLayout()
@@ -320,13 +313,13 @@ Partial Class Menu_Principal
     Friend WithEvents Panel5 As Panel
     Friend WithEvents Panel6 As Panel
     Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents LinkLabel2 As LinkLabel
-    Friend WithEvents LinkLabel3 As LinkLabel
-    Friend WithEvents LinkLabel4 As LinkLabel
+	Friend WithEvents LinkLabel3 As LinkLabel
+	Friend WithEvents LinkLabel4 As LinkLabel
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents PictureBox3 As PictureBox
     Friend WithEvents PictureBox4 As PictureBox
 	Friend WithEvents btnRegistroCita As Button
 	Friend WithEvents btnConsulta As Button
 	Friend WithEvents btnMascota As Button
+	Friend WithEvents ComboBox1 As ComboBox
 End Class

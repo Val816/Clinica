@@ -418,8 +418,9 @@ Partial Class Consulta_Médica
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+		Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
 		Me.BackColor = System.Drawing.SystemColors.ButtonHighlight
-		Me.ClientSize = New System.Drawing.Size(850, 528)
+		Me.ClientSize = New System.Drawing.Size(841, 528)
 		Me.Controls.Add(Me.TextBox10)
 		Me.Controls.Add(Me.Label12)
 		Me.Controls.Add(Me.ComboBoxServicio)
@@ -446,7 +447,10 @@ Partial Class Consulta_Médica
 		Me.Controls.Add(Me.Label4)
 		Me.Controls.Add(Me.Panel2)
 		Me.Controls.Add(Me.Panel1)
+		Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
 		Me.Margin = New System.Windows.Forms.Padding(2)
+		Me.MaximizeBox = False
+		Me.MinimizeBox = False
 		Me.Name = "Consulta_Médica"
 		Me.Text = "Consulta_Médica"
 		Me.Panel1.ResumeLayout(False)
