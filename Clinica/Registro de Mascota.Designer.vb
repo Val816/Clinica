@@ -47,13 +47,13 @@ Partial Class Registro_de_Mascota
 		Me.ComboBoxGenero = New System.Windows.Forms.ComboBox()
 		Me.ComboBoxRaza = New System.Windows.Forms.ComboBox()
 		Me.ComboBoxEspecie = New System.Windows.Forms.ComboBox()
-		Me.DataGridMascotas = New System.Windows.Forms.DataGridView()
+		Me.DataGridViewMascota = New System.Windows.Forms.DataGridView()
 		Me.ComboBoxTalla = New System.Windows.Forms.ComboBox()
 		Me.Panel1.SuspendLayout()
 		Me.Panel2.SuspendLayout()
 		Me.Panel3.SuspendLayout()
 		Me.Panel4.SuspendLayout()
-		CType(Me.DataGridMascotas, System.ComponentModel.ISupportInitialize).BeginInit()
+		CType(Me.DataGridViewMascota, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.SuspendLayout()
 		'
 		'Panel1
@@ -332,13 +332,13 @@ Partial Class Registro_de_Mascota
 		Me.ComboBoxEspecie.Size = New System.Drawing.Size(121, 21)
 		Me.ComboBoxEspecie.TabIndex = 24
 		'
-		'DataGridMascotas
+		'DataGridViewMascota
 		'
-		Me.DataGridMascotas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-		Me.DataGridMascotas.Location = New System.Drawing.Point(417, 103)
-		Me.DataGridMascotas.Name = "DataGridMascotas"
-		Me.DataGridMascotas.Size = New System.Drawing.Size(397, 292)
-		Me.DataGridMascotas.TabIndex = 25
+		Me.DataGridViewMascota.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+		Me.DataGridViewMascota.Location = New System.Drawing.Point(417, 103)
+		Me.DataGridViewMascota.Name = "DataGridViewMascota"
+		Me.DataGridViewMascota.Size = New System.Drawing.Size(397, 292)
+		Me.DataGridViewMascota.TabIndex = 25
 		'
 		'ComboBoxTalla
 		'
@@ -355,7 +355,7 @@ Partial Class Registro_de_Mascota
 		Me.BackColor = System.Drawing.SystemColors.ControlLightLight
 		Me.ClientSize = New System.Drawing.Size(837, 519)
 		Me.Controls.Add(Me.ComboBoxTalla)
-		Me.Controls.Add(Me.DataGridMascotas)
+		Me.Controls.Add(Me.DataGridViewMascota)
 		Me.Controls.Add(Me.Panel3)
 		Me.Controls.Add(Me.ComboBoxEspecie)
 		Me.Controls.Add(Me.ComboBoxRaza)
@@ -384,7 +384,7 @@ Partial Class Registro_de_Mascota
 		Me.Panel3.PerformLayout()
 		Me.Panel4.ResumeLayout(False)
 		Me.Panel4.PerformLayout()
-		CType(Me.DataGridMascotas, System.ComponentModel.ISupportInitialize).EndInit()
+		CType(Me.DataGridViewMascota, System.ComponentModel.ISupportInitialize).EndInit()
 		Me.ResumeLayout(False)
 		Me.PerformLayout()
 
@@ -415,6 +415,6 @@ Partial Class Registro_de_Mascota
 	Friend WithEvents ComboBox2 As ComboBox
 	Friend WithEvents ComboBoxRaza As ComboBox
 	Friend WithEvents ComboBoxEspecie As ComboBox
-	Friend WithEvents DataGridMascotas As DataGridView
+	Friend WithEvents DataGridViewMascota As DataGridView
 	Friend WithEvents ComboBoxTalla As ComboBox
 End Class

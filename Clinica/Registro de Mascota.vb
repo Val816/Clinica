@@ -93,6 +93,24 @@ Public Class Registro_de_Mascota
         ComboBoxServicios.ValueMember = "Value"
     End Sub
 
+    ' Función para verificar si la mascota ya existe en la base de datos
+    Private Function MascotaExiste(nomMasc As String, idEspecie As Integer, idRaza As Integer, peso As Double, idTalla As Integer, edad As Integer, idGenero As Integer) As Boolean
+        Dim query As String = "SELECT COUNT(*) FROM Mascota WHERE nomMasc = @nomMasc AND idEspecie = @idEspecie AND idRaza = @idRaza AND peso = @peso AND idTalla = @idTalla AND edad = @edad AND idGenero = @idGenero"
+        Using conn As New MySqlConnection("Server=localhost;Database=veterinaria;User Id=root;Password=root;")
+            Using cmd As New MySqlCommand(query, conn)
+                cmd.Parameters.AddWithValue("@nomMasc", nomMasc)
+                cmd.Parameters.AddWithValue("@idEspecie", idEspecie)
+                cmd.Parameters.AddWithValue("@idRaza", idRaza)
+                cmd.Parameters.AddWithValue("@peso", peso)
+                cmd.Parameters.AddWithValue("@idTalla", idTalla)
+                cmd.Parameters.AddWithValue("@edad", edad)
+                cmd.Parameters.AddWithValue("@idGenero", idGenero)
+                conn.Open()
+                Dim count As Integer = Convert.ToInt32(cmd.ExecuteScalar())
+                Return count > 0
+            End Using
+        End Using
+    End Function
 
     ' Guardar datos de la mascota
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
@@ -104,8 +122,15 @@ Public Class Registro_de_Mascota
                 Return
             End If
 
+            ' Verificar si la mascota ya está registrada
+            If MascotaExiste(txtNomMasc.Text, ComboBoxEspecie.SelectedItem.Value, ComboBoxRaza.SelectedItem.Value, Convert.ToDouble(txtPeso.Text), ComboBoxTalla.SelectedItem.Value, Convert.ToInt32(txtEdad.Text), ComboBoxGenero.SelectedItem.Value) Then
+                MessageBox.Show("Esta mascota ya está registrada.")
+                Return
+            End If
+
+            ' Si la mascota no existe, insertar en la base de datos
             Dim query As String = "INSERT INTO Mascota (nomMasc, idEspecie, idRaza, peso, idTalla, edad, caracteristicas, idGenero) " &
-                              "VALUES (@nomMasc, @idEspecie, @idRaza, @peso, @idTalla, @edad, @caracteristicas, @idGenero)"
+                                  "VALUES (@nomMasc, @idEspecie, @idRaza, @peso, @idTalla, @edad, @caracteristicas, @idGenero)"
             Using conn As New MySqlConnection("Server=localhost;Database=veterinaria;User Id=root;Password=root;")
                 Using cmd As New MySqlCommand(query, conn)
                     conn.Open()
@@ -132,53 +157,60 @@ Public Class Registro_de_Mascota
         End Try
     End Sub
 
+    ' Redirigir a la ventana del servicio seleccionado en el ComboBoxServicios
+    Private Sub ComboBoxServicios_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBoxServicios.SelectedIndexChanged
+        ' Verifica si hay un servicio seleccionado
+        If ComboBoxServicios.SelectedItem IsNot Nothing Then
+            Dim idServicio As Integer = ComboBoxServicios.SelectedItem.Value
 
-    ' Redirigir a la ventana del servicio seleccionado al presionar "Continuar"
-    Private Sub btnContinuar_Click(sender As Object, e As EventArgs) Handles btnContinuar.Click
-        ' Guardar los datos de la mascota
-        btnGuardar_Click(sender, e)
+            ' Redirigir a la ventana correspondiente según el idServicio
+            Select Case idServicio
+                Case 1
+                    Dim ventanaDesparacitacion As New Desparacitación()
+                    ventanaDesparacitacion.Show()
+            'Case 2
+            '    Dim ventanaVacunacion As New Vacunación()
+            '    ventanaVacunacion.Show()
+                Case 3
+                    Dim ventanaVacunacion As New Consulta_Médica()
+                    ventanaVacunacion.Show()
+                Case 4
+                    Dim ventanaDesparacitacion As New Desparacitación()
+                    ventanaDesparacitacion.Show()
+                Case Else
+                    MessageBox.Show("Servicio no disponible.")
+            End Select
 
-        ' Redirigir a la ventana del servicio seleccionado
-        Dim idServicioSeleccionado As Integer = ComboBoxServicios.SelectedItem.Value
-
-        Select Case idServicioSeleccionado
-            'Case 1 ' Servicio de Vacunación
-            '    Dim vacunacionForm As New Vacunacion()
-            '    vacunacionForm.Show()
-            Case 2 ' Servicio de Desparacitación
-                Dim desparacitacionForm As New Desparacitación()
-                desparacitacionForm.Show()
-                ' Agregar más casos según los servicios disponibles
-        End Select
-
-        Me.Close() ' Cerrar el formulario actual
+            ' Ocultar la ventana actual si es necesario
+            Me.Hide()
+        End If
     End Sub
 
-    ' Mostrar datos de la mascota en un DataGrid de manera vertical
+
+
+    ' Mostrar los datos de la mascota en el DataGrid
     Private Sub MostrarDatosMascota()
-        Dim query As String = "SELECT M.nomMasc, E.nombreEspecie, R.nombreRaza, M.peso, T.descripcion AS talla, M.edad, M.caracteristicas, G.descripcion AS genero " &
-                          "FROM Mascota M " &
-                          "JOIN Especie E ON M.idEspecie = E.idEspecie " &
-                          "JOIN Raza R ON M.idRaza = R.idRaza " &
-                          "JOIN Talla T ON M.idTalla = T.idTalla " &
-                          "JOIN Genero G ON M.idGenero = G.idGenero"
+        Dim query As String = "SELECT nomMasc, (SELECT nombreEspecie FROM Especie WHERE idEspecie = m.idEspecie) AS especie, " &
+                          "(SELECT nombreRaza FROM Raza WHERE idRaza = m.idRaza) AS raza, " &
+                          "peso, (SELECT descripcion FROM Talla WHERE idTalla = m.idTalla) AS talla, " &
+                          "edad, caracteristicas, (SELECT descripcion FROM Genero WHERE idGenero = m.idGenero) AS genero " &
+                          "FROM Mascota m" ' Cambiar MascotaView por la tabla Mascota
         Dim dt As New DataTable()
         Using conn As New MySqlConnection("Server=localhost;Database=veterinaria;User Id=root;Password=root;")
             Using cmd As New MySqlCommand(query, conn)
                 conn.Open()
                 Dim adapter As New MySqlDataAdapter(cmd)
                 adapter.Fill(dt)
-                DataGridMascotas.DataSource = dt
             End Using
         End Using
+        DataGridViewMascota.DataSource = dt
     End Sub
 
-
-    ' Botón para cerrar el formulario y regresar al menú
+    ' Botón para cerrar la ventana
     Private Sub btnCerrar_Click(sender As Object, e As EventArgs) Handles btnCerrar.Click
+        Me.Close() ' Cierra la ventana actual
+        ' Redirigir al menú principal si lo tienes implementado
         Dim menuPrincipal As New Menu_Principal()
         menuPrincipal.Show()
-        Me.Close() ' Cerrar el formulario actual
     End Sub
-
 End Class

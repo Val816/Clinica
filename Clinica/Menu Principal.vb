@@ -11,8 +11,10 @@
 
 	Private Sub btnMascota_Click(sender As Object, e As EventArgs) Handles btnMascota.Click
 		Dim registroMascotaForm As New Registro_de_Mascota()
+		Me.Hide()
 		registroMascotaForm.Show()
 	End Sub
+
 
 	'Private Sub btnRegistroCita_Click(sender As Object, e As EventArgs) Handles btnRegistro.Click
 	'    Dim registroCitaForm As New FormRegistroCita()
