@@ -131,6 +131,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cirugía.Designer.vb">
+      <DependentUpon>Cirugía.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Cirugía.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Consulta de Cita.Designer.vb">
       <DependentUpon>Consulta de Cita.vb</DependentUpon>
     </Compile>
@@ -153,6 +159,18 @@
       <DependentUpon>Desparacitación.vb</DependentUpon>
     </Compile>
     <Compile Include="Desparacitación.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Estética.Designer.vb">
+      <DependentUpon>Estética.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Estética.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Eutanasia.Designer.vb">
+      <DependentUpon>Eutanasia.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Eutanasia.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Inicio de sesion.Designer.vb">
@@ -200,8 +218,17 @@
     <Compile Include="Registro de Mascota.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Vacunacion.Designer.vb">
+      <DependentUpon>Vacunacion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vacunacion.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Cirugía.resx">
+      <DependentUpon>Cirugía.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Consulta de Cita.resx">
       <DependentUpon>Consulta de Cita.vb</DependentUpon>
     </EmbeddedResource>
@@ -213,6 +240,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Desparacitación.resx">
       <DependentUpon>Desparacitación.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Estética.resx">
+      <DependentUpon>Estética.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Eutanasia.resx">
+      <DependentUpon>Eutanasia.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Inicio de sesion.resx">
       <DependentUpon>Inicio de sesion.vb</DependentUpon>
@@ -234,6 +267,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Registro de Mascota.resx">
       <DependentUpon>Registro de Mascota.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vacunacion.resx">
+      <DependentUpon>Vacunacion.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
