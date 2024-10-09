@@ -90,11 +90,6 @@ Public Class Registro_de_Cita
         ' Cerrar el formulario actual
         Me.Close()
     End Sub
-    Private Sub btnContinuarRegistroMascota_Click(sender As Object, e As EventArgs) Handles btnContinuarRegistroMascota.Click
-        Dim registroMascota As New Registro_de_Mascota()
-        registroMascota.Show()
-        Me.Close()
-    End Sub
 
 
 End Class

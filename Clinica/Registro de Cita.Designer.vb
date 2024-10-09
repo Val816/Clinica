@@ -27,7 +27,6 @@ Partial Class Registro_de_Cita
 		Me.btnMenuPrincipal = New System.Windows.Forms.Button()
 		Me.Label1 = New System.Windows.Forms.Label()
 		Me.Panel2 = New System.Windows.Forms.Panel()
-		Me.btnContinuarRegistroMascota = New System.Windows.Forms.Button()
 		Me.Panel3 = New System.Windows.Forms.Panel()
 		Me.btnRegistrarCita = New System.Windows.Forms.Button()
 		Me.DateTimePickerFecha = New System.Windows.Forms.DateTimePicker()
@@ -50,7 +49,6 @@ Partial Class Registro_de_Cita
 		Me.PictureBox1 = New System.Windows.Forms.PictureBox()
 		Me.PictureBox2 = New System.Windows.Forms.PictureBox()
 		Me.Panel1.SuspendLayout()
-		Me.Panel2.SuspendLayout()
 		Me.Panel3.SuspendLayout()
 		Me.Panel4.SuspendLayout()
 		CType(Me.DataGridViewCitas, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -95,24 +93,11 @@ Partial Class Registro_de_Cita
 		'Panel2
 		'
 		Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(197, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(165, Byte), Integer))
-		Me.Panel2.Controls.Add(Me.btnContinuarRegistroMascota)
 		Me.Panel2.Location = New System.Drawing.Point(-1, 418)
 		Me.Panel2.Margin = New System.Windows.Forms.Padding(2)
 		Me.Panel2.Name = "Panel2"
 		Me.Panel2.Size = New System.Drawing.Size(855, 102)
 		Me.Panel2.TabIndex = 2
-		'
-		'btnContinuarRegistroMascota
-		'
-		Me.btnContinuarRegistroMascota.BackColor = System.Drawing.Color.FromArgb(CType(CType(236, Byte), Integer), CType(CType(129, Byte), Integer), CType(CType(174, Byte), Integer))
-		Me.btnContinuarRegistroMascota.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-		Me.btnContinuarRegistroMascota.Location = New System.Drawing.Point(640, 43)
-		Me.btnContinuarRegistroMascota.Margin = New System.Windows.Forms.Padding(2)
-		Me.btnContinuarRegistroMascota.Name = "btnContinuarRegistroMascota"
-		Me.btnContinuarRegistroMascota.Size = New System.Drawing.Size(174, 25)
-		Me.btnContinuarRegistroMascota.TabIndex = 9
-		Me.btnContinuarRegistroMascota.Text = "Continuar a Registro de Mascota"
-		Me.btnContinuarRegistroMascota.UseVisualStyleBackColor = False
 		'
 		'Panel3
 		'
@@ -373,7 +358,6 @@ Partial Class Registro_de_Cita
 		Me.Name = "Registro_de_Cita"
 		Me.Text = "Registro de Cita"
 		Me.Panel1.ResumeLayout(False)
-		Me.Panel2.ResumeLayout(False)
 		Me.Panel3.ResumeLayout(False)
 		Me.Panel3.PerformLayout()
 		Me.Panel4.ResumeLayout(False)
@@ -403,7 +387,6 @@ Partial Class Registro_de_Cita
 	Friend WithEvents txtApellido As TextBox
 	Friend WithEvents Label8 As Label
 	Friend WithEvents Label7 As Label
-	Friend WithEvents btnContinuarRegistroMascota As Button
 	Friend WithEvents btnRegistrarCita As Button
 	Friend WithEvents txtHora As TextBox
 	Friend WithEvents PictureBox1 As PictureBox

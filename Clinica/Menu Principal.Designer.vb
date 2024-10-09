@@ -31,10 +31,11 @@ Partial Class Menu_Principal
 		Me.Panel4 = New System.Windows.Forms.Panel()
 		Me.btnConsulta = New System.Windows.Forms.Button()
 		Me.Panel5 = New System.Windows.Forms.Panel()
-		Me.Panel6 = New System.Windows.Forms.Panel()
+		Me.cmbServicios = New System.Windows.Forms.ComboBox()
 		Me.btnMascota = New System.Windows.Forms.Button()
-		Me.Panel3 = New System.Windows.Forms.Panel()
+		Me.Panel6 = New System.Windows.Forms.Panel()
 		Me.Button2 = New System.Windows.Forms.Button()
+		Me.Panel3 = New System.Windows.Forms.Panel()
 		Me.Button3 = New System.Windows.Forms.Button()
 		Me.Panel1.SuspendLayout()
 		Me.Panel2.SuspendLayout()
@@ -131,12 +132,30 @@ Partial Class Menu_Principal
 		'Panel5
 		'
 		Me.Panel5.BackColor = System.Drawing.Color.FromArgb(CType(CType(129, Byte), Integer), CType(CType(199, Byte), Integer), CType(CType(132, Byte), Integer))
+		Me.Panel5.Controls.Add(Me.cmbServicios)
 		Me.Panel5.Controls.Add(Me.btnMascota)
 		Me.Panel5.Location = New System.Drawing.Point(11, 111)
 		Me.Panel5.Margin = New System.Windows.Forms.Padding(2)
 		Me.Panel5.Name = "Panel5"
 		Me.Panel5.Size = New System.Drawing.Size(129, 295)
 		Me.Panel5.TabIndex = 4
+		'
+		'cmbServicios
+		'
+		Me.cmbServicios.FormattingEnabled = True
+		Me.cmbServicios.Location = New System.Drawing.Point(5, 213)
+		Me.cmbServicios.Name = "cmbServicios"
+		Me.cmbServicios.Size = New System.Drawing.Size(121, 21)
+		Me.cmbServicios.TabIndex = 7
+		'
+		'btnMascota
+		'
+		Me.btnMascota.Location = New System.Drawing.Point(8, 240)
+		Me.btnMascota.Name = "btnMascota"
+		Me.btnMascota.Size = New System.Drawing.Size(115, 23)
+		Me.btnMascota.TabIndex = 6
+		Me.btnMascota.Text = "Registro de Mascota"
+		Me.btnMascota.UseVisualStyleBackColor = True
 		'
 		'Panel6
 		'
@@ -148,14 +167,14 @@ Partial Class Menu_Principal
 		Me.Panel6.Size = New System.Drawing.Size(133, 294)
 		Me.Panel6.TabIndex = 5
 		'
-		'btnMascota
+		'Button2
 		'
-		Me.btnMascota.Location = New System.Drawing.Point(8, 240)
-		Me.btnMascota.Name = "btnMascota"
-		Me.btnMascota.Size = New System.Drawing.Size(115, 23)
-		Me.btnMascota.TabIndex = 6
-		Me.btnMascota.Text = "Registro de Mascota"
-		Me.btnMascota.UseVisualStyleBackColor = True
+		Me.Button2.Location = New System.Drawing.Point(36, 239)
+		Me.Button2.Name = "Button2"
+		Me.Button2.Size = New System.Drawing.Size(75, 23)
+		Me.Button2.TabIndex = 9
+		Me.Button2.Text = "Informes"
+		Me.Button2.UseVisualStyleBackColor = True
 		'
 		'Panel3
 		'
@@ -166,15 +185,6 @@ Partial Class Menu_Principal
 		Me.Panel3.Name = "Panel3"
 		Me.Panel3.Size = New System.Drawing.Size(133, 294)
 		Me.Panel3.TabIndex = 10
-		'
-		'Button2
-		'
-		Me.Button2.Location = New System.Drawing.Point(36, 239)
-		Me.Button2.Name = "Button2"
-		Me.Button2.Size = New System.Drawing.Size(75, 23)
-		Me.Button2.TabIndex = 9
-		Me.Button2.Text = "Informes"
-		Me.Button2.UseVisualStyleBackColor = True
 		'
 		'Button3
 		'
@@ -226,4 +236,5 @@ Partial Class Menu_Principal
 	Friend WithEvents Panel3 As Panel
 	Friend WithEvents Button2 As Button
 	Friend WithEvents Button3 As Button
+	Friend WithEvents cmbServicios As ComboBox
 End Class
