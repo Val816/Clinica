@@ -167,6 +167,7 @@ Public Class Registro_de_Mascota
             End Using
             MessageBox.Show("Mascota registrada exitosamente.")
             LimpiarCampos()
+            MostrarDatosMascota()
         Catch ex As Exception
             MessageBox.Show("Error al guardar la mascota: " & ex.Message)
         End Try
@@ -201,26 +202,66 @@ Public Class Registro_de_Mascota
 
         ' Redirigir según el servicio seleccionado
         Select Case idServicio
-            Case 1 ' Ejemplo: Servicio de Vacunación
-                Dim formVacunacion As New Vacunacion()
-                formVacunacion.Show()
+            Case 1 ' 
+                Dim formCirugia As New Cirugía()
+                formCirugia.Show()
                 Me.Hide()
 
-            Case 2 ' Ejemplo: Servicio de Desparacitación
-                Dim formDesparacitacion As New Desparacitación()
-                formDesparacitacion.Show()
-                Me.Hide()
-
-            Case 3 ' Otro servicio
+            Case 2 ' 
                 Dim consultamedica As New Consulta_Médica()
                 consultamedica.Show()
                 Me.Hide()
 
+            Case 4
+                Dim formDesparacitacion As New Desparacitación()
+                formDesparacitacion.Show()
+                Me.Hide()
+
+            'Case 5
+            '    Dim formEsterilizacion As New Esterilización()
+            '    formEsterilizacion.Show()
+            '    Me.Hide()
+
+            'Case 6
+            '    Dim formPension As New Pensión()
+            '    formPension.Show()
+            '    Me.Hide()
+
+            Case 7
+                Dim formGrooming As New Estética()
+                formGrooming.Show()
+                Me.Hide()
+            Case 8
+                Dim formEutanasia As New Eutanasia()
+                formEutanasia.Show()
+                Me.Hide()
+
+            Case 9
+                Dim formGrooming As New Vacunacion()
+                formGrooming.Show()
+                Me.Hide()
+
+                'Case 10
+                '    Dim formHospitalizacion As New Hospitalización()
+                '    formHospitalizacion.Show()
+                '    Me.Hide()
+                'Case 11
+                '    Dim formProfilaxis As New Profilaxis_Dental()
+                '    formProfilaxis.Show()
+                '    Me.Hide()
             Case Else
                 MessageBox.Show("Servicio no reconocido. Por favor, selecciona un servicio válido.")
+
         End Select
     End Sub
+    Private Sub btnMenuPrincipal_Click(sender As Object, e As EventArgs) Handles btnMenuPrincipal.Click
+        ' Abrir el formulario del Menú Principal
+        Dim menuPrincipal As New Menu_Principal()
+        menuPrincipal.Show()
 
+        ' Cerrar el formulario actual
+        Me.Close()
+    End Sub
 
     ' Mostrar datos de la mascota en el DataGridView
     Private Sub MostrarDatosMascota()

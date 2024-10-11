@@ -158,7 +158,9 @@
     <Compile Include="Desparacitación.Designer.vb">
       <DependentUpon>Desparacitación.vb</DependentUpon>
     </Compile>
-    <Compile Include="Desparacitación.vb" />
+    <Compile Include="Desparacitación.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Estética.Designer.vb">
       <DependentUpon>Estética.vb</DependentUpon>
     </Compile>

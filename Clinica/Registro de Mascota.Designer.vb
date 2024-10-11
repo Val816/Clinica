@@ -23,7 +23,7 @@ Partial Class Registro_de_Mascota
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
 		Me.Panel1 = New System.Windows.Forms.Panel()
-		Me.btnCerrar = New System.Windows.Forms.Button()
+		Me.btnMenuPrincipal = New System.Windows.Forms.Button()
 		Me.Label1 = New System.Windows.Forms.Label()
 		Me.Panel2 = New System.Windows.Forms.Panel()
 		Me.btnGuardar = New System.Windows.Forms.Button()
@@ -65,7 +65,7 @@ Partial Class Registro_de_Mascota
 		'Panel1
 		'
 		Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(197, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(165, Byte), Integer))
-		Me.Panel1.Controls.Add(Me.btnCerrar)
+		Me.Panel1.Controls.Add(Me.btnMenuPrincipal)
 		Me.Panel1.Controls.Add(Me.Label1)
 		Me.Panel1.Location = New System.Drawing.Point(1, -5)
 		Me.Panel1.Margin = New System.Windows.Forms.Padding(2)
@@ -73,17 +73,17 @@ Partial Class Registro_de_Mascota
 		Me.Panel1.Size = New System.Drawing.Size(845, 74)
 		Me.Panel1.TabIndex = 3
 		'
-		'btnCerrar
+		'btnMenuPrincipal
 		'
-		Me.btnCerrar.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(128, Byte), Integer))
-		Me.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-		Me.btnCerrar.Location = New System.Drawing.Point(705, 29)
-		Me.btnCerrar.Margin = New System.Windows.Forms.Padding(2)
-		Me.btnCerrar.Name = "btnCerrar"
-		Me.btnCerrar.Size = New System.Drawing.Size(93, 25)
-		Me.btnCerrar.TabIndex = 1
-		Me.btnCerrar.Text = "Menú Principal"
-		Me.btnCerrar.UseVisualStyleBackColor = False
+		Me.btnMenuPrincipal.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(128, Byte), Integer))
+		Me.btnMenuPrincipal.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+		Me.btnMenuPrincipal.Location = New System.Drawing.Point(705, 29)
+		Me.btnMenuPrincipal.Margin = New System.Windows.Forms.Padding(2)
+		Me.btnMenuPrincipal.Name = "btnMenuPrincipal"
+		Me.btnMenuPrincipal.Size = New System.Drawing.Size(93, 25)
+		Me.btnMenuPrincipal.TabIndex = 1
+		Me.btnMenuPrincipal.Text = "Menú Principal"
+		Me.btnMenuPrincipal.UseVisualStyleBackColor = False
 		'
 		'Label1
 		'
@@ -465,7 +465,7 @@ Partial Class Registro_de_Mascota
 	End Sub
 
 	Friend WithEvents Panel1 As Panel
-    Friend WithEvents btnCerrar As Button
+    Friend WithEvents btnMenuPrincipal As Button
     Friend WithEvents Label1 As Label
     Friend WithEvents Panel2 As Panel
     Friend WithEvents btnGuardar As Button
