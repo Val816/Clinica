@@ -28,8 +28,8 @@ Partial Class Vacunacion
 		Me.Label1 = New System.Windows.Forms.Label()
 		Me.Panel2 = New System.Windows.Forms.Panel()
 		Me.btnGuardar = New System.Windows.Forms.Button()
-		Me.CheckedListBox1 = New System.Windows.Forms.CheckedListBox()
-		Me.CheckedListBox2 = New System.Windows.Forms.CheckedListBox()
+		Me.groupBoxVacunasAplicar = New System.Windows.Forms.CheckedListBox()
+		Me.CargarVacunasAplicadas = New System.Windows.Forms.CheckedListBox()
 		Me.Label2 = New System.Windows.Forms.Label()
 		Me.Label3 = New System.Windows.Forms.Label()
 		Me.Label10 = New System.Windows.Forms.Label()
@@ -47,7 +47,7 @@ Partial Class Vacunacion
 		Me.Panel1.Controls.Add(Me.btnMenuPrincipal)
 		Me.Panel1.Controls.Add(Me.Label1)
 		Me.Panel1.Location = New System.Drawing.Point(1, -1)
-		Me.Panel1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+		Me.Panel1.Margin = New System.Windows.Forms.Padding(2)
 		Me.Panel1.Name = "Panel1"
 		Me.Panel1.Size = New System.Drawing.Size(838, 107)
 		Me.Panel1.TabIndex = 6
@@ -57,7 +57,7 @@ Partial Class Vacunacion
 		Me.btnMenuPrincipal.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(128, Byte), Integer))
 		Me.btnMenuPrincipal.FlatStyle = System.Windows.Forms.FlatStyle.Flat
 		Me.btnMenuPrincipal.Location = New System.Drawing.Point(410, 12)
-		Me.btnMenuPrincipal.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+		Me.btnMenuPrincipal.Margin = New System.Windows.Forms.Padding(2)
 		Me.btnMenuPrincipal.Name = "btnMenuPrincipal"
 		Me.btnMenuPrincipal.Size = New System.Drawing.Size(93, 25)
 		Me.btnMenuPrincipal.TabIndex = 1
@@ -80,7 +80,7 @@ Partial Class Vacunacion
 		Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(197, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(165, Byte), Integer))
 		Me.Panel2.Controls.Add(Me.btnGuardar)
 		Me.Panel2.Location = New System.Drawing.Point(1, 435)
-		Me.Panel2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+		Me.Panel2.Margin = New System.Windows.Forms.Padding(2)
 		Me.Panel2.Name = "Panel2"
 		Me.Panel2.Size = New System.Drawing.Size(854, 94)
 		Me.Panel2.TabIndex = 7
@@ -90,32 +90,32 @@ Partial Class Vacunacion
 		Me.btnGuardar.BackColor = System.Drawing.Color.FromArgb(CType(CType(174, Byte), Integer), CType(CType(214, Byte), Integer), CType(CType(241, Byte), Integer))
 		Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
 		Me.btnGuardar.Location = New System.Drawing.Point(410, 25)
-		Me.btnGuardar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+		Me.btnGuardar.Margin = New System.Windows.Forms.Padding(2)
 		Me.btnGuardar.Name = "btnGuardar"
 		Me.btnGuardar.Size = New System.Drawing.Size(93, 25)
 		Me.btnGuardar.TabIndex = 5
 		Me.btnGuardar.Text = "Guardar"
 		Me.btnGuardar.UseVisualStyleBackColor = False
 		'
-		'CheckedListBox1
+		'groupBoxVacunasAplicar
 		'
-		Me.CheckedListBox1.FormattingEnabled = True
-		Me.CheckedListBox1.Items.AddRange(New Object() {"Vacuna Puppy", "Vacuna Quintuple", "Vacuna Sextuple", "Vacuna de rabia", "Vacuna triple felina", "Vacuna bordetella", "Vacuna giarda", "Otra", "Ninguna"})
-		Me.CheckedListBox1.Location = New System.Drawing.Point(84, 140)
-		Me.CheckedListBox1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
-		Me.CheckedListBox1.Name = "CheckedListBox1"
-		Me.CheckedListBox1.Size = New System.Drawing.Size(153, 124)
-		Me.CheckedListBox1.TabIndex = 28
+		Me.groupBoxVacunasAplicar.FormattingEnabled = True
+		Me.groupBoxVacunasAplicar.Items.AddRange(New Object() {"Vacuna Puppy", "Vacuna Quintuple", "Vacuna Sextuple", "Vacuna de rabia", "Vacuna triple felina", "Vacuna bordetella", "Vacuna giarda", "Otra", "Ninguna"})
+		Me.groupBoxVacunasAplicar.Location = New System.Drawing.Point(84, 140)
+		Me.groupBoxVacunasAplicar.Margin = New System.Windows.Forms.Padding(2)
+		Me.groupBoxVacunasAplicar.Name = "groupBoxVacunasAplicar"
+		Me.groupBoxVacunasAplicar.Size = New System.Drawing.Size(153, 124)
+		Me.groupBoxVacunasAplicar.TabIndex = 28
 		'
-		'CheckedListBox2
+		'CargarVacunasAplicadas
 		'
-		Me.CheckedListBox2.FormattingEnabled = True
-		Me.CheckedListBox2.Items.AddRange(New Object() {"Vacuna Puppy", "Vacuna Quintuple", "Vacuna Sextuple", "Vacuna de rabia", "Vacuna triple felina", "Vacuna bordetella", "Vacuna giarda", "Otra"})
-		Me.CheckedListBox2.Location = New System.Drawing.Point(331, 140)
-		Me.CheckedListBox2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
-		Me.CheckedListBox2.Name = "CheckedListBox2"
-		Me.CheckedListBox2.Size = New System.Drawing.Size(153, 124)
-		Me.CheckedListBox2.TabIndex = 29
+		Me.CargarVacunasAplicadas.FormattingEnabled = True
+		Me.CargarVacunasAplicadas.Items.AddRange(New Object() {"Vacuna Puppy", "Vacuna Quintuple", "Vacuna Sextuple", "Vacuna de rabia", "Vacuna triple felina", "Vacuna bordetella", "Vacuna giarda", "Otra"})
+		Me.CargarVacunasAplicadas.Location = New System.Drawing.Point(331, 140)
+		Me.CargarVacunasAplicadas.Margin = New System.Windows.Forms.Padding(2)
+		Me.CargarVacunasAplicadas.Name = "CargarVacunasAplicadas"
+		Me.CargarVacunasAplicadas.Size = New System.Drawing.Size(153, 124)
+		Me.CargarVacunasAplicadas.TabIndex = 29
 		'
 		'Label2
 		'
@@ -156,7 +156,7 @@ Partial Class Vacunacion
 		Me.txtObservaciones.BackColor = System.Drawing.Color.Silver
 		Me.txtObservaciones.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
 		Me.txtObservaciones.Location = New System.Drawing.Point(145, 288)
-		Me.txtObservaciones.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+		Me.txtObservaciones.Margin = New System.Windows.Forms.Padding(2)
 		Me.txtObservaciones.Multiline = True
 		Me.txtObservaciones.Name = "txtObservaciones"
 		Me.txtObservaciones.Size = New System.Drawing.Size(161, 78)
@@ -170,7 +170,7 @@ Partial Class Vacunacion
 		Me.ComboBoxServicio.FormattingEnabled = True
 		Me.ComboBoxServicio.Items.AddRange(New Object() {"Consulta Médica", "Desparacitación", "Vacunación", "Eutanasia", "Cirugía", "Estética", "Pensión", "Castración", "Proaxis Dental"})
 		Me.ComboBoxServicio.Location = New System.Drawing.Point(159, 384)
-		Me.ComboBoxServicio.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+		Me.ComboBoxServicio.Margin = New System.Windows.Forms.Padding(2)
 		Me.ComboBoxServicio.Name = "ComboBoxServicio"
 		Me.ComboBoxServicio.Size = New System.Drawing.Size(147, 21)
 		Me.ComboBoxServicio.TabIndex = 36
@@ -180,7 +180,7 @@ Partial Class Vacunacion
 		'
 		Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
 		Me.PictureBox1.Location = New System.Drawing.Point(318, 302)
-		Me.PictureBox1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+		Me.PictureBox1.Margin = New System.Windows.Forms.Padding(2)
 		Me.PictureBox1.Name = "PictureBox1"
 		Me.PictureBox1.Size = New System.Drawing.Size(186, 129)
 		Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -192,18 +192,18 @@ Partial Class Vacunacion
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
 		Me.BackColor = System.Drawing.SystemColors.ButtonHighlight
-		Me.ClientSize = New System.Drawing.Size(553, 502)
+		Me.ClientSize = New System.Drawing.Size(556, 516)
 		Me.Controls.Add(Me.PictureBox1)
 		Me.Controls.Add(Me.ComboBoxServicio)
 		Me.Controls.Add(Me.txtObservaciones)
 		Me.Controls.Add(Me.Label10)
 		Me.Controls.Add(Me.Label3)
 		Me.Controls.Add(Me.Label2)
-		Me.Controls.Add(Me.CheckedListBox2)
-		Me.Controls.Add(Me.CheckedListBox1)
+		Me.Controls.Add(Me.CargarVacunasAplicadas)
+		Me.Controls.Add(Me.groupBoxVacunasAplicar)
 		Me.Controls.Add(Me.Panel2)
 		Me.Controls.Add(Me.Panel1)
-		Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+		Me.Margin = New System.Windows.Forms.Padding(2)
 		Me.Name = "Vacunacion"
 		Me.Text = "Vacunacion"
 		Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
@@ -220,8 +220,8 @@ Partial Class Vacunacion
     Friend WithEvents Label1 As Label
     Friend WithEvents Panel2 As Panel
     Friend WithEvents btnGuardar As Button
-	Friend WithEvents CheckedListBox1 As CheckedListBox
-	Friend WithEvents CheckedListBox2 As CheckedListBox
+	Friend WithEvents groupBoxVacunasAplicar As CheckedListBox
+	Friend WithEvents CargarVacunasAplicadas As CheckedListBox
 	Friend WithEvents Label2 As Label
 	Friend WithEvents Label3 As Label
 	Friend WithEvents Label10 As Label
