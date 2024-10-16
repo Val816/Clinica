@@ -56,10 +56,10 @@ Public Class Menu_Principal
             '    Dim esterilizacionForm As New Esterilizacion()
             '    Me.Hide()
             '    esterilizacionForm.Show()
-            Case 4 ' Desparacitación
-                Dim desparacitacionForm As New Desparacitación()
-                Me.Hide()
-                desparacitacionForm.Show()
+            'Case 4 ' Desparacitación
+            '    Dim desparacitacionForm As New Desparacitación()
+            '    Me.Hide()
+            '    desparacitacionForm.Show()
             Case 5 ' Vacunación (si está habilitado)
                 Dim vacunacionForm As New Vacunacion()
                 Me.Hide()

@@ -15,8 +15,8 @@ Public Class Vacunacion
             Try
                 ' 1. Insertar el registro en la tabla RegistroVacunacion, utilizando NOW() para la fecha
                 Dim comandoRegistro As New MySqlCommand("INSERT INTO RegistroVacunacion (idMascota, fecha, observaciones) VALUES (@idMascota, NOW(), @observaciones)", conexion)
-                comandoRegistro.Parameters.AddWithValue("@idMascota", idMascota)  ' Asume que idMascota está definido
-                comandoRegistro.Parameters.AddWithValue("@observaciones", txtObservaciones.Text)
+            'comandoRegistro.Parameters.AddWithValue("@idMascota", idMascota)  ' Asume que idMascota está definido
+            comandoRegistro.Parameters.AddWithValue("@observaciones", txtObservaciones.Text)
                 comandoRegistro.ExecuteNonQuery()
 
                 ' Obtener el ID del registro de vacunación recién insertado

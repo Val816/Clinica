@@ -164,10 +164,10 @@ Public Class Consulta_Médica
                 consultamedica.Show()
                 Me.Hide()
 
-            Case 4
-                Dim formDesparacitacion As New Desparacitación()
-                formDesparacitacion.Show()
-                Me.Hide()
+            'Case 4
+            '    Dim formDesparacitacion As New Desparacitación()
+            '    formDesparacitacion.Show()
+            '    Me.Hide()
 
             'Case 5
             '    Dim formEsterilizacion As New Esterilización()
