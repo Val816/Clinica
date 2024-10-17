@@ -40,12 +40,12 @@ Partial Class Inicio_de_sesion
 		'Label1
 		'
 		Me.Label1.AutoSize = True
-		Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.Label1.ForeColor = System.Drawing.Color.Lime
-		Me.Label1.Location = New System.Drawing.Point(349, 33)
+		Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.Label1.ForeColor = System.Drawing.Color.LightSlateGray
+		Me.Label1.Location = New System.Drawing.Point(276, 33)
 		Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
 		Me.Label1.Name = "Label1"
-		Me.Label1.Size = New System.Drawing.Size(143, 31)
+		Me.Label1.Size = New System.Drawing.Size(150, 31)
 		Me.Label1.TabIndex = 0
 		Me.Label1.Text = "VETCARE"
 		'
@@ -53,7 +53,7 @@ Partial Class Inicio_de_sesion
 		'
 		Me.Label2.AutoSize = True
 		Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.Label2.Location = New System.Drawing.Point(339, 180)
+		Me.Label2.Location = New System.Drawing.Point(266, 180)
 		Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
 		Me.Label2.Name = "Label2"
 		Me.Label2.Size = New System.Drawing.Size(162, 25)
@@ -64,7 +64,7 @@ Partial Class Inicio_de_sesion
 		'
 		Me.Label3.AutoSize = True
 		Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.Label3.Location = New System.Drawing.Point(291, 226)
+		Me.Label3.Location = New System.Drawing.Point(218, 226)
 		Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
 		Me.Label3.Name = "Label3"
 		Me.Label3.Size = New System.Drawing.Size(124, 17)
@@ -75,7 +75,7 @@ Partial Class Inicio_de_sesion
 		'
 		Me.Label4.AutoSize = True
 		Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.Label4.Location = New System.Drawing.Point(291, 294)
+		Me.Label4.Location = New System.Drawing.Point(218, 294)
 		Me.Label4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
 		Me.Label4.Name = "Label4"
 		Me.Label4.Size = New System.Drawing.Size(81, 17)
@@ -86,8 +86,9 @@ Partial Class Inicio_de_sesion
 		'
 		Me.linkRecuperarCuenta.ActiveLinkColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
 		Me.linkRecuperarCuenta.AutoSize = True
-		Me.linkRecuperarCuenta.LinkColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
-		Me.linkRecuperarCuenta.Location = New System.Drawing.Point(388, 426)
+		Me.linkRecuperarCuenta.DisabledLinkColor = System.Drawing.Color.Black
+		Me.linkRecuperarCuenta.LinkColor = System.Drawing.Color.MidnightBlue
+		Me.linkRecuperarCuenta.Location = New System.Drawing.Point(315, 426)
 		Me.linkRecuperarCuenta.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
 		Me.linkRecuperarCuenta.Name = "linkRecuperarCuenta"
 		Me.linkRecuperarCuenta.Size = New System.Drawing.Size(94, 13)
@@ -99,8 +100,8 @@ Partial Class Inicio_de_sesion
 		'
 		Me.linkCrearCuenta.ActiveLinkColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
 		Me.linkCrearCuenta.AutoSize = True
-		Me.linkCrearCuenta.LinkColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
-		Me.linkCrearCuenta.Location = New System.Drawing.Point(394, 452)
+		Me.linkCrearCuenta.LinkColor = System.Drawing.Color.MidnightBlue
+		Me.linkCrearCuenta.Location = New System.Drawing.Point(321, 452)
 		Me.linkCrearCuenta.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
 		Me.linkCrearCuenta.Name = "linkCrearCuenta"
 		Me.linkCrearCuenta.Size = New System.Drawing.Size(69, 13)
@@ -111,7 +112,7 @@ Partial Class Inicio_de_sesion
 		'PictureBox1
 		'
 		Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-		Me.PictureBox1.Location = New System.Drawing.Point(382, 61)
+		Me.PictureBox1.Location = New System.Drawing.Point(309, 61)
 		Me.PictureBox1.Margin = New System.Windows.Forms.Padding(2)
 		Me.PictureBox1.Name = "PictureBox1"
 		Me.PictureBox1.Size = New System.Drawing.Size(71, 117)
@@ -121,21 +122,21 @@ Partial Class Inicio_de_sesion
 		'
 		'txtCorreo
 		'
-		Me.txtCorreo.Location = New System.Drawing.Point(294, 258)
+		Me.txtCorreo.Location = New System.Drawing.Point(221, 258)
 		Me.txtCorreo.Name = "txtCorreo"
 		Me.txtCorreo.Size = New System.Drawing.Size(274, 20)
 		Me.txtCorreo.TabIndex = 10
 		'
 		'txtContraseña
 		'
-		Me.txtContraseña.Location = New System.Drawing.Point(294, 330)
+		Me.txtContraseña.Location = New System.Drawing.Point(221, 330)
 		Me.txtContraseña.Name = "txtContraseña"
 		Me.txtContraseña.Size = New System.Drawing.Size(274, 20)
 		Me.txtContraseña.TabIndex = 10
 		'
 		'btnIngresar
 		'
-		Me.btnIngresar.Location = New System.Drawing.Point(317, 379)
+		Me.btnIngresar.Location = New System.Drawing.Point(244, 379)
 		Me.btnIngresar.Name = "btnIngresar"
 		Me.btnIngresar.Size = New System.Drawing.Size(75, 23)
 		Me.btnIngresar.TabIndex = 12
@@ -144,7 +145,7 @@ Partial Class Inicio_de_sesion
 		'
 		'btnSalir
 		'
-		Me.btnSalir.Location = New System.Drawing.Point(446, 379)
+		Me.btnSalir.Location = New System.Drawing.Point(373, 379)
 		Me.btnSalir.Name = "btnSalir"
 		Me.btnSalir.Size = New System.Drawing.Size(75, 23)
 		Me.btnSalir.TabIndex = 13
@@ -156,7 +157,7 @@ Partial Class Inicio_de_sesion
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
 		Me.BackColor = System.Drawing.SystemColors.ButtonHighlight
-		Me.ClientSize = New System.Drawing.Size(822, 501)
+		Me.ClientSize = New System.Drawing.Size(720, 501)
 		Me.Controls.Add(Me.btnSalir)
 		Me.Controls.Add(Me.btnIngresar)
 		Me.Controls.Add(Me.txtContraseña)

@@ -1,79 +1,265 @@
 ﻿Imports MySql.Data.MySqlClient
 
 Public Class Cirugía
-    ' Conexión a la base de datos
-    Private connectionString As String = "Server=localhost;Database=tu_base_de_datos;Uid=tu_usuario;Pwd=tu_contraseña;"
-    Private selectedCirugias As New List(Of Integer) ' Lista para almacenar los IDs de las cirugías seleccionadas
-    Private totalCost As Decimal = 0 ' Variable para almacenar el costo total
 
-    ' Método para cargar los tipos de cirugías en el ComboBox al cargar el formulario
-    Private Sub CirugiaForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        LoadCirugias()
+    ' Definir la conexión a la base de datos
+    Dim conexion As New MySqlConnection("Server=localhost;Database=veterinaria;User Id=root;Password=root;")
+
+    ' Clases para representar mascotas y tipos de cirugías
+    Public Class MascotaItem
+        Public Property idMascota As Integer
+        Public Property nomMasc As String
+
+        ' Sobrecarga del método ToString para mostrar el nombre de la mascota en el ComboBox
+        Public Overrides Function ToString() As String
+            Return nomMasc
+        End Function
+    End Class
+
+    Public Class TipoCirugiaItem
+        Public Property idTipoCirugia As Integer
+        Public Property tipoCirugia As String
+        Public Property costo As Decimal
+
+        ' Sobrecarga del método ToString para mostrar el tipo de cirugía en el ComboBox
+        Public Overrides Function ToString() As String
+            Return tipoCirugia
+        End Function
+    End Class
+
+    ' Evento que carga los datos cuando se abre el formulario
+    Private Sub FormCirugia_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        CargarMascotas()
+        CargarCirugias()
     End Sub
 
-    ' Cargar las cirugías desde la base de datos al ComboBox
-    Private Sub LoadCirugias()
+    ' Método para cargar las mascotas registradas hoy
+    Private Sub CargarMascotas()
         Try
-            Using conn As New MySqlConnection(connectionString)
-                conn.Open()
-                Dim query As String = "SELECT idTipoCirugia, nombre, costo FROM TipoCirugia"
-                Dim cmd As New MySqlCommand(query, conn)
-                Dim reader As MySqlDataReader = cmd.ExecuteReader()
+            Dim queryMascota As String = "SELECT idMascota, nomMasc FROM Mascota"
+            Dim cmdMascota As New MySqlCommand(queryMascota, conexion)
+            conexion.Open()
+            Dim readerMascota As MySqlDataReader = cmdMascota.ExecuteReader()
 
-                While reader.Read()
-                    ' Agregar cada cirugía al ComboBox (mostrando nombre y costo)
-                    ComboBoxCirugia.Items.Add(New With {
-                        .id = reader("idTipoCirugia"),
-                        .nombre = reader("nombre"),
-                        .costo = reader("costo")
-                    })
-                End While
-                reader.Close()
-            End Using
+            ComboBoxMascota.Items.Clear()
+
+            While readerMascota.Read()
+                Dim mascota As New MascotaItem() With {
+                    .idMascota = readerMascota("idMascota"),
+                    .nomMasc = readerMascota("nomMasc")
+                }
+                ComboBoxMascota.Items.Add(mascota)
+            End While
+
+            readerMascota.Close()
         Catch ex As Exception
-            MessageBox.Show("Error al cargar las cirugías: " & ex.Message)
+            MessageBox.Show("Error al cargar mascotas: " & ex.Message)
+        Finally
+            conexion.Close()
         End Try
     End Sub
 
-    ' Método para agregar una cirugía seleccionada y calcular el costo total
-    Private Sub ComboBoxCirugias_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBoxCirugia.SelectedIndexChanged
-        Dim selectedCirugia = ComboBoxCirugia.SelectedItem
+    ' Método para cargar los tipos de cirugías disponibles
+    Private Sub CargarCirugias()
+        Try
+            Dim queryCirugia As String = "SELECT idTipoCirugia, nombre, costo FROM TipoCirugia"
+            Dim cmdCirugia As New MySqlCommand(queryCirugia, conexion)
+            conexion.Open()
+            Dim readerCirugia As MySqlDataReader = cmdCirugia.ExecuteReader()
 
-        ' Limitar a 3 cirugías
-        If selectedCirugias.Count >= 3 Then
-            MessageBox.Show("Solo puedes seleccionar hasta 3 cirugías.")
+            ComboBoxCirugia.Items.Clear()
+
+            While readerCirugia.Read()
+                Dim cirugia As New TipoCirugiaItem() With {
+                    .idTipoCirugia = readerCirugia("idTipoCirugia"),
+                    .tipoCirugia = readerCirugia("nombre"),
+                    .costo = readerCirugia("costo")
+                }
+                ComboBoxCirugia.Items.Add(cirugia)
+            End While
+
+            readerCirugia.Close()
+        Catch ex As Exception
+            MessageBox.Show("Error al cargar cirugías: " & ex.Message)
+        Finally
+            conexion.Close()
+        End Try
+    End Sub
+    Private Sub LlenarComboBoxServicios()
+        ComboBoxServicios.Items.Clear()
+        Dim query As String = "SELECT DISTINCT idServicio, nombre FROM Servicio"
+        Using conn As New MySqlConnection("Server=localhost;Database=veterinaria;User Id=root;Password=root;")
+            Using cmd As New MySqlCommand(query, conn)
+                conn.Open()
+                Dim reader As MySqlDataReader = cmd.ExecuteReader()
+                While reader.Read()
+                    ComboBoxServicios.Items.Add(New With {.Value = reader("idServicio"), .Text = reader("nombre")})
+                End While
+            End Using
+        End Using
+        ComboBoxServicios.DisplayMember = "Text"
+        ComboBoxServicios.ValueMember = "Value"
+    End Sub
+
+    ' Método para manejar la selección de una cirugía en el ComboBoxCirugia
+    Private Sub ComboBoxCirugia_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBoxCirugia.SelectedIndexChanged
+        If ComboBoxCirugia.SelectedItem IsNot Nothing Then
+            Dim selectedCirugia As TipoCirugiaItem = CType(ComboBoxCirugia.SelectedItem, TipoCirugiaItem)
+            TextBoxCosto.Text = selectedCirugia.costo.ToString("F2") ' Formato de costo con dos decimales
+        End If
+    End Sub
+
+    ' Método para guardar la cirugía seleccionada
+    Private Sub ButtonGuardar_Click(sender As Object, e As EventArgs) Handles ButtonGuardar.Click
+        Try
+            ' Validar que se haya seleccionado una mascota y una cirugía
+            If ComboBoxMascota.SelectedItem Is Nothing OrElse ComboBoxCirugia.SelectedItem Is Nothing Then
+                MessageBox.Show("Por favor, selecciona una mascota y una cirugía.")
+                Return
+            End If
+
+            ' Obtener los valores seleccionados de los ComboBox
+            Dim selectedMascota As MascotaItem = CType(ComboBoxMascota.SelectedItem, MascotaItem)
+            Dim selectedCirugia As TipoCirugiaItem = CType(ComboBoxCirugia.SelectedItem, TipoCirugiaItem)
+
+            Dim idMascota As Integer = selectedMascota.idMascota
+            Dim idTipoCirugia As Integer = selectedCirugia.idTipoCirugia
+            Dim fechaCirugia As String = DateTimePickerFecha.Value.ToString("yyyy-MM-dd")
+            Dim observaciones As String = TextBoxObservaciones.Text
+            Dim costoCirugia As Decimal = selectedCirugia.costo
+
+            ' Insertar la cirugía en la base de datos
+            Dim query As String = "INSERT INTO Cirugia (idMascota, idTipoCirugia, fecha, observaciones, costo) " &
+                                  "VALUES (@idMascota, @idTipoCirugia, @fecha, @observaciones, @costo)"
+            Dim cmd As New MySqlCommand(query, conexion)
+
+            cmd.Parameters.AddWithValue("@idMascota", idMascota)
+            cmd.Parameters.AddWithValue("@idTipoCirugia", idTipoCirugia)
+            cmd.Parameters.AddWithValue("@fecha", fechaCirugia)
+            cmd.Parameters.AddWithValue("@observaciones", observaciones)
+            cmd.Parameters.AddWithValue("@costo", costoCirugia)
+
+            conexion.Open()
+            cmd.ExecuteNonQuery()
+
+            MessageBox.Show("Cirugía registrada exitosamente.")
+            ' Limpiar campos después de guardar
+            LimpiarCampos()
+            ' Recargar datos en el DataGridView
+            CargarDatosCirugia()
+
+        Catch ex As Exception
+            MessageBox.Show("Error al registrar la cirugía: " & ex.Message)
+        Finally
+            conexion.Close()
+        End Try
+    End Sub
+
+    Private Sub ComboBoxServicios_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBoxServicios.SelectedIndexChanged
+        ' Obtener el servicio seleccionado
+        Dim servicioSeleccionado As Object = ComboBoxServicios.SelectedItem
+        If servicioSeleccionado Is Nothing Then
+            MessageBox.Show("Por favor, selecciona un servicio.")
             Return
         End If
 
-        ' Agregar el ID de la cirugía seleccionada a la lista
-        selectedCirugias.Add(selectedCirugia.id)
-        ' Sumar el costo de la cirugía seleccionada al total
-        totalCost += selectedCirugia.costo
-        ' Actualizar el TextBox de costo total
-        TextBoxCostoTotal.Text = totalCost.ToString("C")
+        Dim idServicio As Integer = servicioSeleccionado.Value
+
+        ' Redirigir según el servicio seleccionado
+        Select Case idServicio
+            Case 1 ' 
+                Dim formCirugia As New Cirugía()
+                formCirugia.Show()
+                Me.Hide()
+
+            Case 2 ' 
+                Dim consultamedica As New Consulta_Médica()
+                consultamedica.Show()
+                Me.Hide()
+
+            'Case 4
+            '    Dim formDesparacitacion As New Desparacitación()
+            '    formDesparacitacion.Show()
+            '    Me.Hide()
+
+            'Case 5
+            '    Dim formEsterilizacion As New Esterilización()
+            '    formEsterilizacion.Show()
+            '    Me.Hide()
+
+            'Case 6
+            '    Dim formPension As New Pensión()
+            '    formPension.Show()
+            '    Me.Hide()
+
+            Case 7
+                Dim formGrooming As New Estética()
+                formGrooming.Show()
+                Me.Hide()
+            Case 8
+                Dim formEutanasia As New Eutanasia()
+                formEutanasia.Show()
+                Me.Hide()
+
+            Case 9
+                Dim formGrooming As New Vacunacion()
+                formGrooming.Show()
+                Me.Hide()
+
+                'Case 10
+                '    Dim formHospitalizacion As New Hospitalización()
+                '    formHospitalizacion.Show()
+                '    Me.Hide()
+                'Case 11
+                '    Dim formProfilaxis As New Profilaxis_Dental()
+                '    formProfilaxis.Show()
+                '    Me.Hide()
+                'Case 12
+                '    Dim formRecibo As New Recibo()
+                '    form formRecibo.Show()
+                '    Me.Hide()
+            Case Else
+                MessageBox.Show("Servicio no reconocido. Por favor, selecciona un servicio válido.")
+
+        End Select
+    End Sub
+    ' Método para limpiar los campos después de registrar la cirugía
+    Private Sub LimpiarCampos()
+        ComboBoxMascota.SelectedIndex = -1
+        ComboBoxCirugia.SelectedIndex = -1
+        TextBoxObservaciones.Clear()
+        TextBoxCosto.Clear()
+    End Sub
+    Private Sub CargarDatosCirugia()
+        Try
+            Dim query As String = "SELECT Cirugia.idCirugia, Mascota.nomMasc, TipoCirugia.nombre, Cirugia.fecha, Cirugia.observaciones, Cirugia.costo " &
+                                  "FROM Cirugia " &
+                                  "JOIN Mascota ON Cirugia.idMascota = Mascota.idMascota " &
+                                  "JOIN TipoCirugia ON Cirugia.idTipoCirugia = TipoCirugia.idTipoCirugia"
+
+            Dim cmd As New MySqlCommand(query, conexion)
+            Dim adapter As New MySqlDataAdapter(cmd)
+            Dim table As New DataTable()
+
+            conexion.Open()
+            adapter.Fill(table)
+
+            ' Asignar los datos al DataGridView
+            DataGridViewCirugias.DataSource = table
+
+        Catch ex As Exception
+            MessageBox.Show("Error al cargar los datos de las cirugías: " & ex.Message)
+        Finally
+            conexion.Close()
+        End Try
     End Sub
 
-    ' Método para guardar los datos de la cirugía en la base de datos
-    Private Sub ButtonGuardar_Click(sender As Object, e As EventArgs) Handles ButtonGuardar.Click
-        Try
-            Using conn As New MySqlConnection(connectionString)
-                conn.Open()
+    Private Sub btnMenuPrincipal_Click(sender As Object, e As EventArgs) Handles btnMenuPrincipal.Click
+        ' Abrir el formulario del Menú Principal
+        Dim menuPrincipal As New Menu_Principal()
+        menuPrincipal.Show()
 
-                For Each idCirugia As Integer In selectedCirugias
-                    Dim query As String = "INSERT INTO Cirugia (idMascota, idTipoCirugia, fecha, observaciones, costo) VALUES (@idMascota, @idTipoCirugia, @fecha, @observaciones, @costo)"
-                    Dim cmd As New MySqlCommand(query, conn)
-                    cmd.Parameters.AddWithValue("@idMascota", 1) ' Cambiar a la mascota correcta según la lógica
-                    cmd.Parameters.AddWithValue("@idTipoCirugia", idCirugia)
-                    cmd.Parameters.AddWithValue("@fecha", DateTimePickerFecha.Value)
-                    cmd.Parameters.AddWithValue("@observaciones", TextBoxObservaciones.Text)
-                    cmd.Parameters.AddWithValue("@costo", totalCost)
-                    cmd.ExecuteNonQuery()
-                Next
-
-                MessageBox.Show("Datos guardados exitosamente.")
-            End Using
-        Catch ex As Exception
-            MessageBox.Show("Error al guardar los datos: " & ex.Message)
-        End Try
+        ' Cerrar el formulario actual
+        Me.Close()
     End Sub
 End Class

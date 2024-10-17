@@ -9,7 +9,14 @@ Public Class Registro_de_Mascota
         LlenarComboBoxTalla()
         LlenarComboBoxServicios()
         LlenarComboBoxEstadoReproductivo()
-        MostrarDatosMascota()
+        LlenarComboBoxEdadUnidad()
+        CargarDatosMascota()
+    End Sub
+
+    Private Sub LlenarComboBoxEdadUnidad()
+        ComboBoxEdadUnidad.Items.Add("Meses")
+        ComboBoxEdadUnidad.Items.Add("Años")
+        ComboBoxEdadUnidad.SelectedIndex = 0 ' Seleccionar "Meses" por defecto
     End Sub
 
     ' Llenar ComboBox de género
@@ -128,6 +135,7 @@ Public Class Registro_de_Mascota
         End Using
     End Function
 
+
     ' Guardar datos de la mascota
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
         Try
@@ -143,14 +151,27 @@ Public Class Registro_de_Mascota
                 MessageBox.Show("Esta mascota ya está registrada.")
                 Return
             End If
+            If String.IsNullOrWhiteSpace(txtEdad.Text) OrElse Not IsNumeric(txtEdad.Text) Then
+                    MessageBox.Show("Por favor, ingrese una edad válida.")
+                    Return
+                End If
 
-            Dim query As String = "INSERT INTO Mascota (nomCliente, celular, nomMasc, idEspecie, idRaza, peso, idTalla, edad, caracteristicas, idGenero, idEstadoReproductivo) " &
-                                  "VALUES (@nomCliente, @celular, @nomMasc, @idEspecie, @idRaza, @peso, @idTalla, @edad, @caracteristicas, @idGenero, @idEstadoReproductivo)"
+                Dim edad As Integer = Convert.ToInt32(txtEdad.Text)
+                Dim unidad As String = ComboBoxEdadUnidad.SelectedItem.ToString()
+
+            ' Convertir la edad a meses si se seleccionó años
+            If unidad = "Años" Then
+                edad *= 12 ' Convertir años a meses
+            End If
+
+            Dim query As String = "INSERT INTO Mascota (nomCliente, apCliente, celular, nomMasc, idEspecie, idRaza, peso, idTalla, edad, caracteristicas, idGenero, idEstadoReproductivo) " &
+                                  "VALUES (@nomCliente, @apCliente, @celular, @nomMasc, @idEspecie, @idRaza, @peso, @idTalla, @edad, @caracteristicas, @idGenero, @idEstadoReproductivo)"
             Using conn As New MySqlConnection("Server=localhost;Database=veterinaria;User Id=root;Password=root;")
                 Using cmd As New MySqlCommand(query, conn)
                     conn.Open()
 
                     cmd.Parameters.AddWithValue("@nomCliente", txtNomCliente.Text)
+                    cmd.Parameters.AddWithValue("@apCliente", txtApCliente.Text)
                     cmd.Parameters.AddWithValue("@celular", Convert.ToDecimal(txtCelular.Text))
                     cmd.Parameters.AddWithValue("@nomMasc", txtNomMasc.Text)
                     cmd.Parameters.AddWithValue("@idEspecie", ComboBoxEspecie.SelectedItem.Value)
@@ -163,19 +184,71 @@ Public Class Registro_de_Mascota
                     cmd.Parameters.AddWithValue("@idEstadoReproductivo", ComboBoxEstadoReproductivo.SelectedItem.Value)
 
                     cmd.ExecuteNonQuery()
+                    MessageBox.Show("Datos de la mascota guardados correctamente.")
+                    CargarDatosMascota()
                 End Using
             End Using
-            MessageBox.Show("Mascota registrada exitosamente.")
-            LimpiarCampos()
-            MostrarDatosMascota()
         Catch ex As Exception
-            MessageBox.Show("Error al guardar la mascota: " & ex.Message)
+            MessageBox.Show("Error al guardar los datos: " & ex.Message)
         End Try
     End Sub
+    Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
+        ' Asignar variables con los valores de los TextBox de nombre del cliente y teléfono
+        Dim nombreCliente As String = txtNomCliente.Text
+        Dim apellidoCliente As String = txtApCliente.Text
+        Dim telefonoCliente As String = txtCelular.Text
+
+        ' Verificar que los campos no estén vacíos
+        If nombreCliente = "" Or telefonoCliente = "" Then
+            MessageBox.Show("Por favor, ingresa el nombre del cliente y su número de teléfono.")
+            Exit Sub
+        End If
+
+        ' Consulta SQL para buscar la mascota por nombre del cliente y teléfono
+        Dim query As String = "SELECT * FROM Mascota WHERE nomCliente = @nombreCliente AND celular = @telefonoCliente AND apCliente = @ApellidoCliente"
+
+        ' Crear conexión y comando para la consulta
+        Using connection As New MySqlConnection("Server=localhost;Database=veterinaria;User Id=root;Password=root;")
+            Using command As New MySqlCommand(query, connection)
+                command.Parameters.AddWithValue("@nombreCliente", nombreCliente)
+                command.Parameters.AddWithValue("@apellidoCliente", apellidoCliente)
+                command.Parameters.AddWithValue("@telefonoCliente", telefonoCliente)
+
+                Try
+                    connection.Open()
+                    Dim reader As MySqlDataReader = command.ExecuteReader()
+
+                    ' Verificar si se encontraron registros
+                    If reader.HasRows Then
+                        ' Mostrar los datos de la mascota en los TextBox correspondientes
+                        While reader.Read()
+                            txtNomMasc.Text = reader("nomMasc").ToString()
+                            ComboBoxEspecie.SelectedValue = reader("idEspecie").ToString()
+                            ComboBoxRaza.SelectedValue = reader("idRaza").ToString()
+                            ComboBoxEspecie.SelectedValue = reader("idEspecie").ToString()
+                            ComboBoxGenero.SelectedValue = reader("idGenero").ToString()
+                            ComboBoxTalla.SelectedValue = reader("idTalla").ToString()
+                            ComboBoxEstadoReproductivo.SelectedValue = reader("idEstadoReproductivo").ToString()
+                            txtPeso.Text = reader("peso").ToString()
+                            txtEdad.Text = reader("edad").ToString()
+                            ' Puedes agregar más campos según la estructura de tu tabla
+                        End While
+                    Else
+                        MessageBox.Show("No se encontró ninguna mascota para este cliente.")
+                    End If
+
+                Catch ex As Exception
+                    MessageBox.Show("Error al buscar los datos: " & ex.Message)
+                End Try
+            End Using
+        End Using
+    End Sub
+
 
     ' Limpiar campos
     Private Sub LimpiarCampos()
         txtNomCliente.Clear()
+        txtApCliente.Clear()
         txtCelular.Clear()
         txtNomMasc.Clear()
         txtPeso.Clear()
@@ -187,6 +260,7 @@ Public Class Registro_de_Mascota
         ComboBoxTalla.SelectedIndex = -1
         ComboBoxEstadoReproductivo.SelectedIndex = -1
         ComboBoxServicios.SelectedIndex = -1
+        ComboBoxEdadUnidad.SelectedIndex = 0
     End Sub
 
     ' Redirigir al formulario de vacunación
@@ -264,23 +338,90 @@ Public Class Registro_de_Mascota
     End Sub
 
     ' Mostrar datos de la mascota en el DataGridView
-    Private Sub MostrarDatosMascota()
-        Dim query As String = "SELECT idMascota, nomCliente, celular, nomMasc, idEspecie, idRaza, peso, idTalla, edad, caracteristicas, idGenero, idEstadoReproductivo FROM Mascota"
+    Private Sub CargarDatosMascota()
+        ' Consulta SQL para obtener todos los registros de la tabla Mascota
+        Dim query As String = "SELECT * FROM Mascota"
 
-        Using conn As New MySqlConnection("Server=localhost;Database=veterinaria;User Id=root;Password=root;")
-            Using cmd As New MySqlCommand(query, conn)
-                Dim dt As New DataTable() ' Usamos un DataTable para almacenar los datos
-                Dim da As New MySqlDataAdapter(cmd)
-
+        ' Crear conexión y adaptador de datos
+        Using connection As New MySqlConnection("Server=localhost;Database=veterinaria;User Id=root;Password=root;")
+            Using command As New MySqlCommand(query, connection)
                 Try
-                    conn.Open()
-                    da.Fill(dt) ' Llenar el DataTable con los resultados de la consulta
-                    DataGridMascota.DataSource = dt ' Vincular el DataTable al DataGridView
+                    connection.Open()
+
+                    ' Llenar el DataTable con los resultados de la consulta
+                    Dim adapter As New MySqlDataAdapter(command)
+                    Dim table As New DataTable()
+                    adapter.Fill(table)
+
+                    ' Llenar el DataGridView con los datos obtenidos
+                    DataGridViewMascotas.DataSource = table
+                    DataGridViewMascotas.Columns("idMascota").Visible = False
+
                 Catch ex As Exception
-                    MessageBox.Show("Error al mostrar los datos: " & ex.Message)
+                    MessageBox.Show("Error al cargar los datos: " & ex.Message)
                 End Try
             End Using
         End Using
     End Sub
+
+
+    Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
+        ' Verificar si hay alguna fila seleccionada en el DataGridView
+        If DataGridViewMascotas.SelectedRows.Count = 0 Then
+            MessageBox.Show("Por favor, selecciona una fila del DataGridView para eliminar.")
+            Exit Sub
+        End If
+
+        ' Obtener los valores de la fila seleccionada (nombre de la mascota y teléfono)
+        Dim nombreMascota As String = DataGridViewMascotas.SelectedRows(0).Cells("nomMasc").Value.ToString()
+        Dim telefonoCliente As String = DataGridViewMascotas.SelectedRows(0).Cells("celular").Value.ToString()
+
+        ' Preguntar confirmación antes de eliminar
+        Dim confirmacion As DialogResult = MessageBox.Show("¿Estás seguro de que deseas eliminar el registro seleccionado?", "Confirmar Eliminación", MessageBoxButtons.YesNo)
+        If confirmacion = DialogResult.No Then
+            Exit Sub
+        End If
+
+        ' Consulta SQL para eliminar por nombre de la mascota o por teléfono del cliente
+        Dim query As String = "DELETE FROM Mascota WHERE nomMasc = @nombreMascota AND celular = @telefonoCliente"
+
+        ' Crear conexión y comando para la consulta
+        Using connection As New MySqlConnection("Server=localhost;Database=veterinaria;User Id=root;Password=root;")
+            Using command As New MySqlCommand(query, connection)
+                command.Parameters.AddWithValue("@nombreMascota", nombreMascota)
+                command.Parameters.AddWithValue("@telefonoCliente", telefonoCliente)
+
+                Try
+                    connection.Open()
+                    Dim result As Integer = command.ExecuteNonQuery()
+
+                    ' Verificar si se eliminó algún registro
+                    If result > 0 Then
+                        MessageBox.Show("Registro eliminado correctamente.")
+                        ' Actualizar el DataGridView después de eliminar
+                        CargarDatosMascota()
+
+                        ' Limpiar los campos después de eliminar
+                        txtNomCliente.Clear()
+                        txtCelular.Clear()
+                        txtNomMasc.Clear()
+                        ComboBoxEspecie.SelectedIndex = -1
+                        ComboBoxRaza.SelectedIndex = -1
+                        ComboBoxGenero.SelectedIndex = -1
+                        ComboBoxTalla.SelectedIndex = -1
+                        ComboBoxEstadoReproductivo.SelectedIndex = -1
+                        txtPeso.Clear()
+                        txtEdad.Clear()
+                    Else
+                        MessageBox.Show("No se encontró ninguna mascota para eliminar.")
+                    End If
+
+                Catch ex As Exception
+                    MessageBox.Show("Error al eliminar los datos: " & ex.Message)
+                End Try
+            End Using
+        End Using
+    End Sub
+
 
 End Class

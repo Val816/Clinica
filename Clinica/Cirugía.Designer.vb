@@ -22,7 +22,6 @@ Partial Class Cirugía
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-		Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Cirugía))
 		Me.Panel1 = New System.Windows.Forms.Panel()
 		Me.btnMenuPrincipal = New System.Windows.Forms.Button()
 		Me.Label1 = New System.Windows.Forms.Label()
@@ -32,15 +31,16 @@ Partial Class Cirugía
 		Me.Label10 = New System.Windows.Forms.Label()
 		Me.TextBoxObservaciones = New System.Windows.Forms.TextBox()
 		Me.Label6 = New System.Windows.Forms.Label()
-		Me.ComboBoxServicio = New System.Windows.Forms.ComboBox()
+		Me.ComboBoxServicios = New System.Windows.Forms.ComboBox()
 		Me.Label12 = New System.Windows.Forms.Label()
-		Me.TextBoxCostoTotal = New System.Windows.Forms.TextBox()
-		Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+		Me.TextBoxCosto = New System.Windows.Forms.TextBox()
 		Me.DateTimePickerFecha = New System.Windows.Forms.DateTimePicker()
 		Me.ComboBoxCirugia = New System.Windows.Forms.ComboBox()
+		Me.ComboBoxMascota = New System.Windows.Forms.ComboBox()
+		Me.DataGridViewCirugias = New System.Windows.Forms.DataGridView()
 		Me.Panel1.SuspendLayout()
 		Me.Panel2.SuspendLayout()
-		CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+		CType(Me.DataGridViewCirugias, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.SuspendLayout()
 		'
 		'Panel1
@@ -148,24 +148,24 @@ Partial Class Cirugía
 		Me.Label6.Text = "Fecha:"
 		Me.Label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
 		'
-		'ComboBoxServicio
+		'ComboBoxServicios
 		'
-		Me.ComboBoxServicio.BackColor = System.Drawing.SystemColors.InfoText
-		Me.ComboBoxServicio.ForeColor = System.Drawing.Color.White
-		Me.ComboBoxServicio.FormattingEnabled = True
-		Me.ComboBoxServicio.Items.AddRange(New Object() {"Consulta Médica", "Desparacitación", "Vacunación", "Eutanasia", "Cirugía", "Estética", "Pensión", "Castración", "Proaxis Dental"})
-		Me.ComboBoxServicio.Location = New System.Drawing.Point(220, 111)
-		Me.ComboBoxServicio.Margin = New System.Windows.Forms.Padding(2)
-		Me.ComboBoxServicio.Name = "ComboBoxServicio"
-		Me.ComboBoxServicio.Size = New System.Drawing.Size(147, 21)
-		Me.ComboBoxServicio.TabIndex = 42
-		Me.ComboBoxServicio.Text = "Agregar Servicio"
+		Me.ComboBoxServicios.BackColor = System.Drawing.SystemColors.InfoText
+		Me.ComboBoxServicios.ForeColor = System.Drawing.Color.White
+		Me.ComboBoxServicios.FormattingEnabled = True
+		Me.ComboBoxServicios.Items.AddRange(New Object() {"Consulta Médica", "Desparacitación", "Vacunación", "Eutanasia", "Cirugía", "Estética", "Pensión", "Castración", "Proaxis Dental"})
+		Me.ComboBoxServicios.Location = New System.Drawing.Point(220, 338)
+		Me.ComboBoxServicios.Margin = New System.Windows.Forms.Padding(2)
+		Me.ComboBoxServicios.Name = "ComboBoxServicios"
+		Me.ComboBoxServicios.Size = New System.Drawing.Size(147, 21)
+		Me.ComboBoxServicios.TabIndex = 42
+		Me.ComboBoxServicios.Text = "Agregar Servicio"
 		'
 		'Label12
 		'
 		Me.Label12.BackColor = System.Drawing.Color.Silver
 		Me.Label12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-		Me.Label12.Location = New System.Drawing.Point(73, 363)
+		Me.Label12.Location = New System.Drawing.Point(73, 374)
 		Me.Label12.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
 		Me.Label12.Name = "Label12"
 		Me.Label12.Size = New System.Drawing.Size(62, 24)
@@ -173,28 +173,17 @@ Partial Class Cirugía
 		Me.Label12.Text = "Costo:"
 		Me.Label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
 		'
-		'TextBoxCostoTotal
+		'TextBoxCosto
 		'
-		Me.TextBoxCostoTotal.BackColor = System.Drawing.Color.Silver
-		Me.TextBoxCostoTotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-		Me.TextBoxCostoTotal.Location = New System.Drawing.Point(157, 363)
-		Me.TextBoxCostoTotal.Margin = New System.Windows.Forms.Padding(2)
-		Me.TextBoxCostoTotal.Multiline = True
-		Me.TextBoxCostoTotal.Name = "TextBoxCostoTotal"
-		Me.TextBoxCostoTotal.Size = New System.Drawing.Size(73, 24)
-		Me.TextBoxCostoTotal.TabIndex = 44
-		Me.TextBoxCostoTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-		'
-		'PictureBox1
-		'
-		Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-		Me.PictureBox1.Location = New System.Drawing.Point(389, 111)
-		Me.PictureBox1.Margin = New System.Windows.Forms.Padding(2)
-		Me.PictureBox1.Name = "PictureBox1"
-		Me.PictureBox1.Size = New System.Drawing.Size(245, 287)
-		Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-		Me.PictureBox1.TabIndex = 45
-		Me.PictureBox1.TabStop = False
+		Me.TextBoxCosto.BackColor = System.Drawing.Color.Silver
+		Me.TextBoxCosto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+		Me.TextBoxCosto.Location = New System.Drawing.Point(157, 374)
+		Me.TextBoxCosto.Margin = New System.Windows.Forms.Padding(2)
+		Me.TextBoxCosto.Multiline = True
+		Me.TextBoxCosto.Name = "TextBoxCosto"
+		Me.TextBoxCosto.Size = New System.Drawing.Size(73, 24)
+		Me.TextBoxCosto.TabIndex = 44
+		Me.TextBoxCosto.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
 		'
 		'DateTimePickerFecha
 		'
@@ -211,17 +200,34 @@ Partial Class Cirugía
 		Me.ComboBoxCirugia.Size = New System.Drawing.Size(200, 21)
 		Me.ComboBoxCirugia.TabIndex = 47
 		'
+		'ComboBoxMascota
+		'
+		Me.ComboBoxMascota.FormattingEnabled = True
+		Me.ComboBoxMascota.Location = New System.Drawing.Point(157, 112)
+		Me.ComboBoxMascota.Name = "ComboBoxMascota"
+		Me.ComboBoxMascota.Size = New System.Drawing.Size(121, 21)
+		Me.ComboBoxMascota.TabIndex = 48
+		'
+		'DataGridViewCirugias
+		'
+		Me.DataGridViewCirugias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+		Me.DataGridViewCirugias.Location = New System.Drawing.Point(396, 112)
+		Me.DataGridViewCirugias.Name = "DataGridViewCirugias"
+		Me.DataGridViewCirugias.Size = New System.Drawing.Size(240, 286)
+		Me.DataGridViewCirugias.TabIndex = 49
+		'
 		'Cirugía
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
 		Me.BackColor = System.Drawing.SystemColors.ButtonHighlight
 		Me.ClientSize = New System.Drawing.Size(648, 477)
+		Me.Controls.Add(Me.DataGridViewCirugias)
+		Me.Controls.Add(Me.ComboBoxMascota)
 		Me.Controls.Add(Me.ComboBoxCirugia)
 		Me.Controls.Add(Me.DateTimePickerFecha)
-		Me.Controls.Add(Me.ComboBoxServicio)
-		Me.Controls.Add(Me.PictureBox1)
-		Me.Controls.Add(Me.TextBoxCostoTotal)
+		Me.Controls.Add(Me.ComboBoxServicios)
+		Me.Controls.Add(Me.TextBoxCosto)
 		Me.Controls.Add(Me.Label12)
 		Me.Controls.Add(Me.Label6)
 		Me.Controls.Add(Me.TextBoxObservaciones)
@@ -235,7 +241,7 @@ Partial Class Cirugía
 		Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
 		Me.Panel1.ResumeLayout(False)
 		Me.Panel2.ResumeLayout(False)
-		CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+		CType(Me.DataGridViewCirugias, System.ComponentModel.ISupportInitialize).EndInit()
 		Me.ResumeLayout(False)
 		Me.PerformLayout()
 
@@ -250,12 +256,11 @@ Partial Class Cirugía
 	Friend WithEvents Label10 As System.Windows.Forms.Label
 	Friend WithEvents TextBoxObservaciones As System.Windows.Forms.TextBox
 	Friend WithEvents Label6 As System.Windows.Forms.Label
-	Friend WithEvents ComboBoxServicio As System.Windows.Forms.ComboBox
+	Friend WithEvents ComboBoxServicios As System.Windows.Forms.ComboBox
 	Friend WithEvents Label12 As System.Windows.Forms.Label
-	Friend WithEvents TextBoxCostoTotal As System.Windows.Forms.TextBox
-	Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
+	Friend WithEvents TextBoxCosto As System.Windows.Forms.TextBox
 	Friend WithEvents DateTimePickerFecha As System.Windows.Forms.DateTimePicker
 	Friend WithEvents ComboBoxCirugia As System.Windows.Forms.ComboBox
-
-
+	Friend WithEvents ComboBoxMascota As ComboBox
+	Friend WithEvents DataGridViewCirugias As DataGridView
 End Class
