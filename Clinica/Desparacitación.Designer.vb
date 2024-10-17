@@ -33,6 +33,8 @@ Partial Class Desparacitación
 		Me.TextBoxObservaciones = New System.Windows.Forms.TextBox()
 		Me.ComboBoxServicios = New System.Windows.Forms.ComboBox()
 		Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+		Me.TextBox1 = New System.Windows.Forms.TextBox()
+		Me.Label2 = New System.Windows.Forms.Label()
 		Me.Panel1.SuspendLayout()
 		Me.Panel2.SuspendLayout()
 		CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -40,7 +42,7 @@ Partial Class Desparacitación
 		'
 		'Panel1
 		'
-		Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(197, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(165, Byte), Integer))
+		Me.Panel1.BackColor = System.Drawing.Color.LightSlateGray
 		Me.Panel1.Controls.Add(Me.btnMenuPrincipal)
 		Me.Panel1.Controls.Add(Me.Label1)
 		Me.Panel1.Location = New System.Drawing.Point(1, 0)
@@ -51,9 +53,9 @@ Partial Class Desparacitación
 		'
 		'btnMenuPrincipal
 		'
-		Me.btnMenuPrincipal.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(128, Byte), Integer))
+		Me.btnMenuPrincipal.BackColor = System.Drawing.Color.LightSteelBlue
 		Me.btnMenuPrincipal.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-		Me.btnMenuPrincipal.Location = New System.Drawing.Point(422, 11)
+		Me.btnMenuPrincipal.Location = New System.Drawing.Point(441, 34)
 		Me.btnMenuPrincipal.Margin = New System.Windows.Forms.Padding(2)
 		Me.btnMenuPrincipal.Name = "btnMenuPrincipal"
 		Me.btnMenuPrincipal.Size = New System.Drawing.Size(93, 25)
@@ -64,8 +66,9 @@ Partial Class Desparacitación
 		'Label1
 		'
 		Me.Label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-		Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 25.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.Label1.Location = New System.Drawing.Point(146, 49)
+		Me.Label1.Font = New System.Drawing.Font("MV Boli", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.Label1.ForeColor = System.Drawing.SystemColors.ControlLightLight
+		Me.Label1.Location = New System.Drawing.Point(143, 43)
 		Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
 		Me.Label1.Name = "Label1"
 		Me.Label1.Size = New System.Drawing.Size(337, 39)
@@ -74,7 +77,7 @@ Partial Class Desparacitación
 		'
 		'Panel2
 		'
-		Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(197, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(165, Byte), Integer))
+		Me.Panel2.BackColor = System.Drawing.Color.LightSlateGray
 		Me.Panel2.Controls.Add(Me.btnGuardar)
 		Me.Panel2.Location = New System.Drawing.Point(-36, 350)
 		Me.Panel2.Margin = New System.Windows.Forms.Padding(2)
@@ -84,7 +87,7 @@ Partial Class Desparacitación
 		'
 		'btnGuardar
 		'
-		Me.btnGuardar.BackColor = System.Drawing.Color.FromArgb(CType(CType(174, Byte), Integer), CType(CType(214, Byte), Integer), CType(CType(241, Byte), Integer))
+		Me.btnGuardar.BackColor = System.Drawing.Color.LightSteelBlue
 		Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
 		Me.btnGuardar.Location = New System.Drawing.Point(459, 20)
 		Me.btnGuardar.Margin = New System.Windows.Forms.Padding(2)
@@ -114,7 +117,7 @@ Partial Class Desparacitación
 		Me.Label10.Location = New System.Drawing.Point(229, 222)
 		Me.Label10.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
 		Me.Label10.Name = "Label10"
-		Me.Label10.Size = New System.Drawing.Size(101, 39)
+		Me.Label10.Size = New System.Drawing.Size(101, 29)
 		Me.Label10.TabIndex = 27
 		Me.Label10.Text = "Observaciones:"
 		Me.Label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -155,12 +158,30 @@ Partial Class Desparacitación
 		Me.PictureBox1.TabIndex = 35
 		Me.PictureBox1.TabStop = False
 		'
+		'TextBox1
+		'
+		Me.TextBox1.Location = New System.Drawing.Point(416, 304)
+		Me.TextBox1.Name = "TextBox1"
+		Me.TextBox1.Size = New System.Drawing.Size(100, 20)
+		Me.TextBox1.TabIndex = 36
+		'
+		'Label2
+		'
+		Me.Label2.AutoSize = True
+		Me.Label2.Location = New System.Drawing.Point(356, 307)
+		Me.Label2.Name = "Label2"
+		Me.Label2.Size = New System.Drawing.Size(34, 13)
+		Me.Label2.TabIndex = 37
+		Me.Label2.Text = "Costo"
+		'
 		'Desparacitación
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
 		Me.BackColor = System.Drawing.SystemColors.ButtonHighlight
 		Me.ClientSize = New System.Drawing.Size(556, 426)
+		Me.Controls.Add(Me.Label2)
+		Me.Controls.Add(Me.TextBox1)
 		Me.Controls.Add(Me.PictureBox1)
 		Me.Controls.Add(Me.ComboBoxServicios)
 		Me.Controls.Add(Me.TextBoxObservaciones)
@@ -190,4 +211,6 @@ Partial Class Desparacitación
 	Friend WithEvents TextBoxObservaciones As TextBox
 	Friend WithEvents ComboBoxServicios As ComboBox
 	Friend WithEvents PictureBox1 As PictureBox
+	Friend WithEvents TextBox1 As TextBox
+	Friend WithEvents Label2 As Label
 End Class
