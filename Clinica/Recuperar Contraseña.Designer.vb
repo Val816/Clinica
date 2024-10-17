@@ -41,7 +41,7 @@ Partial Class Recuperar_Contraseña
 		'
 		Me.Label1.AutoSize = True
 		Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.Label1.ForeColor = System.Drawing.Color.Lime
+		Me.Label1.ForeColor = System.Drawing.Color.MidnightBlue
 		Me.Label1.Location = New System.Drawing.Point(260, 18)
 		Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
 		Me.Label1.Name = "Label1"
@@ -116,8 +116,8 @@ Partial Class Recuperar_Contraseña
 		'
 		'btnCambiarContraseña
 		'
-		Me.btnCambiarContraseña.BackColor = System.Drawing.SystemColors.ActiveCaptionText
-		Me.btnCambiarContraseña.ForeColor = System.Drawing.SystemColors.ControlLightLight
+		Me.btnCambiarContraseña.BackColor = System.Drawing.SystemColors.ActiveCaption
+		Me.btnCambiarContraseña.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
 		Me.btnCambiarContraseña.Location = New System.Drawing.Point(218, 433)
 		Me.btnCambiarContraseña.Name = "btnCambiarContraseña"
 		Me.btnCambiarContraseña.Size = New System.Drawing.Size(75, 23)

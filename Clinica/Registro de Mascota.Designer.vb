@@ -83,7 +83,7 @@ Partial Class Registro_de_Mascota
 		'
 		'btnMenuPrincipal
 		'
-		Me.btnMenuPrincipal.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(128, Byte), Integer))
+		Me.btnMenuPrincipal.BackColor = System.Drawing.Color.LightSteelBlue
 		Me.btnMenuPrincipal.FlatStyle = System.Windows.Forms.FlatStyle.Flat
 		Me.btnMenuPrincipal.Location = New System.Drawing.Point(856, 29)
 		Me.btnMenuPrincipal.Margin = New System.Windows.Forms.Padding(2)

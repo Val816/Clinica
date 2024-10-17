@@ -214,4 +214,6 @@ Public Class Consulta_Médica
         ' Cerrar el formulario actual
         Me.Close()
     End Sub
+
+
 End Class
