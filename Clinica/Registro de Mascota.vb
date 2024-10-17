@@ -245,7 +245,6 @@ Public Class Registro_de_Mascota
     End Sub
 
 
-    ' Limpiar campos
     Private Sub LimpiarCampos()
         txtNomCliente.Clear()
         txtApCliente.Clear()
@@ -263,9 +262,9 @@ Public Class Registro_de_Mascota
         ComboBoxEdadUnidad.SelectedIndex = 0
     End Sub
 
-    ' Redirigir al formulario de vacunación
+
     Private Sub ComboBoxServicios_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBoxServicios.SelectedIndexChanged
-        ' Obtener el servicio seleccionado
+
         Dim servicioSeleccionado As Object = ComboBoxServicios.SelectedItem
         If servicioSeleccionado Is Nothing Then
             MessageBox.Show("Por favor, selecciona un servicio.")
@@ -274,7 +273,6 @@ Public Class Registro_de_Mascota
 
         Dim idServicio As Integer = servicioSeleccionado.Value
 
-        ' Redirigir según el servicio seleccionado
         Select Case idServicio
             Case 1 ' 
                 Dim formCirugia As New Cirugía()

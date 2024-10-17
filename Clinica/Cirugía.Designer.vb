@@ -62,7 +62,7 @@ Partial Class Cirugía
 		Me.btnMenuPrincipal.BackColor = System.Drawing.Color.LightSteelBlue
 		Me.btnMenuPrincipal.FlatStyle = System.Windows.Forms.FlatStyle.Flat
 		Me.btnMenuPrincipal.ForeColor = System.Drawing.SystemColors.ControlText
-		Me.btnMenuPrincipal.Location = New System.Drawing.Point(540, 29)
+		Me.btnMenuPrincipal.Location = New System.Drawing.Point(604, 29)
 		Me.btnMenuPrincipal.Margin = New System.Windows.Forms.Padding(2)
 		Me.btnMenuPrincipal.Name = "btnMenuPrincipal"
 		Me.btnMenuPrincipal.Size = New System.Drawing.Size(93, 25)
@@ -75,10 +75,10 @@ Partial Class Cirugía
 		Me.Label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
 		Me.Label1.Font = New System.Drawing.Font("MV Boli", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
 		Me.Label1.ForeColor = System.Drawing.SystemColors.ControlLightLight
-		Me.Label1.Location = New System.Drawing.Point(263, 29)
+		Me.Label1.Location = New System.Drawing.Point(294, 29)
 		Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
 		Me.Label1.Name = "Label1"
-		Me.Label1.Size = New System.Drawing.Size(337, 39)
+		Me.Label1.Size = New System.Drawing.Size(271, 39)
 		Me.Label1.TabIndex = 0
 		Me.Label1.Text = "Cirugía"
 		'
@@ -108,7 +108,7 @@ Partial Class Cirugía
 		Me.DataGridViewCirugias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
 		Me.DataGridViewCirugias.Location = New System.Drawing.Point(371, 100)
 		Me.DataGridViewCirugias.Name = "DataGridViewCirugias"
-		Me.DataGridViewCirugias.Size = New System.Drawing.Size(265, 306)
+		Me.DataGridViewCirugias.Size = New System.Drawing.Size(328, 306)
 		Me.DataGridViewCirugias.TabIndex = 49
 		'
 		'Panel3
@@ -269,7 +269,7 @@ Partial Class Cirugía
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
 		Me.BackColor = System.Drawing.SystemColors.ButtonHighlight
-		Me.ClientSize = New System.Drawing.Size(648, 477)
+		Me.ClientSize = New System.Drawing.Size(711, 477)
 		Me.Controls.Add(Me.Panel3)
 		Me.Controls.Add(Me.DataGridViewCirugias)
 		Me.Controls.Add(Me.Panel2)
