@@ -94,10 +94,10 @@ Partial Class Consulta_Médica
 		'
 		Me.Panel2.BackColor = System.Drawing.Color.LightSlateGray
 		Me.Panel2.Controls.Add(Me.btnGuardar)
-		Me.Panel2.Location = New System.Drawing.Point(1, 403)
+		Me.Panel2.Location = New System.Drawing.Point(1, 446)
 		Me.Panel2.Margin = New System.Windows.Forms.Padding(2)
 		Me.Panel2.Name = "Panel2"
-		Me.Panel2.Size = New System.Drawing.Size(839, 87)
+		Me.Panel2.Size = New System.Drawing.Size(839, 81)
 		Me.Panel2.TabIndex = 5
 		'
 		'btnGuardar
@@ -200,7 +200,7 @@ Partial Class Consulta_Médica
 		'
 		Me.Label6.BackColor = System.Drawing.Color.Silver
 		Me.Label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-		Me.Label6.Location = New System.Drawing.Point(286, 134)
+		Me.Label6.Location = New System.Drawing.Point(23, 397)
 		Me.Label6.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
 		Me.Label6.Name = "Label6"
 		Me.Label6.Size = New System.Drawing.Size(83, 24)
@@ -236,7 +236,7 @@ Partial Class Consulta_Médica
 		'
 		Me.TextBoxEnfermedad.BackColor = System.Drawing.Color.Silver
 		Me.TextBoxEnfermedad.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-		Me.TextBoxEnfermedad.Location = New System.Drawing.Point(376, 134)
+		Me.TextBoxEnfermedad.Location = New System.Drawing.Point(127, 397)
 		Me.TextBoxEnfermedad.Margin = New System.Windows.Forms.Padding(2)
 		Me.TextBoxEnfermedad.Multiline = True
 		Me.TextBoxEnfermedad.Name = "TextBoxEnfermedad"
@@ -271,7 +271,7 @@ Partial Class Consulta_Médica
 		'Label9
 		'
 		Me.Label9.AutoSize = True
-		Me.Label9.Location = New System.Drawing.Point(354, 300)
+		Me.Label9.Location = New System.Drawing.Point(354, 348)
 		Me.Label9.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
 		Me.Label9.Name = "Label9"
 		Me.Label9.Size = New System.Drawing.Size(152, 13)
@@ -284,7 +284,7 @@ Partial Class Consulta_Médica
 		Me.ComboBoxDesparacitacion.ForeColor = System.Drawing.Color.Black
 		Me.ComboBoxDesparacitacion.FormattingEnabled = True
 		Me.ComboBoxDesparacitacion.Items.AddRange(New Object() {"Si", "No"})
-		Me.ComboBoxDesparacitacion.Location = New System.Drawing.Point(359, 320)
+		Me.ComboBoxDesparacitacion.Location = New System.Drawing.Point(359, 366)
 		Me.ComboBoxDesparacitacion.Margin = New System.Windows.Forms.Padding(2)
 		Me.ComboBoxDesparacitacion.Name = "ComboBoxDesparacitacion"
 		Me.ComboBoxDesparacitacion.Size = New System.Drawing.Size(147, 21)
@@ -295,7 +295,7 @@ Partial Class Consulta_Médica
 		'
 		Me.Label10.BackColor = System.Drawing.Color.Silver
 		Me.Label10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-		Me.Label10.Location = New System.Drawing.Point(286, 175)
+		Me.Label10.Location = New System.Drawing.Point(286, 134)
 		Me.Label10.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
 		Me.Label10.Name = "Label10"
 		Me.Label10.Size = New System.Drawing.Size(83, 24)
@@ -307,11 +307,11 @@ Partial Class Consulta_Médica
 		'
 		Me.TextBoxObservaciones.BackColor = System.Drawing.Color.Silver
 		Me.TextBoxObservaciones.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-		Me.TextBoxObservaciones.Location = New System.Drawing.Point(376, 175)
+		Me.TextBoxObservaciones.Location = New System.Drawing.Point(376, 134)
 		Me.TextBoxObservaciones.Margin = New System.Windows.Forms.Padding(2)
 		Me.TextBoxObservaciones.Multiline = True
 		Me.TextBoxObservaciones.Name = "TextBoxObservaciones"
-		Me.TextBoxObservaciones.Size = New System.Drawing.Size(130, 24)
+		Me.TextBoxObservaciones.Size = New System.Drawing.Size(130, 76)
 		Me.TextBoxObservaciones.TabIndex = 27
 		Me.TextBoxObservaciones.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
 		'
@@ -335,7 +335,7 @@ Partial Class Consulta_Médica
 		Me.TextBoxReceta.Margin = New System.Windows.Forms.Padding(2)
 		Me.TextBoxReceta.Multiline = True
 		Me.TextBoxReceta.Name = "TextBoxReceta"
-		Me.TextBoxReceta.Size = New System.Drawing.Size(130, 24)
+		Me.TextBoxReceta.Size = New System.Drawing.Size(130, 70)
 		Me.TextBoxReceta.TabIndex = 29
 		Me.TextBoxReceta.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
 		'
@@ -345,7 +345,7 @@ Partial Class Consulta_Médica
 		Me.ComboBoxVacunas.ForeColor = System.Drawing.Color.Black
 		Me.ComboBoxVacunas.FormattingEnabled = True
 		Me.ComboBoxVacunas.Items.AddRange(New Object() {"Puppy", "Quintuple", "Sextuple", "Rabia", "Triple felina", "Bordetella", "Giarda", "Ninguna"})
-		Me.ComboBoxVacunas.Location = New System.Drawing.Point(359, 269)
+		Me.ComboBoxVacunas.Location = New System.Drawing.Point(359, 315)
 		Me.ComboBoxVacunas.Margin = New System.Windows.Forms.Padding(2)
 		Me.ComboBoxVacunas.Name = "ComboBoxVacunas"
 		Me.ComboBoxVacunas.Size = New System.Drawing.Size(147, 21)
@@ -358,7 +358,7 @@ Partial Class Consulta_Médica
 		Me.ComboBoxServicios.ForeColor = System.Drawing.Color.Black
 		Me.ComboBoxServicios.FormattingEnabled = True
 		Me.ComboBoxServicios.Items.AddRange(New Object() {"Consulta Médica", "Desparacitación", "Vacunación", "Eutanasia", "Cirugía", "Estética", "Pensión", "Castración", "Proaxis Dental"})
-		Me.ComboBoxServicios.Location = New System.Drawing.Point(357, 366)
+		Me.ComboBoxServicios.Location = New System.Drawing.Point(359, 410)
 		Me.ComboBoxServicios.Margin = New System.Windows.Forms.Padding(2)
 		Me.ComboBoxServicios.Name = "ComboBoxServicios"
 		Me.ComboBoxServicios.Size = New System.Drawing.Size(147, 21)
@@ -376,7 +376,7 @@ Partial Class Consulta_Médica
 		'Label12
 		'
 		Me.Label12.AutoSize = True
-		Me.Label12.Location = New System.Drawing.Point(388, 249)
+		Me.Label12.Location = New System.Drawing.Point(388, 300)
 		Me.Label12.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
 		Me.Label12.Name = "Label12"
 		Me.Label12.Size = New System.Drawing.Size(118, 13)
@@ -386,7 +386,7 @@ Partial Class Consulta_Médica
 		'Label13
 		'
 		Me.Label13.AutoSize = True
-		Me.Label13.Location = New System.Drawing.Point(411, 351)
+		Me.Label13.Location = New System.Drawing.Point(411, 395)
 		Me.Label13.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
 		Me.Label13.Name = "Label13"
 		Me.Label13.Size = New System.Drawing.Size(95, 13)
@@ -399,7 +399,7 @@ Partial Class Consulta_Médica
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
 		Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
 		Me.BackColor = System.Drawing.SystemColors.ButtonHighlight
-		Me.ClientSize = New System.Drawing.Size(549, 477)
+		Me.ClientSize = New System.Drawing.Size(549, 526)
 		Me.Controls.Add(Me.Label13)
 		Me.Controls.Add(Me.Label12)
 		Me.Controls.Add(Me.ComboBoxEstadoReprod)

@@ -2,12 +2,11 @@
 
 Public Class Menu_Principal
     Private Sub Menu_Principal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        ' Llama al método para cargar los servicios en el ComboBox
+
         CargarServicios()
     End Sub
 
     Private Sub CargarServicios()
-        ' Configura tu cadena de conexión a la base de datos
         Dim connectionString As String = "Server=localhost;Database=veterinaria;User Id=root;Password=root;"
         Using connection As New MySqlConnection(connectionString)
             Dim command As New MySqlCommand("SELECT idServicio, nombre FROM Servicio", connection)
@@ -15,17 +14,14 @@ Public Class Menu_Principal
                 connection.Open()
                 Dim reader As MySqlDataReader = command.ExecuteReader()
 
-                ' Limpia el ComboBox antes de cargar los nuevos datos
                 cmbServicios.Items.Clear()
 
                 While reader.Read()
                     Dim idServicio As Integer = reader.GetInt32("idServicio")
                     Dim nombreServicio As String = reader.GetString("nombre")
-                    ' Agrega cada servicio al ComboBox como un objeto Servicio
                     cmbServicios.Items.Add(New Servicio(idServicio, nombreServicio))
                 End While
 
-                ' Configura la presentación del ComboBox
                 cmbServicios.DisplayMember = "Nombre"
                 cmbServicios.ValueMember = "ID"
             Catch ex As Exception
@@ -121,11 +117,10 @@ Public Class Menu_Principal
     End Sub
 
     Private Sub btnCerrarSistema_Click(sender As Object, e As EventArgs) Handles btnCerrarSistema.Click
-        Application.Exit() ' Cierra la aplicación completamente
+        Application.Exit()
     End Sub
 End Class
 
-' Clase para el servicio
 Public Class Servicio
     Public Property ID As Integer
     Public Property Nombre As String
@@ -135,7 +130,6 @@ Public Class Servicio
         Me.Nombre = nombre
     End Sub
 
-    ' Sobreescribir el método ToString para mostrar el nombre en el ComboBox
     Public Overrides Function ToString() As String
         Return Nombre
     End Function

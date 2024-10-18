@@ -2,8 +2,12 @@
 
 Public Class Consulta_Médica
     Private conexionString As String = "Server=localhost;Database=veterinaria;User Id=root;Password=root;"
+    Private idMascota As Integer
 
-    ' Cargar el formulario y llenar los ComboBox al cargar el formulario
+    Private Sub SeleccionarMascota(mascotaId As Integer)
+        idMascota = mascotaId
+    End Sub
+
     Private Sub ConsultaMedicaForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LlenarComboBoxDesparacitacion()
         LlenarComboBoxVacunas()
@@ -11,29 +15,25 @@ Public Class Consulta_Médica
         LlenarComboBoxServicios()
     End Sub
 
-    ' Llenar ComboBox de Desparacitaciones
     Private Sub LlenarComboBoxDesparacitacion()
-            ComboBoxDesparacitacion.Items.Clear()
+        ComboBoxDesparacitacion.Items.Clear()
 
-            Dim query As String = "SELECT idDesparacitacion, nombre FROM Desparacitacion"
-            Using conn As New MySqlConnection(conexionString)
-                Using cmd As New MySqlCommand(query, conn)
-                    conn.Open()
-                    Dim reader As MySqlDataReader = cmd.ExecuteReader()
-                    While reader.Read()
-                        ComboBoxDesparacitacion.Items.Add(New With {
-                        .Value = reader("idDesparacitacion"),
-                        .Text = reader("nombre")
-                    })
-                    End While
-                End Using
+        Dim query As String = "SELECT idDesparacitacion, nombre FROM Desparacitacion"
+        Using conn As New MySqlConnection(conexionString)
+            Using cmd As New MySqlCommand(query, conn)
+                conn.Open()
+                Dim reader As MySqlDataReader = cmd.ExecuteReader()
+                While reader.Read()
+                    ComboBoxDesparacitacion.Items.Add(New KeyValuePair(Of Integer, String)(reader("idDesparacitacion"), reader("nombre")))
+                End While
             End Using
+        End Using
 
-            ComboBoxDesparacitacion.DisplayMember = "Text"
-            ComboBoxDesparacitacion.ValueMember = "Value"
-        End Sub
+        ComboBoxDesparacitacion.DisplayMember = "Value"
+        ComboBoxDesparacitacion.ValueMember = "Key"
+    End Sub
 
-    ' Llenar ComboBox de Vacunas
+
     Private Sub LlenarComboBoxVacunas()
         ComboBoxVacunas.Items.Clear()
 
@@ -43,19 +43,15 @@ Public Class Consulta_Médica
                 conn.Open()
                 Dim reader As MySqlDataReader = cmd.ExecuteReader()
                 While reader.Read()
-                    ComboBoxVacunas.Items.Add(New With {
-                        .Value = reader("idVacuna"),
-                        .Text = reader("nombreVac")
-                    })
+                    ComboBoxVacunas.Items.Add(New KeyValuePair(Of Integer, String)(reader("idVacuna"), reader("nombreVac")))
                 End While
             End Using
         End Using
 
-        ComboBoxVacunas.DisplayMember = "Text"
-        ComboBoxVacunas.ValueMember = "Value"
+        ComboBoxVacunas.DisplayMember = "Value"
+        ComboBoxVacunas.ValueMember = "Key"
     End Sub
 
-    ' Llenar ComboBox de Estado Reproductivo
     Private Sub LlenarComboBoxEstadoReprod()
         ComboBoxEstadoReprod.Items.Clear()
 
@@ -74,42 +70,32 @@ Public Class Consulta_Médica
         ComboBoxEstadoReprod.ValueMember = "Key"
     End Sub
 
-
-
-
-
-    ' Llenar ComboBox de Servicios
     Private Sub LlenarComboBoxServicios()
-            ComboBoxServicios.Items.Clear()
-
-            Dim query As String = "SELECT DISTINCT idServicio, nombre FROM Servicio"
-            Using conn As New MySqlConnection(conexionString)
-                Using cmd As New MySqlCommand(query, conn)
-                    conn.Open()
-                    Dim reader As MySqlDataReader = cmd.ExecuteReader()
-                    While reader.Read()
-                        ComboBoxServicios.Items.Add(New With {
-                        .Value = reader("idServicio"),
-                        .Text = reader("nombre")
-                    })
-                    End While
-                End Using
+        ComboBoxServicios.Items.Clear()
+        Dim query As String = "SELECT DISTINCT idServicio, nombre FROM Servicio"
+        Using conn As New MySqlConnection("Server=localhost;Database=veterinaria;User Id=root;Password=root;")
+            Using cmd As New MySqlCommand(query, conn)
+                conn.Open()
+                Dim reader As MySqlDataReader = cmd.ExecuteReader()
+                While reader.Read()
+                    ComboBoxServicios.Items.Add(New With {.Value = reader("idServicio"), .Text = reader("nombre")})
+                End While
             End Using
+        End Using
+        ComboBoxServicios.DisplayMember = "Text"
+        ComboBoxServicios.ValueMember = "Value"
+    End Sub
 
-            ComboBoxServicios.DisplayMember = "Text"
-            ComboBoxServicios.ValueMember = "Value"
-        End Sub
 
-    ' Guardar los datos de la consulta médica junto con la fecha y hora actual
+
     Private Sub GuardarConsulta()
-        Dim query As String = "INSERT INTO Consulta (idDesparacitacion, idVacuna, idServicio, temperatura, pulso, TLLC, estadoRep, frecCardi, frecResp, enfermedad, receta, desparacitacion, costoCons, observaciones, fechaConsulta) " &
-                          "VALUES (@idDesparacitacion, @idVacuna, @idServicio, @temperatura, @pulso, @TLLC, @estadoRep, @frecCardi, @frecResp, @enfermedad, @receta, @desparacitacion, @costoCons, @observaciones, @fechaConsulta)"
-
+        Dim query As String = "INSERT INTO Consulta (idMascota, idDesparacitacion, idVacuna, temperatura, pulso, TLLC, estadoRep, frecCardi, frecResp, enfermedad, receta, desparacitacion, costoCons, observaciones, fechaConsulta) " &
+                      "VALUES (@idMascota, @idDesparacitacion, @idVacuna, @idServicio, @temperatura, @pulso, @TLLC, @estadoRep, @frecCardi, @frecResp, @enfermedad, @receta, @desparacitacion, @costoCons, @observaciones, @fechaConsulta)"
         Using conn As New MySqlConnection(conexionString)
             Using cmd As New MySqlCommand(query, conn)
-                cmd.Parameters.AddWithValue("@idDesparacitacion", ComboBoxDesparacitacion.SelectedValue)
-                cmd.Parameters.AddWithValue("@idVacuna", ComboBoxVacunas.SelectedValue)
-                cmd.Parameters.AddWithValue("@idServicio", ComboBoxServicios.SelectedValue)
+                cmd.Parameters.AddWithValue("@idMascota", idMascota)
+                cmd.Parameters.AddWithValue("@idDesparacitacion", If(ComboBoxDesparacitacion.SelectedItem IsNot Nothing, DirectCast(ComboBoxDesparacitacion.SelectedItem, KeyValuePair(Of Integer, String)).Key, DBNull.Value))
+                cmd.Parameters.AddWithValue("@idVacuna", If(ComboBoxVacunas.SelectedItem IsNot Nothing, DirectCast(ComboBoxVacunas.SelectedItem, KeyValuePair(Of Integer, String)).Key, DBNull.Value))
                 cmd.Parameters.AddWithValue("@temperatura", Convert.ToDouble(TextBoxTemperatura.Text))
                 cmd.Parameters.AddWithValue("@pulso", TextBoxPulso.Text)
                 cmd.Parameters.AddWithValue("@TLLC", TextBoxTLLC.Text)
@@ -131,19 +117,15 @@ Public Class Consulta_Médica
     End Sub
 
 
-
-
-    Private Sub BtnnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
+    Private Sub BtnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
         Try
             GuardarConsulta()
         Catch ex As Exception
             MessageBox.Show("Error al guardar la consulta: " & ex.Message)
         End Try
     End Sub
-
-    ' Redirigir al formulario adecuado cuando selecciona un servicio
     Private Sub ComboBoxServicios_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBoxServicios.SelectedIndexChanged
-        ' Obtener el servicio seleccionado
+
         Dim servicioSeleccionado As Object = ComboBoxServicios.SelectedItem
         If servicioSeleccionado Is Nothing Then
             MessageBox.Show("Por favor, selecciona un servicio.")
@@ -152,7 +134,6 @@ Public Class Consulta_Médica
 
         Dim idServicio As Integer = servicioSeleccionado.Value
 
-        ' Redirigir según el servicio seleccionado
         Select Case idServicio
             Case 1 ' 
                 Dim formCirugia As New Cirugía()
@@ -201,17 +182,21 @@ Public Class Consulta_Médica
                 '    Dim formProfilaxis As New Profilaxis_Dental()
                 '    formProfilaxis.Show()
                 '    Me.Hide()
+                'Case 12
+                '    Dim formRecibo As New Recibo()
+                '    formRecibo.Show()
+                '    Me.Hide()
+
             Case Else
                 MessageBox.Show("Servicio no reconocido. Por favor, selecciona un servicio válido.")
 
         End Select
     End Sub
     Private Sub btnMenuPrincipal_Click(sender As Object, e As EventArgs) Handles btnMenuPrincipal.Click
-        ' Abrir el formulario del Menú Principal
+
         Dim menuPrincipal As New Menu_Principal()
         menuPrincipal.Show()
 
-        ' Cerrar el formulario actual
         Me.Close()
     End Sub
 
