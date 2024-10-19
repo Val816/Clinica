@@ -131,6 +131,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Castración.Designer.vb">
+      <DependentUpon>Castración.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Castración.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Cirugía.Designer.vb">
       <DependentUpon>Cirugía.vb</DependentUpon>
     </Compile>
@@ -173,6 +179,12 @@
     <Compile Include="Eutanasia.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Hospitalización.Designer.vb">
+      <DependentUpon>Hospitalización.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Hospitalización.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Inicio de sesion.Designer.vb">
       <DependentUpon>Inicio de sesion.vb</DependentUpon>
     </Compile>
@@ -201,6 +213,18 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Pensión.Designer.vb">
+      <DependentUpon>Pensión.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Pensión.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Proaxis Dental.Designer.vb">
+      <DependentUpon>Proaxis Dental.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Proaxis Dental.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Recuperar Contraseña.Designer.vb">
       <DependentUpon>Recuperar Contraseña.vb</DependentUpon>
     </Compile>
@@ -227,6 +251,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Castración.resx">
+      <DependentUpon>Castración.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Cirugía.resx">
       <DependentUpon>Cirugía.vb</DependentUpon>
     </EmbeddedResource>
@@ -248,6 +275,9 @@
     <EmbeddedResource Include="Eutanasia.resx">
       <DependentUpon>Eutanasia.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Hospitalización.resx">
+      <DependentUpon>Hospitalización.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Inicio de sesion.resx">
       <DependentUpon>Inicio de sesion.vb</DependentUpon>
     </EmbeddedResource>
@@ -259,6 +289,12 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pensión.resx">
+      <DependentUpon>Pensión.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Proaxis Dental.resx">
+      <DependentUpon>Proaxis Dental.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Recuperar Contraseña.resx">
       <DependentUpon>Recuperar Contraseña.vb</DependentUpon>
