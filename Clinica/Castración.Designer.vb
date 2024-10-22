@@ -31,12 +31,14 @@ Partial Class Castración_y_Esterilización
 		Me.ComboBoxTalla = New System.Windows.Forms.ComboBox()
 		Me.Label2 = New System.Windows.Forms.Label()
 		Me.Label8 = New System.Windows.Forms.Label()
-		Me.ComboBoxServicio = New System.Windows.Forms.ComboBox()
+		Me.ComboBoxServicios = New System.Windows.Forms.ComboBox()
 		Me.Label12 = New System.Windows.Forms.Label()
-		Me.TextBox10 = New System.Windows.Forms.TextBox()
+		Me.TextBoxCosto = New System.Windows.Forms.TextBox()
 		Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-		Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
+		Me.DateTimePickerFecha = New System.Windows.Forms.DateTimePicker()
 		Me.TextBoxObservaciones = New System.Windows.Forms.TextBox()
+		Me.ComboBoxEspecie = New System.Windows.Forms.ComboBox()
+		Me.ComboBoxTipoProcedimiento = New System.Windows.Forms.ComboBox()
 		Me.Panel1.SuspendLayout()
 		Me.Panel2.SuspendLayout()
 		CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -57,7 +59,7 @@ Partial Class Castración_y_Esterilización
 		'
 		Me.btnMenuPrincipal.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(128, Byte), Integer))
 		Me.btnMenuPrincipal.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-		Me.btnMenuPrincipal.Location = New System.Drawing.Point(360, 43)
+		Me.btnMenuPrincipal.Location = New System.Drawing.Point(373, 21)
 		Me.btnMenuPrincipal.Margin = New System.Windows.Forms.Padding(2)
 		Me.btnMenuPrincipal.Name = "btnMenuPrincipal"
 		Me.btnMenuPrincipal.Size = New System.Drawing.Size(93, 25)
@@ -70,12 +72,12 @@ Partial Class Castración_y_Esterilización
 		Me.Label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
 		Me.Label1.Font = New System.Drawing.Font("MV Boli", 24.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
 		Me.Label1.ForeColor = System.Drawing.SystemColors.ControlLightLight
-		Me.Label1.Location = New System.Drawing.Point(142, 43)
+		Me.Label1.Location = New System.Drawing.Point(119, 11)
 		Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
 		Me.Label1.Name = "Label1"
-		Me.Label1.Size = New System.Drawing.Size(419, 39)
+		Me.Label1.Size = New System.Drawing.Size(237, 85)
 		Me.Label1.TabIndex = 0
-		Me.Label1.Text = "Castración"
+		Me.Label1.Text = "Castración y" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Esterilización"
 		'
 		'Panel2
 		'
@@ -105,10 +107,10 @@ Partial Class Castración_y_Esterilización
 		Me.ComboBoxTalla.ForeColor = System.Drawing.Color.White
 		Me.ComboBoxTalla.FormattingEnabled = True
 		Me.ComboBoxTalla.Items.AddRange(New Object() {"Pequeña", "Mediana", "Grande"})
-		Me.ComboBoxTalla.Location = New System.Drawing.Point(31, 134)
+		Me.ComboBoxTalla.Location = New System.Drawing.Point(31, 204)
 		Me.ComboBoxTalla.Margin = New System.Windows.Forms.Padding(2)
 		Me.ComboBoxTalla.Name = "ComboBoxTalla"
-		Me.ComboBoxTalla.Size = New System.Drawing.Size(147, 21)
+		Me.ComboBoxTalla.Size = New System.Drawing.Size(121, 21)
 		Me.ComboBoxTalla.TabIndex = 62
 		Me.ComboBoxTalla.Text = "Talla"
 		'
@@ -137,18 +139,18 @@ Partial Class Castración_y_Esterilización
 		Me.Label8.TabIndex = 69
 		Me.Label8.Text = "Observaciones:"
 		'
-		'ComboBoxServicio
+		'ComboBoxServicios
 		'
-		Me.ComboBoxServicio.BackColor = System.Drawing.SystemColors.InfoText
-		Me.ComboBoxServicio.ForeColor = System.Drawing.Color.White
-		Me.ComboBoxServicio.FormattingEnabled = True
-		Me.ComboBoxServicio.Items.AddRange(New Object() {"Consulta Médica", "Desparacitación", "Vacunación", "Eutanasia", "Cirugía", "Estética", "Pensión", "Castración", "Proaxis Dental"})
-		Me.ComboBoxServicio.Location = New System.Drawing.Point(304, 358)
-		Me.ComboBoxServicio.Margin = New System.Windows.Forms.Padding(2)
-		Me.ComboBoxServicio.Name = "ComboBoxServicio"
-		Me.ComboBoxServicio.Size = New System.Drawing.Size(147, 21)
-		Me.ComboBoxServicio.TabIndex = 71
-		Me.ComboBoxServicio.Text = "Agregar Servicio"
+		Me.ComboBoxServicios.BackColor = System.Drawing.SystemColors.InfoText
+		Me.ComboBoxServicios.ForeColor = System.Drawing.Color.White
+		Me.ComboBoxServicios.FormattingEnabled = True
+		Me.ComboBoxServicios.Items.AddRange(New Object() {"Consulta Médica", "Desparacitación", "Vacunación", "Eutanasia", "Cirugía", "Estética", "Pensión", "Castración", "Proaxis Dental"})
+		Me.ComboBoxServicios.Location = New System.Drawing.Point(304, 358)
+		Me.ComboBoxServicios.Margin = New System.Windows.Forms.Padding(2)
+		Me.ComboBoxServicios.Name = "ComboBoxServicios"
+		Me.ComboBoxServicios.Size = New System.Drawing.Size(147, 21)
+		Me.ComboBoxServicios.TabIndex = 71
+		Me.ComboBoxServicios.Text = "Agregar Servicio"
 		'
 		'Label12
 		'
@@ -162,17 +164,17 @@ Partial Class Castración_y_Esterilización
 		Me.Label12.Text = "Costo:"
 		Me.Label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
 		'
-		'TextBox10
+		'TextBoxCosto
 		'
-		Me.TextBox10.BackColor = System.Drawing.Color.LightGray
-		Me.TextBox10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-		Me.TextBox10.Location = New System.Drawing.Point(337, 301)
-		Me.TextBox10.Margin = New System.Windows.Forms.Padding(2)
-		Me.TextBox10.Multiline = True
-		Me.TextBox10.Name = "TextBox10"
-		Me.TextBox10.Size = New System.Drawing.Size(86, 24)
-		Me.TextBox10.TabIndex = 73
-		Me.TextBox10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+		Me.TextBoxCosto.BackColor = System.Drawing.Color.LightGray
+		Me.TextBoxCosto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+		Me.TextBoxCosto.Location = New System.Drawing.Point(337, 301)
+		Me.TextBoxCosto.Margin = New System.Windows.Forms.Padding(2)
+		Me.TextBoxCosto.Multiline = True
+		Me.TextBoxCosto.Name = "TextBoxCosto"
+		Me.TextBoxCosto.Size = New System.Drawing.Size(86, 24)
+		Me.TextBoxCosto.TabIndex = 73
+		Me.TextBoxCosto.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
 		'
 		'PictureBox1
 		'
@@ -185,21 +187,37 @@ Partial Class Castración_y_Esterilización
 		Me.PictureBox1.TabIndex = 74
 		Me.PictureBox1.TabStop = False
 		'
-		'DateTimePicker1
+		'DateTimePickerFecha
 		'
-		Me.DateTimePicker1.Location = New System.Drawing.Point(259, 140)
-		Me.DateTimePicker1.Name = "DateTimePicker1"
-		Me.DateTimePicker1.Size = New System.Drawing.Size(164, 20)
-		Me.DateTimePicker1.TabIndex = 75
+		Me.DateTimePickerFecha.Location = New System.Drawing.Point(259, 140)
+		Me.DateTimePickerFecha.Name = "DateTimePickerFecha"
+		Me.DateTimePickerFecha.Size = New System.Drawing.Size(164, 20)
+		Me.DateTimePickerFecha.TabIndex = 75
 		'
 		'TextBoxObservaciones
 		'
 		Me.TextBoxObservaciones.BackColor = System.Drawing.Color.LightGray
-		Me.TextBoxObservaciones.Location = New System.Drawing.Point(231, 213)
+		Me.TextBoxObservaciones.Location = New System.Drawing.Point(233, 213)
 		Me.TextBoxObservaciones.Multiline = True
 		Me.TextBoxObservaciones.Name = "TextBoxObservaciones"
 		Me.TextBoxObservaciones.Size = New System.Drawing.Size(192, 66)
 		Me.TextBoxObservaciones.TabIndex = 76
+		'
+		'ComboBoxEspecie
+		'
+		Me.ComboBoxEspecie.FormattingEnabled = True
+		Me.ComboBoxEspecie.Location = New System.Drawing.Point(31, 168)
+		Me.ComboBoxEspecie.Name = "ComboBoxEspecie"
+		Me.ComboBoxEspecie.Size = New System.Drawing.Size(121, 21)
+		Me.ComboBoxEspecie.TabIndex = 77
+		'
+		'ComboBoxTipoProcedimiento
+		'
+		Me.ComboBoxTipoProcedimiento.FormattingEnabled = True
+		Me.ComboBoxTipoProcedimiento.Location = New System.Drawing.Point(31, 128)
+		Me.ComboBoxTipoProcedimiento.Name = "ComboBoxTipoProcedimiento"
+		Me.ComboBoxTipoProcedimiento.Size = New System.Drawing.Size(121, 21)
+		Me.ComboBoxTipoProcedimiento.TabIndex = 78
 		'
 		'Castración_y_Esterilización
 		'
@@ -207,12 +225,14 @@ Partial Class Castración_y_Esterilización
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
 		Me.BackColor = System.Drawing.SystemColors.ButtonHighlight
 		Me.ClientSize = New System.Drawing.Size(475, 487)
+		Me.Controls.Add(Me.ComboBoxTipoProcedimiento)
+		Me.Controls.Add(Me.ComboBoxEspecie)
 		Me.Controls.Add(Me.TextBoxObservaciones)
-		Me.Controls.Add(Me.DateTimePicker1)
+		Me.Controls.Add(Me.DateTimePickerFecha)
 		Me.Controls.Add(Me.PictureBox1)
-		Me.Controls.Add(Me.TextBox10)
+		Me.Controls.Add(Me.TextBoxCosto)
 		Me.Controls.Add(Me.Label12)
-		Me.Controls.Add(Me.ComboBoxServicio)
+		Me.Controls.Add(Me.ComboBoxServicios)
 		Me.Controls.Add(Me.Label8)
 		Me.Controls.Add(Me.Label2)
 		Me.Controls.Add(Me.ComboBoxTalla)
@@ -220,7 +240,7 @@ Partial Class Castración_y_Esterilización
 		Me.Controls.Add(Me.Panel1)
 		Me.Margin = New System.Windows.Forms.Padding(2)
 		Me.Name = "Castración_y_Esterilización"
-		Me.Text = "Castración_y_Esterilización"
+		Me.Text = "Castración y Esterilización"
 		Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
 		Me.Panel1.ResumeLayout(False)
 		Me.Panel2.ResumeLayout(False)
@@ -238,10 +258,12 @@ Partial Class Castración_y_Esterilización
 	Friend WithEvents ComboBoxTalla As ComboBox
 	Friend WithEvents Label2 As Label
 	Friend WithEvents Label8 As Label
-	Friend WithEvents ComboBoxServicio As ComboBox
+	Friend WithEvents ComboBoxServicios As ComboBox
 	Friend WithEvents Label12 As Label
-	Friend WithEvents TextBox10 As TextBox
+	Friend WithEvents TextBoxCosto As TextBox
 	Friend WithEvents PictureBox1 As PictureBox
-	Friend WithEvents DateTimePicker1 As DateTimePicker
+	Friend WithEvents DateTimePickerFecha As DateTimePicker
 	Friend WithEvents TextBoxObservaciones As TextBox
+	Friend WithEvents ComboBoxEspecie As ComboBox
+	Friend WithEvents ComboBoxTipoProcedimiento As ComboBox
 End Class
