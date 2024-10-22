@@ -179,10 +179,22 @@
     <Compile Include="Eutanasia.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Historial.Designer.vb">
+      <DependentUpon>Historial.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Historial.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Hospitalización.Designer.vb">
       <DependentUpon>Hospitalización.vb</DependentUpon>
     </Compile>
     <Compile Include="Hospitalización.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Informes.Designer.vb">
+      <DependentUpon>Informes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Informes.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Inicio de sesion.Designer.vb">
@@ -223,6 +235,12 @@
       <DependentUpon>Proaxis Dental.vb</DependentUpon>
     </Compile>
     <Compile Include="Proaxis Dental.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Recibo.Designer.vb">
+      <DependentUpon>Recibo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Recibo.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Recuperar Contraseña.Designer.vb">
@@ -275,8 +293,14 @@
     <EmbeddedResource Include="Eutanasia.resx">
       <DependentUpon>Eutanasia.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Historial.resx">
+      <DependentUpon>Historial.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Hospitalización.resx">
       <DependentUpon>Hospitalización.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Informes.resx">
+      <DependentUpon>Informes.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Inicio de sesion.resx">
       <DependentUpon>Inicio de sesion.vb</DependentUpon>
@@ -295,6 +319,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Proaxis Dental.resx">
       <DependentUpon>Proaxis Dental.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Recibo.resx">
+      <DependentUpon>Recibo.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Recuperar Contraseña.resx">
       <DependentUpon>Recuperar Contraseña.vb</DependentUpon>
