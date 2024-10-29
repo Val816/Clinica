@@ -17,6 +17,9 @@ Public Class Proaxis_Dental
     End Sub
 
     Private Sub LlenarComboBoxTallas()
+        ' Limpiar el ComboBox antes de llenarlo
+        ComboBoxTalla.Items.Clear()
+
         ' Conectar a la base de datos y llenar el ComboBox de tallas con id y descripción
         Dim query As String = "SELECT idTalla, descripcion FROM Talla"
         Using conn As New MySqlConnection("Server=localhost;Database=veterinaria;User Id=root;Password=root;")
@@ -25,13 +28,15 @@ Public Class Proaxis_Dental
             Dim reader As MySqlDataReader = cmd.ExecuteReader()
             While reader.Read()
                 Dim item As New ComboBoxItem With {
-                    .Value = reader("idTalla"),
-                    .Text = reader("descripcion").ToString()
-                }
+                .Value = reader("idTalla"),
+                .Text = reader("descripcion").ToString()
+            }
                 ComboBoxTalla.Items.Add(item)
             End While
         End Using
     End Sub
+
+
 
     Private Sub LlenarComboBoxServicios()
         ComboBoxServicios.Items.Clear()
@@ -51,22 +56,25 @@ Public Class Proaxis_Dental
         End Using
     End Sub
     Private Sub ComboBoxTalla_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBoxTalla.SelectedIndexChanged
-        ' Obtener el costo basado en la talla seleccionada
-        Dim idTallaSeleccionada As Integer = CType(ComboBoxTalla.SelectedItem, ComboBoxItem).Value
-        Dim query As String = "SELECT precio FROM PrecioProfilaxis WHERE idTalla = @idTalla"
+        If ComboBoxTalla.SelectedItem IsNot Nothing Then
+            ' Obtener el costo basado en la talla seleccionada
+            Dim idTallaSeleccionada As Integer = CType(ComboBoxTalla.SelectedItem, ComboBoxItem).Value
+            Dim query As String = "SELECT precio FROM PrecioProfilaxis WHERE idTalla = @idTalla"
 
-        Using conn As New MySqlConnection("Server=localhost;Database=veterinaria;User Id=root;Password=root;")
-            Dim cmd As New MySqlCommand(query, conn)
-            cmd.Parameters.AddWithValue("@idTalla", idTallaSeleccionada)
-            conn.Open()
-            Dim costo As Object = cmd.ExecuteScalar()
-            If costo IsNot Nothing Then
-                TextBoxCosto.Text = Convert.ToDecimal(costo).ToString("C2") ' Muestra el costo en formato de moneda
-            Else
-                TextBoxCosto.Text = "0.00"
-            End If
-        End Using
+            Using conn As New MySqlConnection("Server=localhost;Database=veterinaria;User Id=root;Password=root;")
+                Dim cmd As New MySqlCommand(query, conn)
+                cmd.Parameters.AddWithValue("@idTalla", idTallaSeleccionada)
+                conn.Open()
+                Dim costo As Object = cmd.ExecuteScalar()
+                If costo IsNot Nothing Then
+                    TextBoxCosto.Text = Convert.ToDecimal(costo).ToString("C2") ' Muestra el costo en formato de moneda
+                Else
+                    TextBoxCosto.Text = "0.00"
+                End If
+            End Using
+        End If
     End Sub
+
 
 
     Private Sub BtnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
@@ -77,26 +85,35 @@ Public Class Proaxis_Dental
         Dim horaSalida As Date = DateTimePickerHoraSalida.Value
         Dim idTalla As Integer = CType(ComboBoxTalla.SelectedItem, ComboBoxItem).Value
         Dim observaciones As String = TextBoxObservaciones.Text
-        Dim costo As Decimal = Decimal.Parse(TextBoxCosto.Text, Globalization.NumberStyles.Currency)
 
-        Dim query As String = "INSERT INTO ProfilaxisDental (idMascota, fecha, horaEntrada, horaSalida, idTalla, observaciones, costo) " &
-                              "VALUES (@idMascota, @fecha, @horaEntrada, @horaSalida, @idTalla, @observaciones, @costo)"
-
+        ' Obtener el idPrecioProfilaxis basado en la talla seleccionada
+        Dim idPrecioProfilaxis As Integer
+        Dim query As String = "SELECT idPrecioProfilaxis FROM PrecioProfilaxis WHERE idTalla = @idTalla"
         Using conn As New MySqlConnection("Server=localhost;Database=veterinaria;User Id=root;Password=root;")
             Dim cmd As New MySqlCommand(query, conn)
+            cmd.Parameters.AddWithValue("@idTalla", idTalla)
+            conn.Open()
+            idPrecioProfilaxis = Convert.ToInt32(cmd.ExecuteScalar())
+        End Using
+
+        Dim insertQuery As String = "INSERT INTO ProfilaxisDental (idMascota, fecha, horaEntrada, horaSalida, observaciones, idPrecioProfilaxis) " &
+                                 "VALUES (@idMascota, @fecha, @horaEntrada, @horaSalida, @observaciones, @idPrecioProfilaxis)"
+
+        Using conn As New MySqlConnection("Server=localhost;Database=veterinaria;User Id=root;Password=root;")
+            Dim cmd As New MySqlCommand(insertQuery, conn)
             cmd.Parameters.AddWithValue("@idMascota", idMascota)
             cmd.Parameters.AddWithValue("@fecha", fecha)
             cmd.Parameters.AddWithValue("@horaEntrada", horaEntrada)
             cmd.Parameters.AddWithValue("@horaSalida", horaSalida)
-            cmd.Parameters.AddWithValue("@idTalla", idTalla)
             cmd.Parameters.AddWithValue("@observaciones", observaciones)
-            cmd.Parameters.AddWithValue("@costo", costo)
+            cmd.Parameters.AddWithValue("@idPrecioProfilaxis", idPrecioProfilaxis)
             conn.Open()
             cmd.ExecuteNonQuery()
         End Using
 
         MessageBox.Show("Registro de profilaxis guardado exitosamente.")
     End Sub
+
     Private Sub ComboBoxServicios_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBoxServicios.SelectedIndexChanged
 
         Dim servicioSeleccionado As Object = ComboBoxServicios.SelectedItem
