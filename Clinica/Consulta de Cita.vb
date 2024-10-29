@@ -105,4 +105,7 @@ Public Class Consulta_de_Cita
         Me.Close()
     End Sub
 
+    Private Sub Consulta_de_Cita_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
 End Class

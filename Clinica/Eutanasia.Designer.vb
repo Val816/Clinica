@@ -26,37 +26,39 @@ Partial Class Eutanasia
 		Me.btnMenuPrincipal = New System.Windows.Forms.Button()
 		Me.Label1 = New System.Windows.Forms.Label()
 		Me.Panel2 = New System.Windows.Forms.Panel()
-		Me.btnGuardar = New System.Windows.Forms.Button()
-		Me.ComboBoxMotivos = New System.Windows.Forms.ComboBox()
-		Me.Label10 = New System.Windows.Forms.Label()
-		Me.TextBoxObservaciones = New System.Windows.Forms.TextBox()
-		Me.Label12 = New System.Windows.Forms.Label()
-		Me.TextBoxCostoFinal = New System.Windows.Forms.TextBox()
-		Me.ComboBoxServicios = New System.Windows.Forms.ComboBox()
-		Me.txtHora = New System.Windows.Forms.TextBox()
-		Me.Label6 = New System.Windows.Forms.Label()
-		Me.DateTimePickerFecha = New System.Windows.Forms.DateTimePicker()
 		Me.BtnGenerarPDF = New System.Windows.Forms.Button()
+		Me.btnGuardar = New System.Windows.Forms.Button()
+		Me.Panel3 = New System.Windows.Forms.Panel()
+		Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
+		Me.Label2 = New System.Windows.Forms.Label()
+		Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+		Me.TextBox1 = New System.Windows.Forms.TextBox()
+		Me.Label3 = New System.Windows.Forms.Label()
+		Me.TextBox2 = New System.Windows.Forms.TextBox()
+		Me.Label4 = New System.Windows.Forms.Label()
+		Me.ComboBox2 = New System.Windows.Forms.ComboBox()
 		Me.Panel1.SuspendLayout()
 		Me.Panel2.SuspendLayout()
+		Me.Panel3.SuspendLayout()
 		Me.SuspendLayout()
 		'
 		'Panel1
 		'
-		Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(197, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(165, Byte), Integer))
+		Me.Panel1.BackColor = System.Drawing.Color.SteelBlue
 		Me.Panel1.Controls.Add(Me.btnMenuPrincipal)
 		Me.Panel1.Controls.Add(Me.Label1)
 		Me.Panel1.Location = New System.Drawing.Point(-4, -3)
 		Me.Panel1.Margin = New System.Windows.Forms.Padding(2)
 		Me.Panel1.Name = "Panel1"
-		Me.Panel1.Size = New System.Drawing.Size(854, 106)
+		Me.Panel1.Size = New System.Drawing.Size(604, 91)
 		Me.Panel1.TabIndex = 5
 		'
 		'btnMenuPrincipal
 		'
-		Me.btnMenuPrincipal.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(128, Byte), Integer))
+		Me.btnMenuPrincipal.BackColor = System.Drawing.Color.LightBlue
 		Me.btnMenuPrincipal.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-		Me.btnMenuPrincipal.Location = New System.Drawing.Point(368, 29)
+		Me.btnMenuPrincipal.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.btnMenuPrincipal.Location = New System.Drawing.Point(406, 36)
 		Me.btnMenuPrincipal.Margin = New System.Windows.Forms.Padding(2)
 		Me.btnMenuPrincipal.Name = "btnMenuPrincipal"
 		Me.btnMenuPrincipal.Size = New System.Drawing.Size(93, 25)
@@ -67,17 +69,18 @@ Partial Class Eutanasia
 		'Label1
 		'
 		Me.Label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-		Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 25.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.Label1.Location = New System.Drawing.Point(142, 29)
+		Me.Label1.Font = New System.Drawing.Font("Arial Narrow", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.Label1.ForeColor = System.Drawing.SystemColors.ControlLightLight
+		Me.Label1.Location = New System.Drawing.Point(187, 23)
 		Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
 		Me.Label1.Name = "Label1"
-		Me.Label1.Size = New System.Drawing.Size(196, 39)
+		Me.Label1.Size = New System.Drawing.Size(145, 39)
 		Me.Label1.TabIndex = 0
 		Me.Label1.Text = "Eutanasia"
 		'
 		'Panel2
 		'
-		Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(197, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(165, Byte), Integer))
+		Me.Panel2.BackColor = System.Drawing.Color.SteelBlue
 		Me.Panel2.Controls.Add(Me.BtnGenerarPDF)
 		Me.Panel2.Controls.Add(Me.btnGuardar)
 		Me.Panel2.Location = New System.Drawing.Point(-4, 381)
@@ -86,11 +89,24 @@ Partial Class Eutanasia
 		Me.Panel2.Size = New System.Drawing.Size(854, 152)
 		Me.Panel2.TabIndex = 6
 		'
+		'BtnGenerarPDF
+		'
+		Me.BtnGenerarPDF.BackColor = System.Drawing.Color.LightBlue
+		Me.BtnGenerarPDF.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+		Me.BtnGenerarPDF.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.BtnGenerarPDF.Location = New System.Drawing.Point(309, 18)
+		Me.BtnGenerarPDF.Name = "BtnGenerarPDF"
+		Me.BtnGenerarPDF.Size = New System.Drawing.Size(83, 25)
+		Me.BtnGenerarPDF.TabIndex = 6
+		Me.BtnGenerarPDF.Text = "Generar pdf"
+		Me.BtnGenerarPDF.UseVisualStyleBackColor = False
+		'
 		'btnGuardar
 		'
-		Me.btnGuardar.BackColor = System.Drawing.Color.FromArgb(CType(CType(174, Byte), Integer), CType(CType(214, Byte), Integer), CType(CType(241, Byte), Integer))
+		Me.btnGuardar.BackColor = System.Drawing.Color.LightBlue
 		Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-		Me.btnGuardar.Location = New System.Drawing.Point(357, 19)
+		Me.btnGuardar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.btnGuardar.Location = New System.Drawing.Point(406, 18)
 		Me.btnGuardar.Margin = New System.Windows.Forms.Padding(2)
 		Me.btnGuardar.Name = "btnGuardar"
 		Me.btnGuardar.Size = New System.Drawing.Size(93, 25)
@@ -98,147 +114,137 @@ Partial Class Eutanasia
 		Me.btnGuardar.Text = "Guardar"
 		Me.btnGuardar.UseVisualStyleBackColor = False
 		'
-		'ComboBoxMotivos
+		'Panel3
 		'
-		Me.ComboBoxMotivos.BackColor = System.Drawing.SystemColors.InfoText
-		Me.ComboBoxMotivos.DropDownHeight = 150
-		Me.ComboBoxMotivos.ForeColor = System.Drawing.Color.White
-		Me.ComboBoxMotivos.FormattingEnabled = True
-		Me.ComboBoxMotivos.IntegralHeight = False
-		Me.ComboBoxMotivos.Items.AddRange(New Object() {"Edad Avanzada", "Enfermedad crónica"})
-		Me.ComboBoxMotivos.Location = New System.Drawing.Point(78, 290)
-		Me.ComboBoxMotivos.Margin = New System.Windows.Forms.Padding(2)
-		Me.ComboBoxMotivos.Name = "ComboBoxMotivos"
-		Me.ComboBoxMotivos.Size = New System.Drawing.Size(121, 21)
-		Me.ComboBoxMotivos.TabIndex = 26
-		Me.ComboBoxMotivos.Text = "Motivo"
+		Me.Panel3.BackColor = System.Drawing.Color.LightSteelBlue
+		Me.Panel3.Controls.Add(Me.DateTimePicker1)
+		Me.Panel3.Controls.Add(Me.Label2)
+		Me.Panel3.Controls.Add(Me.ComboBox1)
+		Me.Panel3.Controls.Add(Me.TextBox1)
+		Me.Panel3.Controls.Add(Me.Label3)
+		Me.Panel3.Controls.Add(Me.TextBox2)
+		Me.Panel3.Controls.Add(Me.Label4)
+		Me.Panel3.Controls.Add(Me.ComboBox2)
+		Me.Panel3.Location = New System.Drawing.Point(84, 118)
+		Me.Panel3.Name = "Panel3"
+		Me.Panel3.Size = New System.Drawing.Size(358, 241)
+		Me.Panel3.TabIndex = 40
 		'
-		'Label10
+		'DateTimePicker1
 		'
-		Me.Label10.BackColor = System.Drawing.Color.Silver
-		Me.Label10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-		Me.Label10.Location = New System.Drawing.Point(63, 168)
-		Me.Label10.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-		Me.Label10.Name = "Label10"
-		Me.Label10.Size = New System.Drawing.Size(95, 24)
-		Me.Label10.TabIndex = 27
-		Me.Label10.Text = "Observaciones:"
-		Me.Label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+		Me.DateTimePicker1.Location = New System.Drawing.Point(130, 9)
+		Me.DateTimePicker1.Name = "DateTimePicker1"
+		Me.DateTimePicker1.Size = New System.Drawing.Size(200, 20)
+		Me.DateTimePicker1.TabIndex = 46
 		'
-		'TextBoxObservaciones
+		'Label2
 		'
-		Me.TextBoxObservaciones.BackColor = System.Drawing.Color.Silver
-		Me.TextBoxObservaciones.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-		Me.TextBoxObservaciones.Location = New System.Drawing.Point(182, 172)
-		Me.TextBoxObservaciones.Margin = New System.Windows.Forms.Padding(2)
-		Me.TextBoxObservaciones.Multiline = True
-		Me.TextBoxObservaciones.Name = "TextBoxObservaciones"
-		Me.TextBoxObservaciones.Size = New System.Drawing.Size(210, 96)
-		Me.TextBoxObservaciones.TabIndex = 28
-		Me.TextBoxObservaciones.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+		Me.Label2.BackColor = System.Drawing.Color.Transparent
+		Me.Label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+		Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.Label2.Location = New System.Drawing.Point(67, 9)
+		Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+		Me.Label2.Name = "Label2"
+		Me.Label2.Size = New System.Drawing.Size(67, 20)
+		Me.Label2.TabIndex = 45
+		Me.Label2.Text = "Fecha:"
+		Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
 		'
-		'Label12
+		'ComboBox1
 		'
-		Me.Label12.BackColor = System.Drawing.Color.Silver
-		Me.Label12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-		Me.Label12.Location = New System.Drawing.Point(253, 308)
-		Me.Label12.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-		Me.Label12.Name = "Label12"
-		Me.Label12.Size = New System.Drawing.Size(62, 24)
-		Me.Label12.TabIndex = 33
-		Me.Label12.Text = "Costo:"
-		Me.Label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+		Me.ComboBox1.BackColor = System.Drawing.SystemColors.ControlLightLight
+		Me.ComboBox1.ForeColor = System.Drawing.Color.Black
+		Me.ComboBox1.FormattingEnabled = True
+		Me.ComboBox1.Items.AddRange(New Object() {"Consulta Médica", "Desparacitación", "Vacunación", "Eutanasia", "Cirugía", "Estética", "Pensión", "Castración", "Proaxis Dental"})
+		Me.ComboBox1.Location = New System.Drawing.Point(19, 209)
+		Me.ComboBox1.Margin = New System.Windows.Forms.Padding(2)
+		Me.ComboBox1.Name = "ComboBox1"
+		Me.ComboBox1.Size = New System.Drawing.Size(121, 21)
+		Me.ComboBox1.TabIndex = 44
+		Me.ComboBox1.Text = "Agregar Servicio"
 		'
-		'TextBoxCostoFinal
+		'TextBox1
 		'
-		Me.TextBoxCostoFinal.BackColor = System.Drawing.Color.Silver
-		Me.TextBoxCostoFinal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-		Me.TextBoxCostoFinal.Location = New System.Drawing.Point(319, 308)
-		Me.TextBoxCostoFinal.Margin = New System.Windows.Forms.Padding(2)
-		Me.TextBoxCostoFinal.Multiline = True
-		Me.TextBoxCostoFinal.Name = "TextBoxCostoFinal"
-		Me.TextBoxCostoFinal.Size = New System.Drawing.Size(73, 24)
-		Me.TextBoxCostoFinal.TabIndex = 34
-		Me.TextBoxCostoFinal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+		Me.TextBox1.BackColor = System.Drawing.Color.White
+		Me.TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+		Me.TextBox1.Location = New System.Drawing.Point(257, 189)
+		Me.TextBox1.Margin = New System.Windows.Forms.Padding(2)
+		Me.TextBox1.Multiline = True
+		Me.TextBox1.Name = "TextBox1"
+		Me.TextBox1.Size = New System.Drawing.Size(73, 24)
+		Me.TextBox1.TabIndex = 43
+		Me.TextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
 		'
-		'ComboBoxServicios
+		'Label3
 		'
-		Me.ComboBoxServicios.BackColor = System.Drawing.SystemColors.InfoText
-		Me.ComboBoxServicios.ForeColor = System.Drawing.Color.White
-		Me.ComboBoxServicios.FormattingEnabled = True
-		Me.ComboBoxServicios.Items.AddRange(New Object() {"Consulta Médica", "Desparacitación", "Vacunación", "Eutanasia", "Cirugía", "Estética", "Pensión", "Castración", "Proaxis Dental"})
-		Me.ComboBoxServicios.Location = New System.Drawing.Point(78, 334)
-		Me.ComboBoxServicios.Margin = New System.Windows.Forms.Padding(2)
-		Me.ComboBoxServicios.Name = "ComboBoxServicios"
-		Me.ComboBoxServicios.Size = New System.Drawing.Size(121, 21)
-		Me.ComboBoxServicios.TabIndex = 35
-		Me.ComboBoxServicios.Text = "Agregar Servicio"
+		Me.Label3.BackColor = System.Drawing.Color.Transparent
+		Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.Label3.Location = New System.Drawing.Point(203, 189)
+		Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+		Me.Label3.Name = "Label3"
+		Me.Label3.Size = New System.Drawing.Size(62, 24)
+		Me.Label3.TabIndex = 42
+		Me.Label3.Text = "Costo:"
+		Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
 		'
-		'txtHora
+		'TextBox2
 		'
-		Me.txtHora.BackColor = System.Drawing.Color.Silver
-		Me.txtHora.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-		Me.txtHora.Location = New System.Drawing.Point(182, 124)
-		Me.txtHora.Margin = New System.Windows.Forms.Padding(2)
-		Me.txtHora.Multiline = True
-		Me.txtHora.Name = "txtHora"
-		Me.txtHora.Size = New System.Drawing.Size(210, 28)
-		Me.txtHora.TabIndex = 36
+		Me.TextBox2.BackColor = System.Drawing.Color.Silver
+		Me.TextBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+		Me.TextBox2.Location = New System.Drawing.Point(130, 49)
+		Me.TextBox2.Margin = New System.Windows.Forms.Padding(2)
+		Me.TextBox2.Multiline = True
+		Me.TextBox2.Name = "TextBox2"
+		Me.TextBox2.Size = New System.Drawing.Size(210, 96)
+		Me.TextBox2.TabIndex = 41
+		Me.TextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
 		'
-		'Label6
+		'Label4
 		'
-		Me.Label6.BackColor = System.Drawing.Color.Silver
-		Me.Label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-		Me.Label6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-		Me.Label6.Location = New System.Drawing.Point(63, 124)
-		Me.Label6.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-		Me.Label6.Name = "Label6"
-		Me.Label6.Size = New System.Drawing.Size(95, 28)
-		Me.Label6.TabIndex = 37
-		Me.Label6.Text = "Fecha:"
-		Me.Label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+		Me.Label4.BackColor = System.Drawing.Color.Transparent
+		Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.Label4.Location = New System.Drawing.Point(19, 44)
+		Me.Label4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+		Me.Label4.Name = "Label4"
+		Me.Label4.Size = New System.Drawing.Size(106, 24)
+		Me.Label4.TabIndex = 40
+		Me.Label4.Text = "Observaciones:"
+		Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
 		'
-		'DateTimePickerFecha
+		'ComboBox2
 		'
-		Me.DateTimePickerFecha.Location = New System.Drawing.Point(186, 126)
-		Me.DateTimePickerFecha.Name = "DateTimePickerFecha"
-		Me.DateTimePickerFecha.Size = New System.Drawing.Size(200, 20)
-		Me.DateTimePickerFecha.TabIndex = 38
-		'
-		'BtnGenerarPDF
-		'
-		Me.BtnGenerarPDF.Location = New System.Drawing.Point(257, 20)
-		Me.BtnGenerarPDF.Name = "BtnGenerarPDF"
-		Me.BtnGenerarPDF.Size = New System.Drawing.Size(75, 23)
-		Me.BtnGenerarPDF.TabIndex = 6
-		Me.BtnGenerarPDF.Text = "Generar pdf"
-		Me.BtnGenerarPDF.UseVisualStyleBackColor = True
+		Me.ComboBox2.BackColor = System.Drawing.SystemColors.ControlLightLight
+		Me.ComboBox2.DropDownHeight = 150
+		Me.ComboBox2.ForeColor = System.Drawing.Color.Black
+		Me.ComboBox2.FormattingEnabled = True
+		Me.ComboBox2.IntegralHeight = False
+		Me.ComboBox2.Items.AddRange(New Object() {"Edad Avanzada", "Enfermedad crónica"})
+		Me.ComboBox2.Location = New System.Drawing.Point(19, 166)
+		Me.ComboBox2.Margin = New System.Windows.Forms.Padding(2)
+		Me.ComboBox2.Name = "ComboBox2"
+		Me.ComboBox2.Size = New System.Drawing.Size(121, 21)
+		Me.ComboBox2.TabIndex = 39
+		Me.ComboBox2.Text = "Motivo"
 		'
 		'Eutanasia
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
 		Me.BackColor = System.Drawing.SystemColors.ButtonHighlight
-		Me.ClientSize = New System.Drawing.Size(468, 450)
-		Me.Controls.Add(Me.DateTimePickerFecha)
-		Me.Controls.Add(Me.Label6)
-		Me.Controls.Add(Me.txtHora)
-		Me.Controls.Add(Me.ComboBoxServicios)
-		Me.Controls.Add(Me.TextBoxCostoFinal)
-		Me.Controls.Add(Me.Label12)
-		Me.Controls.Add(Me.TextBoxObservaciones)
-		Me.Controls.Add(Me.Label10)
-		Me.Controls.Add(Me.ComboBoxMotivos)
+		Me.ClientSize = New System.Drawing.Size(512, 458)
+		Me.Controls.Add(Me.Panel3)
 		Me.Controls.Add(Me.Panel2)
 		Me.Controls.Add(Me.Panel1)
+		Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
 		Me.Margin = New System.Windows.Forms.Padding(2)
 		Me.Name = "Eutanasia"
 		Me.Text = "Eutanasia"
 		Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
 		Me.Panel1.ResumeLayout(False)
 		Me.Panel2.ResumeLayout(False)
+		Me.Panel3.ResumeLayout(False)
+		Me.Panel3.PerformLayout()
 		Me.ResumeLayout(False)
-		Me.PerformLayout()
 
 	End Sub
 
@@ -247,14 +253,14 @@ Partial Class Eutanasia
     Friend WithEvents Label1 As Label
     Friend WithEvents Panel2 As Panel
     Friend WithEvents btnGuardar As Button
-	Friend WithEvents ComboBoxMotivos As ComboBox
-	Friend WithEvents Label10 As Label
-	Friend WithEvents TextBoxObservaciones As TextBox
-	Friend WithEvents Label12 As Label
-	Friend WithEvents TextBoxCostoFinal As TextBox
-	Friend WithEvents ComboBoxServicios As ComboBox
-	Friend WithEvents txtHora As TextBox
-	Friend WithEvents Label6 As Label
-	Friend WithEvents DateTimePickerFecha As DateTimePicker
 	Friend WithEvents BtnGenerarPDF As Button
+	Friend WithEvents Panel3 As Panel
+	Friend WithEvents DateTimePicker1 As DateTimePicker
+	Friend WithEvents Label2 As Label
+	Friend WithEvents ComboBox1 As ComboBox
+	Friend WithEvents TextBox1 As TextBox
+	Friend WithEvents Label3 As Label
+	Friend WithEvents TextBox2 As TextBox
+	Friend WithEvents Label4 As Label
+	Friend WithEvents ComboBox2 As ComboBox
 End Class

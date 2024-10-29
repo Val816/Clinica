@@ -54,7 +54,7 @@ Partial Class Consulta_de_Cita
 		'
 		'Panel1
 		'
-		Me.Panel1.BackColor = System.Drawing.Color.LightSlateGray
+		Me.Panel1.BackColor = System.Drawing.Color.SteelBlue
 		Me.Panel1.Controls.Add(Me.btnMenuPrincipal)
 		Me.Panel1.Controls.Add(Me.Label1)
 		Me.Panel1.Location = New System.Drawing.Point(0, 0)
@@ -65,12 +65,13 @@ Partial Class Consulta_de_Cita
 		'
 		'btnMenuPrincipal
 		'
-		Me.btnMenuPrincipal.BackColor = System.Drawing.Color.LightSteelBlue
+		Me.btnMenuPrincipal.BackColor = System.Drawing.Color.LightBlue
 		Me.btnMenuPrincipal.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-		Me.btnMenuPrincipal.Location = New System.Drawing.Point(651, 43)
+		Me.btnMenuPrincipal.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.btnMenuPrincipal.Location = New System.Drawing.Point(617, 43)
 		Me.btnMenuPrincipal.Margin = New System.Windows.Forms.Padding(2)
 		Me.btnMenuPrincipal.Name = "btnMenuPrincipal"
-		Me.btnMenuPrincipal.Size = New System.Drawing.Size(93, 25)
+		Me.btnMenuPrincipal.Size = New System.Drawing.Size(127, 25)
 		Me.btnMenuPrincipal.TabIndex = 1
 		Me.btnMenuPrincipal.Text = "Menú Principal"
 		Me.btnMenuPrincipal.UseVisualStyleBackColor = False
@@ -78,18 +79,18 @@ Partial Class Consulta_de_Cita
 		'Label1
 		'
 		Me.Label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-		Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 25.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.Label1.Font = New System.Drawing.Font("Arial Narrow", 24.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
 		Me.Label1.ForeColor = System.Drawing.SystemColors.ControlLightLight
-		Me.Label1.Location = New System.Drawing.Point(243, 29)
+		Me.Label1.Location = New System.Drawing.Point(263, 29)
 		Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
 		Me.Label1.Name = "Label1"
-		Me.Label1.Size = New System.Drawing.Size(287, 39)
+		Me.Label1.Size = New System.Drawing.Size(243, 39)
 		Me.Label1.TabIndex = 0
 		Me.Label1.Text = "Consulta de Cita"
 		'
 		'Panel2
 		'
-		Me.Panel2.BackColor = System.Drawing.Color.LightSlateGray
+		Me.Panel2.BackColor = System.Drawing.Color.SteelBlue
 		Me.Panel2.Controls.Add(Me.btnContinuarRegistroMascota)
 		Me.Panel2.Location = New System.Drawing.Point(0, 422)
 		Me.Panel2.Margin = New System.Windows.Forms.Padding(2)
@@ -99,19 +100,20 @@ Partial Class Consulta_de_Cita
 		'
 		'btnContinuarRegistroMascota
 		'
-		Me.btnContinuarRegistroMascota.BackColor = System.Drawing.Color.CadetBlue
+		Me.btnContinuarRegistroMascota.BackColor = System.Drawing.Color.LightBlue
 		Me.btnContinuarRegistroMascota.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-		Me.btnContinuarRegistroMascota.Location = New System.Drawing.Point(570, 17)
+		Me.btnContinuarRegistroMascota.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.btnContinuarRegistroMascota.Location = New System.Drawing.Point(595, 10)
 		Me.btnContinuarRegistroMascota.Margin = New System.Windows.Forms.Padding(2)
 		Me.btnContinuarRegistroMascota.Name = "btnContinuarRegistroMascota"
-		Me.btnContinuarRegistroMascota.Size = New System.Drawing.Size(174, 25)
+		Me.btnContinuarRegistroMascota.Size = New System.Drawing.Size(159, 44)
 		Me.btnContinuarRegistroMascota.TabIndex = 9
 		Me.btnContinuarRegistroMascota.Text = "Continuar a Registro de Mascota"
 		Me.btnContinuarRegistroMascota.UseVisualStyleBackColor = False
 		'
 		'Panel3
 		'
-		Me.Panel3.BackColor = System.Drawing.Color.LightGray
+		Me.Panel3.BackColor = System.Drawing.Color.LightSteelBlue
 		Me.Panel3.Controls.Add(Me.btnAgregarCita)
 		Me.Panel3.Controls.Add(Me.btnBuscar)
 		Me.Panel3.Controls.Add(Me.dtpFecha)
@@ -133,8 +135,9 @@ Partial Class Consulta_de_Cita
 		'
 		'btnAgregarCita
 		'
-		Me.btnAgregarCita.BackColor = System.Drawing.Color.LightSteelBlue
+		Me.btnAgregarCita.BackColor = System.Drawing.Color.LightBlue
 		Me.btnAgregarCita.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+		Me.btnAgregarCita.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
 		Me.btnAgregarCita.Location = New System.Drawing.Point(236, 187)
 		Me.btnAgregarCita.Name = "btnAgregarCita"
 		Me.btnAgregarCita.Size = New System.Drawing.Size(98, 25)
@@ -144,8 +147,9 @@ Partial Class Consulta_de_Cita
 		'
 		'btnBuscar
 		'
-		Me.btnBuscar.BackColor = System.Drawing.Color.LightSteelBlue
+		Me.btnBuscar.BackColor = System.Drawing.Color.LightBlue
 		Me.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+		Me.btnBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
 		Me.btnBuscar.Location = New System.Drawing.Point(17, 187)
 		Me.btnBuscar.Margin = New System.Windows.Forms.Padding(2)
 		Me.btnBuscar.Name = "btnBuscar"
@@ -163,8 +167,9 @@ Partial Class Consulta_de_Cita
 		'
 		'btnEliminar
 		'
-		Me.btnEliminar.BackColor = System.Drawing.Color.LightSteelBlue
+		Me.btnEliminar.BackColor = System.Drawing.Color.LightBlue
 		Me.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+		Me.btnEliminar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
 		Me.btnEliminar.Location = New System.Drawing.Point(128, 187)
 		Me.btnEliminar.Margin = New System.Windows.Forms.Padding(2)
 		Me.btnEliminar.Name = "btnEliminar"
@@ -175,7 +180,7 @@ Partial Class Consulta_de_Cita
 		'
 		'txtNombreMascota
 		'
-		Me.txtNombreMascota.BackColor = System.Drawing.Color.Silver
+		Me.txtNombreMascota.BackColor = System.Drawing.Color.White
 		Me.txtNombreMascota.BorderStyle = System.Windows.Forms.BorderStyle.None
 		Me.txtNombreMascota.Location = New System.Drawing.Point(148, 79)
 		Me.txtNombreMascota.Margin = New System.Windows.Forms.Padding(2)
@@ -186,31 +191,33 @@ Partial Class Consulta_de_Cita
 		'
 		'Label7
 		'
-		Me.Label7.BackColor = System.Drawing.Color.Silver
+		Me.Label7.BackColor = System.Drawing.Color.Transparent
 		Me.Label7.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-		Me.Label7.Location = New System.Drawing.Point(33, 146)
+		Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.Label7.Location = New System.Drawing.Point(97, 146)
 		Me.Label7.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
 		Me.Label7.Name = "Label7"
-		Me.Label7.Size = New System.Drawing.Size(94, 27)
+		Me.Label7.Size = New System.Drawing.Size(47, 27)
 		Me.Label7.TabIndex = 11
 		Me.Label7.Text = "Hora:"
 		Me.Label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
 		'
 		'Label5
 		'
-		Me.Label5.BackColor = System.Drawing.Color.Silver
+		Me.Label5.BackColor = System.Drawing.Color.Transparent
 		Me.Label5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-		Me.Label5.Location = New System.Drawing.Point(30, 80)
+		Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.Label5.Location = New System.Drawing.Point(14, 79)
 		Me.Label5.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
 		Me.Label5.Name = "Label5"
-		Me.Label5.Size = New System.Drawing.Size(97, 27)
+		Me.Label5.Size = New System.Drawing.Size(125, 27)
 		Me.Label5.TabIndex = 10
 		Me.Label5.Text = "Nombre de mascota:"
 		Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
 		'
 		'txtHora
 		'
-		Me.txtHora.BackColor = System.Drawing.Color.Silver
+		Me.txtHora.BackColor = System.Drawing.Color.White
 		Me.txtHora.BorderStyle = System.Windows.Forms.BorderStyle.None
 		Me.txtHora.Location = New System.Drawing.Point(148, 146)
 		Me.txtHora.Margin = New System.Windows.Forms.Padding(2)
@@ -221,7 +228,7 @@ Partial Class Consulta_de_Cita
 		'
 		'txtCelular
 		'
-		Me.txtCelular.BackColor = System.Drawing.Color.Silver
+		Me.txtCelular.BackColor = System.Drawing.Color.White
 		Me.txtCelular.BorderStyle = System.Windows.Forms.BorderStyle.None
 		Me.txtCelular.Location = New System.Drawing.Point(148, 48)
 		Me.txtCelular.Margin = New System.Windows.Forms.Padding(2)
@@ -232,31 +239,33 @@ Partial Class Consulta_de_Cita
 		'
 		'Label6
 		'
-		Me.Label6.BackColor = System.Drawing.Color.Silver
+		Me.Label6.BackColor = System.Drawing.Color.Transparent
 		Me.Label6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-		Me.Label6.Location = New System.Drawing.Point(33, 114)
+		Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.Label6.Location = New System.Drawing.Point(89, 114)
 		Me.Label6.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
 		Me.Label6.Name = "Label6"
-		Me.Label6.Size = New System.Drawing.Size(94, 27)
+		Me.Label6.Size = New System.Drawing.Size(55, 27)
 		Me.Label6.TabIndex = 9
 		Me.Label6.Text = "Fecha:"
 		Me.Label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
 		'
 		'Label4
 		'
-		Me.Label4.BackColor = System.Drawing.Color.Silver
+		Me.Label4.BackColor = System.Drawing.Color.Transparent
 		Me.Label4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-		Me.Label4.Location = New System.Drawing.Point(30, 48)
+		Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.Label4.Location = New System.Drawing.Point(72, 48)
 		Me.Label4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
 		Me.Label4.Name = "Label4"
-		Me.Label4.Size = New System.Drawing.Size(97, 27)
+		Me.Label4.Size = New System.Drawing.Size(72, 27)
 		Me.Label4.TabIndex = 8
 		Me.Label4.Text = "Teléfono:"
 		Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
 		'
 		'txtNombre
 		'
-		Me.txtNombre.BackColor = System.Drawing.Color.Silver
+		Me.txtNombre.BackColor = System.Drawing.Color.White
 		Me.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.None
 		Me.txtNombre.Location = New System.Drawing.Point(148, 17)
 		Me.txtNombre.Margin = New System.Windows.Forms.Padding(2)
@@ -267,18 +276,20 @@ Partial Class Consulta_de_Cita
 		'
 		'Label2
 		'
-		Me.Label2.BackColor = System.Drawing.Color.Silver
+		Me.Label2.BackColor = System.Drawing.Color.Transparent
 		Me.Label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-		Me.Label2.Location = New System.Drawing.Point(30, 17)
+		Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.Label2.Location = New System.Drawing.Point(32, 17)
 		Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
 		Me.Label2.Name = "Label2"
-		Me.Label2.Size = New System.Drawing.Size(97, 27)
+		Me.Label2.Size = New System.Drawing.Size(112, 27)
 		Me.Label2.TabIndex = 6
 		Me.Label2.Text = "Nombre de tutor:"
 		Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
 		'
 		'dgvCitaProgramada
 		'
+		Me.dgvCitaProgramada.BackgroundColor = System.Drawing.SystemColors.ActiveCaption
 		Me.dgvCitaProgramada.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
 		Me.dgvCitaProgramada.Location = New System.Drawing.Point(402, 110)
 		Me.dgvCitaProgramada.Name = "dgvCitaProgramada"
@@ -299,7 +310,7 @@ Partial Class Consulta_de_Cita
 		'PictureBox1
 		'
 		Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-		Me.PictureBox1.Location = New System.Drawing.Point(73, 335)
+		Me.PictureBox1.Location = New System.Drawing.Point(83, 340)
 		Me.PictureBox1.Margin = New System.Windows.Forms.Padding(2)
 		Me.PictureBox1.Name = "PictureBox1"
 		Me.PictureBox1.Size = New System.Drawing.Size(258, 83)
@@ -318,6 +329,7 @@ Partial Class Consulta_de_Cita
 		Me.Controls.Add(Me.Panel3)
 		Me.Controls.Add(Me.Panel2)
 		Me.Controls.Add(Me.Panel1)
+		Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
 		Me.Margin = New System.Windows.Forms.Padding(2)
 		Me.Name = "Consulta_de_Cita"
 		Me.Text = "Consulta de Cita"

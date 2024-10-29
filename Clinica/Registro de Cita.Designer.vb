@@ -54,7 +54,7 @@ Partial Class Registro_de_Cita
 		'
 		'Panel1
 		'
-		Me.Panel1.BackColor = System.Drawing.Color.LightSlateGray
+		Me.Panel1.BackColor = System.Drawing.Color.SteelBlue
 		Me.Panel1.Controls.Add(Me.btnMenuPrincipal)
 		Me.Panel1.Controls.Add(Me.Label1)
 		Me.Panel1.Location = New System.Drawing.Point(-1, 0)
@@ -65,13 +65,14 @@ Partial Class Registro_de_Cita
 		'
 		'btnMenuPrincipal
 		'
-		Me.btnMenuPrincipal.BackColor = System.Drawing.Color.LightSteelBlue
+		Me.btnMenuPrincipal.BackColor = System.Drawing.Color.LightBlue
 		Me.btnMenuPrincipal.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+		Me.btnMenuPrincipal.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
 		Me.btnMenuPrincipal.ForeColor = System.Drawing.SystemColors.ControlText
-		Me.btnMenuPrincipal.Location = New System.Drawing.Point(526, 43)
+		Me.btnMenuPrincipal.Location = New System.Drawing.Point(491, 43)
 		Me.btnMenuPrincipal.Margin = New System.Windows.Forms.Padding(2)
 		Me.btnMenuPrincipal.Name = "btnMenuPrincipal"
-		Me.btnMenuPrincipal.Size = New System.Drawing.Size(93, 25)
+		Me.btnMenuPrincipal.Size = New System.Drawing.Size(128, 25)
 		Me.btnMenuPrincipal.TabIndex = 1
 		Me.btnMenuPrincipal.Text = "Menú Principal"
 		Me.btnMenuPrincipal.UseVisualStyleBackColor = False
@@ -79,18 +80,18 @@ Partial Class Registro_de_Cita
 		'Label1
 		'
 		Me.Label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-		Me.Label1.Font = New System.Drawing.Font("MV Boli", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.Label1.Font = New System.Drawing.Font("Arial Narrow", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
 		Me.Label1.ForeColor = System.Drawing.SystemColors.ControlLightLight
-		Me.Label1.Location = New System.Drawing.Point(177, 29)
+		Me.Label1.Location = New System.Drawing.Point(220, 29)
 		Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
 		Me.Label1.Name = "Label1"
-		Me.Label1.Size = New System.Drawing.Size(287, 39)
+		Me.Label1.Size = New System.Drawing.Size(229, 39)
 		Me.Label1.TabIndex = 0
 		Me.Label1.Text = "Registro de Cita"
 		'
 		'Panel2
 		'
-		Me.Panel2.BackColor = System.Drawing.Color.LightSlateGray
+		Me.Panel2.BackColor = System.Drawing.Color.SteelBlue
 		Me.Panel2.ForeColor = System.Drawing.Color.LightSlateGray
 		Me.Panel2.Location = New System.Drawing.Point(-1, 443)
 		Me.Panel2.Margin = New System.Windows.Forms.Padding(2)
@@ -100,7 +101,7 @@ Partial Class Registro_de_Cita
 		'
 		'Panel3
 		'
-		Me.Panel3.BackColor = System.Drawing.SystemColors.ControlLight
+		Me.Panel3.BackColor = System.Drawing.Color.LightSteelBlue
 		Me.Panel3.Controls.Add(Me.btnRegistrarCita)
 		Me.Panel3.Controls.Add(Me.DateTimePickerFecha)
 		Me.Panel3.Controls.Add(Me.txtHora)
@@ -120,14 +121,15 @@ Partial Class Registro_de_Cita
 		Me.Panel3.Location = New System.Drawing.Point(11, 120)
 		Me.Panel3.Margin = New System.Windows.Forms.Padding(2)
 		Me.Panel3.Name = "Panel3"
-		Me.Panel3.Size = New System.Drawing.Size(319, 281)
+		Me.Panel3.Size = New System.Drawing.Size(319, 297)
 		Me.Panel3.TabIndex = 3
 		'
 		'btnRegistrarCita
 		'
-		Me.btnRegistrarCita.BackColor = System.Drawing.Color.LightSteelBlue
+		Me.btnRegistrarCita.BackColor = System.Drawing.Color.LightBlue
 		Me.btnRegistrarCita.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-		Me.btnRegistrarCita.Location = New System.Drawing.Point(120, 254)
+		Me.btnRegistrarCita.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.btnRegistrarCita.Location = New System.Drawing.Point(130, 254)
 		Me.btnRegistrarCita.Margin = New System.Windows.Forms.Padding(2)
 		Me.btnRegistrarCita.Name = "btnRegistrarCita"
 		Me.btnRegistrarCita.Size = New System.Drawing.Size(93, 25)
@@ -137,16 +139,16 @@ Partial Class Registro_de_Cita
 		'
 		'DateTimePickerFecha
 		'
-		Me.DateTimePickerFecha.Location = New System.Drawing.Point(141, 183)
+		Me.DateTimePickerFecha.Location = New System.Drawing.Point(151, 183)
 		Me.DateTimePickerFecha.Name = "DateTimePickerFecha"
 		Me.DateTimePickerFecha.Size = New System.Drawing.Size(149, 20)
 		Me.DateTimePickerFecha.TabIndex = 8
 		'
 		'txtHora
 		'
-		Me.txtHora.BackColor = System.Drawing.Color.Silver
+		Me.txtHora.BackColor = System.Drawing.Color.White
 		Me.txtHora.BorderStyle = System.Windows.Forms.BorderStyle.None
-		Me.txtHora.Location = New System.Drawing.Point(141, 208)
+		Me.txtHora.Location = New System.Drawing.Point(151, 208)
 		Me.txtHora.Margin = New System.Windows.Forms.Padding(2)
 		Me.txtHora.Multiline = True
 		Me.txtHora.Name = "txtHora"
@@ -155,9 +157,9 @@ Partial Class Registro_de_Cita
 		'
 		'txtEspecie
 		'
-		Me.txtEspecie.BackColor = System.Drawing.Color.Silver
+		Me.txtEspecie.BackColor = System.Drawing.Color.White
 		Me.txtEspecie.BorderStyle = System.Windows.Forms.BorderStyle.None
-		Me.txtEspecie.Location = New System.Drawing.Point(141, 143)
+		Me.txtEspecie.Location = New System.Drawing.Point(151, 143)
 		Me.txtEspecie.Margin = New System.Windows.Forms.Padding(2)
 		Me.txtEspecie.Multiline = True
 		Me.txtEspecie.Name = "txtEspecie"
@@ -166,21 +168,22 @@ Partial Class Registro_de_Cita
 		'
 		'Label8
 		'
-		Me.Label8.BackColor = System.Drawing.Color.Silver
+		Me.Label8.BackColor = System.Drawing.Color.Transparent
 		Me.Label8.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-		Me.Label8.Location = New System.Drawing.Point(26, 208)
+		Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.Label8.Location = New System.Drawing.Point(89, 208)
 		Me.Label8.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
 		Me.Label8.Name = "Label8"
-		Me.Label8.Size = New System.Drawing.Size(97, 27)
+		Me.Label8.Size = New System.Drawing.Size(55, 27)
 		Me.Label8.TabIndex = 5
 		Me.Label8.Text = "Hora:"
 		Me.Label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
 		'
 		'txtNomMascota
 		'
-		Me.txtNomMascota.BackColor = System.Drawing.Color.Silver
+		Me.txtNomMascota.BackColor = System.Drawing.Color.White
 		Me.txtNomMascota.BorderStyle = System.Windows.Forms.BorderStyle.None
-		Me.txtNomMascota.Location = New System.Drawing.Point(141, 111)
+		Me.txtNomMascota.Location = New System.Drawing.Point(151, 111)
 		Me.txtNomMascota.Margin = New System.Windows.Forms.Padding(2)
 		Me.txtNomMascota.Multiline = True
 		Me.txtNomMascota.Name = "txtNomMascota"
@@ -189,9 +192,9 @@ Partial Class Registro_de_Cita
 		'
 		'txtTelefono
 		'
-		Me.txtTelefono.BackColor = System.Drawing.Color.Silver
+		Me.txtTelefono.BackColor = System.Drawing.Color.White
 		Me.txtTelefono.BorderStyle = System.Windows.Forms.BorderStyle.None
-		Me.txtTelefono.Location = New System.Drawing.Point(141, 80)
+		Me.txtTelefono.Location = New System.Drawing.Point(151, 80)
 		Me.txtTelefono.Margin = New System.Windows.Forms.Padding(2)
 		Me.txtTelefono.Multiline = True
 		Me.txtTelefono.Name = "txtTelefono"
@@ -200,9 +203,9 @@ Partial Class Registro_de_Cita
 		'
 		'txtApellido
 		'
-		Me.txtApellido.BackColor = System.Drawing.Color.Silver
+		Me.txtApellido.BackColor = System.Drawing.Color.White
 		Me.txtApellido.BorderStyle = System.Windows.Forms.BorderStyle.None
-		Me.txtApellido.Location = New System.Drawing.Point(141, 49)
+		Me.txtApellido.Location = New System.Drawing.Point(151, 49)
 		Me.txtApellido.Margin = New System.Windows.Forms.Padding(2)
 		Me.txtApellido.Multiline = True
 		Me.txtApellido.Name = "txtApellido"
@@ -211,21 +214,22 @@ Partial Class Registro_de_Cita
 		'
 		'Label7
 		'
-		Me.Label7.BackColor = System.Drawing.Color.Silver
+		Me.Label7.BackColor = System.Drawing.Color.Transparent
 		Me.Label7.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-		Me.Label7.Location = New System.Drawing.Point(26, 176)
+		Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.Label7.Location = New System.Drawing.Point(78, 183)
 		Me.Label7.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
 		Me.Label7.Name = "Label7"
-		Me.Label7.Size = New System.Drawing.Size(97, 27)
+		Me.Label7.Size = New System.Drawing.Size(66, 20)
 		Me.Label7.TabIndex = 1
 		Me.Label7.Text = "Fecha:"
 		Me.Label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
 		'
 		'txtNomCliente
 		'
-		Me.txtNomCliente.BackColor = System.Drawing.Color.Silver
+		Me.txtNomCliente.BackColor = System.Drawing.Color.White
 		Me.txtNomCliente.BorderStyle = System.Windows.Forms.BorderStyle.None
-		Me.txtNomCliente.Location = New System.Drawing.Point(141, 19)
+		Me.txtNomCliente.Location = New System.Drawing.Point(151, 19)
 		Me.txtNomCliente.Margin = New System.Windows.Forms.Padding(2)
 		Me.txtNomCliente.Multiline = True
 		Me.txtNomCliente.Name = "txtNomCliente"
@@ -234,7 +238,7 @@ Partial Class Registro_de_Cita
 		'
 		'TextBox1
 		'
-		Me.TextBox1.Location = New System.Drawing.Point(150, 33)
+		Me.TextBox1.Location = New System.Drawing.Point(160, 33)
 		Me.TextBox1.Margin = New System.Windows.Forms.Padding(2)
 		Me.TextBox1.Name = "TextBox1"
 		Me.TextBox1.Size = New System.Drawing.Size(1, 20)
@@ -243,66 +247,72 @@ Partial Class Registro_de_Cita
 		'
 		'Label6
 		'
-		Me.Label6.BackColor = System.Drawing.Color.Silver
+		Me.Label6.BackColor = System.Drawing.Color.Transparent
 		Me.Label6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-		Me.Label6.Location = New System.Drawing.Point(26, 143)
+		Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.Label6.Location = New System.Drawing.Point(75, 143)
 		Me.Label6.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
 		Me.Label6.Name = "Label6"
-		Me.Label6.Size = New System.Drawing.Size(97, 27)
+		Me.Label6.Size = New System.Drawing.Size(72, 27)
 		Me.Label6.TabIndex = 4
 		Me.Label6.Text = "Especie:"
 		Me.Label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
 		'
 		'Label5
 		'
-		Me.Label5.BackColor = System.Drawing.Color.Silver
+		Me.Label5.BackColor = System.Drawing.Color.Transparent
 		Me.Label5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-		Me.Label5.Location = New System.Drawing.Point(26, 111)
+		Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.Label5.Location = New System.Drawing.Point(2, 109)
 		Me.Label5.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
 		Me.Label5.Name = "Label5"
-		Me.Label5.Size = New System.Drawing.Size(97, 27)
+		Me.Label5.Size = New System.Drawing.Size(159, 27)
 		Me.Label5.TabIndex = 3
 		Me.Label5.Text = "Nombre de mascota:"
 		Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
 		'
 		'Label4
 		'
-		Me.Label4.BackColor = System.Drawing.Color.Silver
+		Me.Label4.BackColor = System.Drawing.Color.Transparent
 		Me.Label4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-		Me.Label4.Location = New System.Drawing.Point(26, 80)
+		Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.Label4.Location = New System.Drawing.Point(78, 80)
 		Me.Label4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
 		Me.Label4.Name = "Label4"
-		Me.Label4.Size = New System.Drawing.Size(97, 27)
+		Me.Label4.Size = New System.Drawing.Size(69, 27)
 		Me.Label4.TabIndex = 2
 		Me.Label4.Text = "Teléfono:"
 		Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
 		'
 		'Label3
 		'
-		Me.Label3.BackColor = System.Drawing.Color.Silver
+		Me.Label3.BackColor = System.Drawing.Color.Transparent
 		Me.Label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-		Me.Label3.Location = New System.Drawing.Point(26, 49)
+		Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.Label3.Location = New System.Drawing.Point(81, 49)
 		Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
 		Me.Label3.Name = "Label3"
-		Me.Label3.Size = New System.Drawing.Size(97, 27)
+		Me.Label3.Size = New System.Drawing.Size(66, 27)
 		Me.Label3.TabIndex = 1
 		Me.Label3.Text = "Apellido:"
 		Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
 		'
 		'Label2
 		'
-		Me.Label2.BackColor = System.Drawing.Color.Silver
+		Me.Label2.BackColor = System.Drawing.Color.Transparent
 		Me.Label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-		Me.Label2.Location = New System.Drawing.Point(26, 19)
+		Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.Label2.Location = New System.Drawing.Point(26, 22)
 		Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
 		Me.Label2.Name = "Label2"
-		Me.Label2.Size = New System.Drawing.Size(97, 27)
+		Me.Label2.Size = New System.Drawing.Size(121, 27)
 		Me.Label2.TabIndex = 0
 		Me.Label2.Text = "Nombre de tutor:"
 		Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
 		'
 		'DataGridViewCitas
 		'
+		Me.DataGridViewCitas.BackgroundColor = System.Drawing.SystemColors.ActiveCaption
 		Me.DataGridViewCitas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
 		Me.DataGridViewCitas.Location = New System.Drawing.Point(335, 120)
 		Me.DataGridViewCitas.Name = "DataGridViewCitas"
@@ -331,6 +341,7 @@ Partial Class Registro_de_Cita
 		Me.Controls.Add(Me.Panel3)
 		Me.Controls.Add(Me.Panel2)
 		Me.Controls.Add(Me.Panel1)
+		Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
 		Me.Margin = New System.Windows.Forms.Padding(2)
 		Me.Name = "Registro_de_Cita"
 		Me.Text = "Registro de Cita"

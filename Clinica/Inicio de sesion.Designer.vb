@@ -41,7 +41,7 @@ Partial Class Inicio_de_sesion
 		'
 		Me.Label1.AutoSize = True
 		Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.Label1.ForeColor = System.Drawing.Color.LightSlateGray
+		Me.Label1.ForeColor = System.Drawing.Color.SteelBlue
 		Me.Label1.Location = New System.Drawing.Point(276, 33)
 		Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
 		Me.Label1.Name = "Label1"
@@ -84,10 +84,10 @@ Partial Class Inicio_de_sesion
 		'
 		'linkRecuperarCuenta
 		'
-		Me.linkRecuperarCuenta.ActiveLinkColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
+		Me.linkRecuperarCuenta.ActiveLinkColor = System.Drawing.Color.DarkViolet
 		Me.linkRecuperarCuenta.AutoSize = True
 		Me.linkRecuperarCuenta.DisabledLinkColor = System.Drawing.Color.Black
-		Me.linkRecuperarCuenta.LinkColor = System.Drawing.Color.MidnightBlue
+		Me.linkRecuperarCuenta.LinkColor = System.Drawing.Color.SteelBlue
 		Me.linkRecuperarCuenta.Location = New System.Drawing.Point(315, 426)
 		Me.linkRecuperarCuenta.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
 		Me.linkRecuperarCuenta.Name = "linkRecuperarCuenta"
@@ -95,12 +95,13 @@ Partial Class Inicio_de_sesion
 		Me.linkRecuperarCuenta.TabIndex = 7
 		Me.linkRecuperarCuenta.TabStop = True
 		Me.linkRecuperarCuenta.Text = "Recuperar Cuenta"
+		Me.linkRecuperarCuenta.VisitedLinkColor = System.Drawing.Color.DarkMagenta
 		'
 		'linkCrearCuenta
 		'
 		Me.linkCrearCuenta.ActiveLinkColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
 		Me.linkCrearCuenta.AutoSize = True
-		Me.linkCrearCuenta.LinkColor = System.Drawing.Color.MidnightBlue
+		Me.linkCrearCuenta.LinkColor = System.Drawing.Color.SteelBlue
 		Me.linkCrearCuenta.Location = New System.Drawing.Point(321, 452)
 		Me.linkCrearCuenta.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
 		Me.linkCrearCuenta.Name = "linkCrearCuenta"
@@ -157,7 +158,7 @@ Partial Class Inicio_de_sesion
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
 		Me.BackColor = System.Drawing.SystemColors.ButtonHighlight
-		Me.ClientSize = New System.Drawing.Size(720, 501)
+		Me.ClientSize = New System.Drawing.Size(706, 500)
 		Me.Controls.Add(Me.btnSalir)
 		Me.Controls.Add(Me.btnIngresar)
 		Me.Controls.Add(Me.txtContraseña)
@@ -172,6 +173,7 @@ Partial Class Inicio_de_sesion
 		Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
 		Me.Margin = New System.Windows.Forms.Padding(2)
 		Me.Name = "Inicio_de_sesion"
+		Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
 		Me.Text = "Inicio_de_sesion"
 		CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
 		Me.ResumeLayout(False)

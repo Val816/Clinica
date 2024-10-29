@@ -36,30 +36,33 @@ Partial Class Vacunacion
 		Me.txtObservaciones = New System.Windows.Forms.TextBox()
 		Me.ComboBoxServicio = New System.Windows.Forms.ComboBox()
 		Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+		Me.Panel3 = New System.Windows.Forms.Panel()
 		Me.Panel1.SuspendLayout()
 		Me.Panel2.SuspendLayout()
 		CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+		Me.Panel3.SuspendLayout()
 		Me.SuspendLayout()
 		'
 		'Panel1
 		'
-		Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(197, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(165, Byte), Integer))
+		Me.Panel1.BackColor = System.Drawing.Color.SteelBlue
 		Me.Panel1.Controls.Add(Me.btnMenuPrincipal)
 		Me.Panel1.Controls.Add(Me.Label1)
 		Me.Panel1.Location = New System.Drawing.Point(1, -1)
 		Me.Panel1.Margin = New System.Windows.Forms.Padding(2)
 		Me.Panel1.Name = "Panel1"
-		Me.Panel1.Size = New System.Drawing.Size(838, 107)
+		Me.Panel1.Size = New System.Drawing.Size(838, 93)
 		Me.Panel1.TabIndex = 6
 		'
 		'btnMenuPrincipal
 		'
-		Me.btnMenuPrincipal.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(128, Byte), Integer))
+		Me.btnMenuPrincipal.BackColor = System.Drawing.Color.LightBlue
 		Me.btnMenuPrincipal.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-		Me.btnMenuPrincipal.Location = New System.Drawing.Point(410, 12)
+		Me.btnMenuPrincipal.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.btnMenuPrincipal.Location = New System.Drawing.Point(439, 38)
 		Me.btnMenuPrincipal.Margin = New System.Windows.Forms.Padding(2)
 		Me.btnMenuPrincipal.Name = "btnMenuPrincipal"
-		Me.btnMenuPrincipal.Size = New System.Drawing.Size(93, 25)
+		Me.btnMenuPrincipal.Size = New System.Drawing.Size(105, 25)
 		Me.btnMenuPrincipal.TabIndex = 1
 		Me.btnMenuPrincipal.Text = "Menú Principal"
 		Me.btnMenuPrincipal.UseVisualStyleBackColor = False
@@ -67,29 +70,31 @@ Partial Class Vacunacion
 		'Label1
 		'
 		Me.Label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-		Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 25.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.Label1.Location = New System.Drawing.Point(146, 38)
+		Me.Label1.Font = New System.Drawing.Font("Arial Narrow", 24.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.Label1.ForeColor = System.Drawing.Color.White
+		Me.Label1.Location = New System.Drawing.Point(201, 29)
 		Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
 		Me.Label1.Name = "Label1"
-		Me.Label1.Size = New System.Drawing.Size(337, 39)
+		Me.Label1.Size = New System.Drawing.Size(201, 39)
 		Me.Label1.TabIndex = 0
 		Me.Label1.Text = "Vacunación"
 		'
 		'Panel2
 		'
-		Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(197, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(165, Byte), Integer))
+		Me.Panel2.BackColor = System.Drawing.Color.SteelBlue
 		Me.Panel2.Controls.Add(Me.btnGuardar)
 		Me.Panel2.Location = New System.Drawing.Point(1, 435)
 		Me.Panel2.Margin = New System.Windows.Forms.Padding(2)
 		Me.Panel2.Name = "Panel2"
-		Me.Panel2.Size = New System.Drawing.Size(854, 94)
+		Me.Panel2.Size = New System.Drawing.Size(854, 87)
 		Me.Panel2.TabIndex = 7
 		'
 		'btnGuardar
 		'
-		Me.btnGuardar.BackColor = System.Drawing.Color.FromArgb(CType(CType(174, Byte), Integer), CType(CType(214, Byte), Integer), CType(CType(241, Byte), Integer))
+		Me.btnGuardar.BackColor = System.Drawing.Color.LightBlue
 		Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-		Me.btnGuardar.Location = New System.Drawing.Point(410, 25)
+		Me.btnGuardar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.btnGuardar.Location = New System.Drawing.Point(451, 25)
 		Me.btnGuardar.Margin = New System.Windows.Forms.Padding(2)
 		Me.btnGuardar.Name = "btnGuardar"
 		Me.btnGuardar.Size = New System.Drawing.Size(93, 25)
@@ -101,7 +106,7 @@ Partial Class Vacunacion
 		'
 		Me.groupBoxVacunasAplicar.FormattingEnabled = True
 		Me.groupBoxVacunasAplicar.Items.AddRange(New Object() {"Vacuna Puppy", "Vacuna Quintuple", "Vacuna Sextuple", "Vacuna de rabia", "Vacuna triple felina", "Vacuna bordetella", "Vacuna giarda", "Otra", "Ninguna"})
-		Me.groupBoxVacunasAplicar.Location = New System.Drawing.Point(84, 140)
+		Me.groupBoxVacunasAplicar.Location = New System.Drawing.Point(41, 26)
 		Me.groupBoxVacunasAplicar.Margin = New System.Windows.Forms.Padding(2)
 		Me.groupBoxVacunasAplicar.Name = "groupBoxVacunasAplicar"
 		Me.groupBoxVacunasAplicar.Size = New System.Drawing.Size(153, 124)
@@ -111,7 +116,7 @@ Partial Class Vacunacion
 		'
 		Me.CargarVacunasAplicadas.FormattingEnabled = True
 		Me.CargarVacunasAplicadas.Items.AddRange(New Object() {"Vacuna Puppy", "Vacuna Quintuple", "Vacuna Sextuple", "Vacuna de rabia", "Vacuna triple felina", "Vacuna bordetella", "Vacuna giarda", "Otra"})
-		Me.CargarVacunasAplicadas.Location = New System.Drawing.Point(331, 140)
+		Me.CargarVacunasAplicadas.Location = New System.Drawing.Point(283, 26)
 		Me.CargarVacunasAplicadas.Margin = New System.Windows.Forms.Padding(2)
 		Me.CargarVacunasAplicadas.Name = "CargarVacunasAplicadas"
 		Me.CargarVacunasAplicadas.Size = New System.Drawing.Size(153, 124)
@@ -121,7 +126,7 @@ Partial Class Vacunacion
 		'
 		Me.Label2.AutoSize = True
 		Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.Label2.Location = New System.Drawing.Point(86, 119)
+		Me.Label2.Location = New System.Drawing.Point(38, 6)
 		Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
 		Me.Label2.Name = "Label2"
 		Me.Label2.Size = New System.Drawing.Size(146, 13)
@@ -132,7 +137,7 @@ Partial Class Vacunacion
 		'
 		Me.Label3.AutoSize = True
 		Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.Label3.Location = New System.Drawing.Point(350, 119)
+		Me.Label3.Location = New System.Drawing.Point(307, 6)
 		Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
 		Me.Label3.Name = "Label3"
 		Me.Label3.Size = New System.Drawing.Size(102, 13)
@@ -141,12 +146,12 @@ Partial Class Vacunacion
 		'
 		'Label10
 		'
-		Me.Label10.BackColor = System.Drawing.Color.Silver
-		Me.Label10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-		Me.Label10.Location = New System.Drawing.Point(26, 288)
+		Me.Label10.BackColor = System.Drawing.Color.Transparent
+		Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.Label10.Location = New System.Drawing.Point(42, 288)
 		Me.Label10.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
 		Me.Label10.Name = "Label10"
-		Me.Label10.Size = New System.Drawing.Size(115, 40)
+		Me.Label10.Size = New System.Drawing.Size(99, 40)
 		Me.Label10.TabIndex = 32
 		Me.Label10.Text = "Observaciones:"
 		Me.Label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -165,11 +170,11 @@ Partial Class Vacunacion
 		'
 		'ComboBoxServicio
 		'
-		Me.ComboBoxServicio.BackColor = System.Drawing.SystemColors.InfoText
-		Me.ComboBoxServicio.ForeColor = System.Drawing.Color.White
+		Me.ComboBoxServicio.BackColor = System.Drawing.Color.White
+		Me.ComboBoxServicio.ForeColor = System.Drawing.Color.Black
 		Me.ComboBoxServicio.FormattingEnabled = True
 		Me.ComboBoxServicio.Items.AddRange(New Object() {"Consulta Médica", "Desparacitación", "Vacunación", "Eutanasia", "Cirugía", "Estética", "Pensión", "Castración", "Proaxis Dental"})
-		Me.ComboBoxServicio.Location = New System.Drawing.Point(159, 384)
+		Me.ComboBoxServicio.Location = New System.Drawing.Point(145, 384)
 		Me.ComboBoxServicio.Margin = New System.Windows.Forms.Padding(2)
 		Me.ComboBoxServicio.Name = "ComboBoxServicio"
 		Me.ComboBoxServicio.Size = New System.Drawing.Size(147, 21)
@@ -179,7 +184,7 @@ Partial Class Vacunacion
 		'PictureBox1
 		'
 		Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-		Me.PictureBox1.Location = New System.Drawing.Point(318, 302)
+		Me.PictureBox1.Location = New System.Drawing.Point(331, 288)
 		Me.PictureBox1.Margin = New System.Windows.Forms.Padding(2)
 		Me.PictureBox1.Name = "PictureBox1"
 		Me.PictureBox1.Size = New System.Drawing.Size(186, 129)
@@ -187,20 +192,29 @@ Partial Class Vacunacion
 		Me.PictureBox1.TabIndex = 39
 		Me.PictureBox1.TabStop = False
 		'
+		'Panel3
+		'
+		Me.Panel3.BackColor = System.Drawing.Color.LightSteelBlue
+		Me.Panel3.Controls.Add(Me.Label3)
+		Me.Panel3.Controls.Add(Me.Label2)
+		Me.Panel3.Controls.Add(Me.CargarVacunasAplicadas)
+		Me.Panel3.Controls.Add(Me.groupBoxVacunasAplicar)
+		Me.Panel3.Location = New System.Drawing.Point(48, 111)
+		Me.Panel3.Name = "Panel3"
+		Me.Panel3.Size = New System.Drawing.Size(468, 162)
+		Me.Panel3.TabIndex = 40
+		'
 		'Vacunacion
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
 		Me.BackColor = System.Drawing.SystemColors.ButtonHighlight
-		Me.ClientSize = New System.Drawing.Size(556, 516)
+		Me.ClientSize = New System.Drawing.Size(556, 503)
+		Me.Controls.Add(Me.Panel3)
 		Me.Controls.Add(Me.PictureBox1)
 		Me.Controls.Add(Me.ComboBoxServicio)
 		Me.Controls.Add(Me.txtObservaciones)
 		Me.Controls.Add(Me.Label10)
-		Me.Controls.Add(Me.Label3)
-		Me.Controls.Add(Me.Label2)
-		Me.Controls.Add(Me.CargarVacunasAplicadas)
-		Me.Controls.Add(Me.groupBoxVacunasAplicar)
 		Me.Controls.Add(Me.Panel2)
 		Me.Controls.Add(Me.Panel1)
 		Me.Margin = New System.Windows.Forms.Padding(2)
@@ -210,6 +224,8 @@ Partial Class Vacunacion
 		Me.Panel1.ResumeLayout(False)
 		Me.Panel2.ResumeLayout(False)
 		CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+		Me.Panel3.ResumeLayout(False)
+		Me.Panel3.PerformLayout()
 		Me.ResumeLayout(False)
 		Me.PerformLayout()
 
@@ -228,4 +244,5 @@ Partial Class Vacunacion
 	Friend WithEvents txtObservaciones As TextBox
 	Friend WithEvents ComboBoxServicio As ComboBox
 	Friend WithEvents PictureBox1 As PictureBox
+	Friend WithEvents Panel3 As Panel
 End Class

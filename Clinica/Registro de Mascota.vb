@@ -322,6 +322,7 @@ Public Class Registro_de_Mascota
                 Me.Hide()
 
             Case 10
+
                 Dim formHospitalizacion As New Hospitalización()
                 formHospitalizacion.Show()
                 Me.Hide()
@@ -495,5 +496,6 @@ Public Class Registro_de_Mascota
             End If
         End Using
     End Sub
+
 
 End Class

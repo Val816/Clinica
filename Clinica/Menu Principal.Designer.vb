@@ -26,29 +26,32 @@ Partial Class Menu_Principal
 		Me.Label1 = New System.Windows.Forms.Label()
 		Me.Panel2 = New System.Windows.Forms.Panel()
 		Me.btnCerrarSistema = New System.Windows.Forms.Button()
-		Me.btnRegistro = New System.Windows.Forms.Panel()
-		Me.btnRegistroCita = New System.Windows.Forms.Button()
+		Me.Button2 = New System.Windows.Forms.Button()
 		Me.btnConsulta = New System.Windows.Forms.Button()
-		Me.Panel5 = New System.Windows.Forms.Panel()
+		Me.Button3 = New System.Windows.Forms.Button()
+		Me.btnRegistroCita = New System.Windows.Forms.Button()
 		Me.cmbServicios = New System.Windows.Forms.ComboBox()
 		Me.btnMascota = New System.Windows.Forms.Button()
-		Me.Button3 = New System.Windows.Forms.Button()
-		Me.Button2 = New System.Windows.Forms.Button()
 		Me.Label2 = New System.Windows.Forms.Label()
+		Me.Button1 = New System.Windows.Forms.Button()
+		Me.Panel3 = New System.Windows.Forms.Panel()
+		Me.Panel4 = New System.Windows.Forms.Panel()
+		Me.Panel5 = New System.Windows.Forms.Panel()
 		Me.Panel1.SuspendLayout()
 		Me.Panel2.SuspendLayout()
-		Me.btnRegistro.SuspendLayout()
+		Me.Panel3.SuspendLayout()
+		Me.Panel4.SuspendLayout()
 		Me.Panel5.SuspendLayout()
 		Me.SuspendLayout()
 		'
 		'Panel1
 		'
-		Me.Panel1.BackColor = System.Drawing.Color.LightSlateGray
+		Me.Panel1.BackColor = System.Drawing.Color.SteelBlue
 		Me.Panel1.Controls.Add(Me.Label1)
-		Me.Panel1.Location = New System.Drawing.Point(-1, 8)
+		Me.Panel1.Location = New System.Drawing.Point(-1, -11)
 		Me.Panel1.Margin = New System.Windows.Forms.Padding(2)
 		Me.Panel1.Name = "Panel1"
-		Me.Panel1.Size = New System.Drawing.Size(847, 98)
+		Me.Panel1.Size = New System.Drawing.Size(847, 83)
 		Me.Panel1.TabIndex = 0
 		'
 		'Label1
@@ -65,7 +68,7 @@ Partial Class Menu_Principal
 		'
 		'Panel2
 		'
-		Me.Panel2.BackColor = System.Drawing.Color.LightSlateGray
+		Me.Panel2.BackColor = System.Drawing.Color.SteelBlue
 		Me.Panel2.Controls.Add(Me.btnCerrarSistema)
 		Me.Panel2.Location = New System.Drawing.Point(-1, 437)
 		Me.Panel2.Margin = New System.Windows.Forms.Padding(2)
@@ -75,127 +78,155 @@ Partial Class Menu_Principal
 		'
 		'btnCerrarSistema
 		'
-		Me.btnCerrarSistema.BackColor = System.Drawing.Color.LightSteelBlue
+		Me.btnCerrarSistema.BackColor = System.Drawing.Color.LightBlue
 		Me.btnCerrarSistema.FlatAppearance.BorderColor = System.Drawing.Color.Black
-		Me.btnCerrarSistema.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-		Me.btnCerrarSistema.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.btnCerrarSistema.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-		Me.btnCerrarSistema.Location = New System.Drawing.Point(478, 37)
+		Me.btnCerrarSistema.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.btnCerrarSistema.ForeColor = System.Drawing.SystemColors.ControlText
+		Me.btnCerrarSistema.Location = New System.Drawing.Point(439, 27)
 		Me.btnCerrarSistema.Margin = New System.Windows.Forms.Padding(2)
 		Me.btnCerrarSistema.Name = "btnCerrarSistema"
-		Me.btnCerrarSistema.Size = New System.Drawing.Size(110, 24)
+		Me.btnCerrarSistema.Size = New System.Drawing.Size(110, 30)
 		Me.btnCerrarSistema.TabIndex = 0
 		Me.btnCerrarSistema.Text = "Cerrar Sesión"
 		Me.btnCerrarSistema.UseVisualStyleBackColor = False
 		'
-		'btnRegistro
+		'Button2
 		'
-		Me.btnRegistro.BackColor = System.Drawing.Color.Silver
-		Me.btnRegistro.Controls.Add(Me.Button2)
-		Me.btnRegistro.Controls.Add(Me.btnConsulta)
-		Me.btnRegistro.Controls.Add(Me.Button3)
-		Me.btnRegistro.Location = New System.Drawing.Point(454, 124)
-		Me.btnRegistro.Margin = New System.Windows.Forms.Padding(2)
-		Me.btnRegistro.Name = "btnRegistro"
-		Me.btnRegistro.Size = New System.Drawing.Size(133, 295)
-		Me.btnRegistro.TabIndex = 2
-		'
-		'btnRegistroCita
-		'
-		Me.btnRegistroCita.Location = New System.Drawing.Point(8, 70)
-		Me.btnRegistroCita.Name = "btnRegistroCita"
-		Me.btnRegistroCita.Size = New System.Drawing.Size(105, 23)
-		Me.btnRegistroCita.TabIndex = 7
-		Me.btnRegistroCita.Text = "Registro de cita"
-		Me.btnRegistroCita.UseVisualStyleBackColor = True
+		Me.Button2.BackColor = System.Drawing.Color.LightBlue
+		Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.Button2.Location = New System.Drawing.Point(9, 49)
+		Me.Button2.Name = "Button2"
+		Me.Button2.Size = New System.Drawing.Size(228, 31)
+		Me.Button2.TabIndex = 9
+		Me.Button2.Text = "Informes"
+		Me.Button2.UseVisualStyleBackColor = False
 		'
 		'btnConsulta
 		'
-		Me.btnConsulta.Location = New System.Drawing.Point(36, 259)
+		Me.btnConsulta.BackColor = System.Drawing.Color.LightBlue
+		Me.btnConsulta.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.btnConsulta.Location = New System.Drawing.Point(9, 12)
 		Me.btnConsulta.Name = "btnConsulta"
-		Me.btnConsulta.Size = New System.Drawing.Size(75, 23)
+		Me.btnConsulta.Size = New System.Drawing.Size(228, 31)
 		Me.btnConsulta.TabIndex = 9
 		Me.btnConsulta.Text = "Consulta"
-		Me.btnConsulta.UseVisualStyleBackColor = True
+		Me.btnConsulta.UseVisualStyleBackColor = False
 		'
-		'Panel5
+		'Button3
 		'
-		Me.Panel5.BackColor = System.Drawing.Color.Silver
-		Me.Panel5.Controls.Add(Me.btnRegistroCita)
-		Me.Panel5.Controls.Add(Me.cmbServicios)
-		Me.Panel5.Controls.Add(Me.btnMascota)
-		Me.Panel5.Location = New System.Drawing.Point(51, 124)
-		Me.Panel5.Margin = New System.Windows.Forms.Padding(2)
-		Me.Panel5.Name = "Panel5"
-		Me.Panel5.Size = New System.Drawing.Size(129, 295)
-		Me.Panel5.TabIndex = 4
+		Me.Button3.BackColor = System.Drawing.Color.LightBlue
+		Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.Button3.Location = New System.Drawing.Point(9, 14)
+		Me.Button3.Name = "Button3"
+		Me.Button3.Size = New System.Drawing.Size(228, 31)
+		Me.Button3.TabIndex = 9
+		Me.Button3.Text = "Historial"
+		Me.Button3.UseVisualStyleBackColor = False
+		'
+		'btnRegistroCita
+		'
+		Me.btnRegistroCita.BackColor = System.Drawing.Color.LightBlue
+		Me.btnRegistroCita.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.btnRegistroCita.ForeColor = System.Drawing.SystemColors.ControlText
+		Me.btnRegistroCita.Location = New System.Drawing.Point(9, 56)
+		Me.btnRegistroCita.Name = "btnRegistroCita"
+		Me.btnRegistroCita.Size = New System.Drawing.Size(228, 34)
+		Me.btnRegistroCita.TabIndex = 7
+		Me.btnRegistroCita.Text = "Registro de cita"
+		Me.btnRegistroCita.UseVisualStyleBackColor = False
 		'
 		'cmbServicios
 		'
 		Me.cmbServicios.FormattingEnabled = True
-		Me.cmbServicios.Location = New System.Drawing.Point(3, 166)
+		Me.cmbServicios.Location = New System.Drawing.Point(427, 393)
 		Me.cmbServicios.Name = "cmbServicios"
 		Me.cmbServicios.Size = New System.Drawing.Size(121, 21)
 		Me.cmbServicios.TabIndex = 7
 		'
 		'btnMascota
 		'
-		Me.btnMascota.BackColor = System.Drawing.Color.LightSlateGray
+		Me.btnMascota.BackColor = System.Drawing.Color.LightBlue
 		Me.btnMascota.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-		Me.btnMascota.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-		Me.btnMascota.ForeColor = System.Drawing.SystemColors.ControlLightLight
-		Me.btnMascota.Location = New System.Drawing.Point(8, 259)
+		Me.btnMascota.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.btnMascota.ForeColor = System.Drawing.SystemColors.ControlText
+		Me.btnMascota.Location = New System.Drawing.Point(9, 16)
 		Me.btnMascota.Name = "btnMascota"
-		Me.btnMascota.Size = New System.Drawing.Size(115, 23)
+		Me.btnMascota.Size = New System.Drawing.Size(228, 34)
 		Me.btnMascota.TabIndex = 6
 		Me.btnMascota.Text = "Registro de Mascota"
 		Me.btnMascota.UseVisualStyleBackColor = False
-		'
-		'Button3
-		'
-		Me.Button3.Location = New System.Drawing.Point(36, 164)
-		Me.Button3.Name = "Button3"
-		Me.Button3.Size = New System.Drawing.Size(75, 23)
-		Me.Button3.TabIndex = 9
-		Me.Button3.Text = "Historial"
-		Me.Button3.UseVisualStyleBackColor = True
-		'
-		'Button2
-		'
-		Me.Button2.Location = New System.Drawing.Point(36, 70)
-		Me.Button2.Name = "Button2"
-		Me.Button2.Size = New System.Drawing.Size(75, 23)
-		Me.Button2.TabIndex = 9
-		Me.Button2.Text = "Informes"
-		Me.Button2.UseVisualStyleBackColor = True
 		'
 		'Label2
 		'
 		Me.Label2.AutoSize = True
 		Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.Label2.Location = New System.Drawing.Point(228, 233)
+		Me.Label2.Location = New System.Drawing.Point(359, 110)
 		Me.Label2.Name = "Label2"
 		Me.Label2.Size = New System.Drawing.Size(176, 31)
 		Me.Label2.TabIndex = 5
 		Me.Label2.Text = "¡Bienvenido!"
 		'
+		'Button1
+		'
+		Me.Button1.BackColor = System.Drawing.Color.LightBlue
+		Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.Button1.Location = New System.Drawing.Point(9, 51)
+		Me.Button1.Name = "Button1"
+		Me.Button1.Size = New System.Drawing.Size(228, 34)
+		Me.Button1.TabIndex = 10
+		Me.Button1.Text = "Cirugía"
+		Me.Button1.UseVisualStyleBackColor = False
+		'
+		'Panel3
+		'
+		Me.Panel3.BackColor = System.Drawing.Color.LightSteelBlue
+		Me.Panel3.Controls.Add(Me.btnMascota)
+		Me.Panel3.Controls.Add(Me.btnRegistroCita)
+		Me.Panel3.Location = New System.Drawing.Point(12, 91)
+		Me.Panel3.Name = "Panel3"
+		Me.Panel3.Size = New System.Drawing.Size(251, 103)
+		Me.Panel3.TabIndex = 11
+		'
+		'Panel4
+		'
+		Me.Panel4.BackColor = System.Drawing.Color.LightSteelBlue
+		Me.Panel4.Controls.Add(Me.btnConsulta)
+		Me.Panel4.Controls.Add(Me.Button2)
+		Me.Panel4.Location = New System.Drawing.Point(12, 218)
+		Me.Panel4.Name = "Panel4"
+		Me.Panel4.Size = New System.Drawing.Size(251, 92)
+		Me.Panel4.TabIndex = 12
+		'
+		'Panel5
+		'
+		Me.Panel5.BackColor = System.Drawing.Color.LightSteelBlue
+		Me.Panel5.Controls.Add(Me.Button1)
+		Me.Panel5.Controls.Add(Me.Button3)
+		Me.Panel5.Location = New System.Drawing.Point(12, 330)
+		Me.Panel5.Name = "Panel5"
+		Me.Panel5.Size = New System.Drawing.Size(250, 93)
+		Me.Panel5.TabIndex = 13
+		'
 		'Menu_Principal
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-		Me.ClientSize = New System.Drawing.Size(630, 522)
-		Me.Controls.Add(Me.Label2)
+		Me.ClientSize = New System.Drawing.Size(597, 522)
 		Me.Controls.Add(Me.Panel5)
-		Me.Controls.Add(Me.btnRegistro)
+		Me.Controls.Add(Me.Panel4)
+		Me.Controls.Add(Me.Panel3)
+		Me.Controls.Add(Me.cmbServicios)
+		Me.Controls.Add(Me.Label2)
 		Me.Controls.Add(Me.Panel2)
 		Me.Controls.Add(Me.Panel1)
-		Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
+		Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
 		Me.Margin = New System.Windows.Forms.Padding(2)
 		Me.Name = "Menu_Principal"
 		Me.Text = "Menú"
 		Me.Panel1.ResumeLayout(False)
 		Me.Panel2.ResumeLayout(False)
-		Me.btnRegistro.ResumeLayout(False)
+		Me.Panel3.ResumeLayout(False)
+		Me.Panel4.ResumeLayout(False)
 		Me.Panel5.ResumeLayout(False)
 		Me.ResumeLayout(False)
 		Me.PerformLayout()
@@ -206,8 +237,6 @@ Partial Class Menu_Principal
     Friend WithEvents Label1 As Label
     Friend WithEvents Panel2 As Panel
     Friend WithEvents btnCerrarSistema As Button
-    Friend WithEvents btnRegistro As Panel
-	Friend WithEvents Panel5 As Panel
 	Friend WithEvents btnRegistroCita As Button
 	Friend WithEvents btnConsulta As Button
 	Friend WithEvents btnMascota As Button
@@ -215,4 +244,8 @@ Partial Class Menu_Principal
 	Friend WithEvents cmbServicios As ComboBox
 	Friend WithEvents Button2 As Button
 	Friend WithEvents Label2 As Label
+	Friend WithEvents Button1 As Button
+	Friend WithEvents Panel3 As Panel
+	Friend WithEvents Panel4 As Panel
+	Friend WithEvents Panel5 As Panel
 End Class

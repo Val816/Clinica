@@ -105,7 +105,7 @@ Public Class Castración_y_Esterilización
         ComboBoxServicios.ValueMember = "Value"
     End Sub
 
-    Private Sub ComboBoxServicios_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBoxServicios.SelectedIndexChanged
+    Private Sub ComboBoxServicios_SelectedIndexChanged(sender As Object, e As EventArgs)
         Dim servicioSeleccionado = CType(ComboBoxServicios.SelectedItem, Object)
 
         If servicioSeleccionado Is Nothing Then
@@ -118,57 +118,57 @@ Public Class Castración_y_Esterilización
         Select Case idServicio
 
             Case 1 ' 
-                    Dim formCirugia As New Cirugía()
-                    formCirugia.Show()
-                    Me.Hide()
+                Dim formCirugia As New Cirugía()
+                formCirugia.Show()
+                Me.Hide()
 
-                Case 2 ' 
-                    Dim consultamedica As New Consulta_Médica()
-                    consultamedica.Show()
-                    Me.Hide()
+            Case 2 ' 
+                Dim consultamedica As New Consulta_Médica()
+                consultamedica.Show()
+                Me.Hide()
 
             'Case 4
             '    Dim formDesparacitacion As New Desparacitación()
             '    formDesparacitacion.Show()
             '    Me.Hide()
 
-                Case 5
-                    Dim formEsterilizacion As New Castración_y_Esterilización()
-                    formEsterilizacion.Show()
-                    Me.Hide()
+            Case 5
+                Dim formEsterilizacion As New Castración_y_Esterilización()
+                formEsterilizacion.Show()
+                Me.Hide()
 
-                Case 6
-                    Dim formPension As New Pensión()
-                    formPension.Show()
-                    Me.Hide()
+            Case 6
+                Dim formPension As New Pensión()
+                formPension.Show()
+                Me.Hide()
 
-                Case 7
-                    Dim formGrooming As New Estética()
-                    formGrooming.Show()
-                    Me.Hide()
-                Case 8
-                    Dim formEutanasia As New Eutanasia()
-                    formEutanasia.Show()
-                    Me.Hide()
+            Case 7
+                Dim formGrooming As New Estética()
+                formGrooming.Show()
+                Me.Hide()
+            Case 8
+                Dim formEutanasia As New Eutanasia()
+                formEutanasia.Show()
+                Me.Hide()
 
-                Case 9
-                    Dim formGrooming As New Vacunacion()
-                    formGrooming.Show()
-                    Me.Hide()
+            Case 9
+                Dim formGrooming As New Vacunacion()
+                formGrooming.Show()
+                Me.Hide()
 
-                Case 10
-                    Dim formHospitalizacion As New Hospitalización()
-                    formHospitalizacion.Show()
-                    Me.Hide()
-                Case 11
-                    Dim formProfilaxis As New Proaxis_Dental()
-                    formProfilaxis.Show()
-                    Me.Hide()
-                Case 12
-                    Dim formmRecibo As New Recibo()
-                    formmRecibo.Show()
-                    Me.Hide()
-                Case Else
+            Case 10
+                Dim formHospitalizacion As New Hospitalización()
+                formHospitalizacion.Show()
+                Me.Hide()
+            Case 11
+                Dim formProfilaxis As New Proaxis_Dental()
+                formProfilaxis.Show()
+                Me.Hide()
+            Case 12
+                Dim formmRecibo As New Recibo()
+                formmRecibo.Show()
+                Me.Hide()
+            Case Else
                 MessageBox.Show("Servicio no reconocido. Por favor, selecciona un servicio válido.")
         End Select
     End Sub
@@ -177,5 +177,13 @@ Public Class Castración_y_Esterilización
         Dim menuPrincipal As New Menu_Principal()
         menuPrincipal.Show()
         Me.Close()
+    End Sub
+
+    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
+
+    End Sub
+
+    Private Sub Label2_Click(sender As Object, e As EventArgs) Handles Label2.Click
+
     End Sub
 End Class

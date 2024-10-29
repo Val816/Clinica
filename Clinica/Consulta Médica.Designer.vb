@@ -51,29 +51,33 @@ Partial Class Consulta_Médica
 		Me.ComboBoxEstadoReprod = New System.Windows.Forms.ComboBox()
 		Me.Label12 = New System.Windows.Forms.Label()
 		Me.Label13 = New System.Windows.Forms.Label()
+		Me.Panel3 = New System.Windows.Forms.Panel()
+		Me.Panel4 = New System.Windows.Forms.Panel()
 		Me.Panel1.SuspendLayout()
 		Me.Panel2.SuspendLayout()
+		Me.Panel3.SuspendLayout()
+		Me.Panel4.SuspendLayout()
 		Me.SuspendLayout()
 		'
 		'Panel1
 		'
-		Me.Panel1.BackColor = System.Drawing.Color.LightSlateGray
+		Me.Panel1.BackColor = System.Drawing.Color.SteelBlue
 		Me.Panel1.Controls.Add(Me.btnMenuPrincipal)
 		Me.Panel1.Controls.Add(Me.Label1)
 		Me.Panel1.Location = New System.Drawing.Point(1, -1)
-		Me.Panel1.Margin = New System.Windows.Forms.Padding(2)
+		Me.Panel1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
 		Me.Panel1.Name = "Panel1"
-		Me.Panel1.Size = New System.Drawing.Size(842, 115)
+		Me.Panel1.Size = New System.Drawing.Size(1123, 109)
 		Me.Panel1.TabIndex = 4
 		'
 		'btnMenuPrincipal
 		'
-		Me.btnMenuPrincipal.BackColor = System.Drawing.Color.LightSteelBlue
+		Me.btnMenuPrincipal.BackColor = System.Drawing.Color.LightBlue
 		Me.btnMenuPrincipal.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-		Me.btnMenuPrincipal.Location = New System.Drawing.Point(444, 44)
-		Me.btnMenuPrincipal.Margin = New System.Windows.Forms.Padding(2)
+		Me.btnMenuPrincipal.Location = New System.Drawing.Point(607, 47)
+		Me.btnMenuPrincipal.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
 		Me.btnMenuPrincipal.Name = "btnMenuPrincipal"
-		Me.btnMenuPrincipal.Size = New System.Drawing.Size(93, 25)
+		Me.btnMenuPrincipal.Size = New System.Drawing.Size(124, 29)
 		Me.btnMenuPrincipal.TabIndex = 1
 		Me.btnMenuPrincipal.Text = "Menú Principal"
 		Me.btnMenuPrincipal.UseVisualStyleBackColor = False
@@ -81,200 +85,192 @@ Partial Class Consulta_Médica
 		'Label1
 		'
 		Me.Label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-		Me.Label1.Font = New System.Drawing.Font("MV Boli", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.Label1.Font = New System.Drawing.Font("Arial Narrow", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
 		Me.Label1.ForeColor = System.Drawing.SystemColors.ControlLightLight
-		Me.Label1.Location = New System.Drawing.Point(119, 44)
-		Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+		Me.Label1.Location = New System.Drawing.Point(270, 37)
 		Me.Label1.Name = "Label1"
-		Me.Label1.Size = New System.Drawing.Size(337, 39)
+		Me.Label1.Size = New System.Drawing.Size(237, 45)
 		Me.Label1.TabIndex = 0
 		Me.Label1.Text = "Consulta Médica"
 		'
 		'Panel2
 		'
-		Me.Panel2.BackColor = System.Drawing.Color.LightSlateGray
+		Me.Panel2.BackColor = System.Drawing.Color.SteelBlue
+		Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
 		Me.Panel2.Controls.Add(Me.btnGuardar)
-		Me.Panel2.Location = New System.Drawing.Point(1, 446)
-		Me.Panel2.Margin = New System.Windows.Forms.Padding(2)
+		Me.Panel2.Location = New System.Drawing.Point(1, 493)
+		Me.Panel2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
 		Me.Panel2.Name = "Panel2"
-		Me.Panel2.Size = New System.Drawing.Size(839, 81)
+		Me.Panel2.Size = New System.Drawing.Size(1119, 115)
 		Me.Panel2.TabIndex = 5
 		'
 		'btnGuardar
 		'
-		Me.btnGuardar.BackColor = System.Drawing.Color.LightSteelBlue
+		Me.btnGuardar.BackColor = System.Drawing.Color.LightBlue
 		Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-		Me.btnGuardar.Location = New System.Drawing.Point(444, 26)
-		Me.btnGuardar.Margin = New System.Windows.Forms.Padding(2)
+		Me.btnGuardar.Location = New System.Drawing.Point(630, 17)
+		Me.btnGuardar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
 		Me.btnGuardar.Name = "btnGuardar"
-		Me.btnGuardar.Size = New System.Drawing.Size(93, 25)
+		Me.btnGuardar.Size = New System.Drawing.Size(101, 24)
 		Me.btnGuardar.TabIndex = 5
 		Me.btnGuardar.Text = "Guardar"
 		Me.btnGuardar.UseVisualStyleBackColor = False
 		'
 		'Label4
 		'
-		Me.Label4.BackColor = System.Drawing.Color.Silver
-		Me.Label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-		Me.Label4.Location = New System.Drawing.Point(30, 250)
-		Me.Label4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+		Me.Label4.BackColor = System.Drawing.Color.Transparent
+		Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.Label4.Location = New System.Drawing.Point(20, 137)
 		Me.Label4.Name = "Label4"
-		Me.Label4.Size = New System.Drawing.Size(76, 34)
+		Me.Label4.Size = New System.Drawing.Size(144, 39)
 		Me.Label4.TabIndex = 10
 		Me.Label4.Text = "Estado Reproductivo:"
 		Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
 		'
 		'Label2
 		'
-		Me.Label2.BackColor = System.Drawing.Color.Silver
-		Me.Label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-		Me.Label2.Location = New System.Drawing.Point(30, 210)
-		Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+		Me.Label2.BackColor = System.Drawing.Color.Transparent
+		Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.Label2.Location = New System.Drawing.Point(110, 101)
 		Me.Label2.Name = "Label2"
-		Me.Label2.Size = New System.Drawing.Size(76, 24)
+		Me.Label2.Size = New System.Drawing.Size(59, 27)
 		Me.Label2.TabIndex = 11
 		Me.Label2.Text = "TLLC:"
 		Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
 		'
 		'Label3
 		'
-		Me.Label3.BackColor = System.Drawing.Color.Silver
-		Me.Label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-		Me.Label3.Location = New System.Drawing.Point(30, 175)
-		Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+		Me.Label3.BackColor = System.Drawing.Color.Transparent
+		Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.Label3.Location = New System.Drawing.Point(110, 57)
 		Me.Label3.Name = "Label3"
-		Me.Label3.Size = New System.Drawing.Size(76, 24)
+		Me.Label3.Size = New System.Drawing.Size(54, 27)
 		Me.Label3.TabIndex = 12
 		Me.Label3.Text = "Pulso:"
 		Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
 		'
 		'Label5
 		'
-		Me.Label5.BackColor = System.Drawing.Color.Silver
-		Me.Label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-		Me.Label5.Location = New System.Drawing.Point(30, 134)
-		Me.Label5.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+		Me.Label5.BackColor = System.Drawing.Color.Transparent
+		Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.Label5.Location = New System.Drawing.Point(63, 10)
 		Me.Label5.Name = "Label5"
-		Me.Label5.Size = New System.Drawing.Size(76, 24)
+		Me.Label5.Size = New System.Drawing.Size(101, 27)
 		Me.Label5.TabIndex = 13
 		Me.Label5.Text = "Temperatura:"
 		Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
 		'
 		'TextBoxTemperatura
 		'
-		Me.TextBoxTemperatura.BackColor = System.Drawing.Color.Silver
+		Me.TextBoxTemperatura.BackColor = System.Drawing.Color.White
 		Me.TextBoxTemperatura.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-		Me.TextBoxTemperatura.Location = New System.Drawing.Point(127, 134)
-		Me.TextBoxTemperatura.Margin = New System.Windows.Forms.Padding(2)
+		Me.TextBoxTemperatura.Location = New System.Drawing.Point(170, 14)
+		Me.TextBoxTemperatura.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
 		Me.TextBoxTemperatura.Multiline = True
 		Me.TextBoxTemperatura.Name = "TextBoxTemperatura"
-		Me.TextBoxTemperatura.Size = New System.Drawing.Size(130, 24)
+		Me.TextBoxTemperatura.Size = New System.Drawing.Size(173, 27)
 		Me.TextBoxTemperatura.TabIndex = 14
 		Me.TextBoxTemperatura.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
 		'
 		'TextBoxTLLC
 		'
-		Me.TextBoxTLLC.BackColor = System.Drawing.Color.Silver
+		Me.TextBoxTLLC.BackColor = System.Drawing.Color.White
 		Me.TextBoxTLLC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-		Me.TextBoxTLLC.Location = New System.Drawing.Point(127, 210)
-		Me.TextBoxTLLC.Margin = New System.Windows.Forms.Padding(2)
+		Me.TextBoxTLLC.Location = New System.Drawing.Point(170, 101)
+		Me.TextBoxTLLC.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
 		Me.TextBoxTLLC.Multiline = True
 		Me.TextBoxTLLC.Name = "TextBoxTLLC"
-		Me.TextBoxTLLC.Size = New System.Drawing.Size(130, 24)
+		Me.TextBoxTLLC.Size = New System.Drawing.Size(173, 27)
 		Me.TextBoxTLLC.TabIndex = 16
 		Me.TextBoxTLLC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
 		'
 		'TextBoxPulso
 		'
-		Me.TextBoxPulso.BackColor = System.Drawing.Color.Silver
+		Me.TextBoxPulso.BackColor = System.Drawing.Color.White
 		Me.TextBoxPulso.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-		Me.TextBoxPulso.Location = New System.Drawing.Point(127, 175)
-		Me.TextBoxPulso.Margin = New System.Windows.Forms.Padding(2)
+		Me.TextBoxPulso.Location = New System.Drawing.Point(170, 61)
+		Me.TextBoxPulso.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
 		Me.TextBoxPulso.Multiline = True
 		Me.TextBoxPulso.Name = "TextBoxPulso"
-		Me.TextBoxPulso.Size = New System.Drawing.Size(130, 24)
+		Me.TextBoxPulso.Size = New System.Drawing.Size(173, 27)
 		Me.TextBoxPulso.TabIndex = 17
 		Me.TextBoxPulso.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
 		'
 		'Label6
 		'
-		Me.Label6.BackColor = System.Drawing.Color.Silver
-		Me.Label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-		Me.Label6.Location = New System.Drawing.Point(23, 397)
-		Me.Label6.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+		Me.Label6.BackColor = System.Drawing.Color.Transparent
+		Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.Label6.Location = New System.Drawing.Point(70, 261)
 		Me.Label6.Name = "Label6"
-		Me.Label6.Size = New System.Drawing.Size(83, 24)
+		Me.Label6.Size = New System.Drawing.Size(99, 27)
 		Me.Label6.TabIndex = 18
 		Me.Label6.Text = "Enfermedad:"
 		Me.Label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
 		'
 		'Label7
 		'
-		Me.Label7.BackColor = System.Drawing.Color.Silver
-		Me.Label7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-		Me.Label7.Location = New System.Drawing.Point(30, 348)
-		Me.Label7.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+		Me.Label7.BackColor = System.Drawing.Color.Transparent
+		Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.Label7.Location = New System.Drawing.Point(3, 214)
 		Me.Label7.Name = "Label7"
-		Me.Label7.Size = New System.Drawing.Size(76, 32)
+		Me.Label7.Size = New System.Drawing.Size(166, 37)
 		Me.Label7.TabIndex = 19
 		Me.Label7.Text = "Frecuencia Respiratoria:"
 		Me.Label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
 		'
 		'Label8
 		'
-		Me.Label8.BackColor = System.Drawing.Color.Silver
-		Me.Label8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-		Me.Label8.Location = New System.Drawing.Point(30, 300)
-		Me.Label8.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+		Me.Label8.BackColor = System.Drawing.Color.Transparent
+		Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.Label8.Location = New System.Drawing.Point(20, 172)
 		Me.Label8.Name = "Label8"
-		Me.Label8.Size = New System.Drawing.Size(76, 36)
+		Me.Label8.Size = New System.Drawing.Size(149, 41)
 		Me.Label8.TabIndex = 20
 		Me.Label8.Text = "Frecuencia Cardiaca:"
 		Me.Label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
 		'
 		'TextBoxEnfermedad
 		'
-		Me.TextBoxEnfermedad.BackColor = System.Drawing.Color.Silver
+		Me.TextBoxEnfermedad.BackColor = System.Drawing.Color.White
 		Me.TextBoxEnfermedad.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-		Me.TextBoxEnfermedad.Location = New System.Drawing.Point(127, 397)
-		Me.TextBoxEnfermedad.Margin = New System.Windows.Forms.Padding(2)
+		Me.TextBoxEnfermedad.Location = New System.Drawing.Point(171, 261)
+		Me.TextBoxEnfermedad.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
 		Me.TextBoxEnfermedad.Multiline = True
 		Me.TextBoxEnfermedad.Name = "TextBoxEnfermedad"
-		Me.TextBoxEnfermedad.Size = New System.Drawing.Size(130, 24)
+		Me.TextBoxEnfermedad.Size = New System.Drawing.Size(173, 27)
 		Me.TextBoxEnfermedad.TabIndex = 21
 		Me.TextBoxEnfermedad.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
 		'
 		'TextBoxFrecRespiratoria
 		'
-		Me.TextBoxFrecRespiratoria.BackColor = System.Drawing.Color.Silver
+		Me.TextBoxFrecRespiratoria.BackColor = System.Drawing.Color.White
 		Me.TextBoxFrecRespiratoria.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-		Me.TextBoxFrecRespiratoria.Location = New System.Drawing.Point(127, 348)
-		Me.TextBoxFrecRespiratoria.Margin = New System.Windows.Forms.Padding(2)
+		Me.TextBoxFrecRespiratoria.Location = New System.Drawing.Point(171, 223)
+		Me.TextBoxFrecRespiratoria.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
 		Me.TextBoxFrecRespiratoria.Multiline = True
 		Me.TextBoxFrecRespiratoria.Name = "TextBoxFrecRespiratoria"
-		Me.TextBoxFrecRespiratoria.Size = New System.Drawing.Size(130, 32)
+		Me.TextBoxFrecRespiratoria.Size = New System.Drawing.Size(173, 22)
 		Me.TextBoxFrecRespiratoria.TabIndex = 22
 		Me.TextBoxFrecRespiratoria.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
 		'
 		'TextBoxFrecCardiaca
 		'
-		Me.TextBoxFrecCardiaca.BackColor = System.Drawing.Color.Silver
+		Me.TextBoxFrecCardiaca.BackColor = System.Drawing.Color.White
 		Me.TextBoxFrecCardiaca.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-		Me.TextBoxFrecCardiaca.Location = New System.Drawing.Point(127, 300)
-		Me.TextBoxFrecCardiaca.Margin = New System.Windows.Forms.Padding(2)
+		Me.TextBoxFrecCardiaca.Location = New System.Drawing.Point(170, 179)
+		Me.TextBoxFrecCardiaca.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
 		Me.TextBoxFrecCardiaca.Multiline = True
 		Me.TextBoxFrecCardiaca.Name = "TextBoxFrecCardiaca"
-		Me.TextBoxFrecCardiaca.Size = New System.Drawing.Size(130, 36)
+		Me.TextBoxFrecCardiaca.Size = New System.Drawing.Size(173, 25)
 		Me.TextBoxFrecCardiaca.TabIndex = 23
 		Me.TextBoxFrecCardiaca.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
 		'
 		'Label9
 		'
 		Me.Label9.AutoSize = True
-		Me.Label9.Location = New System.Drawing.Point(354, 348)
-		Me.Label9.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+		Me.Label9.Location = New System.Drawing.Point(117, 246)
 		Me.Label9.Name = "Label9"
-		Me.Label9.Size = New System.Drawing.Size(152, 13)
+		Me.Label9.Size = New System.Drawing.Size(201, 15)
 		Me.Label9.TabIndex = 24
 		Me.Label9.Text = "¿Cuenta con desparacitación?"
 		'
@@ -284,21 +280,20 @@ Partial Class Consulta_Médica
 		Me.ComboBoxDesparacitacion.ForeColor = System.Drawing.Color.Black
 		Me.ComboBoxDesparacitacion.FormattingEnabled = True
 		Me.ComboBoxDesparacitacion.Items.AddRange(New Object() {"Si", "No"})
-		Me.ComboBoxDesparacitacion.Location = New System.Drawing.Point(359, 366)
-		Me.ComboBoxDesparacitacion.Margin = New System.Windows.Forms.Padding(2)
+		Me.ComboBoxDesparacitacion.Location = New System.Drawing.Point(124, 266)
+		Me.ComboBoxDesparacitacion.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
 		Me.ComboBoxDesparacitacion.Name = "ComboBoxDesparacitacion"
-		Me.ComboBoxDesparacitacion.Size = New System.Drawing.Size(147, 21)
+		Me.ComboBoxDesparacitacion.Size = New System.Drawing.Size(195, 23)
 		Me.ComboBoxDesparacitacion.TabIndex = 25
 		Me.ComboBoxDesparacitacion.Text = "Desparacitación"
 		'
 		'Label10
 		'
-		Me.Label10.BackColor = System.Drawing.Color.Silver
-		Me.Label10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-		Me.Label10.Location = New System.Drawing.Point(286, 134)
-		Me.Label10.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+		Me.Label10.BackColor = System.Drawing.Color.Transparent
+		Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.Label10.Location = New System.Drawing.Point(3, 13)
 		Me.Label10.Name = "Label10"
-		Me.Label10.Size = New System.Drawing.Size(83, 24)
+		Me.Label10.Size = New System.Drawing.Size(110, 27)
 		Me.Label10.TabIndex = 26
 		Me.Label10.Text = "Observaciones:"
 		Me.Label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -307,22 +302,21 @@ Partial Class Consulta_Médica
 		'
 		Me.TextBoxObservaciones.BackColor = System.Drawing.Color.Silver
 		Me.TextBoxObservaciones.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-		Me.TextBoxObservaciones.Location = New System.Drawing.Point(376, 134)
-		Me.TextBoxObservaciones.Margin = New System.Windows.Forms.Padding(2)
+		Me.TextBoxObservaciones.Location = New System.Drawing.Point(113, 13)
+		Me.TextBoxObservaciones.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
 		Me.TextBoxObservaciones.Multiline = True
 		Me.TextBoxObservaciones.Name = "TextBoxObservaciones"
-		Me.TextBoxObservaciones.Size = New System.Drawing.Size(130, 76)
+		Me.TextBoxObservaciones.Size = New System.Drawing.Size(204, 70)
 		Me.TextBoxObservaciones.TabIndex = 27
 		Me.TextBoxObservaciones.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
 		'
 		'Label11
 		'
-		Me.Label11.BackColor = System.Drawing.Color.Silver
-		Me.Label11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-		Me.Label11.Location = New System.Drawing.Point(286, 214)
-		Me.Label11.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+		Me.Label11.BackColor = System.Drawing.Color.Transparent
+		Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.Label11.Location = New System.Drawing.Point(43, 104)
 		Me.Label11.Name = "Label11"
-		Me.Label11.Size = New System.Drawing.Size(83, 24)
+		Me.Label11.Size = New System.Drawing.Size(67, 27)
 		Me.Label11.TabIndex = 28
 		Me.Label11.Text = "Receta:"
 		Me.Label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -331,11 +325,11 @@ Partial Class Consulta_Médica
 		'
 		Me.TextBoxReceta.BackColor = System.Drawing.Color.Silver
 		Me.TextBoxReceta.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-		Me.TextBoxReceta.Location = New System.Drawing.Point(376, 214)
-		Me.TextBoxReceta.Margin = New System.Windows.Forms.Padding(2)
+		Me.TextBoxReceta.Location = New System.Drawing.Point(113, 104)
+		Me.TextBoxReceta.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
 		Me.TextBoxReceta.Multiline = True
 		Me.TextBoxReceta.Name = "TextBoxReceta"
-		Me.TextBoxReceta.Size = New System.Drawing.Size(130, 70)
+		Me.TextBoxReceta.Size = New System.Drawing.Size(204, 71)
 		Me.TextBoxReceta.TabIndex = 29
 		Me.TextBoxReceta.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
 		'
@@ -345,10 +339,10 @@ Partial Class Consulta_Médica
 		Me.ComboBoxVacunas.ForeColor = System.Drawing.Color.Black
 		Me.ComboBoxVacunas.FormattingEnabled = True
 		Me.ComboBoxVacunas.Items.AddRange(New Object() {"Puppy", "Quintuple", "Sextuple", "Rabia", "Triple felina", "Bordetella", "Giarda", "Ninguna"})
-		Me.ComboBoxVacunas.Location = New System.Drawing.Point(359, 315)
-		Me.ComboBoxVacunas.Margin = New System.Windows.Forms.Padding(2)
+		Me.ComboBoxVacunas.Location = New System.Drawing.Point(124, 207)
+		Me.ComboBoxVacunas.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
 		Me.ComboBoxVacunas.Name = "ComboBoxVacunas"
-		Me.ComboBoxVacunas.Size = New System.Drawing.Size(147, 21)
+		Me.ComboBoxVacunas.Size = New System.Drawing.Size(195, 23)
 		Me.ComboBoxVacunas.TabIndex = 30
 		Me.ComboBoxVacunas.Text = "Esquema de Vacunación"
 		'
@@ -358,84 +352,105 @@ Partial Class Consulta_Médica
 		Me.ComboBoxServicios.ForeColor = System.Drawing.Color.Black
 		Me.ComboBoxServicios.FormattingEnabled = True
 		Me.ComboBoxServicios.Items.AddRange(New Object() {"Consulta Médica", "Desparacitación", "Vacunación", "Eutanasia", "Cirugía", "Estética", "Pensión", "Castración", "Proaxis Dental"})
-		Me.ComboBoxServicios.Location = New System.Drawing.Point(359, 410)
-		Me.ComboBoxServicios.Margin = New System.Windows.Forms.Padding(2)
+		Me.ComboBoxServicios.Location = New System.Drawing.Point(124, 317)
+		Me.ComboBoxServicios.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
 		Me.ComboBoxServicios.Name = "ComboBoxServicios"
-		Me.ComboBoxServicios.Size = New System.Drawing.Size(147, 21)
+		Me.ComboBoxServicios.Size = New System.Drawing.Size(195, 23)
 		Me.ComboBoxServicios.TabIndex = 31
 		Me.ComboBoxServicios.Text = "Agregar Servicio"
 		'
 		'ComboBoxEstadoReprod
 		'
 		Me.ComboBoxEstadoReprod.FormattingEnabled = True
-		Me.ComboBoxEstadoReprod.Location = New System.Drawing.Point(127, 263)
+		Me.ComboBoxEstadoReprod.Location = New System.Drawing.Point(171, 146)
+		Me.ComboBoxEstadoReprod.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
 		Me.ComboBoxEstadoReprod.Name = "ComboBoxEstadoReprod"
-		Me.ComboBoxEstadoReprod.Size = New System.Drawing.Size(130, 21)
+		Me.ComboBoxEstadoReprod.Size = New System.Drawing.Size(172, 23)
 		Me.ComboBoxEstadoReprod.TabIndex = 34
 		'
 		'Label12
 		'
 		Me.Label12.AutoSize = True
-		Me.Label12.Location = New System.Drawing.Point(388, 300)
-		Me.Label12.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+		Me.Label12.Location = New System.Drawing.Point(162, 190)
 		Me.Label12.Name = "Label12"
-		Me.Label12.Size = New System.Drawing.Size(118, 13)
+		Me.Label12.Size = New System.Drawing.Size(151, 15)
 		Me.Label12.TabIndex = 35
 		Me.Label12.Text = "¿Cuenta con vacunas?"
 		'
 		'Label13
 		'
 		Me.Label13.AutoSize = True
-		Me.Label13.Location = New System.Drawing.Point(411, 395)
-		Me.Label13.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+		Me.Label13.Location = New System.Drawing.Point(193, 300)
 		Me.Label13.Name = "Label13"
-		Me.Label13.Size = New System.Drawing.Size(95, 13)
+		Me.Label13.Size = New System.Drawing.Size(125, 15)
 		Me.Label13.TabIndex = 36
 		Me.Label13.Text = "Agrega un servicio"
 		'
+		'Panel3
+		'
+		Me.Panel3.BackColor = System.Drawing.Color.LightSteelBlue
+		Me.Panel3.Controls.Add(Me.ComboBoxEstadoReprod)
+		Me.Panel3.Controls.Add(Me.TextBoxFrecCardiaca)
+		Me.Panel3.Controls.Add(Me.TextBoxFrecRespiratoria)
+		Me.Panel3.Controls.Add(Me.TextBoxEnfermedad)
+		Me.Panel3.Controls.Add(Me.Label8)
+		Me.Panel3.Controls.Add(Me.Label6)
+		Me.Panel3.Controls.Add(Me.TextBoxPulso)
+		Me.Panel3.Controls.Add(Me.TextBoxTLLC)
+		Me.Panel3.Controls.Add(Me.TextBoxTemperatura)
+		Me.Panel3.Controls.Add(Me.Label5)
+		Me.Panel3.Controls.Add(Me.Label3)
+		Me.Panel3.Controls.Add(Me.Label7)
+		Me.Panel3.Controls.Add(Me.Label2)
+		Me.Panel3.Controls.Add(Me.Label4)
+		Me.Panel3.Location = New System.Drawing.Point(33, 130)
+		Me.Panel3.Name = "Panel3"
+		Me.Panel3.Size = New System.Drawing.Size(364, 312)
+		Me.Panel3.TabIndex = 37
+		'
+		'Panel4
+		'
+		Me.Panel4.BackColor = System.Drawing.Color.LightSteelBlue
+		Me.Panel4.Controls.Add(Me.Label13)
+		Me.Panel4.Controls.Add(Me.Label12)
+		Me.Panel4.Controls.Add(Me.ComboBoxServicios)
+		Me.Panel4.Controls.Add(Me.ComboBoxVacunas)
+		Me.Panel4.Controls.Add(Me.TextBoxReceta)
+		Me.Panel4.Controls.Add(Me.Label11)
+		Me.Panel4.Controls.Add(Me.TextBoxObservaciones)
+		Me.Panel4.Controls.Add(Me.Label10)
+		Me.Panel4.Controls.Add(Me.ComboBoxDesparacitacion)
+		Me.Panel4.Controls.Add(Me.Label9)
+		Me.Panel4.Location = New System.Drawing.Point(403, 117)
+		Me.Panel4.Name = "Panel4"
+		Me.Panel4.Size = New System.Drawing.Size(329, 350)
+		Me.Panel4.TabIndex = 38
+		'
 		'Consulta_Médica
 		'
-		Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+		Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 15.0!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
 		Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
 		Me.BackColor = System.Drawing.SystemColors.ButtonHighlight
-		Me.ClientSize = New System.Drawing.Size(549, 526)
-		Me.Controls.Add(Me.Label13)
-		Me.Controls.Add(Me.Label12)
-		Me.Controls.Add(Me.ComboBoxEstadoReprod)
-		Me.Controls.Add(Me.ComboBoxServicios)
-		Me.Controls.Add(Me.ComboBoxVacunas)
-		Me.Controls.Add(Me.TextBoxReceta)
-		Me.Controls.Add(Me.Label11)
-		Me.Controls.Add(Me.TextBoxObservaciones)
-		Me.Controls.Add(Me.Label10)
-		Me.Controls.Add(Me.ComboBoxDesparacitacion)
-		Me.Controls.Add(Me.Label9)
-		Me.Controls.Add(Me.TextBoxFrecCardiaca)
-		Me.Controls.Add(Me.TextBoxFrecRespiratoria)
-		Me.Controls.Add(Me.TextBoxEnfermedad)
-		Me.Controls.Add(Me.Label8)
-		Me.Controls.Add(Me.Label7)
-		Me.Controls.Add(Me.Label6)
-		Me.Controls.Add(Me.TextBoxPulso)
-		Me.Controls.Add(Me.TextBoxTLLC)
-		Me.Controls.Add(Me.TextBoxTemperatura)
-		Me.Controls.Add(Me.Label5)
-		Me.Controls.Add(Me.Label3)
-		Me.Controls.Add(Me.Label2)
-		Me.Controls.Add(Me.Label4)
+		Me.ClientSize = New System.Drawing.Size(744, 549)
+		Me.Controls.Add(Me.Panel4)
+		Me.Controls.Add(Me.Panel3)
 		Me.Controls.Add(Me.Panel2)
 		Me.Controls.Add(Me.Panel1)
+		Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
 		Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-		Me.Margin = New System.Windows.Forms.Padding(2)
+		Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
 		Me.MaximizeBox = False
 		Me.MinimizeBox = False
 		Me.Name = "Consulta_Médica"
 		Me.Text = "Consulta_Médica"
 		Me.Panel1.ResumeLayout(False)
 		Me.Panel2.ResumeLayout(False)
+		Me.Panel3.ResumeLayout(False)
+		Me.Panel3.PerformLayout()
+		Me.Panel4.ResumeLayout(False)
+		Me.Panel4.PerformLayout()
 		Me.ResumeLayout(False)
-		Me.PerformLayout()
 
 	End Sub
 
@@ -468,4 +483,6 @@ Partial Class Consulta_Médica
 	Friend WithEvents ComboBoxEstadoReprod As ComboBox
 	Friend WithEvents Label12 As Label
 	Friend WithEvents Label13 As Label
+	Friend WithEvents Panel3 As Panel
+	Friend WithEvents Panel4 As Panel
 End Class
