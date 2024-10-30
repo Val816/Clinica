@@ -150,42 +150,42 @@ Public Class Consulta_Médica
             '    formDesparacitacion.Show()
             '    Me.Hide()
 
-            'Case 5
-            '    Dim formEsterilizacion As New Esterilización()
-            '    formEsterilizacion.Show()
-            '    Me.Hide()
+            Case 5
+                Dim formEsterilizacion As New Castración_y_Esterilización()
+                formEsterilizacion.Show()
+                Me.Hide()
 
-            'Case 6
-            '    Dim formPension As New Pensión()
-            '    formPension.Show()
-            '    Me.Hide()
+            Case 6
+                Dim formPension As New Pensión()
+                formPension.Show()
+                Me.Hide()
 
             Case 7
                 Dim formGrooming As New Estética()
                 formGrooming.Show()
                 Me.Hide()
-            Case 8
-                Dim formEutanasia As New Eutanasia()
-                formEutanasia.Show()
-                Me.Hide()
+            'Case 8
+            '    Dim formEutanasia As New Eutanasia()
+            '    formEutanasia.Show()
+            '    Me.Hide()
 
             Case 9
                 Dim formGrooming As New Vacunacion()
                 formGrooming.Show()
                 Me.Hide()
 
-                'Case 10
-                '    Dim formHospitalizacion As New Hospitalización()
-                '    formHospitalizacion.Show()
-                '    Me.Hide()
-                'Case 11
-                '    Dim formProfilaxis As New Profilaxis_Dental()
-                '    formProfilaxis.Show()
-                '    Me.Hide()
-                'Case 12
-                '    Dim formRecibo As New Recibo()
-                '    formRecibo.Show()
-                '    Me.Hide()
+            Case 10
+                Dim formHospitalizacion As New Hospitalización()
+                formHospitalizacion.Show()
+                Me.Hide()
+            Case 11
+                Dim formProfilaxis As New Proaxis_Dental()
+                formProfilaxis.Show()
+                Me.Hide()
+            Case 12
+                Dim formRecibo As New Recibo()
+                formRecibo.Show()
+                Me.Hide()
 
             Case Else
                 MessageBox.Show("Servicio no reconocido. Por favor, selecciona un servicio válido.")

@@ -79,18 +79,18 @@ Public Class Menu_Principal
                 formGrooming.Show()
                 Me.Hide()
 
-                'Case 10
-                '    Dim formHospitalizacion As New Hospitalización()
-                '    formHospitalizacion.Show()
-                '    Me.Hide()
-                'Case 11
-                '    Dim formProfilaxis As New Profilaxis_Dental()
-                '    formProfilaxis.Show()
-                '    Me.Hide()
-                'Case 12
-                '    Dim formRecibo As New Recibo()
-                '    form formRecibo.Show()
-                '    Me.Hide()
+            Case 10
+                Dim formHospitalizacion As New Hospitalización()
+                formHospitalizacion.Show()
+                Me.Hide()
+            Case 11
+                Dim formProfilaxis As New Proaxis_Dental()
+                formProfilaxis.Show()
+                Me.Hide()
+            Case 12
+                Dim formRecibo As New Recibo()
+                formRecibo.Show()
+                Me.Hide()
             Case Else
                 MessageBox.Show("Servicio no reconocido. Por favor, selecciona un servicio válido.")
 
