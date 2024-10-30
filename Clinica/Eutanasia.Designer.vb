@@ -201,7 +201,7 @@ Partial Class Eutanasia
 		'
 		'TextBoxObservaciones
 		'
-		Me.TextBoxObservaciones.BackColor = System.Drawing.Color.Silver
+		Me.TextBoxObservaciones.BackColor = System.Drawing.Color.White
 		Me.TextBoxObservaciones.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
 		Me.TextBoxObservaciones.Location = New System.Drawing.Point(130, 115)
 		Me.TextBoxObservaciones.Margin = New System.Windows.Forms.Padding(2)
@@ -251,7 +251,6 @@ Partial Class Eutanasia
 		Me.Margin = New System.Windows.Forms.Padding(2)
 		Me.Name = "Eutanasia"
 		Me.Text = "Eutanasia"
-		Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
 		Me.Panel1.ResumeLayout(False)
 		Me.Panel2.ResumeLayout(False)
 		Me.Panel3.ResumeLayout(False)

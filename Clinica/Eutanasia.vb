@@ -7,7 +7,6 @@ Public Class Eutanasia
     Private Const CostoEutanasia As Decimal = 250D ' Costo fijo de eutanasia
     Private idMascota As Integer
 
-
     Public Sub New()
         InitializeComponent()
     End Sub
@@ -27,16 +26,20 @@ Public Class Eutanasia
         Dim existe As Boolean = False
         Dim query As String = "SELECT COUNT(*) FROM mascota WHERE idMascota = @idMascota"
 
-        Using connection As New MySqlConnection("tu_conexion")
+        Using connection As New MySqlConnection("Server=localhost;Database=veterinaria;User Id=root;Password=root;")
             Using command As New MySqlCommand(query, connection)
                 command.Parameters.AddWithValue("@idMascota", idMascota)
                 connection.Open()
-                existe = Convert.ToInt32(command.ExecuteScalar()) > 0
+                Dim count As Integer = Convert.ToInt32(command.ExecuteScalar())
+                If count > 0 Then
+                    existe = True
+                End If
             End Using
         End Using
 
         Return existe
     End Function
+
     Private Sub LlenarComboBoxMotivo()
         ComboBoxMotivo.Items.Clear()
 
@@ -47,9 +50,9 @@ Public Class Eutanasia
             Dim reader As MySqlDataReader = cmd.ExecuteReader()
             While reader.Read()
                 Dim item As New ComboBoxItem With {
-                .Value = reader("idMotivo"),
-                .Text = reader("descripcion").ToString()
-            }
+                    .Value = reader("idMotivo"),
+                    .Text = reader("descripcion").ToString()
+                }
                 ComboBoxMotivo.Items.Add(item)
             End While
         End Using
@@ -57,28 +60,77 @@ Public Class Eutanasia
 
     ' Al seleccionar un motivo, el costo se muestra en el TextBoxCosto
     Private Sub ComboBoxMotivo_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBoxMotivo.SelectedIndexChanged
-        TextBoxCosto.Text = CostoEutanasia.ToString("C2") ' Actualizar el TextBox con el costo fijo
+        TextBoxCosto.Text = CostoEutanasia.ToString("C2")
     End Sub
+
     Private Sub GuardarEutanasia()
-        ' Verifica si el idMascota existe en la tabla mascota
-        If Not ExisteMascota(idMascota) Then
-            MessageBox.Show("La mascota con el ID especificado no existe.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        ' Primero verificamos si el idMascota es válido
+        If idMascota <= 0 Then
+            MessageBox.Show("ID de mascota no válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Return
         End If
 
-        ' Inserta el registro en la tabla eutanasia
-        Dim query As String = "INSERT INTO eutanasia (idMascota, costo) VALUES (@idMascota, @costo)"
+        ' Verificamos si la mascota existe en la base de datos
+        Dim existeMascota As Boolean = False
+        Dim queryVerificar As String = "SELECT COUNT(*) FROM mascota WHERE idMascota = @idMascota"
 
-        Using connection As New MySqlConnection("tu_conexion")
-            Using command As New MySqlCommand(query, connection)
+        Using connection As New MySqlConnection("Server=localhost;Database=veterinaria;User Id=root;Password=root;")
+            Using command As New MySqlCommand(queryVerificar, connection)
                 command.Parameters.AddWithValue("@idMascota", idMascota)
-                command.Parameters.AddWithValue("@costo", CostoEutanasia)
-                connection.Open()
-                command.ExecuteNonQuery()
-                MessageBox.Show("Registro de eutanasia guardado exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+                Try
+                    connection.Open()
+                    Dim count As Integer = Convert.ToInt32(command.ExecuteScalar())
+                    existeMascota = (count > 0)
+                Catch ex As Exception
+                    MessageBox.Show("Error al verificar la mascota: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    Return
+                End Try
             End Using
+
+            ' Solo procedemos si la mascota existe
+            If existeMascota Then
+                ' Obtener los valores de los campos
+                If ComboBoxMotivo.SelectedItem Is Nothing Then
+                    MessageBox.Show("Por favor seleccione un motivo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    Return
+                End If
+
+                Dim idMotivo As Integer = CType(ComboBoxMotivo.SelectedItem, ComboBoxItem).Value
+                Dim fecha As DateTime = DateTimePickerFecha.Value
+                Dim observaciones As String = TextBoxObservaciones.Text
+                Dim costoFinal As Decimal = CostoEutanasia
+
+                ' Insertar el registro de eutanasia
+                Dim queryInsertar As String = "INSERT INTO eutanasia (idMascota, idMotivo, fecha, observaciones, costoFinal) " &
+                                        "VALUES (@idMascota, @idMotivo, @fecha, @observaciones, @costoFinal)"
+
+                Using insertCommand As New MySqlCommand(queryInsertar, connection)
+                    insertCommand.Parameters.AddWithValue("@idMascota", idMascota)
+                    insertCommand.Parameters.AddWithValue("@idMotivo", idMotivo)
+                    insertCommand.Parameters.AddWithValue("@fecha", fecha)
+                    insertCommand.Parameters.AddWithValue("@observaciones", observaciones)
+                    insertCommand.Parameters.AddWithValue("@costoFinal", costoFinal)
+
+                    Try
+                        insertCommand.ExecuteNonQuery()
+                        MessageBox.Show("Registro de eutanasia guardado exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+                        ' Limpiar los campos después de guardar
+                        ComboBoxMotivo.SelectedItem = Nothing
+                        TextBoxObservaciones.Clear()
+                        DateTimePickerFecha.Value = DateTime.Now
+                    Catch ex As Exception
+                        MessageBox.Show("Error al guardar la eutanasia: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    End Try
+                End Using
+            Else
+                MessageBox.Show("La mascota especificada no existe en la base de datos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End If
         End Using
     End Sub
+
+
     Private Sub BtnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
         If ComboBoxMotivo.SelectedItem Is Nothing Then
             MessageBox.Show("Seleccione un motivo de eutanasia.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -91,20 +143,16 @@ Public Class Eutanasia
             Return
         End If
 
-        ' Obtener los valores de los campos
         Dim idMotivo As Integer = CType(ComboBoxMotivo.SelectedItem, ComboBoxItem).Value
         Dim fecha As DateTime = DateTimePickerFecha.Value
+        Dim costoFinal As Decimal = CostoEutanasia
 
-        ' Puedes establecer el costo final aquí según sea necesario
-        Dim costoFinal As Decimal = CostoEutanasia ' O calcularlo de alguna manera
-
-        ' Insertar los datos en la tabla eutanasia
         Dim query As String = "INSERT INTO eutanasia (idMascota, idMotivo, fecha, observaciones, costoFinal) VALUES (@idMascota, @idMotivo, @fecha, @observaciones, @costoFinal)"
 
         Try
             Using conn As New MySqlConnection("Server=localhost;Database=veterinaria;User Id=root;Password=root;")
                 Dim cmd As New MySqlCommand(query, conn)
-                cmd.Parameters.AddWithValue("@idMascota", idMascota) ' Asignar el idMascota asociado
+                cmd.Parameters.AddWithValue("@idMascota", idMascota)
                 cmd.Parameters.AddWithValue("@idMotivo", idMotivo)
                 cmd.Parameters.AddWithValue("@fecha", fecha)
                 cmd.Parameters.AddWithValue("@observaciones", observaciones)
@@ -115,11 +163,9 @@ Public Class Eutanasia
             End Using
 
             MessageBox.Show("Registro de eutanasia guardado correctamente para la mascota.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information)
-
-            ' Limpiar los campos después de guardar
             ComboBoxMotivo.SelectedItem = Nothing
             TextBoxObservaciones.Clear()
-            DateTimePickerFecha.Value = DateTime.Now ' Resetear a la fecha actual
+            DateTimePickerFecha.Value = DateTime.Now
         Catch ex As MySqlException
             MessageBox.Show("Error al guardar el registro: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
@@ -199,10 +245,10 @@ Public Class Eutanasia
                 Dim formGrooming As New Estética()
                 formGrooming.Show()
                 Me.Hide()
-            'Case 8
-            '    Dim formEutanasia As New Eutanasia()
-            '    formEutanasia.Show()
-            '    Me.Hide()
+            Case 8
+                Dim formEutanasia As New Eutanasia()
+                formEutanasia.Show()
+                Me.Hide()
 
             Case 9
                 Dim formGrooming As New Vacunacion()
@@ -275,8 +321,9 @@ Public Class Eutanasia
                 doc.Add(New Paragraph(Environment.NewLine))
 
                 ' Espacio para la firma
-                doc.Add(New Paragraph("Firma del Cliente: _______________________", fuenteTexto))
+                doc.Add(New Paragraph("Firma del Cliente: ____________________________", fuenteTexto))
                 doc.Add(New Paragraph(Environment.NewLine))
+
                 doc.Add(New Paragraph("Fecha: " & DateTime.Now.ToString("dd/MM/yyyy"), fuenteTexto))
 
                 ' Cerrar el documento PDF
@@ -292,57 +339,52 @@ Public Class Eutanasia
 
 
     Private Function ObtenerDatosClienteMascota(idMascota As Integer) As String
-        Dim resultado As String = ""
-        Dim query As String = "SELECT nomCliente, celular, nomMasc, idEspecie, idRaza FROM Mascota WHERE idMascota = @idMascota"
+        Dim datos As String = String.Empty
+        Dim query As String = "SELECT nomCliente, celular, nomMasc FROM Mascota WHERE idMascota = @idMascota"
 
-        Using conn As New MySqlConnection("Server=localhost;Database=veterinaria;User Id=root;Password=root;")
-            Using cmd As New MySqlCommand(query, conn)
-                cmd.Parameters.AddWithValue("@idMascota", idMascota)
-                conn.Open()
-                Dim reader As MySqlDataReader = cmd.ExecuteReader()
-
-                If reader.Read() Then
-                    resultado = "Cliente: " & reader("nomCliente") & Environment.NewLine &
-                                "Teléfono: " & reader("celular") & Environment.NewLine &
-                                "Mascota: " & reader("nomMasc") & Environment.NewLine &
-                                "Especie: " & ObtenerNombreEspecie(reader("idEspecie")) & Environment.NewLine &
-                                "Raza: " & ObtenerNombreRaza(reader("idRaza"))
-                End If
+        Using connection As New MySqlConnection("Server=localhost;Database=veterinaria;User Id=root;Password=root;")
+            Using command As New MySqlCommand(query, connection)
+                command.Parameters.AddWithValue("@idMascota", idMascota)
+                connection.Open()
+                Using reader As MySqlDataReader = command.ExecuteReader()
+                    If reader.Read() Then
+                        datos = "Cliente: " & reader("nomCliente").ToString() & vbCrLf &
+                                "Teléfono: " & reader("celular").ToString() & vbCrLf &
+                                "Mascota: " & reader("nomMasc").ToString()
+                    End If
+                End Using
             End Using
         End Using
-        Return resultado
-    End Function
 
+        Return datos
+    End Function
 
     Private Function ObtenerDatosEutanasia(idMascota As Integer) As String
-        Dim resultado As String = ""
-        Dim query As String = "SELECT E.fecha, M.descripcion AS motivo, E.observaciones, E.costoFinal " &
-                              "FROM Eutanasia E " &
-                              "JOIN MotivoEutanasia M ON E.idMotivo = M.idMotivo " &
-                              "WHERE E.idMascota = @idMascota"
+        Dim datos As String = String.Empty
+        Dim query As String = "SELECT fecha, observaciones, costoFinal FROM Eutanasia WHERE idMascota = @idMascota ORDER BY fecha DESC LIMIT 1"
 
-        Using conn As New MySqlConnection("Server=localhost;Database=veterinaria;User Id=root;Password=root;")
-            Using cmd As New MySqlCommand(query, conn)
-                cmd.Parameters.AddWithValue("@idMascota", idMascota)
-                conn.Open()
-                Dim reader As MySqlDataReader = cmd.ExecuteReader()
-
-                If reader.Read() Then
-                    resultado = "Fecha: " & Convert.ToDateTime(reader("fecha")).ToString("dd/MM/yyyy") & Environment.NewLine &
-                                "Motivo: " & reader("motivo").ToString() & Environment.NewLine &
-                                "Observaciones: " & reader("observaciones").ToString() & Environment.NewLine &
-                                "Costo Final: " & Convert.ToDecimal(reader("costoFinal")).ToString("C2")
-                End If
+        Using connection As New MySqlConnection("Server=localhost;Database=veterinaria;User Id=root;Password=root;")
+            Using command As New MySqlCommand(query, connection)
+                command.Parameters.AddWithValue("@idMascota", idMascota)
+                connection.Open()
+                Using reader As MySqlDataReader = command.ExecuteReader()
+                    If reader.Read() Then
+                        datos = $"Fecha: {reader("fecha")}, Observaciones: {reader("observaciones")}" & vbCrLf &
+                            $"Costo: {Convert.ToDecimal(reader("costoFinal")).ToString("C2")}"
+                    End If
+                End Using
             End Using
         End Using
-        Return resultado
+
+        Return datos
     End Function
+
 
 
     ' Métodos adicionales para obtener el nombre de la especie y la raza desde la base de datos
     Private Function ObtenerNombreEspecie(idEspecie As Integer) As String
         Dim nombreEspecie As String = ""
-        Dim query As String = "SELECT nombre FROM especie WHERE idEspecie = @idEspecie"
+        Dim query As String = "SELECT nombreEspecie FROM especie WHERE idEspecie = @idEspecie"
 
         Using conn As New MySqlConnection("Server=localhost;Database=veterinaria;User Id=root;Password=root;")
             Dim cmd As New MySqlCommand(query, conn)
@@ -365,7 +407,7 @@ Public Class Eutanasia
 
     Private Function ObtenerNombreRaza(idRaza As Integer) As String
         Dim nombreRaza As String = ""
-        Dim query As String = "SELECT nombre FROM raza WHERE idRaza = @idRaza"
+        Dim query As String = "SELECT nombreRaza FROM raza WHERE idRaza = @idRaza"
 
         Using conn As New MySqlConnection("Server=localhost;Database=veterinaria;User Id=root;Password=root;")
             Dim cmd As New MySqlCommand(query, conn)

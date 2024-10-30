@@ -311,10 +311,10 @@ Public Class Registro_de_Mascota
                 Dim formGrooming As New Estética()
                 formGrooming.Show()
                 Me.Hide()
-            'Case 8
-            '    Dim formEutanasia As New Eutanasia()
-            '    formEutanasia.Show()
-            '    Me.Hide()
+            Case 8
+                Dim formEutanasia As New Eutanasia()
+                formEutanasia.Show()
+                Me.Hide()
 
             Case 9
                 Dim formGrooming As New Vacunacion()
