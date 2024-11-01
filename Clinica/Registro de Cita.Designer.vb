@@ -46,15 +46,20 @@ Partial Class Registro_de_Cita
 		Me.Label2 = New System.Windows.Forms.Label()
 		Me.DataGridViewCitas = New System.Windows.Forms.DataGridView()
 		Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+		Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+		Me.Label14 = New System.Windows.Forms.Label()
 		Me.Panel1.SuspendLayout()
 		Me.Panel3.SuspendLayout()
 		CType(Me.DataGridViewCitas, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+		CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.SuspendLayout()
 		'
 		'Panel1
 		'
 		Me.Panel1.BackColor = System.Drawing.Color.SteelBlue
+		Me.Panel1.Controls.Add(Me.PictureBox2)
+		Me.Panel1.Controls.Add(Me.Label14)
 		Me.Panel1.Controls.Add(Me.btnMenuPrincipal)
 		Me.Panel1.Controls.Add(Me.Label1)
 		Me.Panel1.Location = New System.Drawing.Point(-1, 0)
@@ -93,15 +98,16 @@ Partial Class Registro_de_Cita
 		'
 		Me.Panel2.BackColor = System.Drawing.Color.SteelBlue
 		Me.Panel2.ForeColor = System.Drawing.Color.LightSlateGray
-		Me.Panel2.Location = New System.Drawing.Point(-1, 443)
+		Me.Panel2.Location = New System.Drawing.Point(-1, 438)
 		Me.Panel2.Margin = New System.Windows.Forms.Padding(2)
 		Me.Panel2.Name = "Panel2"
-		Me.Panel2.Size = New System.Drawing.Size(855, 77)
+		Me.Panel2.Size = New System.Drawing.Size(855, 82)
 		Me.Panel2.TabIndex = 2
 		'
 		'Panel3
 		'
 		Me.Panel3.BackColor = System.Drawing.Color.LightSteelBlue
+		Me.Panel3.Controls.Add(Me.PictureBox1)
 		Me.Panel3.Controls.Add(Me.btnRegistrarCita)
 		Me.Panel3.Controls.Add(Me.DateTimePickerFecha)
 		Me.Panel3.Controls.Add(Me.txtHora)
@@ -118,10 +124,10 @@ Partial Class Registro_de_Cita
 		Me.Panel3.Controls.Add(Me.Label4)
 		Me.Panel3.Controls.Add(Me.Label3)
 		Me.Panel3.Controls.Add(Me.Label2)
-		Me.Panel3.Location = New System.Drawing.Point(11, 120)
+		Me.Panel3.Location = New System.Drawing.Point(11, 102)
 		Me.Panel3.Margin = New System.Windows.Forms.Padding(2)
 		Me.Panel3.Name = "Panel3"
-		Me.Panel3.Size = New System.Drawing.Size(319, 297)
+		Me.Panel3.Size = New System.Drawing.Size(614, 176)
 		Me.Panel3.TabIndex = 3
 		'
 		'btnRegistrarCita
@@ -129,7 +135,7 @@ Partial Class Registro_de_Cita
 		Me.btnRegistrarCita.BackColor = System.Drawing.Color.LightBlue
 		Me.btnRegistrarCita.FlatStyle = System.Windows.Forms.FlatStyle.Flat
 		Me.btnRegistrarCita.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.btnRegistrarCita.Location = New System.Drawing.Point(130, 254)
+		Me.btnRegistrarCita.Location = New System.Drawing.Point(207, 124)
 		Me.btnRegistrarCita.Margin = New System.Windows.Forms.Padding(2)
 		Me.btnRegistrarCita.Name = "btnRegistrarCita"
 		Me.btnRegistrarCita.Size = New System.Drawing.Size(93, 25)
@@ -139,7 +145,7 @@ Partial Class Registro_de_Cita
 		'
 		'DateTimePickerFecha
 		'
-		Me.DateTimePickerFecha.Location = New System.Drawing.Point(151, 183)
+		Me.DateTimePickerFecha.Location = New System.Drawing.Point(449, 88)
 		Me.DateTimePickerFecha.Name = "DateTimePickerFecha"
 		Me.DateTimePickerFecha.Size = New System.Drawing.Size(149, 20)
 		Me.DateTimePickerFecha.TabIndex = 8
@@ -148,7 +154,7 @@ Partial Class Registro_de_Cita
 		'
 		Me.txtHora.BackColor = System.Drawing.Color.White
 		Me.txtHora.BorderStyle = System.Windows.Forms.BorderStyle.None
-		Me.txtHora.Location = New System.Drawing.Point(151, 208)
+		Me.txtHora.Location = New System.Drawing.Point(449, 113)
 		Me.txtHora.Margin = New System.Windows.Forms.Padding(2)
 		Me.txtHora.Multiline = True
 		Me.txtHora.Name = "txtHora"
@@ -159,7 +165,7 @@ Partial Class Registro_de_Cita
 		'
 		Me.txtEspecie.BackColor = System.Drawing.Color.White
 		Me.txtEspecie.BorderStyle = System.Windows.Forms.BorderStyle.None
-		Me.txtEspecie.Location = New System.Drawing.Point(151, 143)
+		Me.txtEspecie.Location = New System.Drawing.Point(449, 56)
 		Me.txtEspecie.Margin = New System.Windows.Forms.Padding(2)
 		Me.txtEspecie.Multiline = True
 		Me.txtEspecie.Name = "txtEspecie"
@@ -171,7 +177,7 @@ Partial Class Registro_de_Cita
 		Me.Label8.BackColor = System.Drawing.Color.Transparent
 		Me.Label8.FlatStyle = System.Windows.Forms.FlatStyle.Flat
 		Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.Label8.Location = New System.Drawing.Point(89, 208)
+		Me.Label8.Location = New System.Drawing.Point(390, 113)
 		Me.Label8.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
 		Me.Label8.Name = "Label8"
 		Me.Label8.Size = New System.Drawing.Size(55, 27)
@@ -183,7 +189,7 @@ Partial Class Registro_de_Cita
 		'
 		Me.txtNomMascota.BackColor = System.Drawing.Color.White
 		Me.txtNomMascota.BorderStyle = System.Windows.Forms.BorderStyle.None
-		Me.txtNomMascota.Location = New System.Drawing.Point(151, 111)
+		Me.txtNomMascota.Location = New System.Drawing.Point(449, 22)
 		Me.txtNomMascota.Margin = New System.Windows.Forms.Padding(2)
 		Me.txtNomMascota.Multiline = True
 		Me.txtNomMascota.Name = "txtNomMascota"
@@ -217,7 +223,7 @@ Partial Class Registro_de_Cita
 		Me.Label7.BackColor = System.Drawing.Color.Transparent
 		Me.Label7.FlatStyle = System.Windows.Forms.FlatStyle.Flat
 		Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.Label7.Location = New System.Drawing.Point(78, 183)
+		Me.Label7.Location = New System.Drawing.Point(379, 89)
 		Me.Label7.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
 		Me.Label7.Name = "Label7"
 		Me.Label7.Size = New System.Drawing.Size(66, 20)
@@ -250,7 +256,7 @@ Partial Class Registro_de_Cita
 		Me.Label6.BackColor = System.Drawing.Color.Transparent
 		Me.Label6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
 		Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.Label6.Location = New System.Drawing.Point(75, 143)
+		Me.Label6.Location = New System.Drawing.Point(373, 56)
 		Me.Label6.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
 		Me.Label6.Name = "Label6"
 		Me.Label6.Size = New System.Drawing.Size(72, 27)
@@ -263,7 +269,7 @@ Partial Class Registro_de_Cita
 		Me.Label5.BackColor = System.Drawing.Color.Transparent
 		Me.Label5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
 		Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.Label5.Location = New System.Drawing.Point(2, 109)
+		Me.Label5.Location = New System.Drawing.Point(304, 22)
 		Me.Label5.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
 		Me.Label5.Name = "Label5"
 		Me.Label5.Size = New System.Drawing.Size(159, 27)
@@ -314,21 +320,44 @@ Partial Class Registro_de_Cita
 		'
 		Me.DataGridViewCitas.BackgroundColor = System.Drawing.SystemColors.ActiveCaption
 		Me.DataGridViewCitas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-		Me.DataGridViewCitas.Location = New System.Drawing.Point(335, 120)
+		Me.DataGridViewCitas.Location = New System.Drawing.Point(11, 293)
 		Me.DataGridViewCitas.Name = "DataGridViewCitas"
-		Me.DataGridViewCitas.Size = New System.Drawing.Size(283, 215)
+		Me.DataGridViewCitas.Size = New System.Drawing.Size(614, 128)
 		Me.DataGridViewCitas.TabIndex = 0
 		'
 		'PictureBox1
 		'
 		Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-		Me.PictureBox1.Location = New System.Drawing.Point(374, 340)
+		Me.PictureBox1.Location = New System.Drawing.Point(0, 109)
 		Me.PictureBox1.Margin = New System.Windows.Forms.Padding(2)
 		Me.PictureBox1.Name = "PictureBox1"
-		Me.PictureBox1.Size = New System.Drawing.Size(203, 99)
+		Me.PictureBox1.Size = New System.Drawing.Size(134, 68)
 		Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
 		Me.PictureBox1.TabIndex = 5
 		Me.PictureBox1.TabStop = False
+		'
+		'PictureBox2
+		'
+		Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
+		Me.PictureBox2.Location = New System.Drawing.Point(2, 2)
+		Me.PictureBox2.Margin = New System.Windows.Forms.Padding(2)
+		Me.PictureBox2.Name = "PictureBox2"
+		Me.PictureBox2.Size = New System.Drawing.Size(60, 52)
+		Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+		Me.PictureBox2.TabIndex = 96
+		Me.PictureBox2.TabStop = False
+		'
+		'Label14
+		'
+		Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.Label14.ForeColor = System.Drawing.Color.Black
+		Me.Label14.Location = New System.Drawing.Point(-3, 54)
+		Me.Label14.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+		Me.Label14.Name = "Label14"
+		Me.Label14.Size = New System.Drawing.Size(83, 18)
+		Me.Label14.TabIndex = 95
+		Me.Label14.Text = "VETCARE"
+		Me.Label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
 		'
 		'Registro_de_Cita
 		'
@@ -336,9 +365,8 @@ Partial Class Registro_de_Cita
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
 		Me.BackColor = System.Drawing.Color.White
 		Me.ClientSize = New System.Drawing.Size(636, 487)
-		Me.Controls.Add(Me.DataGridViewCitas)
-		Me.Controls.Add(Me.PictureBox1)
 		Me.Controls.Add(Me.Panel3)
+		Me.Controls.Add(Me.DataGridViewCitas)
 		Me.Controls.Add(Me.Panel2)
 		Me.Controls.Add(Me.Panel1)
 		Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
@@ -350,6 +378,7 @@ Partial Class Registro_de_Cita
 		Me.Panel3.PerformLayout()
 		CType(Me.DataGridViewCitas, System.ComponentModel.ISupportInitialize).EndInit()
 		CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+		CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
 		Me.ResumeLayout(False)
 
 	End Sub
@@ -377,4 +406,6 @@ Partial Class Registro_de_Cita
 	Friend WithEvents PictureBox1 As PictureBox
 	Friend WithEvents DateTimePickerFecha As DateTimePicker
 	Friend WithEvents DataGridViewCitas As DataGridView
+	Friend WithEvents PictureBox2 As PictureBox
+	Friend WithEvents Label14 As Label
 End Class

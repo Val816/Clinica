@@ -24,6 +24,8 @@ Partial Class Pensión
     Private Sub InitializeComponent()
 		Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Pensión))
 		Me.Panel1 = New System.Windows.Forms.Panel()
+		Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+		Me.Label14 = New System.Windows.Forms.Label()
 		Me.btnMenuPrincipal = New System.Windows.Forms.Button()
 		Me.Label1 = New System.Windows.Forms.Label()
 		Me.Panel2 = New System.Windows.Forms.Panel()
@@ -33,29 +35,34 @@ Partial Class Pensión
 		Me.Label8 = New System.Windows.Forms.Label()
 		Me.Label4 = New System.Windows.Forms.Label()
 		Me.Label5 = New System.Windows.Forms.Label()
-		Me.TextBox5 = New System.Windows.Forms.TextBox()
+		Me.txtObservaciones = New System.Windows.Forms.TextBox()
 		Me.Label12 = New System.Windows.Forms.Label()
 		Me.Label6 = New System.Windows.Forms.Label()
-		Me.TextBox10 = New System.Windows.Forms.TextBox()
-		Me.TextBox6 = New System.Windows.Forms.TextBox()
-		Me.ComboBoxServicio = New System.Windows.Forms.ComboBox()
+		Me.txtCostoDiario = New System.Windows.Forms.TextBox()
+		Me.txtCostoTotal = New System.Windows.Forms.TextBox()
+		Me.ComboBoxServicios = New System.Windows.Forms.ComboBox()
 		Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-		Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
-		Me.DateTimePicker2 = New System.Windows.Forms.DateTimePicker()
-		Me.DateTimePicker3 = New System.Windows.Forms.DateTimePicker()
-		Me.DateTimePicker4 = New System.Windows.Forms.DateTimePicker()
+		Me.dtpFechaEntrada = New System.Windows.Forms.DateTimePicker()
+		Me.dtpFechaSalida = New System.Windows.Forms.DateTimePicker()
 		Me.Panel3 = New System.Windows.Forms.Panel()
+		Me.dtpHoraSalida = New System.Windows.Forms.DateTimePicker()
+		Me.dtpHoraEntrada = New System.Windows.Forms.DateTimePicker()
 		Me.Panel4 = New System.Windows.Forms.Panel()
+		Me.dgvPension = New System.Windows.Forms.DataGridView()
+		Me.btnBuscar = New System.Windows.Forms.Button()
 		Me.Panel1.SuspendLayout()
-		Me.Panel2.SuspendLayout()
+		CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.Panel3.SuspendLayout()
 		Me.Panel4.SuspendLayout()
+		CType(Me.dgvPension, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.SuspendLayout()
 		'
 		'Panel1
 		'
 		Me.Panel1.BackColor = System.Drawing.Color.SteelBlue
+		Me.Panel1.Controls.Add(Me.PictureBox2)
+		Me.Panel1.Controls.Add(Me.Label14)
 		Me.Panel1.Controls.Add(Me.btnMenuPrincipal)
 		Me.Panel1.Controls.Add(Me.Label1)
 		Me.Panel1.Location = New System.Drawing.Point(1, -1)
@@ -64,12 +71,35 @@ Partial Class Pensión
 		Me.Panel1.Size = New System.Drawing.Size(862, 90)
 		Me.Panel1.TabIndex = 12
 		'
+		'PictureBox2
+		'
+		Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
+		Me.PictureBox2.Location = New System.Drawing.Point(10, 2)
+		Me.PictureBox2.Margin = New System.Windows.Forms.Padding(2)
+		Me.PictureBox2.Name = "PictureBox2"
+		Me.PictureBox2.Size = New System.Drawing.Size(60, 52)
+		Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+		Me.PictureBox2.TabIndex = 92
+		Me.PictureBox2.TabStop = False
+		'
+		'Label14
+		'
+		Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.Label14.ForeColor = System.Drawing.Color.Black
+		Me.Label14.Location = New System.Drawing.Point(5, 54)
+		Me.Label14.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+		Me.Label14.Name = "Label14"
+		Me.Label14.Size = New System.Drawing.Size(83, 18)
+		Me.Label14.TabIndex = 91
+		Me.Label14.Text = "VETCARE"
+		Me.Label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+		'
 		'btnMenuPrincipal
 		'
 		Me.btnMenuPrincipal.BackColor = System.Drawing.Color.LightBlue
 		Me.btnMenuPrincipal.FlatStyle = System.Windows.Forms.FlatStyle.Flat
 		Me.btnMenuPrincipal.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.btnMenuPrincipal.Location = New System.Drawing.Point(445, 29)
+		Me.btnMenuPrincipal.Location = New System.Drawing.Point(623, 29)
 		Me.btnMenuPrincipal.Margin = New System.Windows.Forms.Padding(2)
 		Me.btnMenuPrincipal.Name = "btnMenuPrincipal"
 		Me.btnMenuPrincipal.Size = New System.Drawing.Size(112, 25)
@@ -82,7 +112,7 @@ Partial Class Pensión
 		Me.Label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
 		Me.Label1.Font = New System.Drawing.Font("Arial Narrow", 24.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
 		Me.Label1.ForeColor = System.Drawing.SystemColors.ControlLightLight
-		Me.Label1.Location = New System.Drawing.Point(214, 29)
+		Me.Label1.Location = New System.Drawing.Point(290, 29)
 		Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
 		Me.Label1.Name = "Label1"
 		Me.Label1.Size = New System.Drawing.Size(143, 39)
@@ -92,7 +122,6 @@ Partial Class Pensión
 		'Panel2
 		'
 		Me.Panel2.BackColor = System.Drawing.Color.SteelBlue
-		Me.Panel2.Controls.Add(Me.btnGuardar)
 		Me.Panel2.Location = New System.Drawing.Point(-4, 447)
 		Me.Panel2.Margin = New System.Windows.Forms.Padding(2)
 		Me.Panel2.Name = "Panel2"
@@ -104,7 +133,7 @@ Partial Class Pensión
 		Me.btnGuardar.BackColor = System.Drawing.Color.LightBlue
 		Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
 		Me.btnGuardar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.btnGuardar.Location = New System.Drawing.Point(450, 16)
+		Me.btnGuardar.Location = New System.Drawing.Point(415, 367)
 		Me.btnGuardar.Margin = New System.Windows.Forms.Padding(2)
 		Me.btnGuardar.Name = "btnGuardar"
 		Me.btnGuardar.Size = New System.Drawing.Size(112, 25)
@@ -143,7 +172,7 @@ Partial Class Pensión
 		Me.Label8.BackColor = System.Drawing.Color.Transparent
 		Me.Label8.FlatStyle = System.Windows.Forms.FlatStyle.Flat
 		Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.Label8.Location = New System.Drawing.Point(334, 192)
+		Me.Label8.Location = New System.Drawing.Point(219, 346)
 		Me.Label8.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
 		Me.Label8.Name = "Label8"
 		Me.Label8.Size = New System.Drawing.Size(105, 19)
@@ -176,16 +205,16 @@ Partial Class Pensión
 		Me.Label5.Text = "Hora de salida:"
 		Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
 		'
-		'TextBox5
+		'txtObservaciones
 		'
-		Me.TextBox5.BackColor = System.Drawing.Color.Silver
-		Me.TextBox5.BorderStyle = System.Windows.Forms.BorderStyle.None
-		Me.TextBox5.Location = New System.Drawing.Point(337, 213)
-		Me.TextBox5.Margin = New System.Windows.Forms.Padding(2)
-		Me.TextBox5.Multiline = True
-		Me.TextBox5.Name = "TextBox5"
-		Me.TextBox5.Size = New System.Drawing.Size(189, 75)
-		Me.TextBox5.TabIndex = 77
+		Me.txtObservaciones.BackColor = System.Drawing.Color.White
+		Me.txtObservaciones.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+		Me.txtObservaciones.Location = New System.Drawing.Point(222, 367)
+		Me.txtObservaciones.Margin = New System.Windows.Forms.Padding(2)
+		Me.txtObservaciones.Multiline = True
+		Me.txtObservaciones.Name = "txtObservaciones"
+		Me.txtObservaciones.Size = New System.Drawing.Size(189, 62)
+		Me.txtObservaciones.TabIndex = 77
 		'
 		'Label12
 		'
@@ -203,141 +232,168 @@ Partial Class Pensión
 		'
 		Me.Label6.BackColor = System.Drawing.Color.Transparent
 		Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.Label6.Location = New System.Drawing.Point(14, 51)
+		Me.Label6.Location = New System.Drawing.Point(17, 52)
 		Me.Label6.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
 		Me.Label6.Name = "Label6"
-		Me.Label6.Size = New System.Drawing.Size(85, 24)
+		Me.Label6.Size = New System.Drawing.Size(79, 24)
 		Me.Label6.TabIndex = 79
 		Me.Label6.Text = "Costo Total:"
 		Me.Label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
 		'
-		'TextBox10
+		'txtCostoDiario
 		'
-		Me.TextBox10.BackColor = System.Drawing.Color.Silver
-		Me.TextBox10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-		Me.TextBox10.Location = New System.Drawing.Point(103, 11)
-		Me.TextBox10.Margin = New System.Windows.Forms.Padding(2)
-		Me.TextBox10.Multiline = True
-		Me.TextBox10.Name = "TextBox10"
-		Me.TextBox10.Size = New System.Drawing.Size(73, 24)
-		Me.TextBox10.TabIndex = 80
-		Me.TextBox10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+		Me.txtCostoDiario.BackColor = System.Drawing.Color.White
+		Me.txtCostoDiario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+		Me.txtCostoDiario.Location = New System.Drawing.Point(95, 13)
+		Me.txtCostoDiario.Margin = New System.Windows.Forms.Padding(2)
+		Me.txtCostoDiario.Multiline = True
+		Me.txtCostoDiario.Name = "txtCostoDiario"
+		Me.txtCostoDiario.Size = New System.Drawing.Size(73, 24)
+		Me.txtCostoDiario.TabIndex = 80
+		Me.txtCostoDiario.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
 		'
-		'TextBox6
+		'txtCostoTotal
 		'
-		Me.TextBox6.BackColor = System.Drawing.Color.Silver
-		Me.TextBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-		Me.TextBox6.Location = New System.Drawing.Point(103, 55)
-		Me.TextBox6.Margin = New System.Windows.Forms.Padding(2)
-		Me.TextBox6.Multiline = True
-		Me.TextBox6.Name = "TextBox6"
-		Me.TextBox6.Size = New System.Drawing.Size(73, 24)
-		Me.TextBox6.TabIndex = 81
-		Me.TextBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+		Me.txtCostoTotal.BackColor = System.Drawing.Color.White
+		Me.txtCostoTotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+		Me.txtCostoTotal.Location = New System.Drawing.Point(96, 52)
+		Me.txtCostoTotal.Margin = New System.Windows.Forms.Padding(2)
+		Me.txtCostoTotal.Multiline = True
+		Me.txtCostoTotal.Name = "txtCostoTotal"
+		Me.txtCostoTotal.Size = New System.Drawing.Size(73, 24)
+		Me.txtCostoTotal.TabIndex = 81
+		Me.txtCostoTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
 		'
-		'ComboBoxServicio
+		'ComboBoxServicios
 		'
-		Me.ComboBoxServicio.BackColor = System.Drawing.SystemColors.InfoText
-		Me.ComboBoxServicio.ForeColor = System.Drawing.Color.White
-		Me.ComboBoxServicio.FormattingEnabled = True
-		Me.ComboBoxServicio.Items.AddRange(New Object() {"Consulta Médica", "Desparacitación", "Vacunación", "Eutanasia", "Cirugía", "Estética", "Pensión", "Castración", "Proaxis Dental"})
-		Me.ComboBoxServicio.Location = New System.Drawing.Point(372, 403)
-		Me.ComboBoxServicio.Margin = New System.Windows.Forms.Padding(2)
-		Me.ComboBoxServicio.Name = "ComboBoxServicio"
-		Me.ComboBoxServicio.Size = New System.Drawing.Size(147, 21)
-		Me.ComboBoxServicio.TabIndex = 82
-		Me.ComboBoxServicio.Text = "Agregar Servicio"
+		Me.ComboBoxServicios.BackColor = System.Drawing.Color.White
+		Me.ComboBoxServicios.ForeColor = System.Drawing.Color.Black
+		Me.ComboBoxServicios.FormattingEnabled = True
+		Me.ComboBoxServicios.Items.AddRange(New Object() {"Consulta Médica", "Desparacitación", "Vacunación", "Eutanasia", "Cirugía", "Estética", "Pensión", "Castración", "Proaxis Dental"})
+		Me.ComboBoxServicios.Location = New System.Drawing.Point(593, 413)
+		Me.ComboBoxServicios.Margin = New System.Windows.Forms.Padding(2)
+		Me.ComboBoxServicios.Name = "ComboBoxServicios"
+		Me.ComboBoxServicios.Size = New System.Drawing.Size(147, 21)
+		Me.ComboBoxServicios.TabIndex = 82
+		Me.ComboBoxServicios.Text = "Agregar Servicio"
 		'
 		'PictureBox1
 		'
 		Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-		Me.PictureBox1.Location = New System.Drawing.Point(56, 212)
+		Me.PictureBox1.Location = New System.Drawing.Point(535, 249)
 		Me.PictureBox1.Margin = New System.Windows.Forms.Padding(2)
 		Me.PictureBox1.Name = "PictureBox1"
-		Me.PictureBox1.Size = New System.Drawing.Size(246, 168)
+		Me.PictureBox1.Size = New System.Drawing.Size(205, 130)
 		Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
 		Me.PictureBox1.TabIndex = 83
 		Me.PictureBox1.TabStop = False
 		'
-		'DateTimePicker1
+		'dtpFechaEntrada
 		'
-		Me.DateTimePicker1.Location = New System.Drawing.Point(115, 14)
-		Me.DateTimePicker1.Name = "DateTimePicker1"
-		Me.DateTimePicker1.Size = New System.Drawing.Size(142, 20)
-		Me.DateTimePicker1.TabIndex = 84
+		Me.dtpFechaEntrada.Location = New System.Drawing.Point(115, 14)
+		Me.dtpFechaEntrada.Name = "dtpFechaEntrada"
+		Me.dtpFechaEntrada.Size = New System.Drawing.Size(142, 20)
+		Me.dtpFechaEntrada.TabIndex = 84
 		'
-		'DateTimePicker2
+		'dtpFechaSalida
 		'
-		Me.DateTimePicker2.Location = New System.Drawing.Point(115, 51)
-		Me.DateTimePicker2.Name = "DateTimePicker2"
-		Me.DateTimePicker2.Size = New System.Drawing.Size(142, 20)
-		Me.DateTimePicker2.TabIndex = 85
-		'
-		'DateTimePicker3
-		'
-		Me.DateTimePicker3.Location = New System.Drawing.Point(377, 14)
-		Me.DateTimePicker3.Name = "DateTimePicker3"
-		Me.DateTimePicker3.Size = New System.Drawing.Size(122, 20)
-		Me.DateTimePicker3.TabIndex = 86
-		'
-		'DateTimePicker4
-		'
-		Me.DateTimePicker4.Location = New System.Drawing.Point(377, 57)
-		Me.DateTimePicker4.Name = "DateTimePicker4"
-		Me.DateTimePicker4.Size = New System.Drawing.Size(122, 20)
-		Me.DateTimePicker4.TabIndex = 87
+		Me.dtpFechaSalida.Location = New System.Drawing.Point(115, 51)
+		Me.dtpFechaSalida.Name = "dtpFechaSalida"
+		Me.dtpFechaSalida.Size = New System.Drawing.Size(142, 20)
+		Me.dtpFechaSalida.TabIndex = 85
 		'
 		'Panel3
 		'
 		Me.Panel3.BackColor = System.Drawing.Color.LightSteelBlue
-		Me.Panel3.Controls.Add(Me.DateTimePicker4)
-		Me.Panel3.Controls.Add(Me.DateTimePicker3)
-		Me.Panel3.Controls.Add(Me.DateTimePicker2)
-		Me.Panel3.Controls.Add(Me.DateTimePicker1)
+		Me.Panel3.Controls.Add(Me.dtpHoraSalida)
+		Me.Panel3.Controls.Add(Me.dtpHoraEntrada)
+		Me.Panel3.Controls.Add(Me.dtpFechaSalida)
+		Me.Panel3.Controls.Add(Me.dtpFechaEntrada)
 		Me.Panel3.Controls.Add(Me.Label5)
 		Me.Panel3.Controls.Add(Me.Label4)
 		Me.Panel3.Controls.Add(Me.Label3)
 		Me.Panel3.Controls.Add(Me.Label2)
-		Me.Panel3.Location = New System.Drawing.Point(27, 94)
+		Me.Panel3.Location = New System.Drawing.Point(16, 250)
 		Me.Panel3.Name = "Panel3"
 		Me.Panel3.Size = New System.Drawing.Size(514, 88)
 		Me.Panel3.TabIndex = 88
 		'
+		'dtpHoraSalida
+		'
+		Me.dtpHoraSalida.Format = System.Windows.Forms.DateTimePickerFormat.Time
+		Me.dtpHoraSalida.Location = New System.Drawing.Point(381, 52)
+		Me.dtpHoraSalida.Name = "dtpHoraSalida"
+		Me.dtpHoraSalida.Size = New System.Drawing.Size(103, 20)
+		Me.dtpHoraSalida.TabIndex = 93
+		'
+		'dtpHoraEntrada
+		'
+		Me.dtpHoraEntrada.Format = System.Windows.Forms.DateTimePickerFormat.Time
+		Me.dtpHoraEntrada.Location = New System.Drawing.Point(381, 16)
+		Me.dtpHoraEntrada.Name = "dtpHoraEntrada"
+		Me.dtpHoraEntrada.Size = New System.Drawing.Size(104, 20)
+		Me.dtpHoraEntrada.TabIndex = 92
+		'
 		'Panel4
 		'
 		Me.Panel4.BackColor = System.Drawing.Color.LightSteelBlue
-		Me.Panel4.Controls.Add(Me.TextBox10)
+		Me.Panel4.Controls.Add(Me.txtCostoDiario)
 		Me.Panel4.Controls.Add(Me.Label6)
 		Me.Panel4.Controls.Add(Me.Label12)
-		Me.Panel4.Controls.Add(Me.TextBox6)
-		Me.Panel4.Location = New System.Drawing.Point(343, 301)
+		Me.Panel4.Controls.Add(Me.txtCostoTotal)
+		Me.Panel4.Location = New System.Drawing.Point(16, 346)
 		Me.Panel4.Name = "Panel4"
 		Me.Panel4.Size = New System.Drawing.Size(183, 88)
 		Me.Panel4.TabIndex = 89
+		'
+		'dgvPension
+		'
+		Me.dgvPension.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+		Me.dgvPension.Location = New System.Drawing.Point(16, 94)
+		Me.dgvPension.Name = "dgvPension"
+		Me.dgvPension.Size = New System.Drawing.Size(720, 150)
+		Me.dgvPension.TabIndex = 90
+		'
+		'btnBuscar
+		'
+		Me.btnBuscar.BackColor = System.Drawing.Color.LightBlue
+		Me.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+		Me.btnBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.btnBuscar.Location = New System.Drawing.Point(415, 406)
+		Me.btnBuscar.Name = "btnBuscar"
+		Me.btnBuscar.Size = New System.Drawing.Size(112, 23)
+		Me.btnBuscar.TabIndex = 91
+		Me.btnBuscar.Text = "Buscar"
+		Me.btnBuscar.UseVisualStyleBackColor = False
 		'
 		'Pensión
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
 		Me.BackColor = System.Drawing.SystemColors.ButtonHighlight
-		Me.ClientSize = New System.Drawing.Size(569, 504)
+		Me.ClientSize = New System.Drawing.Size(748, 504)
+		Me.Controls.Add(Me.btnBuscar)
+		Me.Controls.Add(Me.btnGuardar)
+		Me.Controls.Add(Me.dgvPension)
 		Me.Controls.Add(Me.Panel4)
 		Me.Controls.Add(Me.Panel3)
 		Me.Controls.Add(Me.PictureBox1)
-		Me.Controls.Add(Me.ComboBoxServicio)
-		Me.Controls.Add(Me.TextBox5)
+		Me.Controls.Add(Me.ComboBoxServicios)
+		Me.Controls.Add(Me.txtObservaciones)
 		Me.Controls.Add(Me.Label8)
 		Me.Controls.Add(Me.Panel2)
 		Me.Controls.Add(Me.Panel1)
+		Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
 		Me.Margin = New System.Windows.Forms.Padding(2)
 		Me.Name = "Pensión"
 		Me.Text = "Pensión"
 		Me.Panel1.ResumeLayout(False)
-		Me.Panel2.ResumeLayout(False)
+		CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
 		CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
 		Me.Panel3.ResumeLayout(False)
 		Me.Panel4.ResumeLayout(False)
 		Me.Panel4.PerformLayout()
+		CType(Me.dgvPension, System.ComponentModel.ISupportInitialize).EndInit()
 		Me.ResumeLayout(False)
 		Me.PerformLayout()
 
@@ -353,17 +409,21 @@ Partial Class Pensión
 	Friend WithEvents Label8 As Label
 	Friend WithEvents Label4 As Label
 	Friend WithEvents Label5 As Label
-	Friend WithEvents TextBox5 As TextBox
+	Friend WithEvents txtObservaciones As TextBox
 	Friend WithEvents Label12 As Label
 	Friend WithEvents Label6 As Label
-	Friend WithEvents TextBox10 As TextBox
-	Friend WithEvents TextBox6 As TextBox
-	Friend WithEvents ComboBoxServicio As ComboBox
+	Friend WithEvents txtCostoDiario As TextBox
+	Friend WithEvents txtCostoTotal As TextBox
+	Friend WithEvents ComboBoxServicios As ComboBox
 	Friend WithEvents PictureBox1 As PictureBox
-	Friend WithEvents DateTimePicker1 As DateTimePicker
-	Friend WithEvents DateTimePicker2 As DateTimePicker
-	Friend WithEvents DateTimePicker3 As DateTimePicker
-	Friend WithEvents DateTimePicker4 As DateTimePicker
+	Friend WithEvents dtpFechaEntrada As DateTimePicker
+	Friend WithEvents dtpFechaSalida As DateTimePicker
 	Friend WithEvents Panel3 As Panel
 	Friend WithEvents Panel4 As Panel
+	Friend WithEvents dtpHoraEntrada As DateTimePicker
+	Friend WithEvents dtpHoraSalida As DateTimePicker
+	Friend WithEvents dgvPension As DataGridView
+	Friend WithEvents PictureBox2 As PictureBox
+	Friend WithEvents Label14 As Label
+	Friend WithEvents btnBuscar As Button
 End Class

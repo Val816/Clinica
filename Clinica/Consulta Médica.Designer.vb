@@ -22,6 +22,7 @@ Partial Class Consulta_Médica
 	'No lo modifique con el editor de código.
 	<System.Diagnostics.DebuggerStepThrough()>
 	Private Sub InitializeComponent()
+		Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Consulta_Médica))
 		Me.Panel1 = New System.Windows.Forms.Panel()
 		Me.btnMenuPrincipal = New System.Windows.Forms.Button()
 		Me.Label1 = New System.Windows.Forms.Label()
@@ -53,15 +54,20 @@ Partial Class Consulta_Médica
 		Me.Label13 = New System.Windows.Forms.Label()
 		Me.Panel3 = New System.Windows.Forms.Panel()
 		Me.Panel4 = New System.Windows.Forms.Panel()
+		Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+		Me.Label14 = New System.Windows.Forms.Label()
 		Me.Panel1.SuspendLayout()
 		Me.Panel2.SuspendLayout()
 		Me.Panel3.SuspendLayout()
 		Me.Panel4.SuspendLayout()
+		CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.SuspendLayout()
 		'
 		'Panel1
 		'
 		Me.Panel1.BackColor = System.Drawing.Color.SteelBlue
+		Me.Panel1.Controls.Add(Me.PictureBox2)
+		Me.Panel1.Controls.Add(Me.Label14)
 		Me.Panel1.Controls.Add(Me.btnMenuPrincipal)
 		Me.Panel1.Controls.Add(Me.Label1)
 		Me.Panel1.Location = New System.Drawing.Point(1, -1)
@@ -268,7 +274,7 @@ Partial Class Consulta_Médica
 		'Label9
 		'
 		Me.Label9.AutoSize = True
-		Me.Label9.Location = New System.Drawing.Point(117, 246)
+		Me.Label9.Location = New System.Drawing.Point(48, 207)
 		Me.Label9.Name = "Label9"
 		Me.Label9.Size = New System.Drawing.Size(201, 15)
 		Me.Label9.TabIndex = 24
@@ -277,10 +283,11 @@ Partial Class Consulta_Médica
 		'ComboBoxDesparacitacion
 		'
 		Me.ComboBoxDesparacitacion.BackColor = System.Drawing.SystemColors.ButtonHighlight
+		Me.ComboBoxDesparacitacion.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
 		Me.ComboBoxDesparacitacion.ForeColor = System.Drawing.Color.Black
 		Me.ComboBoxDesparacitacion.FormattingEnabled = True
 		Me.ComboBoxDesparacitacion.Items.AddRange(New Object() {"Si", "No"})
-		Me.ComboBoxDesparacitacion.Location = New System.Drawing.Point(124, 266)
+		Me.ComboBoxDesparacitacion.Location = New System.Drawing.Point(55, 227)
 		Me.ComboBoxDesparacitacion.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
 		Me.ComboBoxDesparacitacion.Name = "ComboBoxDesparacitacion"
 		Me.ComboBoxDesparacitacion.Size = New System.Drawing.Size(195, 23)
@@ -291,7 +298,7 @@ Partial Class Consulta_Médica
 		'
 		Me.Label10.BackColor = System.Drawing.Color.Transparent
 		Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.Label10.Location = New System.Drawing.Point(3, 13)
+		Me.Label10.Location = New System.Drawing.Point(3, 1)
 		Me.Label10.Name = "Label10"
 		Me.Label10.Size = New System.Drawing.Size(110, 27)
 		Me.Label10.TabIndex = 26
@@ -300,13 +307,13 @@ Partial Class Consulta_Médica
 		'
 		'TextBoxObservaciones
 		'
-		Me.TextBoxObservaciones.BackColor = System.Drawing.Color.Silver
+		Me.TextBoxObservaciones.BackColor = System.Drawing.Color.White
 		Me.TextBoxObservaciones.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-		Me.TextBoxObservaciones.Location = New System.Drawing.Point(113, 13)
+		Me.TextBoxObservaciones.Location = New System.Drawing.Point(6, 25)
 		Me.TextBoxObservaciones.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
 		Me.TextBoxObservaciones.Multiline = True
 		Me.TextBoxObservaciones.Name = "TextBoxObservaciones"
-		Me.TextBoxObservaciones.Size = New System.Drawing.Size(204, 70)
+		Me.TextBoxObservaciones.Size = New System.Drawing.Size(254, 70)
 		Me.TextBoxObservaciones.TabIndex = 27
 		Me.TextBoxObservaciones.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
 		'
@@ -314,7 +321,7 @@ Partial Class Consulta_Médica
 		'
 		Me.Label11.BackColor = System.Drawing.Color.Transparent
 		Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.Label11.Location = New System.Drawing.Point(43, 104)
+		Me.Label11.Location = New System.Drawing.Point(3, 101)
 		Me.Label11.Name = "Label11"
 		Me.Label11.Size = New System.Drawing.Size(67, 27)
 		Me.Label11.TabIndex = 28
@@ -323,36 +330,38 @@ Partial Class Consulta_Médica
 		'
 		'TextBoxReceta
 		'
-		Me.TextBoxReceta.BackColor = System.Drawing.Color.Silver
+		Me.TextBoxReceta.BackColor = System.Drawing.Color.White
 		Me.TextBoxReceta.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-		Me.TextBoxReceta.Location = New System.Drawing.Point(113, 104)
+		Me.TextBoxReceta.Location = New System.Drawing.Point(6, 126)
 		Me.TextBoxReceta.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
 		Me.TextBoxReceta.Multiline = True
 		Me.TextBoxReceta.Name = "TextBoxReceta"
-		Me.TextBoxReceta.Size = New System.Drawing.Size(204, 71)
+		Me.TextBoxReceta.Size = New System.Drawing.Size(254, 70)
 		Me.TextBoxReceta.TabIndex = 29
 		Me.TextBoxReceta.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
 		'
 		'ComboBoxVacunas
 		'
 		Me.ComboBoxVacunas.BackColor = System.Drawing.SystemColors.ButtonHighlight
+		Me.ComboBoxVacunas.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
 		Me.ComboBoxVacunas.ForeColor = System.Drawing.Color.Black
 		Me.ComboBoxVacunas.FormattingEnabled = True
 		Me.ComboBoxVacunas.Items.AddRange(New Object() {"Puppy", "Quintuple", "Sextuple", "Rabia", "Triple felina", "Bordetella", "Giarda", "Ninguna"})
-		Me.ComboBoxVacunas.Location = New System.Drawing.Point(124, 207)
+		Me.ComboBoxVacunas.Location = New System.Drawing.Point(171, 301)
 		Me.ComboBoxVacunas.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
 		Me.ComboBoxVacunas.Name = "ComboBoxVacunas"
-		Me.ComboBoxVacunas.Size = New System.Drawing.Size(195, 23)
+		Me.ComboBoxVacunas.Size = New System.Drawing.Size(172, 23)
 		Me.ComboBoxVacunas.TabIndex = 30
 		Me.ComboBoxVacunas.Text = "Esquema de Vacunación"
 		'
 		'ComboBoxServicios
 		'
 		Me.ComboBoxServicios.BackColor = System.Drawing.SystemColors.ButtonHighlight
+		Me.ComboBoxServicios.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
 		Me.ComboBoxServicios.ForeColor = System.Drawing.Color.Black
 		Me.ComboBoxServicios.FormattingEnabled = True
 		Me.ComboBoxServicios.Items.AddRange(New Object() {"Consulta Médica", "Desparacitación", "Vacunación", "Eutanasia", "Cirugía", "Estética", "Pensión", "Castración", "Proaxis Dental"})
-		Me.ComboBoxServicios.Location = New System.Drawing.Point(124, 317)
+		Me.ComboBoxServicios.Location = New System.Drawing.Point(55, 287)
 		Me.ComboBoxServicios.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
 		Me.ComboBoxServicios.Name = "ComboBoxServicios"
 		Me.ComboBoxServicios.Size = New System.Drawing.Size(195, 23)
@@ -371,7 +380,7 @@ Partial Class Consulta_Médica
 		'Label12
 		'
 		Me.Label12.AutoSize = True
-		Me.Label12.Location = New System.Drawing.Point(162, 190)
+		Me.Label12.Location = New System.Drawing.Point(9, 304)
 		Me.Label12.Name = "Label12"
 		Me.Label12.Size = New System.Drawing.Size(151, 15)
 		Me.Label12.TabIndex = 35
@@ -380,7 +389,7 @@ Partial Class Consulta_Médica
 		'Label13
 		'
 		Me.Label13.AutoSize = True
-		Me.Label13.Location = New System.Drawing.Point(193, 300)
+		Me.Label13.Location = New System.Drawing.Point(124, 263)
 		Me.Label13.Name = "Label13"
 		Me.Label13.Size = New System.Drawing.Size(125, 15)
 		Me.Label13.TabIndex = 36
@@ -390,6 +399,8 @@ Partial Class Consulta_Médica
 		'
 		Me.Panel3.BackColor = System.Drawing.Color.LightSteelBlue
 		Me.Panel3.Controls.Add(Me.ComboBoxEstadoReprod)
+		Me.Panel3.Controls.Add(Me.Label12)
+		Me.Panel3.Controls.Add(Me.ComboBoxVacunas)
 		Me.Panel3.Controls.Add(Me.TextBoxFrecCardiaca)
 		Me.Panel3.Controls.Add(Me.TextBoxFrecRespiratoria)
 		Me.Panel3.Controls.Add(Me.TextBoxEnfermedad)
@@ -405,26 +416,47 @@ Partial Class Consulta_Médica
 		Me.Panel3.Controls.Add(Me.Label4)
 		Me.Panel3.Location = New System.Drawing.Point(33, 130)
 		Me.Panel3.Name = "Panel3"
-		Me.Panel3.Size = New System.Drawing.Size(364, 312)
+		Me.Panel3.Size = New System.Drawing.Size(364, 337)
 		Me.Panel3.TabIndex = 37
 		'
 		'Panel4
 		'
 		Me.Panel4.BackColor = System.Drawing.Color.LightSteelBlue
 		Me.Panel4.Controls.Add(Me.Label13)
-		Me.Panel4.Controls.Add(Me.Label12)
 		Me.Panel4.Controls.Add(Me.ComboBoxServicios)
-		Me.Panel4.Controls.Add(Me.ComboBoxVacunas)
 		Me.Panel4.Controls.Add(Me.TextBoxReceta)
 		Me.Panel4.Controls.Add(Me.Label11)
 		Me.Panel4.Controls.Add(Me.TextBoxObservaciones)
 		Me.Panel4.Controls.Add(Me.Label10)
 		Me.Panel4.Controls.Add(Me.ComboBoxDesparacitacion)
 		Me.Panel4.Controls.Add(Me.Label9)
-		Me.Panel4.Location = New System.Drawing.Point(403, 117)
+		Me.Panel4.Location = New System.Drawing.Point(403, 130)
 		Me.Panel4.Name = "Panel4"
-		Me.Panel4.Size = New System.Drawing.Size(329, 350)
+		Me.Panel4.Size = New System.Drawing.Size(280, 337)
 		Me.Panel4.TabIndex = 38
+		'
+		'PictureBox2
+		'
+		Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
+		Me.PictureBox2.Location = New System.Drawing.Point(2, 2)
+		Me.PictureBox2.Margin = New System.Windows.Forms.Padding(2)
+		Me.PictureBox2.Name = "PictureBox2"
+		Me.PictureBox2.Size = New System.Drawing.Size(60, 52)
+		Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+		Me.PictureBox2.TabIndex = 90
+		Me.PictureBox2.TabStop = False
+		'
+		'Label14
+		'
+		Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.Label14.ForeColor = System.Drawing.Color.Black
+		Me.Label14.Location = New System.Drawing.Point(-3, 54)
+		Me.Label14.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+		Me.Label14.Name = "Label14"
+		Me.Label14.Size = New System.Drawing.Size(83, 18)
+		Me.Label14.TabIndex = 89
+		Me.Label14.Text = "VETCARE"
+		Me.Label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
 		'
 		'Consulta_Médica
 		'
@@ -450,6 +482,7 @@ Partial Class Consulta_Médica
 		Me.Panel3.PerformLayout()
 		Me.Panel4.ResumeLayout(False)
 		Me.Panel4.PerformLayout()
+		CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
 		Me.ResumeLayout(False)
 
 	End Sub
@@ -485,4 +518,6 @@ Partial Class Consulta_Médica
 	Friend WithEvents Label13 As Label
 	Friend WithEvents Panel3 As Panel
 	Friend WithEvents Panel4 As Panel
+	Friend WithEvents PictureBox2 As PictureBox
+	Friend WithEvents Label14 As Label
 End Class

@@ -22,7 +22,10 @@ Partial Class Registro_de_Mascota
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+		Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Registro_de_Mascota))
 		Me.Panel1 = New System.Windows.Forms.Panel()
+		Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+		Me.Label15 = New System.Windows.Forms.Label()
 		Me.btnMenuPrincipal = New System.Windows.Forms.Button()
 		Me.Label1 = New System.Windows.Forms.Label()
 		Me.Panel2 = New System.Windows.Forms.Panel()
@@ -40,6 +43,7 @@ Partial Class Registro_de_Mascota
 		Me.Label14 = New System.Windows.Forms.Label()
 		Me.txtApCliente = New System.Windows.Forms.TextBox()
 		Me.Panel6 = New System.Windows.Forms.Panel()
+		Me.Label16 = New System.Windows.Forms.Label()
 		Me.Label2 = New System.Windows.Forms.Label()
 		Me.Label3 = New System.Windows.Forms.Label()
 		Me.ComboBoxEdadUnidad = New System.Windows.Forms.ComboBox()
@@ -60,6 +64,7 @@ Partial Class Registro_de_Mascota
 		Me.Label5 = New System.Windows.Forms.Label()
 		Me.Label4 = New System.Windows.Forms.Label()
 		Me.Panel1.SuspendLayout()
+		CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.DataGridViewMascotas, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.Panel5.SuspendLayout()
 		Me.Panel6.SuspendLayout()
@@ -68,14 +73,41 @@ Partial Class Registro_de_Mascota
 		'Panel1
 		'
 		Me.Panel1.BackColor = System.Drawing.Color.SteelBlue
+		Me.Panel1.Controls.Add(Me.PictureBox2)
+		Me.Panel1.Controls.Add(Me.Label15)
 		Me.Panel1.Controls.Add(Me.btnMenuPrincipal)
 		Me.Panel1.Controls.Add(Me.Label1)
 		Me.Panel1.Location = New System.Drawing.Point(1, -5)
 		Me.Panel1.Margin = New System.Windows.Forms.Padding(2)
 		Me.Panel1.Name = "Panel1"
-		Me.Panel1.Size = New System.Drawing.Size(964, 74)
+		Me.Panel1.Size = New System.Drawing.Size(964, 75)
 		Me.Panel1.TabIndex = 3
 		Me.Panel1.UseWaitCursor = True
+		'
+		'PictureBox2
+		'
+		Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
+		Me.PictureBox2.Location = New System.Drawing.Point(2, 6)
+		Me.PictureBox2.Margin = New System.Windows.Forms.Padding(2)
+		Me.PictureBox2.Name = "PictureBox2"
+		Me.PictureBox2.Size = New System.Drawing.Size(60, 52)
+		Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+		Me.PictureBox2.TabIndex = 98
+		Me.PictureBox2.TabStop = False
+		Me.PictureBox2.UseWaitCursor = True
+		'
+		'Label15
+		'
+		Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.Label15.ForeColor = System.Drawing.Color.Black
+		Me.Label15.Location = New System.Drawing.Point(-3, 58)
+		Me.Label15.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+		Me.Label15.Name = "Label15"
+		Me.Label15.Size = New System.Drawing.Size(83, 18)
+		Me.Label15.TabIndex = 97
+		Me.Label15.Text = "VETCARE"
+		Me.Label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+		Me.Label15.UseWaitCursor = True
 		'
 		'btnMenuPrincipal
 		'
@@ -84,7 +116,7 @@ Partial Class Registro_de_Mascota
 		Me.btnMenuPrincipal.FlatStyle = System.Windows.Forms.FlatStyle.Flat
 		Me.btnMenuPrincipal.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
 		Me.btnMenuPrincipal.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-		Me.btnMenuPrincipal.Location = New System.Drawing.Point(737, 33)
+		Me.btnMenuPrincipal.Location = New System.Drawing.Point(844, 28)
 		Me.btnMenuPrincipal.Margin = New System.Windows.Forms.Padding(2)
 		Me.btnMenuPrincipal.Name = "btnMenuPrincipal"
 		Me.btnMenuPrincipal.Size = New System.Drawing.Size(103, 25)
@@ -109,10 +141,10 @@ Partial Class Registro_de_Mascota
 		'Panel2
 		'
 		Me.Panel2.BackColor = System.Drawing.Color.SteelBlue
-		Me.Panel2.Location = New System.Drawing.Point(1, 575)
+		Me.Panel2.Location = New System.Drawing.Point(1, 543)
 		Me.Panel2.Margin = New System.Windows.Forms.Padding(2)
 		Me.Panel2.Name = "Panel2"
-		Me.Panel2.Size = New System.Drawing.Size(964, 55)
+		Me.Panel2.Size = New System.Drawing.Size(964, 76)
 		Me.Panel2.TabIndex = 4
 		Me.Panel2.UseWaitCursor = True
 		'
@@ -122,10 +154,10 @@ Partial Class Registro_de_Mascota
 		Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
 		Me.btnGuardar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
 		Me.btnGuardar.ForeColor = System.Drawing.SystemColors.ControlText
-		Me.btnGuardar.Location = New System.Drawing.Point(740, 513)
+		Me.btnGuardar.Location = New System.Drawing.Point(280, 241)
 		Me.btnGuardar.Margin = New System.Windows.Forms.Padding(2)
 		Me.btnGuardar.Name = "btnGuardar"
-		Me.btnGuardar.Size = New System.Drawing.Size(93, 25)
+		Me.btnGuardar.Size = New System.Drawing.Size(77, 25)
 		Me.btnGuardar.TabIndex = 5
 		Me.btnGuardar.Text = "Guardar"
 		Me.btnGuardar.UseVisualStyleBackColor = False
@@ -137,7 +169,7 @@ Partial Class Registro_de_Mascota
 		Me.ComboBoxServicios.ForeColor = System.Drawing.Color.Black
 		Me.ComboBoxServicios.FormattingEnabled = True
 		Me.ComboBoxServicios.Items.AddRange(New Object() {"Consulta Médica", "Desparacitación", "Vacunación", "Cirugía", "Grooming", "Pensión", "Eutanasia"})
-		Me.ComboBoxServicios.Location = New System.Drawing.Point(721, 549)
+		Me.ComboBoxServicios.Location = New System.Drawing.Point(430, 176)
 		Me.ComboBoxServicios.Margin = New System.Windows.Forms.Padding(2)
 		Me.ComboBoxServicios.Name = "ComboBoxServicios"
 		Me.ComboBoxServicios.Size = New System.Drawing.Size(113, 21)
@@ -149,9 +181,9 @@ Partial Class Registro_de_Mascota
 		Me.DataGridViewMascotas.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption
 		Me.DataGridViewMascotas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
 		Me.DataGridViewMascotas.GridColor = System.Drawing.Color.AliceBlue
-		Me.DataGridViewMascotas.Location = New System.Drawing.Point(375, 85)
+		Me.DataGridViewMascotas.Location = New System.Drawing.Point(28, 312)
 		Me.DataGridViewMascotas.Name = "DataGridViewMascotas"
-		Me.DataGridViewMascotas.Size = New System.Drawing.Size(458, 422)
+		Me.DataGridViewMascotas.Size = New System.Drawing.Size(906, 211)
 		Me.DataGridViewMascotas.TabIndex = 25
 		Me.DataGridViewMascotas.UseWaitCursor = True
 		'
@@ -212,7 +244,7 @@ Partial Class Registro_de_Mascota
 		Me.Label13.AutoSize = True
 		Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
 		Me.Label13.ForeColor = System.Drawing.Color.Black
-		Me.Label13.Location = New System.Drawing.Point(587, 552)
+		Me.Label13.Location = New System.Drawing.Point(296, 180)
 		Me.Label13.Name = "Label13"
 		Me.Label13.Size = New System.Drawing.Size(129, 15)
 		Me.Label13.TabIndex = 33
@@ -225,7 +257,7 @@ Partial Class Registro_de_Mascota
 		Me.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Popup
 		Me.btnEliminar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
 		Me.btnEliminar.ForeColor = System.Drawing.SystemColors.ControlText
-		Me.btnEliminar.Location = New System.Drawing.Point(579, 513)
+		Me.btnEliminar.Location = New System.Drawing.Point(28, 241)
 		Me.btnEliminar.Name = "btnEliminar"
 		Me.btnEliminar.Size = New System.Drawing.Size(75, 25)
 		Me.btnEliminar.TabIndex = 34
@@ -240,7 +272,7 @@ Partial Class Registro_de_Mascota
 		Me.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
 		Me.btnBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
 		Me.btnBuscar.ForeColor = System.Drawing.SystemColors.ControlText
-		Me.btnBuscar.Location = New System.Drawing.Point(660, 513)
+		Me.btnBuscar.Location = New System.Drawing.Point(157, 241)
 		Me.btnBuscar.Name = "btnBuscar"
 		Me.btnBuscar.Size = New System.Drawing.Size(75, 25)
 		Me.btnBuscar.TabIndex = 35
@@ -257,7 +289,7 @@ Partial Class Registro_de_Mascota
 		Me.Panel5.Controls.Add(Me.txtCelular)
 		Me.Panel5.Controls.Add(Me.Label11)
 		Me.Panel5.Controls.Add(Me.Label10)
-		Me.Panel5.Location = New System.Drawing.Point(28, 74)
+		Me.Panel5.Location = New System.Drawing.Point(28, 89)
 		Me.Panel5.Name = "Panel5"
 		Me.Panel5.Size = New System.Drawing.Size(329, 130)
 		Me.Panel5.TabIndex = 36
@@ -291,12 +323,15 @@ Partial Class Registro_de_Mascota
 		'Panel6
 		'
 		Me.Panel6.BackColor = System.Drawing.Color.LightSteelBlue
+		Me.Panel6.Controls.Add(Me.Label16)
 		Me.Panel6.Controls.Add(Me.Label2)
 		Me.Panel6.Controls.Add(Me.Label3)
 		Me.Panel6.Controls.Add(Me.ComboBoxEdadUnidad)
 		Me.Panel6.Controls.Add(Me.txtNomMasc)
+		Me.Panel6.Controls.Add(Me.Label13)
 		Me.Panel6.Controls.Add(Me.ComboBoxEstadoReproductivo)
 		Me.Panel6.Controls.Add(Me.Label12)
+		Me.Panel6.Controls.Add(Me.ComboBoxServicios)
 		Me.Panel6.Controls.Add(Me.ComboBoxTalla)
 		Me.Panel6.Controls.Add(Me.ComboBoxEspecie)
 		Me.Panel6.Controls.Add(Me.ComboBoxRaza)
@@ -310,11 +345,25 @@ Partial Class Registro_de_Mascota
 		Me.Panel6.Controls.Add(Me.Label6)
 		Me.Panel6.Controls.Add(Me.Label5)
 		Me.Panel6.Controls.Add(Me.Label4)
-		Me.Panel6.Location = New System.Drawing.Point(28, 213)
+		Me.Panel6.Location = New System.Drawing.Point(378, 89)
 		Me.Panel6.Name = "Panel6"
-		Me.Panel6.Size = New System.Drawing.Size(329, 352)
+		Me.Panel6.Size = New System.Drawing.Size(556, 209)
 		Me.Panel6.TabIndex = 37
 		Me.Panel6.UseWaitCursor = True
+		'
+		'Label16
+		'
+		Me.Label16.BackColor = System.Drawing.Color.Transparent
+		Me.Label16.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+		Me.Label16.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.Label16.Location = New System.Drawing.Point(128, 139)
+		Me.Label16.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+		Me.Label16.Name = "Label16"
+		Me.Label16.Size = New System.Drawing.Size(33, 24)
+		Me.Label16.TabIndex = 51
+		Me.Label16.Text = "Kg."
+		Me.Label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+		Me.Label16.UseWaitCursor = True
 		'
 		'Label2
 		'
@@ -322,7 +371,7 @@ Partial Class Registro_de_Mascota
 		Me.Label2.BackColor = System.Drawing.Color.Transparent
 		Me.Label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
 		Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.Label2.Location = New System.Drawing.Point(14, 10)
+		Me.Label2.Location = New System.Drawing.Point(13, 15)
 		Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
 		Me.Label2.Name = "Label2"
 		Me.Label2.Size = New System.Drawing.Size(140, 15)
@@ -336,7 +385,7 @@ Partial Class Registro_de_Mascota
 		Me.Label3.BackColor = System.Drawing.Color.Transparent
 		Me.Label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
 		Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.Label3.Location = New System.Drawing.Point(35, 37)
+		Me.Label3.Location = New System.Drawing.Point(13, 43)
 		Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
 		Me.Label3.Name = "Label3"
 		Me.Label3.Size = New System.Drawing.Size(62, 15)
@@ -347,9 +396,9 @@ Partial Class Registro_de_Mascota
 		'ComboBoxEdadUnidad
 		'
 		Me.ComboBoxEdadUnidad.FormattingEnabled = True
-		Me.ComboBoxEdadUnidad.Location = New System.Drawing.Point(178, 199)
+		Me.ComboBoxEdadUnidad.Location = New System.Drawing.Point(129, 109)
 		Me.ComboBoxEdadUnidad.Name = "ComboBoxEdadUnidad"
-		Me.ComboBoxEdadUnidad.Size = New System.Drawing.Size(121, 21)
+		Me.ComboBoxEdadUnidad.Size = New System.Drawing.Size(72, 21)
 		Me.ComboBoxEdadUnidad.TabIndex = 50
 		Me.ComboBoxEdadUnidad.UseWaitCursor = True
 		'
@@ -357,7 +406,7 @@ Partial Class Registro_de_Mascota
 		'
 		Me.txtNomMasc.BackColor = System.Drawing.Color.White
 		Me.txtNomMasc.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-		Me.txtNomMasc.Location = New System.Drawing.Point(158, 10)
+		Me.txtNomMasc.Location = New System.Drawing.Point(157, 15)
 		Me.txtNomMasc.Margin = New System.Windows.Forms.Padding(2)
 		Me.txtNomMasc.Name = "txtNomMasc"
 		Me.txtNomMasc.Size = New System.Drawing.Size(133, 20)
@@ -367,7 +416,7 @@ Partial Class Registro_de_Mascota
 		'ComboBoxEstadoReproductivo
 		'
 		Me.ComboBoxEstadoReproductivo.FormattingEnabled = True
-		Me.ComboBoxEstadoReproductivo.Location = New System.Drawing.Point(158, 230)
+		Me.ComboBoxEstadoReproductivo.Location = New System.Drawing.Point(166, 176)
 		Me.ComboBoxEstadoReproductivo.Name = "ComboBoxEstadoReproductivo"
 		Me.ComboBoxEstadoReproductivo.Size = New System.Drawing.Size(121, 21)
 		Me.ComboBoxEstadoReproductivo.TabIndex = 49
@@ -378,10 +427,10 @@ Partial Class Registro_de_Mascota
 		Me.Label12.BackColor = System.Drawing.Color.Transparent
 		Me.Label12.FlatStyle = System.Windows.Forms.FlatStyle.Flat
 		Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.Label12.Location = New System.Drawing.Point(11, 221)
+		Me.Label12.Location = New System.Drawing.Point(16, 167)
 		Me.Label12.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
 		Me.Label12.Name = "Label12"
-		Me.Label12.Size = New System.Drawing.Size(143, 34)
+		Me.Label12.Size = New System.Drawing.Size(145, 34)
 		Me.Label12.TabIndex = 48
 		Me.Label12.Text = "Estado Reproductivo:"
 		Me.Label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -390,16 +439,16 @@ Partial Class Registro_de_Mascota
 		'ComboBoxTalla
 		'
 		Me.ComboBoxTalla.FormattingEnabled = True
-		Me.ComboBoxTalla.Location = New System.Drawing.Point(102, 133)
+		Me.ComboBoxTalla.Location = New System.Drawing.Point(387, 43)
 		Me.ComboBoxTalla.Name = "ComboBoxTalla"
-		Me.ComboBoxTalla.Size = New System.Drawing.Size(121, 21)
+		Me.ComboBoxTalla.Size = New System.Drawing.Size(83, 21)
 		Me.ComboBoxTalla.TabIndex = 47
 		Me.ComboBoxTalla.UseWaitCursor = True
 		'
 		'ComboBoxEspecie
 		'
 		Me.ComboBoxEspecie.FormattingEnabled = True
-		Me.ComboBoxEspecie.Location = New System.Drawing.Point(102, 36)
+		Me.ComboBoxEspecie.Location = New System.Drawing.Point(80, 40)
 		Me.ComboBoxEspecie.Name = "ComboBoxEspecie"
 		Me.ComboBoxEspecie.Size = New System.Drawing.Size(121, 21)
 		Me.ComboBoxEspecie.TabIndex = 46
@@ -408,7 +457,7 @@ Partial Class Registro_de_Mascota
 		'ComboBoxRaza
 		'
 		Me.ComboBoxRaza.FormattingEnabled = True
-		Me.ComboBoxRaza.Location = New System.Drawing.Point(102, 67)
+		Me.ComboBoxRaza.Location = New System.Drawing.Point(80, 71)
 		Me.ComboBoxRaza.Name = "ComboBoxRaza"
 		Me.ComboBoxRaza.Size = New System.Drawing.Size(121, 21)
 		Me.ComboBoxRaza.TabIndex = 45
@@ -417,9 +466,9 @@ Partial Class Registro_de_Mascota
 		'ComboBoxGenero
 		'
 		Me.ComboBoxGenero.FormattingEnabled = True
-		Me.ComboBoxGenero.Location = New System.Drawing.Point(102, 167)
+		Me.ComboBoxGenero.Location = New System.Drawing.Point(385, 15)
 		Me.ComboBoxGenero.Name = "ComboBoxGenero"
-		Me.ComboBoxGenero.Size = New System.Drawing.Size(121, 21)
+		Me.ComboBoxGenero.Size = New System.Drawing.Size(85, 21)
 		Me.ComboBoxGenero.TabIndex = 44
 		Me.ComboBoxGenero.UseWaitCursor = True
 		'
@@ -427,11 +476,11 @@ Partial Class Registro_de_Mascota
 		'
 		Me.txtCaracteristicas.BackColor = System.Drawing.Color.White
 		Me.txtCaracteristicas.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-		Me.txtCaracteristicas.Location = New System.Drawing.Point(110, 266)
+		Me.txtCaracteristicas.Location = New System.Drawing.Point(328, 100)
 		Me.txtCaracteristicas.Margin = New System.Windows.Forms.Padding(2)
 		Me.txtCaracteristicas.Multiline = True
 		Me.txtCaracteristicas.Name = "txtCaracteristicas"
-		Me.txtCaracteristicas.Size = New System.Drawing.Size(209, 80)
+		Me.txtCaracteristicas.Size = New System.Drawing.Size(188, 68)
 		Me.txtCaracteristicas.TabIndex = 43
 		Me.txtCaracteristicas.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
 		Me.txtCaracteristicas.UseWaitCursor = True
@@ -440,11 +489,11 @@ Partial Class Registro_de_Mascota
 		'
 		Me.txtEdad.BackColor = System.Drawing.Color.White
 		Me.txtEdad.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-		Me.txtEdad.Location = New System.Drawing.Point(102, 196)
+		Me.txtEdad.Location = New System.Drawing.Point(80, 105)
 		Me.txtEdad.Margin = New System.Windows.Forms.Padding(2)
 		Me.txtEdad.Multiline = True
 		Me.txtEdad.Name = "txtEdad"
-		Me.txtEdad.Size = New System.Drawing.Size(69, 24)
+		Me.txtEdad.Size = New System.Drawing.Size(44, 24)
 		Me.txtEdad.TabIndex = 42
 		Me.txtEdad.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
 		Me.txtEdad.UseWaitCursor = True
@@ -454,7 +503,7 @@ Partial Class Registro_de_Mascota
 		Me.Label9.BackColor = System.Drawing.Color.Transparent
 		Me.Label9.FlatStyle = System.Windows.Forms.FlatStyle.Flat
 		Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.Label9.Location = New System.Drawing.Point(2, 266)
+		Me.Label9.Location = New System.Drawing.Point(325, 74)
 		Me.Label9.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
 		Me.Label9.Name = "Label9"
 		Me.Label9.Size = New System.Drawing.Size(111, 24)
@@ -468,10 +517,10 @@ Partial Class Registro_de_Mascota
 		Me.Label8.BackColor = System.Drawing.Color.Transparent
 		Me.Label8.FlatStyle = System.Windows.Forms.FlatStyle.Flat
 		Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.Label8.Location = New System.Drawing.Point(44, 195)
+		Me.Label8.Location = New System.Drawing.Point(13, 100)
 		Me.Label8.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
 		Me.Label8.Name = "Label8"
-		Me.Label8.Size = New System.Drawing.Size(67, 24)
+		Me.Label8.Size = New System.Drawing.Size(51, 24)
 		Me.Label8.TabIndex = 40
 		Me.Label8.Text = "Edad:"
 		Me.Label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -482,7 +531,7 @@ Partial Class Registro_de_Mascota
 		Me.Label7.BackColor = System.Drawing.Color.Transparent
 		Me.Label7.FlatStyle = System.Windows.Forms.FlatStyle.Flat
 		Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.Label7.Location = New System.Drawing.Point(36, 163)
+		Me.Label7.Location = New System.Drawing.Point(325, 15)
 		Me.Label7.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
 		Me.Label7.Name = "Label7"
 		Me.Label7.Size = New System.Drawing.Size(67, 24)
@@ -495,11 +544,11 @@ Partial Class Registro_de_Mascota
 		'
 		Me.txtPeso.BackColor = System.Drawing.Color.White
 		Me.txtPeso.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-		Me.txtPeso.Location = New System.Drawing.Point(102, 98)
+		Me.txtPeso.Location = New System.Drawing.Point(80, 139)
 		Me.txtPeso.Margin = New System.Windows.Forms.Padding(2)
 		Me.txtPeso.Multiline = True
 		Me.txtPeso.Name = "txtPeso"
-		Me.txtPeso.Size = New System.Drawing.Size(121, 24)
+		Me.txtPeso.Size = New System.Drawing.Size(44, 24)
 		Me.txtPeso.TabIndex = 38
 		Me.txtPeso.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
 		Me.txtPeso.UseWaitCursor = True
@@ -509,10 +558,10 @@ Partial Class Registro_de_Mascota
 		Me.Label6.BackColor = System.Drawing.Color.Transparent
 		Me.Label6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
 		Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.Label6.Location = New System.Drawing.Point(49, 133)
+		Me.Label6.Location = New System.Drawing.Point(329, 43)
 		Me.Label6.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
 		Me.Label6.Name = "Label6"
-		Me.Label6.Size = New System.Drawing.Size(54, 24)
+		Me.Label6.Size = New System.Drawing.Size(48, 24)
 		Me.Label6.TabIndex = 37
 		Me.Label6.Text = "Talla:"
 		Me.Label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -523,10 +572,10 @@ Partial Class Registro_de_Mascota
 		Me.Label5.BackColor = System.Drawing.Color.Transparent
 		Me.Label5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
 		Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.Label5.Location = New System.Drawing.Point(41, 98)
+		Me.Label5.Location = New System.Drawing.Point(13, 139)
 		Me.Label5.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
 		Me.Label5.Name = "Label5"
-		Me.Label5.Size = New System.Drawing.Size(67, 24)
+		Me.Label5.Size = New System.Drawing.Size(51, 24)
 		Me.Label5.TabIndex = 36
 		Me.Label5.Text = "Peso:"
 		Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -537,7 +586,7 @@ Partial Class Registro_de_Mascota
 		Me.Label4.BackColor = System.Drawing.Color.Transparent
 		Me.Label4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
 		Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.Label4.Location = New System.Drawing.Point(42, 64)
+		Me.Label4.Location = New System.Drawing.Point(4, 68)
 		Me.Label4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
 		Me.Label4.Name = "Label4"
 		Me.Label4.Size = New System.Drawing.Size(60, 24)
@@ -551,15 +600,13 @@ Partial Class Registro_de_Mascota
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
 		Me.BackColor = System.Drawing.SystemColors.ControlLightLight
-		Me.ClientSize = New System.Drawing.Size(853, 624)
+		Me.ClientSize = New System.Drawing.Size(969, 587)
 		Me.Controls.Add(Me.Panel6)
 		Me.Controls.Add(Me.Panel5)
 		Me.Controls.Add(Me.btnGuardar)
 		Me.Controls.Add(Me.btnBuscar)
 		Me.Controls.Add(Me.btnEliminar)
-		Me.Controls.Add(Me.Label13)
 		Me.Controls.Add(Me.DataGridViewMascotas)
-		Me.Controls.Add(Me.ComboBoxServicios)
 		Me.Controls.Add(Me.Panel2)
 		Me.Controls.Add(Me.Panel1)
 		Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
@@ -570,6 +617,7 @@ Partial Class Registro_de_Mascota
 		Me.UseWaitCursor = True
 		Me.Panel1.ResumeLayout(False)
 		Me.Panel1.PerformLayout()
+		CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
 		CType(Me.DataGridViewMascotas, System.ComponentModel.ISupportInitialize).EndInit()
 		Me.Panel5.ResumeLayout(False)
 		Me.Panel5.PerformLayout()
@@ -617,4 +665,7 @@ Partial Class Registro_de_Mascota
 	Friend WithEvents Label4 As Label
 	Friend WithEvents Label3 As Label
 	Friend WithEvents ComboBoxEdadUnidad As ComboBox
+	Friend WithEvents PictureBox2 As PictureBox
+	Friend WithEvents Label15 As Label
+	Friend WithEvents Label16 As Label
 End Class

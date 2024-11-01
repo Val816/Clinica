@@ -42,15 +42,23 @@ Partial Class Proaxis_Dental
 		Me.DateTimePickerHoraSalida = New System.Windows.Forms.DateTimePicker()
 		Me.Panel3 = New System.Windows.Forms.Panel()
 		Me.TextBoxObservaciones = New System.Windows.Forms.TextBox()
+		Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+		Me.Label14 = New System.Windows.Forms.Label()
+		Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+		Me.Label5 = New System.Windows.Forms.Label()
 		Me.Panel1.SuspendLayout()
 		Me.Panel2.SuspendLayout()
 		CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.Panel3.SuspendLayout()
+		CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+		CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.SuspendLayout()
 		'
 		'Panel1
 		'
 		Me.Panel1.BackColor = System.Drawing.Color.SteelBlue
+		Me.Panel1.Controls.Add(Me.PictureBox2)
+		Me.Panel1.Controls.Add(Me.Label14)
 		Me.Panel1.Controls.Add(Me.btnMenuPrincipal)
 		Me.Panel1.Controls.Add(Me.Label1)
 		Me.Panel1.Location = New System.Drawing.Point(-3, 0)
@@ -64,7 +72,7 @@ Partial Class Proaxis_Dental
 		Me.btnMenuPrincipal.BackColor = System.Drawing.Color.LightBlue
 		Me.btnMenuPrincipal.FlatStyle = System.Windows.Forms.FlatStyle.Flat
 		Me.btnMenuPrincipal.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.btnMenuPrincipal.Location = New System.Drawing.Point(463, 29)
+		Me.btnMenuPrincipal.Location = New System.Drawing.Point(565, 29)
 		Me.btnMenuPrincipal.Margin = New System.Windows.Forms.Padding(2)
 		Me.btnMenuPrincipal.Name = "btnMenuPrincipal"
 		Me.btnMenuPrincipal.Size = New System.Drawing.Size(104, 25)
@@ -77,7 +85,7 @@ Partial Class Proaxis_Dental
 		Me.Label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
 		Me.Label1.Font = New System.Drawing.Font("Arial Narrow", 24.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
 		Me.Label1.ForeColor = System.Drawing.Color.White
-		Me.Label1.Location = New System.Drawing.Point(174, 29)
+		Me.Label1.Location = New System.Drawing.Point(226, 29)
 		Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
 		Me.Label1.Name = "Label1"
 		Me.Label1.Size = New System.Drawing.Size(244, 39)
@@ -99,7 +107,7 @@ Partial Class Proaxis_Dental
 		Me.btnGuardar.BackColor = System.Drawing.Color.LightBlue
 		Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
 		Me.btnGuardar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.btnGuardar.Location = New System.Drawing.Point(474, 22)
+		Me.btnGuardar.Location = New System.Drawing.Point(575, 22)
 		Me.btnGuardar.Margin = New System.Windows.Forms.Padding(2)
 		Me.btnGuardar.Name = "btnGuardar"
 		Me.btnGuardar.Size = New System.Drawing.Size(93, 25)
@@ -113,7 +121,7 @@ Partial Class Proaxis_Dental
 		Me.ComboBoxTalla.ForeColor = System.Drawing.Color.Black
 		Me.ComboBoxTalla.FormattingEnabled = True
 		Me.ComboBoxTalla.Items.AddRange(New Object() {"Pequeña", "Mediana", "Grande"})
-		Me.ComboBoxTalla.Location = New System.Drawing.Point(398, 125)
+		Me.ComboBoxTalla.Location = New System.Drawing.Point(23, 244)
 		Me.ComboBoxTalla.Margin = New System.Windows.Forms.Padding(2)
 		Me.ComboBoxTalla.Name = "ComboBoxTalla"
 		Me.ComboBoxTalla.Size = New System.Drawing.Size(147, 21)
@@ -164,7 +172,7 @@ Partial Class Proaxis_Dental
 		Me.Label8.BackColor = System.Drawing.Color.Transparent
 		Me.Label8.FlatStyle = System.Windows.Forms.FlatStyle.Flat
 		Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.Label8.Location = New System.Drawing.Point(20, 252)
+		Me.Label8.Location = New System.Drawing.Point(312, 99)
 		Me.Label8.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
 		Me.Label8.Name = "Label8"
 		Me.Label8.Size = New System.Drawing.Size(101, 24)
@@ -177,7 +185,7 @@ Partial Class Proaxis_Dental
 		Me.ComboBoxServicios.ForeColor = System.Drawing.Color.Black
 		Me.ComboBoxServicios.FormattingEnabled = True
 		Me.ComboBoxServicios.Items.AddRange(New Object() {"Consulta Médica", "Desparacitación", "Vacunación", "Eutanasia", "Cirugía", "Estética", "Pensión", "Castración", "Proaxis Dental"})
-		Me.ComboBoxServicios.Location = New System.Drawing.Point(398, 173)
+		Me.ComboBoxServicios.Location = New System.Drawing.Point(178, 244)
 		Me.ComboBoxServicios.Margin = New System.Windows.Forms.Padding(2)
 		Me.ComboBoxServicios.Name = "ComboBoxServicios"
 		Me.ComboBoxServicios.Size = New System.Drawing.Size(147, 21)
@@ -188,7 +196,7 @@ Partial Class Proaxis_Dental
 		'
 		Me.Label12.BackColor = System.Drawing.Color.Transparent
 		Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.Label12.Location = New System.Drawing.Point(163, 365)
+		Me.Label12.Location = New System.Drawing.Point(312, 198)
 		Me.Label12.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
 		Me.Label12.Name = "Label12"
 		Me.Label12.Size = New System.Drawing.Size(62, 24)
@@ -201,7 +209,7 @@ Partial Class Proaxis_Dental
 		Me.TextBoxCosto.BackColor = System.Drawing.Color.White
 		Me.TextBoxCosto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
 		Me.TextBoxCosto.ForeColor = System.Drawing.Color.Black
-		Me.TextBoxCosto.Location = New System.Drawing.Point(215, 365)
+		Me.TextBoxCosto.Location = New System.Drawing.Point(363, 200)
 		Me.TextBoxCosto.Margin = New System.Windows.Forms.Padding(2)
 		Me.TextBoxCosto.Multiline = True
 		Me.TextBoxCosto.Name = "TextBoxCosto"
@@ -212,10 +220,10 @@ Partial Class Proaxis_Dental
 		'PictureBox1
 		'
 		Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-		Me.PictureBox1.Location = New System.Drawing.Point(318, 242)
+		Me.PictureBox1.Location = New System.Drawing.Point(501, 94)
 		Me.PictureBox1.Margin = New System.Windows.Forms.Padding(2)
 		Me.PictureBox1.Name = "PictureBox1"
-		Me.PictureBox1.Size = New System.Drawing.Size(227, 136)
+		Me.PictureBox1.Size = New System.Drawing.Size(175, 147)
 		Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
 		Me.PictureBox1.TabIndex = 75
 		Me.PictureBox1.TabStop = False
@@ -232,7 +240,7 @@ Partial Class Proaxis_Dental
 		Me.DateTimePickerHoraEntrada.Format = System.Windows.Forms.DateTimePickerFormat.Time
 		Me.DateTimePickerHoraEntrada.Location = New System.Drawing.Point(113, 50)
 		Me.DateTimePickerHoraEntrada.Name = "DateTimePickerHoraEntrada"
-		Me.DateTimePickerHoraEntrada.Size = New System.Drawing.Size(200, 20)
+		Me.DateTimePickerHoraEntrada.Size = New System.Drawing.Size(110, 20)
 		Me.DateTimePickerHoraEntrada.TabIndex = 77
 		'
 		'DateTimePickerHoraSalida
@@ -240,7 +248,7 @@ Partial Class Proaxis_Dental
 		Me.DateTimePickerHoraSalida.Format = System.Windows.Forms.DateTimePickerFormat.Time
 		Me.DateTimePickerHoraSalida.Location = New System.Drawing.Point(113, 86)
 		Me.DateTimePickerHoraSalida.Name = "DateTimePickerHoraSalida"
-		Me.DateTimePickerHoraSalida.Size = New System.Drawing.Size(200, 20)
+		Me.DateTimePickerHoraSalida.Size = New System.Drawing.Size(110, 20)
 		Me.DateTimePickerHoraSalida.TabIndex = 78
 		'
 		'Panel3
@@ -254,7 +262,7 @@ Partial Class Proaxis_Dental
 		Me.Panel3.Controls.Add(Me.Label2)
 		Me.Panel3.Location = New System.Drawing.Point(23, 104)
 		Me.Panel3.Name = "Panel3"
-		Me.Panel3.Size = New System.Drawing.Size(329, 121)
+		Me.Panel3.Size = New System.Drawing.Size(286, 121)
 		Me.Panel3.TabIndex = 79
 		'
 		'TextBoxObservaciones
@@ -263,22 +271,67 @@ Partial Class Proaxis_Dental
 		Me.TextBoxObservaciones.AllowDrop = True
 		Me.TextBoxObservaciones.BackColor = System.Drawing.Color.Silver
 		Me.TextBoxObservaciones.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-		Me.TextBoxObservaciones.Location = New System.Drawing.Point(126, 250)
+		Me.TextBoxObservaciones.Location = New System.Drawing.Point(315, 116)
 		Me.TextBoxObservaciones.Multiline = True
 		Me.TextBoxObservaciones.Name = "TextBoxObservaciones"
-		Me.TextBoxObservaciones.Size = New System.Drawing.Size(176, 90)
+		Me.TextBoxObservaciones.Size = New System.Drawing.Size(171, 77)
 		Me.TextBoxObservaciones.TabIndex = 80
 		Me.TextBoxObservaciones.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+		'
+		'PictureBox2
+		'
+		Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
+		Me.PictureBox2.Location = New System.Drawing.Point(14, 2)
+		Me.PictureBox2.Margin = New System.Windows.Forms.Padding(2)
+		Me.PictureBox2.Name = "PictureBox2"
+		Me.PictureBox2.Size = New System.Drawing.Size(60, 52)
+		Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+		Me.PictureBox2.TabIndex = 94
+		Me.PictureBox2.TabStop = False
+		'
+		'Label14
+		'
+		Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.Label14.ForeColor = System.Drawing.Color.Black
+		Me.Label14.Location = New System.Drawing.Point(9, 54)
+		Me.Label14.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+		Me.Label14.Name = "Label14"
+		Me.Label14.Size = New System.Drawing.Size(83, 18)
+		Me.Label14.TabIndex = 93
+		Me.Label14.Text = "VETCARE"
+		Me.Label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+		'
+		'DataGridView1
+		'
+		Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+		Me.DataGridView1.Location = New System.Drawing.Point(23, 270)
+		Me.DataGridView1.Name = "DataGridView1"
+		Me.DataGridView1.Size = New System.Drawing.Size(642, 138)
+		Me.DataGridView1.TabIndex = 81
+		'
+		'Label5
+		'
+		Me.Label5.BackColor = System.Drawing.Color.Transparent
+		Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.Label5.Location = New System.Drawing.Point(440, 200)
+		Me.Label5.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+		Me.Label5.Name = "Label5"
+		Me.Label5.Size = New System.Drawing.Size(41, 24)
+		Me.Label5.TabIndex = 82
+		Me.Label5.Text = "pesos"
+		Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
 		'
 		'Proaxis_Dental
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
 		Me.BackColor = System.Drawing.SystemColors.ControlLightLight
-		Me.ClientSize = New System.Drawing.Size(575, 479)
+		Me.ClientSize = New System.Drawing.Size(677, 506)
+		Me.Controls.Add(Me.Label5)
+		Me.Controls.Add(Me.DataGridView1)
+		Me.Controls.Add(Me.PictureBox1)
 		Me.Controls.Add(Me.TextBoxObservaciones)
 		Me.Controls.Add(Me.Panel3)
-		Me.Controls.Add(Me.PictureBox1)
 		Me.Controls.Add(Me.TextBoxCosto)
 		Me.Controls.Add(Me.Label12)
 		Me.Controls.Add(Me.ComboBoxServicios)
@@ -294,6 +347,8 @@ Partial Class Proaxis_Dental
 		Me.Panel2.ResumeLayout(False)
 		CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
 		Me.Panel3.ResumeLayout(False)
+		CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+		CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
 		Me.ResumeLayout(False)
 		Me.PerformLayout()
 
@@ -318,4 +373,8 @@ Partial Class Proaxis_Dental
 	Friend WithEvents DateTimePickerHoraSalida As DateTimePicker
 	Friend WithEvents Panel3 As Panel
 	Friend WithEvents TextBoxObservaciones As TextBox
+	Friend WithEvents PictureBox2 As PictureBox
+	Friend WithEvents Label14 As Label
+	Friend WithEvents DataGridView1 As DataGridView
+	Friend WithEvents Label5 As Label
 End Class

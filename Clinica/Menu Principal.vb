@@ -50,20 +50,20 @@ Public Class Menu_Principal
                 consultamedica.Show()
                 Me.Hide()
 
-         'Case 4
-         '    Dim formDesparacitacion As New Desparacitación()
-         '    formDesparacitacion.Show()
-         '    Me.Hide()
+            'Case 4
+            '    Dim formDesparacitacion As New desparacitación(idMascota)
+            '    formDesparacitacion.Show()
+            '    Me.Hide()
 
-         'Case 5
-         '    Dim formEsterilizacion As New Esterilización()
-         '    formEsterilizacion.Show()
-         '    Me.Hide()
+            Case 5
+                Dim formEsterilizacion As New Castración_y_Esterilización()
+                formEsterilizacion.Show()
+                Me.Hide()
 
-         'Case 6
-         '    Dim formPension As New Pensión()
-         '    formPension.Show()
-         '    Me.Hide()
+            Case 6
+                Dim formPension As New Pensión()
+                formPension.Show()
+                Me.Hide()
 
             Case 7
                 Dim formGrooming As New Estética()

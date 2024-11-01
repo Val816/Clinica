@@ -22,6 +22,7 @@ Partial Class Cirugía
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+		Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Cirugía))
 		Me.Panel1 = New System.Windows.Forms.Panel()
 		Me.btnMenuPrincipal = New System.Windows.Forms.Button()
 		Me.Label1 = New System.Windows.Forms.Label()
@@ -29,9 +30,9 @@ Partial Class Cirugía
 		Me.ButtonGuardar = New System.Windows.Forms.Button()
 		Me.DataGridViewCirugias = New System.Windows.Forms.DataGridView()
 		Me.Panel3 = New System.Windows.Forms.Panel()
+		Me.ComboBoxMascota = New System.Windows.Forms.ComboBox()
 		Me.BtnBuscar = New System.Windows.Forms.Button()
 		Me.Label3 = New System.Windows.Forms.Label()
-		Me.ComboBoxMascota = New System.Windows.Forms.ComboBox()
 		Me.ComboBoxCirugia = New System.Windows.Forms.ComboBox()
 		Me.DateTimePickerFecha = New System.Windows.Forms.DateTimePicker()
 		Me.ComboBoxServicios = New System.Windows.Forms.ComboBox()
@@ -41,14 +42,20 @@ Partial Class Cirugía
 		Me.TextBoxObservaciones = New System.Windows.Forms.TextBox()
 		Me.Label10 = New System.Windows.Forms.Label()
 		Me.Label2 = New System.Windows.Forms.Label()
+		Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+		Me.Label4 = New System.Windows.Forms.Label()
+		Me.Label5 = New System.Windows.Forms.Label()
 		Me.Panel1.SuspendLayout()
 		CType(Me.DataGridViewCirugias, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.Panel3.SuspendLayout()
+		CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.SuspendLayout()
 		'
 		'Panel1
 		'
 		Me.Panel1.BackColor = System.Drawing.Color.SteelBlue
+		Me.Panel1.Controls.Add(Me.PictureBox2)
+		Me.Panel1.Controls.Add(Me.Label4)
 		Me.Panel1.Controls.Add(Me.btnMenuPrincipal)
 		Me.Panel1.Controls.Add(Me.Label1)
 		Me.Panel1.Location = New System.Drawing.Point(1, -1)
@@ -76,7 +83,7 @@ Partial Class Cirugía
 		Me.Label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
 		Me.Label1.Font = New System.Drawing.Font("Arial Narrow", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
 		Me.Label1.ForeColor = System.Drawing.SystemColors.ControlLightLight
-		Me.Label1.Location = New System.Drawing.Point(308, 15)
+		Me.Label1.Location = New System.Drawing.Point(289, 15)
 		Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
 		Me.Label1.Name = "Label1"
 		Me.Label1.Size = New System.Drawing.Size(113, 39)
@@ -97,7 +104,7 @@ Partial Class Cirugía
 		Me.ButtonGuardar.BackColor = System.Drawing.Color.LightBlue
 		Me.ButtonGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
 		Me.ButtonGuardar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.ButtonGuardar.Location = New System.Drawing.Point(23, 283)
+		Me.ButtonGuardar.Location = New System.Drawing.Point(523, 150)
 		Me.ButtonGuardar.Margin = New System.Windows.Forms.Padding(2)
 		Me.ButtonGuardar.Name = "ButtonGuardar"
 		Me.ButtonGuardar.Size = New System.Drawing.Size(76, 23)
@@ -109,14 +116,15 @@ Partial Class Cirugía
 		'
 		Me.DataGridViewCirugias.BackgroundColor = System.Drawing.SystemColors.ActiveCaption
 		Me.DataGridViewCirugias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-		Me.DataGridViewCirugias.Location = New System.Drawing.Point(370, 88)
+		Me.DataGridViewCirugias.Location = New System.Drawing.Point(2, 86)
 		Me.DataGridViewCirugias.Name = "DataGridViewCirugias"
-		Me.DataGridViewCirugias.Size = New System.Drawing.Size(328, 318)
+		Me.DataGridViewCirugias.Size = New System.Drawing.Size(697, 143)
 		Me.DataGridViewCirugias.TabIndex = 49
 		'
 		'Panel3
 		'
 		Me.Panel3.BackColor = System.Drawing.Color.LightSteelBlue
+		Me.Panel3.Controls.Add(Me.Label5)
 		Me.Panel3.Controls.Add(Me.ComboBoxMascota)
 		Me.Panel3.Controls.Add(Me.ButtonGuardar)
 		Me.Panel3.Controls.Add(Me.BtnBuscar)
@@ -130,17 +138,25 @@ Partial Class Cirugía
 		Me.Panel3.Controls.Add(Me.TextBoxObservaciones)
 		Me.Panel3.Controls.Add(Me.Label10)
 		Me.Panel3.Controls.Add(Me.Label2)
-		Me.Panel3.Location = New System.Drawing.Point(12, 88)
+		Me.Panel3.Location = New System.Drawing.Point(2, 239)
 		Me.Panel3.Name = "Panel3"
-		Me.Panel3.Size = New System.Drawing.Size(353, 318)
+		Me.Panel3.Size = New System.Drawing.Size(698, 178)
 		Me.Panel3.TabIndex = 50
+		'
+		'ComboBoxMascota
+		'
+		Me.ComboBoxMascota.FormattingEnabled = True
+		Me.ComboBoxMascota.Location = New System.Drawing.Point(173, 13)
+		Me.ComboBoxMascota.Name = "ComboBoxMascota"
+		Me.ComboBoxMascota.Size = New System.Drawing.Size(121, 21)
+		Me.ComboBoxMascota.TabIndex = 58
 		'
 		'BtnBuscar
 		'
 		Me.BtnBuscar.BackColor = System.Drawing.Color.LightBlue
 		Me.BtnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
 		Me.BtnBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.BtnBuscar.Location = New System.Drawing.Point(104, 283)
+		Me.BtnBuscar.Location = New System.Drawing.Point(604, 150)
 		Me.BtnBuscar.Name = "BtnBuscar"
 		Me.BtnBuscar.Size = New System.Drawing.Size(75, 23)
 		Me.BtnBuscar.TabIndex = 61
@@ -151,32 +167,24 @@ Partial Class Cirugía
 		'
 		Me.Label3.BackColor = System.Drawing.Color.Transparent
 		Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.Label3.Location = New System.Drawing.Point(0, 21)
+		Me.Label3.Location = New System.Drawing.Point(8, 7)
 		Me.Label3.Name = "Label3"
 		Me.Label3.Size = New System.Drawing.Size(172, 27)
 		Me.Label3.TabIndex = 60
 		Me.Label3.Text = "Nombre de la mascota:"
 		Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
 		'
-		'ComboBoxMascota
-		'
-		Me.ComboBoxMascota.FormattingEnabled = True
-		Me.ComboBoxMascota.Location = New System.Drawing.Point(165, 27)
-		Me.ComboBoxMascota.Name = "ComboBoxMascota"
-		Me.ComboBoxMascota.Size = New System.Drawing.Size(121, 21)
-		Me.ComboBoxMascota.TabIndex = 58
-		'
 		'ComboBoxCirugia
 		'
 		Me.ComboBoxCirugia.FormattingEnabled = True
-		Me.ComboBoxCirugia.Location = New System.Drawing.Point(140, 60)
+		Me.ComboBoxCirugia.Location = New System.Drawing.Point(173, 43)
 		Me.ComboBoxCirugia.Name = "ComboBoxCirugia"
-		Me.ComboBoxCirugia.Size = New System.Drawing.Size(200, 21)
+		Me.ComboBoxCirugia.Size = New System.Drawing.Size(228, 21)
 		Me.ComboBoxCirugia.TabIndex = 57
 		'
 		'DateTimePickerFecha
 		'
-		Me.DateTimePickerFecha.Location = New System.Drawing.Point(140, 102)
+		Me.DateTimePickerFecha.Location = New System.Drawing.Point(173, 78)
 		Me.DateTimePickerFecha.Name = "DateTimePickerFecha"
 		Me.DateTimePickerFecha.Size = New System.Drawing.Size(200, 20)
 		Me.DateTimePickerFecha.TabIndex = 56
@@ -187,7 +195,7 @@ Partial Class Cirugía
 		Me.ComboBoxServicios.ForeColor = System.Drawing.Color.Black
 		Me.ComboBoxServicios.FormattingEnabled = True
 		Me.ComboBoxServicios.Items.AddRange(New Object() {"Consulta Médica", "Desparacitación", "Vacunación", "Eutanasia", "Cirugía", "Estética", "Pensión", "Castración", "Proaxis Dental"})
-		Me.ComboBoxServicios.Location = New System.Drawing.Point(193, 283)
+		Me.ComboBoxServicios.Location = New System.Drawing.Point(532, 124)
 		Me.ComboBoxServicios.Margin = New System.Windows.Forms.Padding(2)
 		Me.ComboBoxServicios.Name = "ComboBoxServicios"
 		Me.ComboBoxServicios.Size = New System.Drawing.Size(147, 21)
@@ -199,11 +207,11 @@ Partial Class Cirugía
 		Me.TextBoxCosto.BackColor = System.Drawing.Color.White
 		Me.TextBoxCosto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
 		Me.TextBoxCosto.ForeColor = System.Drawing.Color.Black
-		Me.TextBoxCosto.Location = New System.Drawing.Point(140, 221)
+		Me.TextBoxCosto.Location = New System.Drawing.Point(173, 113)
 		Me.TextBoxCosto.Margin = New System.Windows.Forms.Padding(2)
 		Me.TextBoxCosto.Multiline = True
 		Me.TextBoxCosto.Name = "TextBoxCosto"
-		Me.TextBoxCosto.Size = New System.Drawing.Size(73, 24)
+		Me.TextBoxCosto.Size = New System.Drawing.Size(86, 24)
 		Me.TextBoxCosto.TabIndex = 55
 		Me.TextBoxCosto.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
 		'
@@ -211,7 +219,7 @@ Partial Class Cirugía
 		'
 		Me.Label12.BackColor = System.Drawing.Color.Transparent
 		Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.Label12.Location = New System.Drawing.Point(73, 221)
+		Me.Label12.Location = New System.Drawing.Point(118, 113)
 		Me.Label12.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
 		Me.Label12.Name = "Label12"
 		Me.Label12.Size = New System.Drawing.Size(62, 24)
@@ -224,23 +232,23 @@ Partial Class Cirugía
 		Me.Label6.BackColor = System.Drawing.Color.Transparent
 		Me.Label6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
 		Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.Label6.Location = New System.Drawing.Point(73, 99)
+		Me.Label6.Location = New System.Drawing.Point(119, 75)
 		Me.Label6.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
 		Me.Label6.Name = "Label6"
-		Me.Label6.Size = New System.Drawing.Size(66, 28)
+		Me.Label6.Size = New System.Drawing.Size(52, 28)
 		Me.Label6.TabIndex = 52
 		Me.Label6.Text = "Fecha:"
 		Me.Label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
 		'
 		'TextBoxObservaciones
 		'
-		Me.TextBoxObservaciones.BackColor = System.Drawing.Color.Silver
+		Me.TextBoxObservaciones.BackColor = System.Drawing.Color.White
 		Me.TextBoxObservaciones.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-		Me.TextBoxObservaciones.Location = New System.Drawing.Point(140, 129)
+		Me.TextBoxObservaciones.Location = New System.Drawing.Point(419, 30)
 		Me.TextBoxObservaciones.Margin = New System.Windows.Forms.Padding(2)
 		Me.TextBoxObservaciones.Multiline = True
 		Me.TextBoxObservaciones.Name = "TextBoxObservaciones"
-		Me.TextBoxObservaciones.Size = New System.Drawing.Size(200, 82)
+		Me.TextBoxObservaciones.Size = New System.Drawing.Size(260, 82)
 		Me.TextBoxObservaciones.TabIndex = 51
 		Me.TextBoxObservaciones.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
 		'
@@ -248,7 +256,7 @@ Partial Class Cirugía
 		'
 		Me.Label10.BackColor = System.Drawing.Color.Transparent
 		Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.Label10.Location = New System.Drawing.Point(24, 129)
+		Me.Label10.Location = New System.Drawing.Point(413, 4)
 		Me.Label10.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
 		Me.Label10.Name = "Label10"
 		Me.Label10.Size = New System.Drawing.Size(115, 26)
@@ -260,13 +268,48 @@ Partial Class Cirugía
 		'
 		Me.Label2.BackColor = System.Drawing.Color.Transparent
 		Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.Label2.Location = New System.Drawing.Point(24, 57)
+		Me.Label2.Location = New System.Drawing.Point(62, 43)
 		Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
 		Me.Label2.Name = "Label2"
-		Me.Label2.Size = New System.Drawing.Size(119, 24)
+		Me.Label2.Size = New System.Drawing.Size(109, 24)
 		Me.Label2.TabIndex = 49
 		Me.Label2.Text = "Tipo de cirugía:"
 		Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+		'
+		'PictureBox2
+		'
+		Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
+		Me.PictureBox2.Location = New System.Drawing.Point(1, 2)
+		Me.PictureBox2.Margin = New System.Windows.Forms.Padding(2)
+		Me.PictureBox2.Name = "PictureBox2"
+		Me.PictureBox2.Size = New System.Drawing.Size(60, 52)
+		Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+		Me.PictureBox2.TabIndex = 86
+		Me.PictureBox2.TabStop = False
+		'
+		'Label4
+		'
+		Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.Label4.ForeColor = System.Drawing.Color.Black
+		Me.Label4.Location = New System.Drawing.Point(-4, 54)
+		Me.Label4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+		Me.Label4.Name = "Label4"
+		Me.Label4.Size = New System.Drawing.Size(83, 18)
+		Me.Label4.TabIndex = 85
+		Me.Label4.Text = "VETCARE"
+		Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+		'
+		'Label5
+		'
+		Me.Label5.BackColor = System.Drawing.Color.Transparent
+		Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.Label5.Location = New System.Drawing.Point(263, 113)
+		Me.Label5.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+		Me.Label5.Name = "Label5"
+		Me.Label5.Size = New System.Drawing.Size(46, 24)
+		Me.Label5.TabIndex = 62
+		Me.Label5.Text = "pesos"
+		Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
 		'
 		'Cirugía
 		'
@@ -286,6 +329,7 @@ Partial Class Cirugía
 		CType(Me.DataGridViewCirugias, System.ComponentModel.ISupportInitialize).EndInit()
 		Me.Panel3.ResumeLayout(False)
 		Me.Panel3.PerformLayout()
+		CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
 		Me.ResumeLayout(False)
 
 	End Sub
@@ -309,4 +353,7 @@ Partial Class Cirugía
 	Friend WithEvents Label10 As Label
 	Friend WithEvents Label2 As Label
 	Friend WithEvents BtnBuscar As Button
+	Friend WithEvents PictureBox2 As PictureBox
+	Friend WithEvents Label4 As Label
+	Friend WithEvents Label5 As Label
 End Class

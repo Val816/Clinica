@@ -45,16 +45,21 @@ Partial Class Consulta_de_Cita
 		Me.dgvCitaProgramada = New System.Windows.Forms.DataGridView()
 		Me.Label3 = New System.Windows.Forms.Label()
 		Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+		Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+		Me.Label8 = New System.Windows.Forms.Label()
 		Me.Panel1.SuspendLayout()
 		Me.Panel2.SuspendLayout()
 		Me.Panel3.SuspendLayout()
 		CType(Me.dgvCitaProgramada, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+		CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.SuspendLayout()
 		'
 		'Panel1
 		'
 		Me.Panel1.BackColor = System.Drawing.Color.SteelBlue
+		Me.Panel1.Controls.Add(Me.PictureBox2)
+		Me.Panel1.Controls.Add(Me.Label8)
 		Me.Panel1.Controls.Add(Me.btnMenuPrincipal)
 		Me.Panel1.Controls.Add(Me.Label1)
 		Me.Panel1.Location = New System.Drawing.Point(0, 0)
@@ -81,7 +86,7 @@ Partial Class Consulta_de_Cita
 		Me.Label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
 		Me.Label1.Font = New System.Drawing.Font("Arial Narrow", 24.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
 		Me.Label1.ForeColor = System.Drawing.SystemColors.ControlLightLight
-		Me.Label1.Location = New System.Drawing.Point(263, 29)
+		Me.Label1.Location = New System.Drawing.Point(277, 29)
 		Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
 		Me.Label1.Name = "Label1"
 		Me.Label1.Size = New System.Drawing.Size(243, 39)
@@ -92,10 +97,10 @@ Partial Class Consulta_de_Cita
 		'
 		Me.Panel2.BackColor = System.Drawing.Color.SteelBlue
 		Me.Panel2.Controls.Add(Me.btnContinuarRegistroMascota)
-		Me.Panel2.Location = New System.Drawing.Point(0, 422)
+		Me.Panel2.Location = New System.Drawing.Point(0, 438)
 		Me.Panel2.Margin = New System.Windows.Forms.Padding(2)
 		Me.Panel2.Name = "Panel2"
-		Me.Panel2.Size = New System.Drawing.Size(855, 101)
+		Me.Panel2.Size = New System.Drawing.Size(855, 97)
 		Me.Panel2.TabIndex = 3
 		'
 		'btnContinuarRegistroMascota
@@ -116,6 +121,7 @@ Partial Class Consulta_de_Cita
 		Me.Panel3.BackColor = System.Drawing.Color.LightSteelBlue
 		Me.Panel3.Controls.Add(Me.btnAgregarCita)
 		Me.Panel3.Controls.Add(Me.btnBuscar)
+		Me.Panel3.Controls.Add(Me.PictureBox1)
 		Me.Panel3.Controls.Add(Me.dtpFecha)
 		Me.Panel3.Controls.Add(Me.btnEliminar)
 		Me.Panel3.Controls.Add(Me.txtNombreMascota)
@@ -127,10 +133,10 @@ Partial Class Consulta_de_Cita
 		Me.Panel3.Controls.Add(Me.Label4)
 		Me.Panel3.Controls.Add(Me.txtNombre)
 		Me.Panel3.Controls.Add(Me.Label2)
-		Me.Panel3.Location = New System.Drawing.Point(25, 110)
+		Me.Panel3.Location = New System.Drawing.Point(11, 98)
 		Me.Panel3.Margin = New System.Windows.Forms.Padding(2)
 		Me.Panel3.Name = "Panel3"
-		Me.Panel3.Size = New System.Drawing.Size(355, 226)
+		Me.Panel3.Size = New System.Drawing.Size(743, 162)
 		Me.Panel3.TabIndex = 4
 		'
 		'btnAgregarCita
@@ -138,7 +144,7 @@ Partial Class Consulta_de_Cita
 		Me.btnAgregarCita.BackColor = System.Drawing.Color.LightBlue
 		Me.btnAgregarCita.FlatStyle = System.Windows.Forms.FlatStyle.Flat
 		Me.btnAgregarCita.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.btnAgregarCita.Location = New System.Drawing.Point(236, 187)
+		Me.btnAgregarCita.Location = New System.Drawing.Point(232, 111)
 		Me.btnAgregarCita.Name = "btnAgregarCita"
 		Me.btnAgregarCita.Size = New System.Drawing.Size(98, 25)
 		Me.btnAgregarCita.TabIndex = 17
@@ -150,7 +156,7 @@ Partial Class Consulta_de_Cita
 		Me.btnBuscar.BackColor = System.Drawing.Color.LightBlue
 		Me.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
 		Me.btnBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.btnBuscar.Location = New System.Drawing.Point(17, 187)
+		Me.btnBuscar.Location = New System.Drawing.Point(13, 111)
 		Me.btnBuscar.Margin = New System.Windows.Forms.Padding(2)
 		Me.btnBuscar.Name = "btnBuscar"
 		Me.btnBuscar.Size = New System.Drawing.Size(93, 25)
@@ -160,7 +166,7 @@ Partial Class Consulta_de_Cita
 		'
 		'dtpFecha
 		'
-		Me.dtpFecha.Location = New System.Drawing.Point(148, 121)
+		Me.dtpFecha.Location = New System.Drawing.Point(460, 54)
 		Me.dtpFecha.Name = "dtpFecha"
 		Me.dtpFecha.Size = New System.Drawing.Size(168, 20)
 		Me.dtpFecha.TabIndex = 15
@@ -170,7 +176,7 @@ Partial Class Consulta_de_Cita
 		Me.btnEliminar.BackColor = System.Drawing.Color.LightBlue
 		Me.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
 		Me.btnEliminar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.btnEliminar.Location = New System.Drawing.Point(128, 187)
+		Me.btnEliminar.Location = New System.Drawing.Point(120, 111)
 		Me.btnEliminar.Margin = New System.Windows.Forms.Padding(2)
 		Me.btnEliminar.Name = "btnEliminar"
 		Me.btnEliminar.Size = New System.Drawing.Size(93, 25)
@@ -182,7 +188,7 @@ Partial Class Consulta_de_Cita
 		'
 		Me.txtNombreMascota.BackColor = System.Drawing.Color.White
 		Me.txtNombreMascota.BorderStyle = System.Windows.Forms.BorderStyle.None
-		Me.txtNombreMascota.Location = New System.Drawing.Point(148, 79)
+		Me.txtNombreMascota.Location = New System.Drawing.Point(460, 17)
 		Me.txtNombreMascota.Margin = New System.Windows.Forms.Padding(2)
 		Me.txtNombreMascota.Multiline = True
 		Me.txtNombreMascota.Name = "txtNombreMascota"
@@ -194,7 +200,7 @@ Partial Class Consulta_de_Cita
 		Me.Label7.BackColor = System.Drawing.Color.Transparent
 		Me.Label7.FlatStyle = System.Windows.Forms.FlatStyle.Flat
 		Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.Label7.Location = New System.Drawing.Point(97, 146)
+		Me.Label7.Location = New System.Drawing.Point(409, 79)
 		Me.Label7.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
 		Me.Label7.Name = "Label7"
 		Me.Label7.Size = New System.Drawing.Size(47, 27)
@@ -207,7 +213,7 @@ Partial Class Consulta_de_Cita
 		Me.Label5.BackColor = System.Drawing.Color.Transparent
 		Me.Label5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
 		Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.Label5.Location = New System.Drawing.Point(14, 79)
+		Me.Label5.Location = New System.Drawing.Point(331, 17)
 		Me.Label5.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
 		Me.Label5.Name = "Label5"
 		Me.Label5.Size = New System.Drawing.Size(125, 27)
@@ -219,7 +225,7 @@ Partial Class Consulta_de_Cita
 		'
 		Me.txtHora.BackColor = System.Drawing.Color.White
 		Me.txtHora.BorderStyle = System.Windows.Forms.BorderStyle.None
-		Me.txtHora.Location = New System.Drawing.Point(148, 146)
+		Me.txtHora.Location = New System.Drawing.Point(460, 79)
 		Me.txtHora.Margin = New System.Windows.Forms.Padding(2)
 		Me.txtHora.Multiline = True
 		Me.txtHora.Name = "txtHora"
@@ -242,7 +248,7 @@ Partial Class Consulta_de_Cita
 		Me.Label6.BackColor = System.Drawing.Color.Transparent
 		Me.Label6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
 		Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.Label6.Location = New System.Drawing.Point(89, 114)
+		Me.Label6.Location = New System.Drawing.Point(401, 48)
 		Me.Label6.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
 		Me.Label6.Name = "Label6"
 		Me.Label6.Size = New System.Drawing.Size(55, 27)
@@ -291,41 +297,63 @@ Partial Class Consulta_de_Cita
 		'
 		Me.dgvCitaProgramada.BackgroundColor = System.Drawing.SystemColors.ActiveCaption
 		Me.dgvCitaProgramada.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-		Me.dgvCitaProgramada.Location = New System.Drawing.Point(402, 110)
+		Me.dgvCitaProgramada.Location = New System.Drawing.Point(12, 294)
 		Me.dgvCitaProgramada.Name = "dgvCitaProgramada"
-		Me.dgvCitaProgramada.Size = New System.Drawing.Size(342, 262)
+		Me.dgvCitaProgramada.Size = New System.Drawing.Size(742, 133)
 		Me.dgvCitaProgramada.TabIndex = 1
 		'
 		'Label3
 		'
 		Me.Label3.AutoSize = True
 		Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.Label3.Location = New System.Drawing.Point(486, 375)
+		Me.Label3.Location = New System.Drawing.Point(293, 262)
 		Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
 		Me.Label3.Name = "Label3"
-		Me.Label3.Size = New System.Drawing.Size(194, 29)
+		Me.Label3.Size = New System.Drawing.Size(218, 29)
 		Me.Label3.TabIndex = 0
-		Me.Label3.Text = "Cita Programada"
+		Me.Label3.Text = "Citas Programadas"
 		'
 		'PictureBox1
 		'
 		Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-		Me.PictureBox1.Location = New System.Drawing.Point(83, 340)
+		Me.PictureBox1.Location = New System.Drawing.Point(590, 79)
 		Me.PictureBox1.Margin = New System.Windows.Forms.Padding(2)
 		Me.PictureBox1.Name = "PictureBox1"
-		Me.PictureBox1.Size = New System.Drawing.Size(258, 83)
+		Me.PictureBox1.Size = New System.Drawing.Size(153, 83)
 		Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
 		Me.PictureBox1.TabIndex = 6
 		Me.PictureBox1.TabStop = False
+		'
+		'PictureBox2
+		'
+		Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
+		Me.PictureBox2.Location = New System.Drawing.Point(2, 0)
+		Me.PictureBox2.Margin = New System.Windows.Forms.Padding(2)
+		Me.PictureBox2.Name = "PictureBox2"
+		Me.PictureBox2.Size = New System.Drawing.Size(60, 52)
+		Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+		Me.PictureBox2.TabIndex = 88
+		Me.PictureBox2.TabStop = False
+		'
+		'Label8
+		'
+		Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.Label8.ForeColor = System.Drawing.Color.Black
+		Me.Label8.Location = New System.Drawing.Point(-3, 52)
+		Me.Label8.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+		Me.Label8.Name = "Label8"
+		Me.Label8.Size = New System.Drawing.Size(83, 18)
+		Me.Label8.TabIndex = 87
+		Me.Label8.Text = "VETCARE"
+		Me.Label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
 		'
 		'Consulta_de_Cita
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-		Me.ClientSize = New System.Drawing.Size(765, 487)
+		Me.ClientSize = New System.Drawing.Size(765, 526)
 		Me.Controls.Add(Me.Label3)
 		Me.Controls.Add(Me.dgvCitaProgramada)
-		Me.Controls.Add(Me.PictureBox1)
 		Me.Controls.Add(Me.Panel3)
 		Me.Controls.Add(Me.Panel2)
 		Me.Controls.Add(Me.Panel1)
@@ -339,6 +367,7 @@ Partial Class Consulta_de_Cita
 		Me.Panel3.PerformLayout()
 		CType(Me.dgvCitaProgramada, System.ComponentModel.ISupportInitialize).EndInit()
 		CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+		CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
 		Me.ResumeLayout(False)
 		Me.PerformLayout()
 
@@ -366,4 +395,6 @@ Partial Class Consulta_de_Cita
 	Friend WithEvents dtpFecha As DateTimePicker
 	Friend WithEvents btnAgregarCita As Button
 	Friend WithEvents dgvCitaProgramada As DataGridView
+	Friend WithEvents PictureBox2 As PictureBox
+	Friend WithEvents Label8 As Label
 End Class
