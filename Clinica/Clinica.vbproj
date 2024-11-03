@@ -164,10 +164,10 @@
     <Compile Include="Crear Cuenta.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Desparacitación.Designer.vb">
-      <DependentUpon>Desparacitación.vb</DependentUpon>
+    <Compile Include="DesparacitacionForm.Designer.vb">
+      <DependentUpon>DesparacitacionForm.vb</DependentUpon>
     </Compile>
-    <Compile Include="Desparacitación.vb">
+    <Compile Include="DesparacitacionForm.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Estética.Designer.vb">
@@ -287,8 +287,8 @@
     <EmbeddedResource Include="Crear Cuenta.resx">
       <DependentUpon>Crear Cuenta.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Desparacitación.resx">
-      <DependentUpon>Desparacitación.vb</DependentUpon>
+    <EmbeddedResource Include="DesparacitacionForm.resx">
+      <DependentUpon>DesparacitacionForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Estética.resx">
       <DependentUpon>Estética.vb</DependentUpon>

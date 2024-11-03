@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class desparacitación
+Partial Class DesparacitacionForm
 	Inherits System.Windows.Forms.Form
 
 	'Form reemplaza a Dispose para limpiar la lista de componentes.
@@ -22,28 +22,29 @@ Partial Class desparacitación
 	'No lo modifique con el editor de código.
 	<System.Diagnostics.DebuggerStepThrough()>
 	Private Sub InitializeComponent()
-		Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Desparacitación))
+		Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(DesparacitacionForm))
 		Me.Panel1 = New System.Windows.Forms.Panel()
 		Me.btnMenuPrincipal = New System.Windows.Forms.Button()
 		Me.Label1 = New System.Windows.Forms.Label()
 		Me.Panel2 = New System.Windows.Forms.Panel()
 		Me.btnGuardar = New System.Windows.Forms.Button()
-		Me.cbDesparacitacion = New System.Windows.Forms.ComboBox()
 		Me.Label10 = New System.Windows.Forms.Label()
 		Me.txtObservaciones = New System.Windows.Forms.TextBox()
 		Me.ComboBoxServicios = New System.Windows.Forms.ComboBox()
 		Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-		Me.txtPrecioDesparacitacion = New System.Windows.Forms.TextBox()
+		Me.txtCosto = New System.Windows.Forms.TextBox()
 		Me.Label2 = New System.Windows.Forms.Label()
 		Me.Panel3 = New System.Windows.Forms.Panel()
+		Me.lblTipoDesparacitacion = New System.Windows.Forms.Label()
 		Me.Label4 = New System.Windows.Forms.Label()
 		Me.Label3 = New System.Windows.Forms.Label()
-		Me.dgvDesparacitaciones = New System.Windows.Forms.DataGridView()
+		Me.cbDesparacitacion = New System.Windows.Forms.ComboBox()
+		Me.dgvDesparacitacion = New System.Windows.Forms.DataGridView()
 		Me.Panel1.SuspendLayout()
 		Me.Panel2.SuspendLayout()
 		CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.Panel3.SuspendLayout()
-		CType(Me.dgvDesparacitaciones, System.ComponentModel.ISupportInitialize).BeginInit()
+		CType(Me.dgvDesparacitacion, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.SuspendLayout()
 		'
 		'Panel1
@@ -105,19 +106,6 @@ Partial Class desparacitación
 		Me.btnGuardar.Text = "Guardar"
 		Me.btnGuardar.UseVisualStyleBackColor = False
 		'
-		'cbDesparacitacion
-		'
-		Me.cbDesparacitacion.BackColor = System.Drawing.Color.White
-		Me.cbDesparacitacion.ForeColor = System.Drawing.Color.Black
-		Me.cbDesparacitacion.FormattingEnabled = True
-		Me.cbDesparacitacion.Items.AddRange(New Object() {"Chico", "Mediano", "Grande"})
-		Me.cbDesparacitacion.Location = New System.Drawing.Point(24, 34)
-		Me.cbDesparacitacion.Margin = New System.Windows.Forms.Padding(2)
-		Me.cbDesparacitacion.Name = "cbDesparacitacion"
-		Me.cbDesparacitacion.Size = New System.Drawing.Size(147, 21)
-		Me.cbDesparacitacion.TabIndex = 26
-		Me.cbDesparacitacion.Text = "Desparacitación"
-		'
 		'Label10
 		'
 		Me.Label10.BackColor = System.Drawing.Color.Transparent
@@ -166,12 +154,12 @@ Partial Class desparacitación
 		Me.PictureBox1.TabIndex = 35
 		Me.PictureBox1.TabStop = False
 		'
-		'txtPrecioDesparacitacion
+		'txtCosto
 		'
-		Me.txtPrecioDesparacitacion.Location = New System.Drawing.Point(59, 172)
-		Me.txtPrecioDesparacitacion.Name = "txtPrecioDesparacitacion"
-		Me.txtPrecioDesparacitacion.Size = New System.Drawing.Size(69, 20)
-		Me.txtPrecioDesparacitacion.TabIndex = 36
+		Me.txtCosto.Location = New System.Drawing.Point(59, 172)
+		Me.txtCosto.Name = "txtCosto"
+		Me.txtCosto.Size = New System.Drawing.Size(69, 20)
+		Me.txtCosto.TabIndex = 36
 		'
 		'Label2
 		'
@@ -186,17 +174,27 @@ Partial Class desparacitación
 		'Panel3
 		'
 		Me.Panel3.BackColor = System.Drawing.Color.LightSteelBlue
+		Me.Panel3.Controls.Add(Me.lblTipoDesparacitacion)
 		Me.Panel3.Controls.Add(Me.Label4)
 		Me.Panel3.Controls.Add(Me.Label3)
 		Me.Panel3.Controls.Add(Me.Label2)
 		Me.Panel3.Controls.Add(Me.Label10)
 		Me.Panel3.Controls.Add(Me.txtObservaciones)
-		Me.Panel3.Controls.Add(Me.txtPrecioDesparacitacion)
+		Me.Panel3.Controls.Add(Me.txtCosto)
 		Me.Panel3.Controls.Add(Me.cbDesparacitacion)
 		Me.Panel3.Location = New System.Drawing.Point(390, 89)
 		Me.Panel3.Name = "Panel3"
 		Me.Panel3.Size = New System.Drawing.Size(193, 202)
 		Me.Panel3.TabIndex = 38
+		'
+		'lblTipoDesparacitacion
+		'
+		Me.lblTipoDesparacitacion.AutoSize = True
+		Me.lblTipoDesparacitacion.Location = New System.Drawing.Point(21, 57)
+		Me.lblTipoDesparacitacion.Name = "lblTipoDesparacitacion"
+		Me.lblTipoDesparacitacion.Size = New System.Drawing.Size(39, 13)
+		Me.lblTipoDesparacitacion.TabIndex = 39
+		Me.lblTipoDesparacitacion.Text = "Label5"
 		'
 		'Label4
 		'
@@ -220,21 +218,34 @@ Partial Class desparacitación
 		Me.Label3.Text = "Tipo de Desparacitación:"
 		Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
 		'
-		'dgvDesparacitaciones
+		'cbDesparacitacion
 		'
-		Me.dgvDesparacitaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-		Me.dgvDesparacitaciones.Location = New System.Drawing.Point(12, 92)
-		Me.dgvDesparacitaciones.Name = "dgvDesparacitaciones"
-		Me.dgvDesparacitaciones.Size = New System.Drawing.Size(361, 291)
-		Me.dgvDesparacitaciones.TabIndex = 39
+		Me.cbDesparacitacion.BackColor = System.Drawing.Color.White
+		Me.cbDesparacitacion.ForeColor = System.Drawing.Color.Black
+		Me.cbDesparacitacion.FormattingEnabled = True
+		Me.cbDesparacitacion.Items.AddRange(New Object() {"Chico", "Mediano", "Grande"})
+		Me.cbDesparacitacion.Location = New System.Drawing.Point(24, 34)
+		Me.cbDesparacitacion.Margin = New System.Windows.Forms.Padding(2)
+		Me.cbDesparacitacion.Name = "cbDesparacitacion"
+		Me.cbDesparacitacion.Size = New System.Drawing.Size(147, 21)
+		Me.cbDesparacitacion.TabIndex = 26
+		Me.cbDesparacitacion.Text = "Desparacitación"
 		'
-		'Desparacitación
+		'dgvDesparacitacion
+		'
+		Me.dgvDesparacitacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+		Me.dgvDesparacitacion.Location = New System.Drawing.Point(12, 92)
+		Me.dgvDesparacitacion.Name = "dgvDesparacitacion"
+		Me.dgvDesparacitacion.Size = New System.Drawing.Size(361, 291)
+		Me.dgvDesparacitacion.TabIndex = 39
+		'
+		'desparacitación
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
 		Me.BackColor = System.Drawing.SystemColors.ButtonHighlight
 		Me.ClientSize = New System.Drawing.Size(595, 464)
-		Me.Controls.Add(Me.dgvDesparacitaciones)
+		Me.Controls.Add(Me.dgvDesparacitacion)
 		Me.Controls.Add(Me.Panel3)
 		Me.Controls.Add(Me.ComboBoxServicios)
 		Me.Controls.Add(Me.PictureBox1)
@@ -242,14 +253,14 @@ Partial Class desparacitación
 		Me.Controls.Add(Me.Panel1)
 		Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
 		Me.Margin = New System.Windows.Forms.Padding(2)
-		Me.Name = "Desparacitación"
+		Me.Name = "desparacitación"
 		Me.Text = "Desparacitación"
 		Me.Panel1.ResumeLayout(False)
 		Me.Panel2.ResumeLayout(False)
 		CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
 		Me.Panel3.ResumeLayout(False)
 		Me.Panel3.PerformLayout()
-		CType(Me.dgvDesparacitaciones, System.ComponentModel.ISupportInitialize).EndInit()
+		CType(Me.dgvDesparacitacion, System.ComponentModel.ISupportInitialize).EndInit()
 		Me.ResumeLayout(False)
 
 	End Sub
@@ -259,15 +270,16 @@ Partial Class desparacitación
 	Friend WithEvents Label1 As Label
 	Friend WithEvents Panel2 As Panel
 	Friend WithEvents btnGuardar As Button
-	Friend WithEvents cbDesparacitacion As ComboBox
 	Friend WithEvents Label10 As Label
 	Friend WithEvents txtObservaciones As TextBox
 	Friend WithEvents ComboBoxServicios As ComboBox
 	Friend WithEvents PictureBox1 As PictureBox
-	Friend WithEvents txtPrecioDesparacitacion As TextBox
+	Friend WithEvents txtCosto As TextBox
 	Friend WithEvents Label2 As Label
 	Friend WithEvents Panel3 As Panel
 	Friend WithEvents Label4 As Label
 	Friend WithEvents Label3 As Label
-	Friend WithEvents dgvDesparacitaciones As DataGridView
+	Friend WithEvents dgvDesparacitacion As DataGridView
+	Friend WithEvents lblTipoDesparacitacion As Label
+	Friend WithEvents cbDesparacitacion As ComboBox
 End Class

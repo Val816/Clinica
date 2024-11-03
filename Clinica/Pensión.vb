@@ -136,7 +136,7 @@ Public Class Pensión
         ComboBoxServicios.DisplayMember = "Text"
         ComboBoxServicios.ValueMember = "Value"
     End Sub
-    Private Sub ComboBoxServicios_SelectedIndexChanged(sender As Object, e As EventArgs)
+    Private Sub ComboBoxServicios_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBoxServicios.SelectedIndexChanged
 
         Dim servicioSeleccionado As Object = ComboBoxServicios.SelectedItem
         If servicioSeleccionado Is Nothing Then
@@ -157,44 +157,44 @@ Public Class Pensión
                 consultamedica.Show()
                 Me.Hide()
 
-            'Case 4
-            '    Dim formDesparacitacion As New Desparacitación()
-            '    formDesparacitacion.Show()
-            '    Me.Hide()
+            Case 3
+                Dim formDesparacitacion As New DesparacitacionForm()
+                formDesparacitacion.Show()
+                Me.Hide()
 
-            Case 5
+            Case 4
                 Dim formEsterilizacion As New Castración_y_Esterilización()
                 formEsterilizacion.Show()
                 Me.Hide()
 
-            Case 6
+            Case 5
                 Dim formPension As New Pensión()
                 formPension.Show()
                 Me.Hide()
 
-            Case 7
+            Case 6
                 Dim formGrooming As New Estética()
                 formGrooming.Show()
                 Me.Hide()
-            Case 8
+            Case 7
                 Dim formEutanasia As New Eutanasia()
                 formEutanasia.Show()
                 Me.Hide()
 
-            Case 9
+            Case 8
                 Dim formGrooming As New Vacunacion()
                 formGrooming.Show()
                 Me.Hide()
 
-            Case 10
+            Case 9
                 Dim formHospitalizacion As New Hospitalización()
                 formHospitalizacion.Show()
                 Me.Hide()
-            Case 11
+            Case 10
                 Dim formProfilaxis As New Proaxis_Dental()
                 formProfilaxis.Show()
                 Me.Hide()
-            Case 12
+            Case 11
                 Dim formmRecibo As New Recibo()
                 formmRecibo.Show()
                 Me.Hide()

@@ -40,6 +40,7 @@ Partial Class Menu_Principal
 		Me.Panel5 = New System.Windows.Forms.Panel()
 		Me.PictureBox1 = New System.Windows.Forms.PictureBox()
 		Me.Label3 = New System.Windows.Forms.Label()
+		Me.Button4 = New System.Windows.Forms.Button()
 		Me.Panel1.SuspendLayout()
 		Me.Panel2.SuspendLayout()
 		Me.Panel3.SuspendLayout()
@@ -74,10 +75,10 @@ Partial Class Menu_Principal
 		'
 		Me.Panel2.BackColor = System.Drawing.Color.SteelBlue
 		Me.Panel2.Controls.Add(Me.btnCerrarSistema)
-		Me.Panel2.Location = New System.Drawing.Point(-1, 437)
+		Me.Panel2.Location = New System.Drawing.Point(-1, 454)
 		Me.Panel2.Margin = New System.Windows.Forms.Padding(2)
 		Me.Panel2.Name = "Panel2"
-		Me.Panel2.Size = New System.Drawing.Size(847, 98)
+		Me.Panel2.Size = New System.Drawing.Size(847, 81)
 		Me.Panel2.TabIndex = 1
 		'
 		'btnCerrarSistema
@@ -86,7 +87,7 @@ Partial Class Menu_Principal
 		Me.btnCerrarSistema.FlatAppearance.BorderColor = System.Drawing.Color.Black
 		Me.btnCerrarSistema.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
 		Me.btnCerrarSistema.ForeColor = System.Drawing.SystemColors.ControlText
-		Me.btnCerrarSistema.Location = New System.Drawing.Point(439, 27)
+		Me.btnCerrarSistema.Location = New System.Drawing.Point(468, 17)
 		Me.btnCerrarSistema.Margin = New System.Windows.Forms.Padding(2)
 		Me.btnCerrarSistema.Name = "btnCerrarSistema"
 		Me.btnCerrarSistema.Size = New System.Drawing.Size(110, 30)
@@ -113,14 +114,14 @@ Partial Class Menu_Principal
 		Me.btnConsulta.Name = "btnConsulta"
 		Me.btnConsulta.Size = New System.Drawing.Size(228, 31)
 		Me.btnConsulta.TabIndex = 9
-		Me.btnConsulta.Text = "Consulta"
+		Me.btnConsulta.Text = "Consulta de Cita"
 		Me.btnConsulta.UseVisualStyleBackColor = False
 		'
 		'Button3
 		'
 		Me.Button3.BackColor = System.Drawing.Color.LightBlue
 		Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.Button3.Location = New System.Drawing.Point(9, 14)
+		Me.Button3.Location = New System.Drawing.Point(9, 86)
 		Me.Button3.Name = "Button3"
 		Me.Button3.Size = New System.Drawing.Size(228, 31)
 		Me.Button3.TabIndex = 9
@@ -186,7 +187,7 @@ Partial Class Menu_Principal
 		Me.Panel3.BackColor = System.Drawing.Color.LightSteelBlue
 		Me.Panel3.Controls.Add(Me.btnMascota)
 		Me.Panel3.Controls.Add(Me.btnRegistroCita)
-		Me.Panel3.Location = New System.Drawing.Point(12, 91)
+		Me.Panel3.Location = New System.Drawing.Point(11, 77)
 		Me.Panel3.Name = "Panel3"
 		Me.Panel3.Size = New System.Drawing.Size(251, 103)
 		Me.Panel3.TabIndex = 11
@@ -195,18 +196,19 @@ Partial Class Menu_Principal
 		'
 		Me.Panel4.BackColor = System.Drawing.Color.LightSteelBlue
 		Me.Panel4.Controls.Add(Me.btnConsulta)
+		Me.Panel4.Controls.Add(Me.Button3)
 		Me.Panel4.Controls.Add(Me.Button2)
-		Me.Panel4.Location = New System.Drawing.Point(12, 218)
+		Me.Panel4.Location = New System.Drawing.Point(12, 199)
 		Me.Panel4.Name = "Panel4"
-		Me.Panel4.Size = New System.Drawing.Size(251, 92)
+		Me.Panel4.Size = New System.Drawing.Size(251, 131)
 		Me.Panel4.TabIndex = 12
 		'
 		'Panel5
 		'
 		Me.Panel5.BackColor = System.Drawing.Color.LightSteelBlue
+		Me.Panel5.Controls.Add(Me.Button4)
 		Me.Panel5.Controls.Add(Me.Button1)
-		Me.Panel5.Controls.Add(Me.Button3)
-		Me.Panel5.Location = New System.Drawing.Point(12, 330)
+		Me.Panel5.Location = New System.Drawing.Point(12, 348)
 		Me.Panel5.Name = "Panel5"
 		Me.Panel5.Size = New System.Drawing.Size(250, 93)
 		Me.Panel5.TabIndex = 13
@@ -233,6 +235,17 @@ Partial Class Menu_Principal
 		Me.Label3.Size = New System.Drawing.Size(150, 31)
 		Me.Label3.TabIndex = 14
 		Me.Label3.Text = "VETCARE"
+		'
+		'Button4
+		'
+		Me.Button4.BackColor = System.Drawing.Color.LightBlue
+		Me.Button4.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.Button4.Location = New System.Drawing.Point(9, 11)
+		Me.Button4.Name = "Button4"
+		Me.Button4.Size = New System.Drawing.Size(228, 34)
+		Me.Button4.TabIndex = 11
+		Me.Button4.Text = "Pensión"
+		Me.Button4.UseVisualStyleBackColor = False
 		'
 		'Menu_Principal
 		'
@@ -281,4 +294,5 @@ Partial Class Menu_Principal
 	Friend WithEvents Panel5 As Panel
 	Friend WithEvents PictureBox1 As PictureBox
 	Friend WithEvents Label3 As Label
+	Friend WithEvents Button4 As Button
 End Class

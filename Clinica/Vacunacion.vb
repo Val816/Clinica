@@ -66,5 +66,71 @@ Public Class Vacunacion
             ' Regresar al menú principal (o cerrar este formulario)
             Me.Close()
         End Sub
+    'Private Sub ComboBoxServicios_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBoxServicios.SelectedIndexChanged
 
-    End Class
+    '    Dim servicioSeleccionado As Object = ComboBoxServicios.SelectedItem
+    '    If servicioSeleccionado Is Nothing Then
+    '        MessageBox.Show("Por favor, selecciona un servicio.")
+    '        Return
+    '    End If
+
+    '    Dim idServicio As Integer = servicioSeleccionado.Value
+
+    '    Select Case idServicio
+    '        Case 1 ' 
+    '            Dim formCirugia As New Cirugía()
+    '            formCirugia.Show()
+    '            Me.Hide()
+
+    '        Case 2 ' 
+    '            Dim consultamedica As New Consulta_Médica()
+    '            consultamedica.Show()
+    '            Me.Hide()
+
+    '        Case 3
+    '            Dim formDesparacitacion As New desparacitación()
+    '            formDesparacitacion.Show()
+    '            Me.Hide()
+
+    '        Case 4
+    '            Dim formEsterilizacion As New Castración_y_Esterilización()
+    '            formEsterilizacion.Show()
+    '            Me.Hide()
+
+    '        Case 5
+    '            Dim formPension As New Pensión()
+    '            formPension.Show()
+    '            Me.Hide()
+
+    '        Case 6
+    '            Dim formGrooming As New Estética()
+    '            formGrooming.Show()
+    '            Me.Hide()
+    '        Case 7
+    '            Dim formEutanasia As New Eutanasia()
+    '            formEutanasia.Show()
+    '            Me.Hide()
+
+    '        Case 8
+    '            Dim formGrooming As New Vacunacion()
+    '            formGrooming.Show()
+    '            Me.Hide()
+
+    '        Case 9
+    '            Dim formHospitalizacion As New Hospitalización()
+    '            formHospitalizacion.Show()
+    '            Me.Hide()
+    '        Case 10
+    '            Dim formProfilaxis As New Proaxis_Dental()
+    '            formProfilaxis.Show()
+    '            Me.Hide()
+    '        Case 11
+    '            Dim formmRecibo As New Recibo()
+    '            formmRecibo.Show()
+    '            Me.Hide()
+    '        Case Else
+    '            MessageBox.Show("Servicio no reconocido. Por favor, selecciona un servicio válido.")
+
+    '    End Select
+    'End Sub
+End Class

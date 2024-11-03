@@ -50,46 +50,46 @@ Public Class Menu_Principal
                 consultamedica.Show()
                 Me.Hide()
 
-            'Case 4
-            '    Dim formDesparacitacion As New desparacitación(idMascota)
-            '    formDesparacitacion.Show()
-            '    Me.Hide()
+            Case 3
+                Dim formDesparacitacion As New DesparacitacionForm()
+                formDesparacitacion.Show()
+                Me.Hide()
 
-            Case 5
+            Case 4
                 Dim formEsterilizacion As New Castración_y_Esterilización()
                 formEsterilizacion.Show()
                 Me.Hide()
 
-            Case 6
+            Case 5
                 Dim formPension As New Pensión()
                 formPension.Show()
                 Me.Hide()
 
-            Case 7
+            Case 6
                 Dim formGrooming As New Estética()
                 formGrooming.Show()
                 Me.Hide()
-            Case 8
+            Case 7
                 Dim formEutanasia As New Eutanasia()
                 formEutanasia.Show()
                 Me.Hide()
 
-            Case 9
+            Case 8
                 Dim formGrooming As New Vacunacion()
                 formGrooming.Show()
                 Me.Hide()
 
-            Case 10
+            Case 9
                 Dim formHospitalizacion As New Hospitalización()
                 formHospitalizacion.Show()
                 Me.Hide()
-            Case 11
+            Case 10
                 Dim formProfilaxis As New Proaxis_Dental()
                 formProfilaxis.Show()
                 Me.Hide()
-            Case 12
-                Dim formRecibo As New Recibo()
-                formRecibo.Show()
+            Case 11
+                Dim formmRecibo As New Recibo()
+                formmRecibo.Show()
                 Me.Hide()
             Case Else
                 MessageBox.Show("Servicio no reconocido. Por favor, selecciona un servicio válido.")
@@ -117,7 +117,9 @@ Public Class Menu_Principal
     End Sub
 
     Private Sub btnCerrarSistema_Click(sender As Object, e As EventArgs) Handles btnCerrarSistema.Click
-        Application.Exit()
+        Dim inicioSesion As New Inicio_de_sesion()
+        Me.Hide()
+        inicioSesion.Show()
     End Sub
 End Class
 

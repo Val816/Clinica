@@ -11,16 +11,13 @@ Public Class Proaxis_Dental
     End Class
 
     Private Sub FormProfilaxisDental_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        ' Llenar ComboBox de tallas desde la base de datos
+
         LlenarComboBoxTallas()
         LlenarComboBoxServicios()
     End Sub
 
     Private Sub LlenarComboBoxTallas()
-        ' Limpiar el ComboBox antes de llenarlo
         ComboBoxTalla.Items.Clear()
-
-        ' Conectar a la base de datos y llenar el ComboBox de tallas con id y descripción
         Dim query As String = "SELECT idTalla, descripcion FROM Talla"
         Using conn As New MySqlConnection("Server=localhost;Database=veterinaria;User Id=root;Password=root;")
             Dim cmd As New MySqlCommand(query, conn)
@@ -57,7 +54,6 @@ Public Class Proaxis_Dental
     End Sub
     Private Sub ComboBoxTalla_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBoxTalla.SelectedIndexChanged
         If ComboBoxTalla.SelectedItem IsNot Nothing Then
-            ' Obtener el costo basado en la talla seleccionada
             Dim idTallaSeleccionada As Integer = CType(ComboBoxTalla.SelectedItem, ComboBoxItem).Value
             Dim query As String = "SELECT precio FROM PrecioProfilaxis WHERE idTalla = @idTalla"
 
@@ -78,8 +74,8 @@ Public Class Proaxis_Dental
 
 
     Private Sub BtnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
-        ' Guardar la información de profilaxis en la base de datos
-        Dim idMascota As Integer = 1 ' Suponiendo que el idMascota es conocido
+
+        Dim idMascota As Integer = 1
         Dim fecha As Date = DateTimePickerFecha.Value
         Dim horaEntrada As Date = DateTimePickerHoraEntrada.Value
         Dim horaSalida As Date = DateTimePickerHoraSalida.Value
@@ -135,45 +131,44 @@ Public Class Proaxis_Dental
                 consultamedica.Show()
                 Me.Hide()
 
-            'Case 4
-            '    Dim formDesparacitacion As New Desparacitación()
-            '    formDesparacitacion.Show()
-            '    Me.Hide()
+            Case 3
+                Dim formDesparacitacion As New DesparacitacionForm()
+                formDesparacitacion.Show()
+                Me.Hide()
 
-            'Case 5
-            '    Dim formEsterilizacion As New Esterilización()
-            '    formEsterilizacion.Show()
-            '    Me.Hide()
+            Case 4
+                Dim formEsterilizacion As New Castración_y_Esterilización()
+                formEsterilizacion.Show()
+                Me.Hide()
 
-            Case 6
+            Case 5
                 Dim formPension As New Pensión()
                 formPension.Show()
                 Me.Hide()
 
-            Case 7
+            Case 6
                 Dim formGrooming As New Estética()
                 formGrooming.Show()
                 Me.Hide()
-            Case 8
+            Case 7
                 Dim formEutanasia As New Eutanasia()
                 formEutanasia.Show()
                 Me.Hide()
 
-            Case 9
+            Case 8
                 Dim formGrooming As New Vacunacion()
                 formGrooming.Show()
                 Me.Hide()
 
-            Case 10
-
+            Case 9
                 Dim formHospitalizacion As New Hospitalización()
                 formHospitalizacion.Show()
                 Me.Hide()
-            Case 11
+            Case 10
                 Dim formProfilaxis As New Proaxis_Dental()
                 formProfilaxis.Show()
                 Me.Hide()
-            Case 12
+            Case 11
                 Dim formmRecibo As New Recibo()
                 formmRecibo.Show()
                 Me.Hide()
