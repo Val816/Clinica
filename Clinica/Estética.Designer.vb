@@ -48,16 +48,22 @@ Partial Class Estética
 		Me.CheckBox3 = New System.Windows.Forms.CheckBox()
 		Me.CheckBox2 = New System.Windows.Forms.CheckBox()
 		Me.CheckBox1 = New System.Windows.Forms.CheckBox()
+		Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+		Me.Label5 = New System.Windows.Forms.Label()
+		Me.Label7 = New System.Windows.Forms.Label()
 		Me.Panel1.SuspendLayout()
 		Me.Panel2.SuspendLayout()
 		CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.Panel3.SuspendLayout()
 		Me.Panel4.SuspendLayout()
+		CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.SuspendLayout()
 		'
 		'Panel1
 		'
 		Me.Panel1.BackColor = System.Drawing.Color.SteelBlue
+		Me.Panel1.Controls.Add(Me.PictureBox2)
+		Me.Panel1.Controls.Add(Me.Label5)
 		Me.Panel1.Controls.Add(Me.btnMenuPrincipal)
 		Me.Panel1.Controls.Add(Me.Label1)
 		Me.Panel1.Location = New System.Drawing.Point(1, -2)
@@ -68,12 +74,13 @@ Partial Class Estética
 		'
 		'btnMenuPrincipal
 		'
-		Me.btnMenuPrincipal.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(128, Byte), Integer))
+		Me.btnMenuPrincipal.BackColor = System.Drawing.Color.LightBlue
 		Me.btnMenuPrincipal.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-		Me.btnMenuPrincipal.Location = New System.Drawing.Point(398, 29)
+		Me.btnMenuPrincipal.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.btnMenuPrincipal.Location = New System.Drawing.Point(390, 29)
 		Me.btnMenuPrincipal.Margin = New System.Windows.Forms.Padding(2)
 		Me.btnMenuPrincipal.Name = "btnMenuPrincipal"
-		Me.btnMenuPrincipal.Size = New System.Drawing.Size(93, 25)
+		Me.btnMenuPrincipal.Size = New System.Drawing.Size(120, 25)
 		Me.btnMenuPrincipal.TabIndex = 1
 		Me.btnMenuPrincipal.Text = "Menú Principal"
 		Me.btnMenuPrincipal.UseVisualStyleBackColor = False
@@ -81,11 +88,12 @@ Partial Class Estética
 		'Label1
 		'
 		Me.Label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-		Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 25.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.Label1.Location = New System.Drawing.Point(188, 29)
+		Me.Label1.Font = New System.Drawing.Font("Arial Narrow", 24.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.Label1.ForeColor = System.Drawing.Color.White
+		Me.Label1.Location = New System.Drawing.Point(199, 29)
 		Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
 		Me.Label1.Name = "Label1"
-		Me.Label1.Size = New System.Drawing.Size(337, 39)
+		Me.Label1.Size = New System.Drawing.Size(137, 39)
 		Me.Label1.TabIndex = 0
 		Me.Label1.Text = "Estética"
 		'
@@ -103,12 +111,15 @@ Partial Class Estética
 		'
 		'Button1
 		'
+		Me.Button1.BackColor = System.Drawing.Color.LightBlue
+		Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+		Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
 		Me.Button1.Location = New System.Drawing.Point(435, 14)
 		Me.Button1.Name = "Button1"
 		Me.Button1.Size = New System.Drawing.Size(75, 23)
 		Me.Button1.TabIndex = 7
-		Me.Button1.Text = "Button1"
-		Me.Button1.UseVisualStyleBackColor = True
+		Me.Button1.Text = "Guardar"
+		Me.Button1.UseVisualStyleBackColor = False
 		'
 		'btnGuardar
 		'
@@ -136,34 +147,34 @@ Partial Class Estética
 		'
 		'Label6
 		'
-		Me.Label6.BackColor = System.Drawing.Color.LightGray
-		Me.Label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+		Me.Label6.BackColor = System.Drawing.Color.Transparent
 		Me.Label6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-		Me.Label6.Location = New System.Drawing.Point(11, 14)
+		Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.Label6.Location = New System.Drawing.Point(3, 8)
 		Me.Label6.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
 		Me.Label6.Name = "Label6"
-		Me.Label6.Size = New System.Drawing.Size(91, 28)
+		Me.Label6.Size = New System.Drawing.Size(113, 28)
 		Me.Label6.TabIndex = 41
 		Me.Label6.Text = "Hora de entrada:"
-		Me.Label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+		Me.Label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
 		'
 		'Label2
 		'
-		Me.Label2.BackColor = System.Drawing.Color.LightGray
-		Me.Label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+		Me.Label2.BackColor = System.Drawing.Color.Transparent
 		Me.Label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+		Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
 		Me.Label2.Location = New System.Drawing.Point(11, 47)
 		Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
 		Me.Label2.Name = "Label2"
-		Me.Label2.Size = New System.Drawing.Size(82, 26)
+		Me.Label2.Size = New System.Drawing.Size(100, 26)
 		Me.Label2.TabIndex = 43
 		Me.Label2.Text = "Hora de salida:"
 		Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
 		'
 		'TextBox2
 		'
-		Me.TextBox2.BackColor = System.Drawing.Color.Silver
-		Me.TextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None
+		Me.TextBox2.BackColor = System.Drawing.Color.White
+		Me.TextBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
 		Me.TextBox2.Location = New System.Drawing.Point(67, 353)
 		Me.TextBox2.Margin = New System.Windows.Forms.Padding(2)
 		Me.TextBox2.Multiline = True
@@ -173,9 +184,10 @@ Partial Class Estética
 		'
 		'Label12
 		'
-		Me.Label12.BackColor = System.Drawing.Color.Silver
-		Me.Label12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-		Me.Label12.Location = New System.Drawing.Point(298, 318)
+		Me.Label12.BackColor = System.Drawing.Color.Transparent
+		Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.Label12.ForeColor = System.Drawing.Color.Black
+		Me.Label12.Location = New System.Drawing.Point(320, 318)
 		Me.Label12.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
 		Me.Label12.Name = "Label12"
 		Me.Label12.Size = New System.Drawing.Size(62, 24)
@@ -185,7 +197,7 @@ Partial Class Estética
 		'
 		'TextBox10
 		'
-		Me.TextBox10.BackColor = System.Drawing.Color.Silver
+		Me.TextBox10.BackColor = System.Drawing.Color.White
 		Me.TextBox10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
 		Me.TextBox10.Location = New System.Drawing.Point(372, 318)
 		Me.TextBox10.Margin = New System.Windows.Forms.Padding(2)
@@ -197,11 +209,11 @@ Partial Class Estética
 		'
 		'ComboBoxServicio
 		'
-		Me.ComboBoxServicio.BackColor = System.Drawing.SystemColors.InfoText
-		Me.ComboBoxServicio.ForeColor = System.Drawing.Color.White
+		Me.ComboBoxServicio.BackColor = System.Drawing.Color.White
+		Me.ComboBoxServicio.ForeColor = System.Drawing.Color.Black
 		Me.ComboBoxServicio.FormattingEnabled = True
 		Me.ComboBoxServicio.Items.AddRange(New Object() {"Consulta Médica", "Desparacitación", "Vacunación", "Eutanasia", "Cirugía", "Estética", "Pensión", "Castración", "Proaxis Dental"})
-		Me.ComboBoxServicio.Location = New System.Drawing.Point(298, 373)
+		Me.ComboBoxServicio.Location = New System.Drawing.Point(345, 376)
 		Me.ComboBoxServicio.Margin = New System.Windows.Forms.Padding(2)
 		Me.ComboBoxServicio.Name = "ComboBoxServicio"
 		Me.ComboBoxServicio.Size = New System.Drawing.Size(147, 21)
@@ -222,7 +234,7 @@ Partial Class Estética
 		'DateTimePicker1
 		'
 		Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Time
-		Me.DateTimePicker1.Location = New System.Drawing.Point(107, 14)
+		Me.DateTimePicker1.Location = New System.Drawing.Point(115, 13)
 		Me.DateTimePicker1.Name = "DateTimePicker1"
 		Me.DateTimePicker1.Size = New System.Drawing.Size(112, 20)
 		Me.DateTimePicker1.TabIndex = 55
@@ -230,7 +242,7 @@ Partial Class Estética
 		'DateTimePicker2
 		'
 		Me.DateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Time
-		Me.DateTimePicker2.Location = New System.Drawing.Point(107, 53)
+		Me.DateTimePicker2.Location = New System.Drawing.Point(115, 51)
 		Me.DateTimePicker2.Name = "DateTimePicker2"
 		Me.DateTimePicker2.Size = New System.Drawing.Size(112, 20)
 		Me.DateTimePicker2.TabIndex = 56
@@ -251,9 +263,9 @@ Partial Class Estética
 		Me.Panel3.Controls.Add(Me.DateTimePicker1)
 		Me.Panel3.Controls.Add(Me.Label2)
 		Me.Panel3.Controls.Add(Me.Label6)
-		Me.Panel3.Location = New System.Drawing.Point(34, 99)
+		Me.Panel3.Location = New System.Drawing.Point(24, 99)
 		Me.Panel3.Name = "Panel3"
-		Me.Panel3.Size = New System.Drawing.Size(230, 84)
+		Me.Panel3.Size = New System.Drawing.Size(240, 84)
 		Me.Panel3.TabIndex = 60
 		'
 		'Panel4
@@ -281,19 +293,21 @@ Partial Class Estética
 		'Label4
 		'
 		Me.Label4.AutoSize = True
+		Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
 		Me.Label4.Location = New System.Drawing.Point(17, 10)
 		Me.Label4.Name = "Label4"
-		Me.Label4.Size = New System.Drawing.Size(71, 13)
+		Me.Label4.Size = New System.Drawing.Size(85, 13)
 		Me.Label4.TabIndex = 64
 		Me.Label4.Text = "Servicios de :"
 		'
 		'CheckBox4
 		'
 		Me.CheckBox4.AutoSize = True
+		Me.CheckBox4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
 		Me.CheckBox4.Location = New System.Drawing.Point(133, 89)
 		Me.CheckBox4.Margin = New System.Windows.Forms.Padding(2)
 		Me.CheckBox4.Name = "CheckBox4"
-		Me.CheckBox4.Size = New System.Drawing.Size(51, 17)
+		Me.CheckBox4.Size = New System.Drawing.Size(56, 17)
 		Me.CheckBox4.TabIndex = 63
 		Me.CheckBox4.Text = "Otros"
 		Me.CheckBox4.UseVisualStyleBackColor = True
@@ -301,10 +315,11 @@ Partial Class Estética
 		'CheckBox3
 		'
 		Me.CheckBox3.AutoSize = True
+		Me.CheckBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
 		Me.CheckBox3.Location = New System.Drawing.Point(20, 67)
 		Me.CheckBox3.Margin = New System.Windows.Forms.Padding(2)
 		Me.CheckBox3.Name = "CheckBox3"
-		Me.CheckBox3.Size = New System.Drawing.Size(51, 17)
+		Me.CheckBox3.Size = New System.Drawing.Size(55, 17)
 		Me.CheckBox3.TabIndex = 62
 		Me.CheckBox3.Text = "Baño"
 		Me.CheckBox3.UseVisualStyleBackColor = True
@@ -312,10 +327,11 @@ Partial Class Estética
 		'CheckBox2
 		'
 		Me.CheckBox2.AutoSize = True
+		Me.CheckBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
 		Me.CheckBox2.Location = New System.Drawing.Point(20, 46)
 		Me.CheckBox2.Margin = New System.Windows.Forms.Padding(2)
 		Me.CheckBox2.Name = "CheckBox2"
-		Me.CheckBox2.Size = New System.Drawing.Size(64, 17)
+		Me.CheckBox2.Size = New System.Drawing.Size(72, 17)
 		Me.CheckBox2.TabIndex = 61
 		Me.CheckBox2.Text = "Estética"
 		Me.CheckBox2.UseVisualStyleBackColor = True
@@ -323,13 +339,50 @@ Partial Class Estética
 		'CheckBox1
 		'
 		Me.CheckBox1.AutoSize = True
+		Me.CheckBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
 		Me.CheckBox1.Location = New System.Drawing.Point(20, 25)
 		Me.CheckBox1.Margin = New System.Windows.Forms.Padding(2)
 		Me.CheckBox1.Name = "CheckBox1"
-		Me.CheckBox1.Size = New System.Drawing.Size(69, 17)
+		Me.CheckBox1.Size = New System.Drawing.Size(78, 17)
 		Me.CheckBox1.TabIndex = 60
 		Me.CheckBox1.Text = "Cepillado"
 		Me.CheckBox1.UseVisualStyleBackColor = True
+		'
+		'PictureBox2
+		'
+		Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
+		Me.PictureBox2.Location = New System.Drawing.Point(10, 2)
+		Me.PictureBox2.Margin = New System.Windows.Forms.Padding(2)
+		Me.PictureBox2.Name = "PictureBox2"
+		Me.PictureBox2.Size = New System.Drawing.Size(60, 52)
+		Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+		Me.PictureBox2.TabIndex = 86
+		Me.PictureBox2.TabStop = False
+		'
+		'Label5
+		'
+		Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.Label5.ForeColor = System.Drawing.Color.Black
+		Me.Label5.Location = New System.Drawing.Point(1, 56)
+		Me.Label5.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+		Me.Label5.Name = "Label5"
+		Me.Label5.Size = New System.Drawing.Size(83, 18)
+		Me.Label5.TabIndex = 85
+		Me.Label5.Text = "VETCARE"
+		Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+		'
+		'Label7
+		'
+		Me.Label7.BackColor = System.Drawing.Color.Transparent
+		Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.Label7.ForeColor = System.Drawing.Color.Black
+		Me.Label7.Location = New System.Drawing.Point(449, 318)
+		Me.Label7.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+		Me.Label7.Name = "Label7"
+		Me.Label7.Size = New System.Drawing.Size(54, 24)
+		Me.Label7.TabIndex = 62
+		Me.Label7.Text = "pesos."
+		Me.Label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
 		'
 		'Estética
 		'
@@ -337,6 +390,7 @@ Partial Class Estética
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
 		Me.BackColor = System.Drawing.SystemColors.ButtonHighlight
 		Me.ClientSize = New System.Drawing.Size(523, 493)
+		Me.Controls.Add(Me.Label7)
 		Me.Controls.Add(Me.Panel4)
 		Me.Controls.Add(Me.Panel3)
 		Me.Controls.Add(Me.Label3)
@@ -347,6 +401,7 @@ Partial Class Estética
 		Me.Controls.Add(Me.TextBox2)
 		Me.Controls.Add(Me.Panel2)
 		Me.Controls.Add(Me.Panel1)
+		Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
 		Me.Margin = New System.Windows.Forms.Padding(2)
 		Me.Name = "Estética"
 		Me.Text = "Estética"
@@ -357,6 +412,7 @@ Partial Class Estética
 		Me.Panel3.ResumeLayout(False)
 		Me.Panel4.ResumeLayout(False)
 		Me.Panel4.PerformLayout()
+		CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
 		Me.ResumeLayout(False)
 		Me.PerformLayout()
 
@@ -387,4 +443,7 @@ Partial Class Estética
 	Friend WithEvents CheckBox3 As CheckBox
 	Friend WithEvents CheckBox2 As CheckBox
 	Friend WithEvents CheckBox1 As CheckBox
+	Friend WithEvents PictureBox2 As PictureBox
+	Friend WithEvents Label5 As Label
+	Friend WithEvents Label7 As Label
 End Class

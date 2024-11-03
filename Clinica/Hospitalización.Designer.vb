@@ -49,15 +49,20 @@ Partial Class Hospitalización
 		Me.Label8 = New System.Windows.Forms.Label()
 		Me.Label7 = New System.Windows.Forms.Label()
 		Me.TxtObservaciones = New System.Windows.Forms.TextBox()
+		Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+		Me.Label9 = New System.Windows.Forms.Label()
 		Me.Panel1.SuspendLayout()
 		CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.Panel3.SuspendLayout()
 		Me.Panel4.SuspendLayout()
+		CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.SuspendLayout()
 		'
 		'Panel1
 		'
 		Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(197, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(165, Byte), Integer))
+		Me.Panel1.Controls.Add(Me.PictureBox2)
+		Me.Panel1.Controls.Add(Me.Label9)
 		Me.Panel1.Controls.Add(Me.btnMenuPrincipal)
 		Me.Panel1.Controls.Add(Me.Label1)
 		Me.Panel1.Location = New System.Drawing.Point(-5, -5)
@@ -70,7 +75,7 @@ Partial Class Hospitalización
 		'
 		Me.btnMenuPrincipal.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(128, Byte), Integer))
 		Me.btnMenuPrincipal.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-		Me.btnMenuPrincipal.Location = New System.Drawing.Point(411, 16)
+		Me.btnMenuPrincipal.Location = New System.Drawing.Point(437, 16)
 		Me.btnMenuPrincipal.Margin = New System.Windows.Forms.Padding(2)
 		Me.btnMenuPrincipal.Name = "btnMenuPrincipal"
 		Me.btnMenuPrincipal.Size = New System.Drawing.Size(93, 25)
@@ -352,6 +357,29 @@ Partial Class Hospitalización
 		Me.TxtObservaciones.Size = New System.Drawing.Size(218, 77)
 		Me.TxtObservaciones.TabIndex = 71
 		'
+		'PictureBox2
+		'
+		Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
+		Me.PictureBox2.Location = New System.Drawing.Point(16, 2)
+		Me.PictureBox2.Margin = New System.Windows.Forms.Padding(2)
+		Me.PictureBox2.Name = "PictureBox2"
+		Me.PictureBox2.Size = New System.Drawing.Size(60, 52)
+		Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+		Me.PictureBox2.TabIndex = 86
+		Me.PictureBox2.TabStop = False
+		'
+		'Label9
+		'
+		Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.Label9.ForeColor = System.Drawing.Color.Black
+		Me.Label9.Location = New System.Drawing.Point(7, 56)
+		Me.Label9.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+		Me.Label9.Name = "Label9"
+		Me.Label9.Size = New System.Drawing.Size(83, 18)
+		Me.Label9.TabIndex = 85
+		Me.Label9.Text = "VETCARE"
+		Me.Label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+		'
 		'Hospitalización
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -381,6 +409,7 @@ Partial Class Hospitalización
 		Me.Panel3.PerformLayout()
 		Me.Panel4.ResumeLayout(False)
 		Me.Panel4.PerformLayout()
+		CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
 		Me.ResumeLayout(False)
 		Me.PerformLayout()
 
@@ -412,4 +441,6 @@ Partial Class Hospitalización
 	Friend WithEvents Label8 As Label
 	Friend WithEvents Label7 As Label
 	Friend WithEvents TxtObservaciones As TextBox
+	Friend WithEvents PictureBox2 As PictureBox
+	Friend WithEvents Label9 As Label
 End Class

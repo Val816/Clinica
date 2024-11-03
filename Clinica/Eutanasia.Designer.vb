@@ -22,6 +22,7 @@ Partial Class Eutanasia
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+		Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Eutanasia))
 		Me.Panel1 = New System.Windows.Forms.Panel()
 		Me.btnMenuPrincipal = New System.Windows.Forms.Button()
 		Me.Label1 = New System.Windows.Forms.Label()
@@ -38,14 +39,20 @@ Partial Class Eutanasia
 		Me.TextBoxObservaciones = New System.Windows.Forms.TextBox()
 		Me.Label4 = New System.Windows.Forms.Label()
 		Me.ComboBoxMotivo = New System.Windows.Forms.ComboBox()
+		Me.Label6 = New System.Windows.Forms.Label()
+		Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+		Me.Label7 = New System.Windows.Forms.Label()
 		Me.Panel1.SuspendLayout()
 		Me.Panel2.SuspendLayout()
 		Me.Panel3.SuspendLayout()
+		CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.SuspendLayout()
 		'
 		'Panel1
 		'
 		Me.Panel1.BackColor = System.Drawing.Color.SteelBlue
+		Me.Panel1.Controls.Add(Me.PictureBox2)
+		Me.Panel1.Controls.Add(Me.Label7)
 		Me.Panel1.Controls.Add(Me.btnMenuPrincipal)
 		Me.Panel1.Controls.Add(Me.Label1)
 		Me.Panel1.Location = New System.Drawing.Point(-4, -3)
@@ -118,6 +125,7 @@ Partial Class Eutanasia
 		'Panel3
 		'
 		Me.Panel3.BackColor = System.Drawing.Color.LightSteelBlue
+		Me.Panel3.Controls.Add(Me.Label6)
 		Me.Panel3.Controls.Add(Me.Label5)
 		Me.Panel3.Controls.Add(Me.DateTimePickerFecha)
 		Me.Panel3.Controls.Add(Me.Label2)
@@ -136,7 +144,7 @@ Partial Class Eutanasia
 		'
 		Me.Label5.AutoSize = True
 		Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.Label5.Location = New System.Drawing.Point(71, 70)
+		Me.Label5.Location = New System.Drawing.Point(68, 49)
 		Me.Label5.Name = "Label5"
 		Me.Label5.Size = New System.Drawing.Size(57, 15)
 		Me.Label5.TabIndex = 47
@@ -168,7 +176,7 @@ Partial Class Eutanasia
 		Me.ComboBoxServicios.ForeColor = System.Drawing.Color.Black
 		Me.ComboBoxServicios.FormattingEnabled = True
 		Me.ComboBoxServicios.Items.AddRange(New Object() {"Consulta Médica", "Desparacitación", "Vacunación", "Eutanasia", "Cirugía", "Estética", "Pensión", "Castración", "Proaxis Dental"})
-		Me.ComboBoxServicios.Location = New System.Drawing.Point(22, 205)
+		Me.ComboBoxServicios.Location = New System.Drawing.Point(5, 184)
 		Me.ComboBoxServicios.Margin = New System.Windows.Forms.Padding(2)
 		Me.ComboBoxServicios.Name = "ComboBoxServicios"
 		Me.ComboBoxServicios.Size = New System.Drawing.Size(121, 21)
@@ -179,7 +187,7 @@ Partial Class Eutanasia
 		'
 		Me.TextBoxCosto.BackColor = System.Drawing.Color.White
 		Me.TextBoxCosto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-		Me.TextBoxCosto.Location = New System.Drawing.Point(257, 206)
+		Me.TextBoxCosto.Location = New System.Drawing.Point(223, 180)
 		Me.TextBoxCosto.Margin = New System.Windows.Forms.Padding(2)
 		Me.TextBoxCosto.Multiline = True
 		Me.TextBoxCosto.Name = "TextBoxCosto"
@@ -191,7 +199,7 @@ Partial Class Eutanasia
 		'
 		Me.Label3.BackColor = System.Drawing.Color.Transparent
 		Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.Label3.Location = New System.Drawing.Point(201, 206)
+		Me.Label3.Location = New System.Drawing.Point(165, 180)
 		Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
 		Me.Label3.Name = "Label3"
 		Me.Label3.Size = New System.Drawing.Size(62, 24)
@@ -203,7 +211,7 @@ Partial Class Eutanasia
 		'
 		Me.TextBoxObservaciones.BackColor = System.Drawing.Color.White
 		Me.TextBoxObservaciones.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-		Me.TextBoxObservaciones.Location = New System.Drawing.Point(130, 115)
+		Me.TextBoxObservaciones.Location = New System.Drawing.Point(130, 88)
 		Me.TextBoxObservaciones.Margin = New System.Windows.Forms.Padding(2)
 		Me.TextBoxObservaciones.Multiline = True
 		Me.TextBoxObservaciones.Name = "TextBoxObservaciones"
@@ -215,7 +223,7 @@ Partial Class Eutanasia
 		'
 		Me.Label4.BackColor = System.Drawing.Color.Transparent
 		Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.Label4.Location = New System.Drawing.Point(19, 115)
+		Me.Label4.Location = New System.Drawing.Point(20, 88)
 		Me.Label4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
 		Me.Label4.Name = "Label4"
 		Me.Label4.Size = New System.Drawing.Size(106, 24)
@@ -231,12 +239,47 @@ Partial Class Eutanasia
 		Me.ComboBoxMotivo.FormattingEnabled = True
 		Me.ComboBoxMotivo.IntegralHeight = False
 		Me.ComboBoxMotivo.Items.AddRange(New Object() {"Edad Avanzada", "Enfermedad crónica"})
-		Me.ComboBoxMotivo.Location = New System.Drawing.Point(130, 68)
+		Me.ComboBoxMotivo.Location = New System.Drawing.Point(130, 45)
 		Me.ComboBoxMotivo.Margin = New System.Windows.Forms.Padding(2)
 		Me.ComboBoxMotivo.Name = "ComboBoxMotivo"
-		Me.ComboBoxMotivo.Size = New System.Drawing.Size(121, 21)
+		Me.ComboBoxMotivo.Size = New System.Drawing.Size(200, 21)
 		Me.ComboBoxMotivo.TabIndex = 39
 		Me.ComboBoxMotivo.Text = "Motivo"
+		'
+		'Label6
+		'
+		Me.Label6.BackColor = System.Drawing.Color.Transparent
+		Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.Label6.Location = New System.Drawing.Point(296, 180)
+		Me.Label6.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+		Me.Label6.Name = "Label6"
+		Me.Label6.Size = New System.Drawing.Size(62, 24)
+		Me.Label6.TabIndex = 48
+		Me.Label6.Text = "pesos."
+		Me.Label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+		'
+		'PictureBox2
+		'
+		Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
+		Me.PictureBox2.Location = New System.Drawing.Point(11, 4)
+		Me.PictureBox2.Margin = New System.Windows.Forms.Padding(2)
+		Me.PictureBox2.Name = "PictureBox2"
+		Me.PictureBox2.Size = New System.Drawing.Size(60, 52)
+		Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+		Me.PictureBox2.TabIndex = 86
+		Me.PictureBox2.TabStop = False
+		'
+		'Label7
+		'
+		Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.Label7.ForeColor = System.Drawing.Color.Black
+		Me.Label7.Location = New System.Drawing.Point(2, 58)
+		Me.Label7.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+		Me.Label7.Name = "Label7"
+		Me.Label7.Size = New System.Drawing.Size(83, 18)
+		Me.Label7.TabIndex = 85
+		Me.Label7.Text = "VETCARE"
+		Me.Label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
 		'
 		'Eutanasia
 		'
@@ -255,6 +298,7 @@ Partial Class Eutanasia
 		Me.Panel2.ResumeLayout(False)
 		Me.Panel3.ResumeLayout(False)
 		Me.Panel3.PerformLayout()
+		CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
 		Me.ResumeLayout(False)
 
 	End Sub
@@ -275,4 +319,7 @@ Partial Class Eutanasia
 	Friend WithEvents Label4 As Label
 	Friend WithEvents ComboBoxMotivo As ComboBox
 	Friend WithEvents Label5 As Label
+	Friend WithEvents Label6 As Label
+	Friend WithEvents PictureBox2 As PictureBox
+	Friend WithEvents Label7 As Label
 End Class

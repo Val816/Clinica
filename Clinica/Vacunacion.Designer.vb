@@ -37,15 +37,20 @@ Partial Class Vacunacion
 		Me.ComboBoxServicio = New System.Windows.Forms.ComboBox()
 		Me.PictureBox1 = New System.Windows.Forms.PictureBox()
 		Me.Panel3 = New System.Windows.Forms.Panel()
+		Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+		Me.Label6 = New System.Windows.Forms.Label()
 		Me.Panel1.SuspendLayout()
 		Me.Panel2.SuspendLayout()
 		CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.Panel3.SuspendLayout()
+		CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.SuspendLayout()
 		'
 		'Panel1
 		'
 		Me.Panel1.BackColor = System.Drawing.Color.SteelBlue
+		Me.Panel1.Controls.Add(Me.PictureBox2)
+		Me.Panel1.Controls.Add(Me.Label6)
 		Me.Panel1.Controls.Add(Me.btnMenuPrincipal)
 		Me.Panel1.Controls.Add(Me.Label1)
 		Me.Panel1.Location = New System.Drawing.Point(1, -1)
@@ -204,6 +209,29 @@ Partial Class Vacunacion
 		Me.Panel3.Size = New System.Drawing.Size(468, 162)
 		Me.Panel3.TabIndex = 40
 		'
+		'PictureBox2
+		'
+		Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
+		Me.PictureBox2.Location = New System.Drawing.Point(10, 0)
+		Me.PictureBox2.Margin = New System.Windows.Forms.Padding(2)
+		Me.PictureBox2.Name = "PictureBox2"
+		Me.PictureBox2.Size = New System.Drawing.Size(60, 52)
+		Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+		Me.PictureBox2.TabIndex = 86
+		Me.PictureBox2.TabStop = False
+		'
+		'Label6
+		'
+		Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.Label6.ForeColor = System.Drawing.Color.Black
+		Me.Label6.Location = New System.Drawing.Point(1, 54)
+		Me.Label6.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+		Me.Label6.Name = "Label6"
+		Me.Label6.Size = New System.Drawing.Size(83, 18)
+		Me.Label6.TabIndex = 85
+		Me.Label6.Text = "VETCARE"
+		Me.Label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+		'
 		'Vacunacion
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -226,6 +254,7 @@ Partial Class Vacunacion
 		CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
 		Me.Panel3.ResumeLayout(False)
 		Me.Panel3.PerformLayout()
+		CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
 		Me.ResumeLayout(False)
 		Me.PerformLayout()
 
@@ -245,4 +274,6 @@ Partial Class Vacunacion
 	Friend WithEvents ComboBoxServicio As ComboBox
 	Friend WithEvents PictureBox1 As PictureBox
 	Friend WithEvents Panel3 As Panel
+	Friend WithEvents PictureBox2 As PictureBox
+	Friend WithEvents Label6 As Label
 End Class
