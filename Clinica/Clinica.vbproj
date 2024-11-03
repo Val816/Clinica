@@ -171,9 +171,7 @@
     <Compile Include="Estética.Designer.vb">
       <DependentUpon>Estética.vb</DependentUpon>
     </Compile>
-    <Compile Include="Estética.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Estética.vb" />
     <Compile Include="Eutanasia.Designer.vb">
       <DependentUpon>Eutanasia.vb</DependentUpon>
     </Compile>

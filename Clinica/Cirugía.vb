@@ -22,11 +22,43 @@ Public Class Cirugía
     End Class
 
     Private Sub FormCirugia_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        CargarMascotas()
+        CargarMascotas()  ' Llenar ComboBoxMascota antes de seleccionar
         LlenarComboBoxServicios()
         CargarCirugias()
         AddHandler ComboBoxCirugia.SelectedIndexChanged, AddressOf ComboBoxCirugia_SelectedIndexChanged
+
+        ' Seleccionar la última mascota registrada
+        Dim idUltimaMascota As Integer = ObtenerUltimoIdMascota(conexion)
+        If idUltimaMascota > 0 Then
+            For Each item As MascotaItem In ComboBoxMascota.Items
+                If item.idMascota = idUltimaMascota Then
+                    ComboBoxMascota.SelectedItem = item
+                    Exit For
+                End If
+            Next
+        End If
     End Sub
+
+
+    Private Function ObtenerUltimoIdMascota(connection As MySqlConnection) As Integer
+        Dim idMascota As Integer = 0
+        Try
+            Dim query As String = "SELECT MAX(idMascota) FROM Mascota"
+            Using cmd As New MySqlCommand(query, connection)
+                connection.Open()
+                Dim result = cmd.ExecuteScalar()
+                If result IsNot Nothing AndAlso Not IsDBNull(result) Then
+                    idMascota = Convert.ToInt32(result)
+                End If
+            End Using
+        Catch ex As Exception
+            MessageBox.Show("Error al obtener el ID de la mascota: " & ex.Message)
+        Finally
+            connection.Close()
+        End Try
+        Return idMascota
+    End Function
+
 
     Private Sub LlenarComboBoxServicios()
         ComboBoxServicios.Items.Clear()
@@ -102,14 +134,16 @@ Public Class Cirugía
     End Sub
     Private Sub CargarDatosCirugia()
         Try
-            Dim query As String = "SELECT Cirugia.idCirugia, Mascota.nomMasc, TipoCirugia.nombre, Cirugia.fecha, Cirugia.observaciones, Cirugia.costo " &
+            Dim query As String = "SELECT Mascota.nomMasc AS 'Nombre de Mascota', " &
+                              "TipoCirugia.nombre AS 'Tipo de Cirugía', Cirugia.fecha AS 'Fecha de Cirugía', " &
+                              "Cirugia.observaciones AS 'Observaciones', Cirugia.costo AS 'Costo' " &
                               "FROM Cirugia " &
                               "JOIN Mascota ON Cirugia.idMascota = Mascota.idMascota " &
-                              "JOIN TipoCirugia ON Cirugia.idTipoCirugia = TipoCirugia.idTipoCirugia"
+                              "JOIN TipoCirugia ON Cirugia.idTipoCirugia = TipoCirugia.idTipoCirugia " &
+                              "ORDER BY Cirugia.fecha DESC"
 
             Dim cmd As New MySqlCommand(query, conexion)
 
-            ' Verificar si la conexión está abierta y cerrarla si es necesario
             If conexion.State = ConnectionState.Open Then
                 conexion.Close()
             End If
@@ -137,6 +171,7 @@ Public Class Cirugía
             End If
         End Try
     End Sub
+
     Private Sub ButtonGuardar_Click(sender As Object, e As EventArgs) Handles ButtonGuardar.Click
         Try
             If ComboBoxMascota.SelectedItem Is Nothing OrElse ComboBoxCirugia.SelectedItem Is Nothing Then
@@ -154,7 +189,7 @@ Public Class Cirugía
             Dim costoCirugia As Decimal = selectedCirugia.costo
 
             Dim query As String = "INSERT INTO Cirugia (idMascota, idTipoCirugia, fecha, observaciones, costo) " &
-                                  "VALUES (@idMascota, @idTipoCirugia, @fecha, @observaciones, @costo)"
+                              "VALUES (@idMascota, @idTipoCirugia, @fecha, @observaciones, @costo)"
             Dim cmd As New MySqlCommand(query, conexion)
 
             cmd.Parameters.AddWithValue("@idMascota", idMascota)
@@ -168,6 +203,8 @@ Public Class Cirugía
 
             MessageBox.Show("Cirugía registrada exitosamente.")
             LimpiarCampos()
+
+            ' Refleja los datos actualizados en el DataGridView después de guardar la cirugía
             CargarDatosCirugia()
 
         Catch ex As Exception
@@ -258,11 +295,13 @@ Public Class Cirugía
     End Sub
     Private Sub BtnBuscar_Click(sender As Object, e As EventArgs) Handles BtnBuscar.Click
         Try
-            Dim query As String = "SELECT Cirugia.idCirugia, Mascota.nomMasc, TipoCirugia.nombre, Cirugia.fecha, Cirugia.observaciones, Cirugia.costo " &
+            Dim query As String = "SELECT Mascota.nomMasc AS 'Nombre de Mascota', " &
+                                  "TipoCirugia.nombre AS 'Tipo de Cirugía', Cirugia.fecha AS 'Fecha de Cirugía', " &
+                                  "Cirugia.observaciones AS 'Observaciones', Cirugia.costo AS 'Costo' " &
                                   "FROM Cirugia " &
                                   "JOIN Mascota ON Cirugia.idMascota = Mascota.idMascota " &
-                                  "JOIN TipoCirugia ON Cirugia.idTipoCirugia = TipoCirugia.idTipoCirugia WHERE 1=1"
-
+                                  "JOIN TipoCirugia ON Cirugia.idTipoCirugia = TipoCirugia.idTipoCirugia " &
+                                  "WHERE 1=1"
 
             If ComboBoxMascota.SelectedItem IsNot Nothing Then
                 Dim selectedMascota As MascotaItem = CType(ComboBoxMascota.SelectedItem, MascotaItem)
@@ -278,8 +317,9 @@ Public Class Cirugía
                 query &= " AND Cirugia.fecha = @fecha"
             End If
 
-            Dim cmd As New MySqlCommand(query, conexion)
+            query &= " ORDER BY Cirugia.fecha DESC" ' Ordenar por fecha de cirugía de reciente a más antigua
 
+            Dim cmd As New MySqlCommand(query, conexion)
 
             If ComboBoxMascota.SelectedItem IsNot Nothing Then
                 Dim selectedMascota As MascotaItem = CType(ComboBoxMascota.SelectedItem, MascotaItem)
@@ -301,8 +341,8 @@ Public Class Cirugía
             conexion.Open()
             adapter.Fill(table)
 
-
             DataGridViewCirugias.DataSource = table
+            DataGridViewCirugias.Refresh()
 
         Catch ex As Exception
             MessageBox.Show("Error al buscar cirugías: " & ex.Message)
@@ -310,4 +350,5 @@ Public Class Cirugía
             conexion.Close()
         End Try
     End Sub
+
 End Class

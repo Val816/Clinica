@@ -24,26 +24,29 @@ Partial Class Vacunacion
     Private Sub InitializeComponent()
 		Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Vacunacion))
 		Me.Panel1 = New System.Windows.Forms.Panel()
+		Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+		Me.Label6 = New System.Windows.Forms.Label()
 		Me.btnMenuPrincipal = New System.Windows.Forms.Button()
 		Me.Label1 = New System.Windows.Forms.Label()
 		Me.Panel2 = New System.Windows.Forms.Panel()
 		Me.btnGuardar = New System.Windows.Forms.Button()
-		Me.groupBoxVacunasAplicar = New System.Windows.Forms.CheckedListBox()
-		Me.CargarVacunasAplicadas = New System.Windows.Forms.CheckedListBox()
-		Me.Label2 = New System.Windows.Forms.Label()
 		Me.Label3 = New System.Windows.Forms.Label()
 		Me.Label10 = New System.Windows.Forms.Label()
 		Me.txtObservaciones = New System.Windows.Forms.TextBox()
-		Me.ComboBoxServicio = New System.Windows.Forms.ComboBox()
+		Me.ComboBoxServicios = New System.Windows.Forms.ComboBox()
 		Me.PictureBox1 = New System.Windows.Forms.PictureBox()
 		Me.Panel3 = New System.Windows.Forms.Panel()
-		Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-		Me.Label6 = New System.Windows.Forms.Label()
+		Me.Label4 = New System.Windows.Forms.Label()
+		Me.Label2 = New System.Windows.Forms.Label()
+		Me.txtTotalPrice = New System.Windows.Forms.TextBox()
+		Me.CheckListVaccines = New System.Windows.Forms.CheckedListBox()
+		Me.dgvRegistroVacunacion = New System.Windows.Forms.DataGridView()
 		Me.Panel1.SuspendLayout()
+		CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.Panel2.SuspendLayout()
 		CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.Panel3.SuspendLayout()
-		CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+		CType(Me.dgvRegistroVacunacion, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.SuspendLayout()
 		'
 		'Panel1
@@ -58,6 +61,29 @@ Partial Class Vacunacion
 		Me.Panel1.Name = "Panel1"
 		Me.Panel1.Size = New System.Drawing.Size(838, 93)
 		Me.Panel1.TabIndex = 6
+		'
+		'PictureBox2
+		'
+		Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
+		Me.PictureBox2.Location = New System.Drawing.Point(10, 0)
+		Me.PictureBox2.Margin = New System.Windows.Forms.Padding(2)
+		Me.PictureBox2.Name = "PictureBox2"
+		Me.PictureBox2.Size = New System.Drawing.Size(60, 52)
+		Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+		Me.PictureBox2.TabIndex = 86
+		Me.PictureBox2.TabStop = False
+		'
+		'Label6
+		'
+		Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.Label6.ForeColor = System.Drawing.Color.Black
+		Me.Label6.Location = New System.Drawing.Point(1, 54)
+		Me.Label6.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+		Me.Label6.Name = "Label6"
+		Me.Label6.Size = New System.Drawing.Size(83, 18)
+		Me.Label6.TabIndex = 85
+		Me.Label6.Text = "VETCARE"
+		Me.Label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
 		'
 		'btnMenuPrincipal
 		'
@@ -107,42 +133,11 @@ Partial Class Vacunacion
 		Me.btnGuardar.Text = "Guardar"
 		Me.btnGuardar.UseVisualStyleBackColor = False
 		'
-		'groupBoxVacunasAplicar
-		'
-		Me.groupBoxVacunasAplicar.FormattingEnabled = True
-		Me.groupBoxVacunasAplicar.Items.AddRange(New Object() {"Vacuna Puppy", "Vacuna Quintuple", "Vacuna Sextuple", "Vacuna de rabia", "Vacuna triple felina", "Vacuna bordetella", "Vacuna giarda", "Otra", "Ninguna"})
-		Me.groupBoxVacunasAplicar.Location = New System.Drawing.Point(41, 26)
-		Me.groupBoxVacunasAplicar.Margin = New System.Windows.Forms.Padding(2)
-		Me.groupBoxVacunasAplicar.Name = "groupBoxVacunasAplicar"
-		Me.groupBoxVacunasAplicar.Size = New System.Drawing.Size(153, 124)
-		Me.groupBoxVacunasAplicar.TabIndex = 28
-		'
-		'CargarVacunasAplicadas
-		'
-		Me.CargarVacunasAplicadas.FormattingEnabled = True
-		Me.CargarVacunasAplicadas.Items.AddRange(New Object() {"Vacuna Puppy", "Vacuna Quintuple", "Vacuna Sextuple", "Vacuna de rabia", "Vacuna triple felina", "Vacuna bordetella", "Vacuna giarda", "Otra"})
-		Me.CargarVacunasAplicadas.Location = New System.Drawing.Point(283, 26)
-		Me.CargarVacunasAplicadas.Margin = New System.Windows.Forms.Padding(2)
-		Me.CargarVacunasAplicadas.Name = "CargarVacunasAplicadas"
-		Me.CargarVacunasAplicadas.Size = New System.Drawing.Size(153, 124)
-		Me.CargarVacunasAplicadas.TabIndex = 29
-		'
-		'Label2
-		'
-		Me.Label2.AutoSize = True
-		Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.Label2.Location = New System.Drawing.Point(38, 6)
-		Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-		Me.Label2.Name = "Label2"
-		Me.Label2.Size = New System.Drawing.Size(146, 13)
-		Me.Label2.TabIndex = 30
-		Me.Label2.Text = "Esquema de vacunación"
-		'
 		'Label3
 		'
 		Me.Label3.AutoSize = True
 		Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.Label3.Location = New System.Drawing.Point(307, 6)
+		Me.Label3.Location = New System.Drawing.Point(172, 14)
 		Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
 		Me.Label3.Name = "Label3"
 		Me.Label3.Size = New System.Drawing.Size(102, 13)
@@ -153,7 +148,7 @@ Partial Class Vacunacion
 		'
 		Me.Label10.BackColor = System.Drawing.Color.Transparent
 		Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.Label10.Location = New System.Drawing.Point(42, 288)
+		Me.Label10.Location = New System.Drawing.Point(357, 2)
 		Me.Label10.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
 		Me.Label10.Name = "Label10"
 		Me.Label10.Size = New System.Drawing.Size(99, 40)
@@ -163,9 +158,9 @@ Partial Class Vacunacion
 		'
 		'txtObservaciones
 		'
-		Me.txtObservaciones.BackColor = System.Drawing.Color.Silver
+		Me.txtObservaciones.BackColor = System.Drawing.Color.White
 		Me.txtObservaciones.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-		Me.txtObservaciones.Location = New System.Drawing.Point(145, 288)
+		Me.txtObservaciones.Location = New System.Drawing.Point(360, 44)
 		Me.txtObservaciones.Margin = New System.Windows.Forms.Padding(2)
 		Me.txtObservaciones.Multiline = True
 		Me.txtObservaciones.Name = "txtObservaciones"
@@ -173,26 +168,26 @@ Partial Class Vacunacion
 		Me.txtObservaciones.TabIndex = 33
 		Me.txtObservaciones.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
 		'
-		'ComboBoxServicio
+		'ComboBoxServicios
 		'
-		Me.ComboBoxServicio.BackColor = System.Drawing.Color.White
-		Me.ComboBoxServicio.ForeColor = System.Drawing.Color.Black
-		Me.ComboBoxServicio.FormattingEnabled = True
-		Me.ComboBoxServicio.Items.AddRange(New Object() {"Consulta Médica", "Desparacitación", "Vacunación", "Eutanasia", "Cirugía", "Estética", "Pensión", "Castración", "Proaxis Dental"})
-		Me.ComboBoxServicio.Location = New System.Drawing.Point(145, 384)
-		Me.ComboBoxServicio.Margin = New System.Windows.Forms.Padding(2)
-		Me.ComboBoxServicio.Name = "ComboBoxServicio"
-		Me.ComboBoxServicio.Size = New System.Drawing.Size(147, 21)
-		Me.ComboBoxServicio.TabIndex = 36
-		Me.ComboBoxServicio.Text = "Agregar Servicio"
+		Me.ComboBoxServicios.BackColor = System.Drawing.Color.White
+		Me.ComboBoxServicios.ForeColor = System.Drawing.Color.Black
+		Me.ComboBoxServicios.FormattingEnabled = True
+		Me.ComboBoxServicios.Items.AddRange(New Object() {"Consulta Médica", "Desparacitación", "Vacunación", "Eutanasia", "Cirugía", "Estética", "Pensión", "Castración", "Proaxis Dental"})
+		Me.ComboBoxServicios.Location = New System.Drawing.Point(8, 138)
+		Me.ComboBoxServicios.Margin = New System.Windows.Forms.Padding(2)
+		Me.ComboBoxServicios.Name = "ComboBoxServicios"
+		Me.ComboBoxServicios.Size = New System.Drawing.Size(147, 21)
+		Me.ComboBoxServicios.TabIndex = 36
+		Me.ComboBoxServicios.Text = "Agregar Servicio"
 		'
 		'PictureBox1
 		'
 		Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-		Me.PictureBox1.Location = New System.Drawing.Point(331, 288)
+		Me.PictureBox1.Location = New System.Drawing.Point(2, 2)
 		Me.PictureBox1.Margin = New System.Windows.Forms.Padding(2)
 		Me.PictureBox1.Name = "PictureBox1"
-		Me.PictureBox1.Size = New System.Drawing.Size(186, 129)
+		Me.PictureBox1.Size = New System.Drawing.Size(153, 129)
 		Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
 		Me.PictureBox1.TabIndex = 39
 		Me.PictureBox1.TabStop = False
@@ -200,37 +195,67 @@ Partial Class Vacunacion
 		'Panel3
 		'
 		Me.Panel3.BackColor = System.Drawing.Color.LightSteelBlue
-		Me.Panel3.Controls.Add(Me.Label3)
+		Me.Panel3.Controls.Add(Me.Label4)
+		Me.Panel3.Controls.Add(Me.ComboBoxServicios)
 		Me.Panel3.Controls.Add(Me.Label2)
-		Me.Panel3.Controls.Add(Me.CargarVacunasAplicadas)
-		Me.Panel3.Controls.Add(Me.groupBoxVacunasAplicar)
-		Me.Panel3.Location = New System.Drawing.Point(48, 111)
+		Me.Panel3.Controls.Add(Me.txtTotalPrice)
+		Me.Panel3.Controls.Add(Me.Label3)
+		Me.Panel3.Controls.Add(Me.PictureBox1)
+		Me.Panel3.Controls.Add(Me.Label10)
+		Me.Panel3.Controls.Add(Me.txtObservaciones)
+		Me.Panel3.Controls.Add(Me.CheckListVaccines)
+		Me.Panel3.Location = New System.Drawing.Point(11, 97)
 		Me.Panel3.Name = "Panel3"
-		Me.Panel3.Size = New System.Drawing.Size(468, 162)
+		Me.Panel3.Size = New System.Drawing.Size(534, 176)
 		Me.Panel3.TabIndex = 40
 		'
-		'PictureBox2
+		'Label4
 		'
-		Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
-		Me.PictureBox2.Location = New System.Drawing.Point(10, 0)
-		Me.PictureBox2.Margin = New System.Windows.Forms.Padding(2)
-		Me.PictureBox2.Name = "PictureBox2"
-		Me.PictureBox2.Size = New System.Drawing.Size(60, 52)
-		Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-		Me.PictureBox2.TabIndex = 86
-		Me.PictureBox2.TabStop = False
+		Me.Label4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+		Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.Label4.Location = New System.Drawing.Point(471, 138)
+		Me.Label4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+		Me.Label4.Name = "Label4"
+		Me.Label4.Size = New System.Drawing.Size(50, 20)
+		Me.Label4.TabIndex = 42
+		Me.Label4.Text = "pesos."
 		'
-		'Label6
+		'Label2
 		'
-		Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.Label6.ForeColor = System.Drawing.Color.Black
-		Me.Label6.Location = New System.Drawing.Point(1, 54)
-		Me.Label6.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-		Me.Label6.Name = "Label6"
-		Me.Label6.Size = New System.Drawing.Size(83, 18)
-		Me.Label6.TabIndex = 85
-		Me.Label6.Text = "VETCARE"
-		Me.Label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+		Me.Label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+		Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.Label2.Location = New System.Drawing.Point(360, 135)
+		Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+		Me.Label2.Name = "Label2"
+		Me.Label2.Size = New System.Drawing.Size(49, 20)
+		Me.Label2.TabIndex = 41
+		Me.Label2.Text = "Costo:"
+		Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+		'
+		'txtTotalPrice
+		'
+		Me.txtTotalPrice.Location = New System.Drawing.Point(414, 136)
+		Me.txtTotalPrice.Name = "txtTotalPrice"
+		Me.txtTotalPrice.Size = New System.Drawing.Size(55, 20)
+		Me.txtTotalPrice.TabIndex = 40
+		'
+		'CheckListVaccines
+		'
+		Me.CheckListVaccines.FormattingEnabled = True
+		Me.CheckListVaccines.Items.AddRange(New Object() {"Vacuna Puppy", "Vacuna Quintuple", "Vacuna Sextuple", "Vacuna de rabia", "Vacuna triple felina", "Vacuna bordetella", "Vacuna giarda", "Otra"})
+		Me.CheckListVaccines.Location = New System.Drawing.Point(172, 34)
+		Me.CheckListVaccines.Margin = New System.Windows.Forms.Padding(2)
+		Me.CheckListVaccines.Name = "CheckListVaccines"
+		Me.CheckListVaccines.Size = New System.Drawing.Size(153, 124)
+		Me.CheckListVaccines.TabIndex = 29
+		'
+		'dgvRegistroVacunacion
+		'
+		Me.dgvRegistroVacunacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+		Me.dgvRegistroVacunacion.Location = New System.Drawing.Point(44, 280)
+		Me.dgvRegistroVacunacion.Name = "dgvRegistroVacunacion"
+		Me.dgvRegistroVacunacion.Size = New System.Drawing.Size(470, 150)
+		Me.dgvRegistroVacunacion.TabIndex = 41
 		'
 		'Vacunacion
 		'
@@ -238,25 +263,22 @@ Partial Class Vacunacion
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
 		Me.BackColor = System.Drawing.SystemColors.ButtonHighlight
 		Me.ClientSize = New System.Drawing.Size(556, 503)
+		Me.Controls.Add(Me.dgvRegistroVacunacion)
 		Me.Controls.Add(Me.Panel3)
-		Me.Controls.Add(Me.PictureBox1)
-		Me.Controls.Add(Me.ComboBoxServicio)
-		Me.Controls.Add(Me.txtObservaciones)
-		Me.Controls.Add(Me.Label10)
 		Me.Controls.Add(Me.Panel2)
 		Me.Controls.Add(Me.Panel1)
+		Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
 		Me.Margin = New System.Windows.Forms.Padding(2)
 		Me.Name = "Vacunacion"
 		Me.Text = "Vacunacion"
-		Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
 		Me.Panel1.ResumeLayout(False)
+		CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
 		Me.Panel2.ResumeLayout(False)
 		CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
 		Me.Panel3.ResumeLayout(False)
 		Me.Panel3.PerformLayout()
-		CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+		CType(Me.dgvRegistroVacunacion, System.ComponentModel.ISupportInitialize).EndInit()
 		Me.ResumeLayout(False)
-		Me.PerformLayout()
 
 	End Sub
 
@@ -265,15 +287,17 @@ Partial Class Vacunacion
     Friend WithEvents Label1 As Label
     Friend WithEvents Panel2 As Panel
     Friend WithEvents btnGuardar As Button
-	Friend WithEvents groupBoxVacunasAplicar As CheckedListBox
-	Friend WithEvents CargarVacunasAplicadas As CheckedListBox
-	Friend WithEvents Label2 As Label
 	Friend WithEvents Label3 As Label
 	Friend WithEvents Label10 As Label
 	Friend WithEvents txtObservaciones As TextBox
-	Friend WithEvents ComboBoxServicio As ComboBox
+	Friend WithEvents ComboBoxServicios As ComboBox
 	Friend WithEvents PictureBox1 As PictureBox
 	Friend WithEvents Panel3 As Panel
 	Friend WithEvents PictureBox2 As PictureBox
 	Friend WithEvents Label6 As Label
+	Friend WithEvents CheckListVaccines As CheckedListBox
+	Friend WithEvents Label2 As Label
+	Friend WithEvents txtTotalPrice As TextBox
+	Friend WithEvents Label4 As Label
+	Friend WithEvents dgvRegistroVacunacion As DataGridView
 End Class

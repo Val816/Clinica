@@ -24,6 +24,8 @@ Partial Class Proaxis_Dental
     Private Sub InitializeComponent()
 		Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Proaxis_Dental))
 		Me.Panel1 = New System.Windows.Forms.Panel()
+		Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+		Me.Label14 = New System.Windows.Forms.Label()
 		Me.btnMenuPrincipal = New System.Windows.Forms.Button()
 		Me.Label1 = New System.Windows.Forms.Label()
 		Me.Panel2 = New System.Windows.Forms.Panel()
@@ -42,15 +44,13 @@ Partial Class Proaxis_Dental
 		Me.DateTimePickerHoraSalida = New System.Windows.Forms.DateTimePicker()
 		Me.Panel3 = New System.Windows.Forms.Panel()
 		Me.TextBoxObservaciones = New System.Windows.Forms.TextBox()
-		Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-		Me.Label14 = New System.Windows.Forms.Label()
 		Me.DataGridView1 = New System.Windows.Forms.DataGridView()
 		Me.Label5 = New System.Windows.Forms.Label()
 		Me.Panel1.SuspendLayout()
+		CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.Panel2.SuspendLayout()
 		CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.Panel3.SuspendLayout()
-		CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.SuspendLayout()
 		'
@@ -66,6 +66,29 @@ Partial Class Proaxis_Dental
 		Me.Panel1.Name = "Panel1"
 		Me.Panel1.Size = New System.Drawing.Size(862, 90)
 		Me.Panel1.TabIndex = 11
+		'
+		'PictureBox2
+		'
+		Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
+		Me.PictureBox2.Location = New System.Drawing.Point(14, 2)
+		Me.PictureBox2.Margin = New System.Windows.Forms.Padding(2)
+		Me.PictureBox2.Name = "PictureBox2"
+		Me.PictureBox2.Size = New System.Drawing.Size(60, 52)
+		Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+		Me.PictureBox2.TabIndex = 94
+		Me.PictureBox2.TabStop = False
+		'
+		'Label14
+		'
+		Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.Label14.ForeColor = System.Drawing.Color.Black
+		Me.Label14.Location = New System.Drawing.Point(9, 54)
+		Me.Label14.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+		Me.Label14.Name = "Label14"
+		Me.Label14.Size = New System.Drawing.Size(83, 18)
+		Me.Label14.TabIndex = 93
+		Me.Label14.Text = "VETCARE"
+		Me.Label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
 		'
 		'btnMenuPrincipal
 		'
@@ -269,44 +292,21 @@ Partial Class Proaxis_Dental
 		'
 		Me.TextBoxObservaciones.AcceptsTab = True
 		Me.TextBoxObservaciones.AllowDrop = True
-		Me.TextBoxObservaciones.BackColor = System.Drawing.Color.Silver
+		Me.TextBoxObservaciones.BackColor = System.Drawing.Color.White
 		Me.TextBoxObservaciones.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
 		Me.TextBoxObservaciones.Location = New System.Drawing.Point(315, 116)
 		Me.TextBoxObservaciones.Multiline = True
 		Me.TextBoxObservaciones.Name = "TextBoxObservaciones"
 		Me.TextBoxObservaciones.Size = New System.Drawing.Size(171, 77)
 		Me.TextBoxObservaciones.TabIndex = 80
-		Me.TextBoxObservaciones.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-		'
-		'PictureBox2
-		'
-		Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
-		Me.PictureBox2.Location = New System.Drawing.Point(14, 2)
-		Me.PictureBox2.Margin = New System.Windows.Forms.Padding(2)
-		Me.PictureBox2.Name = "PictureBox2"
-		Me.PictureBox2.Size = New System.Drawing.Size(60, 52)
-		Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-		Me.PictureBox2.TabIndex = 94
-		Me.PictureBox2.TabStop = False
-		'
-		'Label14
-		'
-		Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.Label14.ForeColor = System.Drawing.Color.Black
-		Me.Label14.Location = New System.Drawing.Point(9, 54)
-		Me.Label14.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-		Me.Label14.Name = "Label14"
-		Me.Label14.Size = New System.Drawing.Size(83, 18)
-		Me.Label14.TabIndex = 93
-		Me.Label14.Text = "VETCARE"
-		Me.Label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+		Me.TextBoxObservaciones.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
 		'
 		'DataGridView1
 		'
 		Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-		Me.DataGridView1.Location = New System.Drawing.Point(23, 270)
+		Me.DataGridView1.Location = New System.Drawing.Point(64, 270)
 		Me.DataGridView1.Name = "DataGridView1"
-		Me.DataGridView1.Size = New System.Drawing.Size(642, 138)
+		Me.DataGridView1.Size = New System.Drawing.Size(551, 138)
 		Me.DataGridView1.TabIndex = 81
 		'
 		'Label5
@@ -344,10 +344,10 @@ Partial Class Proaxis_Dental
 		Me.Name = "Proaxis_Dental"
 		Me.Text = "Proaxis Dental"
 		Me.Panel1.ResumeLayout(False)
+		CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
 		Me.Panel2.ResumeLayout(False)
 		CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
 		Me.Panel3.ResumeLayout(False)
-		CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
 		CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
 		Me.ResumeLayout(False)
 		Me.PerformLayout()

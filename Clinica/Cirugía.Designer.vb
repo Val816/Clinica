@@ -24,12 +24,15 @@ Partial Class Cirugía
     Private Sub InitializeComponent()
 		Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Cirugía))
 		Me.Panel1 = New System.Windows.Forms.Panel()
+		Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+		Me.Label4 = New System.Windows.Forms.Label()
 		Me.btnMenuPrincipal = New System.Windows.Forms.Button()
 		Me.Label1 = New System.Windows.Forms.Label()
 		Me.Panel2 = New System.Windows.Forms.Panel()
 		Me.ButtonGuardar = New System.Windows.Forms.Button()
 		Me.DataGridViewCirugias = New System.Windows.Forms.DataGridView()
 		Me.Panel3 = New System.Windows.Forms.Panel()
+		Me.Label5 = New System.Windows.Forms.Label()
 		Me.ComboBoxMascota = New System.Windows.Forms.ComboBox()
 		Me.BtnBuscar = New System.Windows.Forms.Button()
 		Me.Label3 = New System.Windows.Forms.Label()
@@ -42,13 +45,10 @@ Partial Class Cirugía
 		Me.TextBoxObservaciones = New System.Windows.Forms.TextBox()
 		Me.Label10 = New System.Windows.Forms.Label()
 		Me.Label2 = New System.Windows.Forms.Label()
-		Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-		Me.Label4 = New System.Windows.Forms.Label()
-		Me.Label5 = New System.Windows.Forms.Label()
 		Me.Panel1.SuspendLayout()
+		CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.DataGridViewCirugias, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.Panel3.SuspendLayout()
-		CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.SuspendLayout()
 		'
 		'Panel1
@@ -63,6 +63,29 @@ Partial Class Cirugía
 		Me.Panel1.Name = "Panel1"
 		Me.Panel1.Size = New System.Drawing.Size(838, 71)
 		Me.Panel1.TabIndex = 7
+		'
+		'PictureBox2
+		'
+		Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
+		Me.PictureBox2.Location = New System.Drawing.Point(1, 2)
+		Me.PictureBox2.Margin = New System.Windows.Forms.Padding(2)
+		Me.PictureBox2.Name = "PictureBox2"
+		Me.PictureBox2.Size = New System.Drawing.Size(60, 52)
+		Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+		Me.PictureBox2.TabIndex = 86
+		Me.PictureBox2.TabStop = False
+		'
+		'Label4
+		'
+		Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.Label4.ForeColor = System.Drawing.Color.Black
+		Me.Label4.Location = New System.Drawing.Point(-4, 54)
+		Me.Label4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+		Me.Label4.Name = "Label4"
+		Me.Label4.Size = New System.Drawing.Size(83, 18)
+		Me.Label4.TabIndex = 85
+		Me.Label4.Text = "VETCARE"
+		Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
 		'
 		'btnMenuPrincipal
 		'
@@ -116,9 +139,9 @@ Partial Class Cirugía
 		'
 		Me.DataGridViewCirugias.BackgroundColor = System.Drawing.SystemColors.ActiveCaption
 		Me.DataGridViewCirugias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-		Me.DataGridViewCirugias.Location = New System.Drawing.Point(2, 86)
+		Me.DataGridViewCirugias.Location = New System.Drawing.Point(89, 82)
 		Me.DataGridViewCirugias.Name = "DataGridViewCirugias"
-		Me.DataGridViewCirugias.Size = New System.Drawing.Size(697, 143)
+		Me.DataGridViewCirugias.Size = New System.Drawing.Size(529, 143)
 		Me.DataGridViewCirugias.TabIndex = 49
 		'
 		'Panel3
@@ -142,6 +165,18 @@ Partial Class Cirugía
 		Me.Panel3.Name = "Panel3"
 		Me.Panel3.Size = New System.Drawing.Size(698, 178)
 		Me.Panel3.TabIndex = 50
+		'
+		'Label5
+		'
+		Me.Label5.BackColor = System.Drawing.Color.Transparent
+		Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.Label5.Location = New System.Drawing.Point(263, 113)
+		Me.Label5.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+		Me.Label5.Name = "Label5"
+		Me.Label5.Size = New System.Drawing.Size(46, 24)
+		Me.Label5.TabIndex = 62
+		Me.Label5.Text = "pesos"
+		Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
 		'
 		'ComboBoxMascota
 		'
@@ -276,41 +311,6 @@ Partial Class Cirugía
 		Me.Label2.Text = "Tipo de cirugía:"
 		Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
 		'
-		'PictureBox2
-		'
-		Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
-		Me.PictureBox2.Location = New System.Drawing.Point(1, 2)
-		Me.PictureBox2.Margin = New System.Windows.Forms.Padding(2)
-		Me.PictureBox2.Name = "PictureBox2"
-		Me.PictureBox2.Size = New System.Drawing.Size(60, 52)
-		Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-		Me.PictureBox2.TabIndex = 86
-		Me.PictureBox2.TabStop = False
-		'
-		'Label4
-		'
-		Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.Label4.ForeColor = System.Drawing.Color.Black
-		Me.Label4.Location = New System.Drawing.Point(-4, 54)
-		Me.Label4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-		Me.Label4.Name = "Label4"
-		Me.Label4.Size = New System.Drawing.Size(83, 18)
-		Me.Label4.TabIndex = 85
-		Me.Label4.Text = "VETCARE"
-		Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-		'
-		'Label5
-		'
-		Me.Label5.BackColor = System.Drawing.Color.Transparent
-		Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.Label5.Location = New System.Drawing.Point(263, 113)
-		Me.Label5.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-		Me.Label5.Name = "Label5"
-		Me.Label5.Size = New System.Drawing.Size(46, 24)
-		Me.Label5.TabIndex = 62
-		Me.Label5.Text = "pesos"
-		Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-		'
 		'Cirugía
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -326,10 +326,10 @@ Partial Class Cirugía
 		Me.Name = "Cirugía"
 		Me.Text = "Cirugía"
 		Me.Panel1.ResumeLayout(False)
+		CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
 		CType(Me.DataGridViewCirugias, System.ComponentModel.ISupportInitialize).EndInit()
 		Me.Panel3.ResumeLayout(False)
 		Me.Panel3.PerformLayout()
-		CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
 		Me.ResumeLayout(False)
 
 	End Sub

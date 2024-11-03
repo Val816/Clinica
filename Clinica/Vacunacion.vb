@@ -1,136 +1,230 @@
 ﻿Imports MySql.Data.MySqlClient
 
 Public Class Vacunacion
+    Dim connectionString As String = "Server=localhost;Database=veterinaria;User Id=root;Password=root;"
+    Dim vacunas As New Dictionary(Of Integer, Tuple(Of String, Decimal))
 
-        ' Cadena de conexión (ajusta con los datos de tu servidor)
-        Dim connectionString As String = "server=localhost;user id=root;password=tu_contraseña;database=tu_base_de_datos"
+        Private Sub VacunacionForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        LoadVacunas()
+        LlenarComboBoxServicios()
+    End Sub
 
-        ' Función para insertar un registro de vacunación en la base de datos
-        Private Sub GuardarVacunacion()
+    Private Sub LoadVacunas()
+        CheckListVaccines.Items.Clear()
 
-            ' Abrir la conexión
-            Dim conexion As New MySqlConnection(connectionString)
-            conexion.Open()
+        Using connection As New MySqlConnection(connectionString)
+            connection.Open()
+            Dim command As New MySqlCommand("SELECT idVacuna, nombreVac, precio FROM Vacuna", connection)
+            Dim reader As MySqlDataReader = command.ExecuteReader()
+            While reader.Read()
+                Dim idVacuna As Integer = reader.GetInt32(0)
+                Dim nombreVac As String = reader.GetString(1)
+                Dim precio As Decimal = reader.GetDecimal(2)
+                vacunas.Add(idVacuna, New Tuple(Of String, Decimal)(nombreVac, precio))
+
+                CheckListVaccines.Items.Add(nombreVac)
+            End While
+        End Using
+    End Sub
+
+
+    Private Sub CheckListVaccines_ItemCheck(sender As Object, e As ItemCheckEventArgs) Handles CheckListVaccines.ItemCheck
+
+        If e.NewValue = CheckState.Checked Then
+            For i As Integer = 0 To CheckListVaccines.Items.Count - 1
+                If i <> e.Index Then
+                    CheckListVaccines.SetItemChecked(i, False)
+                End If
+            Next
+        End If
+
+        Dim precio As Decimal = 0
+
+        If e.NewValue = CheckState.Checked Then
+            Dim idVacuna As Integer = vacunas.Keys.ElementAt(e.Index)
+            precio = vacunas(idVacuna).Item2
+        End If
+
+        txtTotalPrice.Text = precio.ToString("C")
+    End Sub
+
+
+    Private Sub btnRegistrar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
+        Dim observaciones As String = txtObservaciones.Text.Trim()
+
+        If String.IsNullOrEmpty(observaciones) Then
+            MessageBox.Show("Las observaciones no pueden estar vacías.")
+            Return
+        End If
+
+        Dim idMascota As Integer
+        Using connection As New MySqlConnection(connectionString)
+            connection.Open()
+            idMascota = ObtenerUltimoIdMascota(connection)
+
+            If idMascota = 0 Then
+                MessageBox.Show("No se encontraron mascotas registradas.")
+                Return
+            End If
+
+            Dim fecha As DateTime = DateTime.Now
 
             Try
-                ' 1. Insertar el registro en la tabla RegistroVacunacion, utilizando NOW() para la fecha
-                Dim comandoRegistro As New MySqlCommand("INSERT INTO RegistroVacunacion (idMascota, fecha, observaciones) VALUES (@idMascota, NOW(), @observaciones)", conexion)
-            'comandoRegistro.Parameters.AddWithValue("@idMascota", idMascota)  ' Asume que idMascota está definido
-            comandoRegistro.Parameters.AddWithValue("@observaciones", txtObservaciones.Text)
-                comandoRegistro.ExecuteNonQuery()
+                Dim command As New MySqlCommand("INSERT INTO RegistroVacunacion (idMascota, idVacuna, fecha, observaciones) VALUES (@idMascota, @idVacuna, @fecha, @observaciones)", connection)
+                Dim vacunasSeleccionadas As Boolean = False
 
-                ' Obtener el ID del registro de vacunación recién insertado
-                Dim idRegistroVacunacion As Integer = comandoRegistro.LastInsertedId
+                For i As Integer = 0 To CheckListVaccines.Items.Count - 1
+                    If CheckListVaccines.GetItemChecked(i) Then
+                        Dim idVacuna As Integer = vacunas.Keys.ElementAt(i)
+                        command.Parameters.Clear()
+                        command.Parameters.AddWithValue("@idMascota", idMascota)
+                        command.Parameters.AddWithValue("@idVacuna", idVacuna)
+                        command.Parameters.AddWithValue("@fecha", fecha)
+                        command.Parameters.AddWithValue("@observaciones", observaciones)
 
-                ' 2. Insertar las vacunas seleccionadas en DetalleVacunacion
-                For Each chk As CheckBox In groupBoxVacunasAplicar.Controls
-                    If chk.Checked Then
-                        ' Obtener el id de la vacuna en función del nombre del checkbox (debe coincidir con los nombres de las vacunas en la tabla)
-                        Dim comandoVacuna As New MySqlCommand("SELECT idVacuna FROM Vacuna WHERE nombreVac = @nombreVac", conexion)
-                        comandoVacuna.Parameters.AddWithValue("@nombreVac", chk.Text)
-                        Dim idVacuna As Integer = comandoVacuna.ExecuteScalar()
-
-                        ' Insertar en DetalleVacunacion
-                        Dim comandoDetalle As New MySqlCommand("INSERT INTO DetalleVacunacion (idRegistroVacunacion, idVacuna) VALUES (@idRegistroVacunacion, @idVacuna)", conexion)
-                        comandoDetalle.Parameters.AddWithValue("@idRegistroVacunacion", idRegistroVacunacion)
-                        comandoDetalle.Parameters.AddWithValue("@idVacuna", idVacuna)
-                        comandoDetalle.ExecuteNonQuery()
+                        command.ExecuteNonQuery()
+                        vacunasSeleccionadas = True
                     End If
                 Next
 
-                ' Cerrar la conexión
-                conexion.Close()
-
-                ' Mensaje de confirmación
-                MessageBox.Show("Vacunación registrada exitosamente.", "Registro Completado", MessageBoxButtons.OK, MessageBoxIcon.Information)
-
-            Catch ex As Exception
-                ' Manejo de errores
-                MessageBox.Show("Error al registrar la vacunación: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            Finally
-                ' Asegurarse de cerrar la conexión aunque haya un error
-                If conexion.State = ConnectionState.Open Then
-                    conexion.Close()
+                If vacunasSeleccionadas Then
+                    MessageBox.Show("Registro de vacunación guardado exitosamente.")
+                Else
+                    MessageBox.Show("No se seleccionó ninguna vacuna.")
                 End If
+            Catch ex As MySqlException
+                MessageBox.Show("Error al guardar el registro: " & ex.Message)
             End Try
-        End Sub
+        End Using
 
-        ' Evento del botón Guardar
-        Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
-            ' Llamar a la función GuardarVacunacion cuando el botón se presione
-            GuardarVacunacion()
-        End Sub
+        LoadRegistroVacunacion()
+    End Sub
 
-        ' Asume que hay un botón para regresar al menú principal
-        Private Sub btnMenuPrincipal_Click(sender As Object, e As EventArgs) Handles btnMenuPrincipal.Click
-            ' Regresar al menú principal (o cerrar este formulario)
-            Me.Close()
-        End Sub
-    'Private Sub ComboBoxServicios_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBoxServicios.SelectedIndexChanged
 
-    '    Dim servicioSeleccionado As Object = ComboBoxServicios.SelectedItem
-    '    If servicioSeleccionado Is Nothing Then
-    '        MessageBox.Show("Por favor, selecciona un servicio.")
-    '        Return
-    '    End If
+    Private Function ObtenerUltimoIdMascota(connection As MySqlConnection) As Integer
+        Dim idMascota As Integer = 0
+        Try
+            Dim query As String = "SELECT MAX(idMascota) FROM Mascota"
+            Using cmd As New MySqlCommand(query, connection)
+                Dim result = cmd.ExecuteScalar()
+                If result IsNot Nothing AndAlso Not IsDBNull(result) Then
+                    idMascota = Convert.ToInt32(result)
+                End If
+            End Using
+        Catch ex As Exception
+            MessageBox.Show("Error al obtener el ID de la mascota: " & ex.Message)
+        End Try
+        Return idMascota
+    End Function
 
-    '    Dim idServicio As Integer = servicioSeleccionado.Value
+    Private Sub LoadRegistroVacunacion()
+        ' Cargar y mostrar el registro de vacunación en un DataGridView
+        Dim dt As New DataTable()
+        Using connection As New MySqlConnection(connectionString)
+            connection.Open()
+            Dim command As New MySqlCommand("SELECT m.nomMasc, v.nombreVac, r.fecha, v.precio, r.observaciones FROM RegistroVacunacion r JOIN Vacuna v ON r.idVacuna = v.idVacuna JOIN Mascota m ON r.idMascota = m.idMascota", connection)
+            Dim adapter As New MySqlDataAdapter(command)
+            adapter.Fill(dt)
+            dgvRegistroVacunacion.DataSource = dt
+        End Using
 
-    '    Select Case idServicio
-    '        Case 1 ' 
-    '            Dim formCirugia As New Cirugía()
-    '            formCirugia.Show()
-    '            Me.Hide()
+        ' Cambiar los títulos de las columnas
+        dgvRegistroVacunacion.Columns(0).HeaderText = "Nombre de Mascota"
+        dgvRegistroVacunacion.Columns(1).HeaderText = "Nombre de Vacuna"
+        dgvRegistroVacunacion.Columns(2).HeaderText = "Fecha"
+        dgvRegistroVacunacion.Columns(3).HeaderText = "Costo"
+        dgvRegistroVacunacion.Columns(4).HeaderText = "Observaciones"
+    End Sub
 
-    '        Case 2 ' 
-    '            Dim consultamedica As New Consulta_Médica()
-    '            consultamedica.Show()
-    '            Me.Hide()
 
-    '        Case 3
-    '            Dim formDesparacitacion As New desparacitación()
-    '            formDesparacitacion.Show()
-    '            Me.Hide()
+    Private Sub LlenarComboBoxServicios()
+        ComboBoxServicios.Items.Clear()
+        Dim query As String = "SELECT DISTINCT idServicio, nombre FROM Servicio"
+        Using conn As New MySqlConnection("Server=localhost;Database=veterinaria;User Id=root;Password=root;")
+            Using cmd As New MySqlCommand(query, conn)
+                conn.Open()
+                Dim reader As MySqlDataReader = cmd.ExecuteReader()
+                While reader.Read()
+                    ComboBoxServicios.Items.Add(New With {.Value = reader("idServicio"), .Text = reader("nombre")})
+                End While
+            End Using
+        End Using
+        ComboBoxServicios.DisplayMember = "Text"
+        ComboBoxServicios.ValueMember = "Value"
+    End Sub
+    Private Sub ComboBoxServicios_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBoxServicios.SelectedIndexChanged
 
-    '        Case 4
-    '            Dim formEsterilizacion As New Castración_y_Esterilización()
-    '            formEsterilizacion.Show()
-    '            Me.Hide()
+        Dim servicioSeleccionado As Object = ComboBoxServicios.SelectedItem
+        If servicioSeleccionado Is Nothing Then
+            MessageBox.Show("Por favor, selecciona un servicio.")
+            Return
+        End If
 
-    '        Case 5
-    '            Dim formPension As New Pensión()
-    '            formPension.Show()
-    '            Me.Hide()
+        Dim idServicio As Integer = servicioSeleccionado.Value
 
-    '        Case 6
-    '            Dim formGrooming As New Estética()
-    '            formGrooming.Show()
-    '            Me.Hide()
-    '        Case 7
-    '            Dim formEutanasia As New Eutanasia()
-    '            formEutanasia.Show()
-    '            Me.Hide()
+        Select Case idServicio
+            Case 1 ' 
+                Dim formCirugia As New Cirugía()
+                formCirugia.Show()
+                Me.Hide()
 
-    '        Case 8
-    '            Dim formGrooming As New Vacunacion()
-    '            formGrooming.Show()
-    '            Me.Hide()
+            Case 2 ' 
+                Dim consultamedica As New Consulta_Médica()
+                consultamedica.Show()
+                Me.Hide()
 
-    '        Case 9
-    '            Dim formHospitalizacion As New Hospitalización()
-    '            formHospitalizacion.Show()
-    '            Me.Hide()
-    '        Case 10
-    '            Dim formProfilaxis As New Proaxis_Dental()
-    '            formProfilaxis.Show()
-    '            Me.Hide()
-    '        Case 11
-    '            Dim formmRecibo As New Recibo()
-    '            formmRecibo.Show()
-    '            Me.Hide()
-    '        Case Else
-    '            MessageBox.Show("Servicio no reconocido. Por favor, selecciona un servicio válido.")
+            Case 3
+                Dim formDesparacitacion As New DesparacitacionForm()
+                formDesparacitacion.Show()
+                Me.Hide()
 
-    '    End Select
-    'End Sub
+            Case 4
+                Dim formEsterilizacion As New Castración_y_Esterilización()
+                formEsterilizacion.Show()
+                Me.Hide()
+
+            Case 5
+                Dim formPension As New Pensión()
+                formPension.Show()
+                Me.Hide()
+
+            Case 6
+                Dim formGrooming As New Estética()
+                formGrooming.Show()
+                Me.Hide()
+            Case 7
+                Dim formEutanasia As New Eutanasia()
+                formEutanasia.Show()
+                Me.Hide()
+
+            Case 8
+                Dim formGrooming As New Vacunacion()
+                formGrooming.Show()
+                Me.Hide()
+
+            Case 9
+                Dim formHospitalizacion As New Hospitalización()
+                formHospitalizacion.Show()
+                Me.Hide()
+            Case 10
+                Dim formProfilaxis As New Proaxis_Dental()
+                formProfilaxis.Show()
+                Me.Hide()
+            Case 11
+                Dim formmRecibo As New Recibo()
+                formmRecibo.Show()
+                Me.Hide()
+            Case Else
+                MessageBox.Show("Servicio no reconocido. Por favor, selecciona un servicio válido.")
+
+        End Select
+    End Sub
+    Private Sub btnMenuPrincipal_Click(sender As Object, e As EventArgs) Handles btnMenuPrincipal.Click
+
+        Dim menuPrincipal As New Menu_Principal()
+        menuPrincipal.Show()
+
+        Me.Close()
+    End Sub
+
 End Class
