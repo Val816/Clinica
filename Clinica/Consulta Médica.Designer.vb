@@ -437,7 +437,7 @@ Partial Class Consulta_Médica
 		Me.Panel3.Controls.Add(Me.Label7)
 		Me.Panel3.Controls.Add(Me.Label2)
 		Me.Panel3.Controls.Add(Me.Label4)
-		Me.Panel3.Location = New System.Drawing.Point(33, 130)
+		Me.Panel3.Location = New System.Drawing.Point(33, 117)
 		Me.Panel3.Name = "Panel3"
 		Me.Panel3.Size = New System.Drawing.Size(364, 337)
 		Me.Panel3.TabIndex = 37
@@ -453,7 +453,7 @@ Partial Class Consulta_Médica
 		Me.Panel4.Controls.Add(Me.Label10)
 		Me.Panel4.Controls.Add(Me.ComboBoxDesparacitacion)
 		Me.Panel4.Controls.Add(Me.Label9)
-		Me.Panel4.Location = New System.Drawing.Point(403, 130)
+		Me.Panel4.Location = New System.Drawing.Point(403, 117)
 		Me.Panel4.Name = "Panel4"
 		Me.Panel4.Size = New System.Drawing.Size(280, 337)
 		Me.Panel4.TabIndex = 38
