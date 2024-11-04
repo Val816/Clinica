@@ -24,6 +24,8 @@ Partial Class DesparacitacionForm
 	Private Sub InitializeComponent()
 		Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(DesparacitacionForm))
 		Me.Panel1 = New System.Windows.Forms.Panel()
+		Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+		Me.Label6 = New System.Windows.Forms.Label()
 		Me.btnMenuPrincipal = New System.Windows.Forms.Button()
 		Me.Label1 = New System.Windows.Forms.Label()
 		Me.Panel2 = New System.Windows.Forms.Panel()
@@ -35,21 +37,23 @@ Partial Class DesparacitacionForm
 		Me.txtCosto = New System.Windows.Forms.TextBox()
 		Me.Label2 = New System.Windows.Forms.Label()
 		Me.Panel3 = New System.Windows.Forms.Panel()
-		Me.lblTipoDesparacitacion = New System.Windows.Forms.Label()
 		Me.Label4 = New System.Windows.Forms.Label()
 		Me.Label3 = New System.Windows.Forms.Label()
 		Me.cbDesparacitacion = New System.Windows.Forms.ComboBox()
-		Me.dgvDesparacitacion = New System.Windows.Forms.DataGridView()
+		Me.dataGridDesparacitaciones = New System.Windows.Forms.DataGridView()
 		Me.Panel1.SuspendLayout()
+		CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.Panel2.SuspendLayout()
 		CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.Panel3.SuspendLayout()
-		CType(Me.dgvDesparacitacion, System.ComponentModel.ISupportInitialize).BeginInit()
+		CType(Me.dataGridDesparacitaciones, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.SuspendLayout()
 		'
 		'Panel1
 		'
 		Me.Panel1.BackColor = System.Drawing.Color.SteelBlue
+		Me.Panel1.Controls.Add(Me.PictureBox2)
+		Me.Panel1.Controls.Add(Me.Label6)
 		Me.Panel1.Controls.Add(Me.btnMenuPrincipal)
 		Me.Panel1.Controls.Add(Me.Label1)
 		Me.Panel1.Location = New System.Drawing.Point(1, 0)
@@ -57,6 +61,29 @@ Partial Class DesparacitacionForm
 		Me.Panel1.Name = "Panel1"
 		Me.Panel1.Size = New System.Drawing.Size(842, 78)
 		Me.Panel1.TabIndex = 5
+		'
+		'PictureBox2
+		'
+		Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
+		Me.PictureBox2.Location = New System.Drawing.Point(11, 2)
+		Me.PictureBox2.Margin = New System.Windows.Forms.Padding(2)
+		Me.PictureBox2.Name = "PictureBox2"
+		Me.PictureBox2.Size = New System.Drawing.Size(60, 52)
+		Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+		Me.PictureBox2.TabIndex = 86
+		Me.PictureBox2.TabStop = False
+		'
+		'Label6
+		'
+		Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.Label6.ForeColor = System.Drawing.Color.Black
+		Me.Label6.Location = New System.Drawing.Point(2, 56)
+		Me.Label6.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+		Me.Label6.Name = "Label6"
+		Me.Label6.Size = New System.Drawing.Size(83, 18)
+		Me.Label6.TabIndex = 85
+		Me.Label6.Text = "VETCARE"
+		Me.Label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
 		'
 		'btnMenuPrincipal
 		'
@@ -136,7 +163,7 @@ Partial Class DesparacitacionForm
 		Me.ComboBoxServicios.ForeColor = System.Drawing.Color.Black
 		Me.ComboBoxServicios.FormattingEnabled = True
 		Me.ComboBoxServicios.Items.AddRange(New Object() {"Consulta Médica", "Desparacitación", "Vacunación", "Eutanasia", "Cirugía", "Estética", "Pensión", "Castración", "Proaxis Dental"})
-		Me.ComboBoxServicios.Location = New System.Drawing.Point(391, 305)
+		Me.ComboBoxServicios.Location = New System.Drawing.Point(406, 264)
 		Me.ComboBoxServicios.Margin = New System.Windows.Forms.Padding(2)
 		Me.ComboBoxServicios.Name = "ComboBoxServicios"
 		Me.ComboBoxServicios.Size = New System.Drawing.Size(147, 21)
@@ -146,10 +173,10 @@ Partial Class DesparacitacionForm
 		'PictureBox1
 		'
 		Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-		Me.PictureBox1.Location = New System.Drawing.Point(437, 330)
+		Me.PictureBox1.Location = New System.Drawing.Point(327, 90)
 		Me.PictureBox1.Margin = New System.Windows.Forms.Padding(2)
 		Me.PictureBox1.Name = "PictureBox1"
-		Me.PictureBox1.Size = New System.Drawing.Size(112, 77)
+		Me.PictureBox1.Size = New System.Drawing.Size(226, 154)
 		Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
 		Me.PictureBox1.TabIndex = 35
 		Me.PictureBox1.TabStop = False
@@ -174,7 +201,6 @@ Partial Class DesparacitacionForm
 		'Panel3
 		'
 		Me.Panel3.BackColor = System.Drawing.Color.LightSteelBlue
-		Me.Panel3.Controls.Add(Me.lblTipoDesparacitacion)
 		Me.Panel3.Controls.Add(Me.Label4)
 		Me.Panel3.Controls.Add(Me.Label3)
 		Me.Panel3.Controls.Add(Me.Label2)
@@ -182,19 +208,10 @@ Partial Class DesparacitacionForm
 		Me.Panel3.Controls.Add(Me.txtObservaciones)
 		Me.Panel3.Controls.Add(Me.txtCosto)
 		Me.Panel3.Controls.Add(Me.cbDesparacitacion)
-		Me.Panel3.Location = New System.Drawing.Point(390, 89)
+		Me.Panel3.Location = New System.Drawing.Point(55, 88)
 		Me.Panel3.Name = "Panel3"
 		Me.Panel3.Size = New System.Drawing.Size(193, 202)
 		Me.Panel3.TabIndex = 38
-		'
-		'lblTipoDesparacitacion
-		'
-		Me.lblTipoDesparacitacion.AutoSize = True
-		Me.lblTipoDesparacitacion.Location = New System.Drawing.Point(21, 57)
-		Me.lblTipoDesparacitacion.Name = "lblTipoDesparacitacion"
-		Me.lblTipoDesparacitacion.Size = New System.Drawing.Size(39, 13)
-		Me.lblTipoDesparacitacion.TabIndex = 39
-		Me.lblTipoDesparacitacion.Text = "Label5"
 		'
 		'Label4
 		'
@@ -210,7 +227,7 @@ Partial Class DesparacitacionForm
 		'
 		Me.Label3.BackColor = System.Drawing.Color.Transparent
 		Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.Label3.Location = New System.Drawing.Point(9, 3)
+		Me.Label3.Location = New System.Drawing.Point(14, 6)
 		Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
 		Me.Label3.Name = "Label3"
 		Me.Label3.Size = New System.Drawing.Size(169, 29)
@@ -231,36 +248,37 @@ Partial Class DesparacitacionForm
 		Me.cbDesparacitacion.TabIndex = 26
 		Me.cbDesparacitacion.Text = "Desparacitación"
 		'
-		'dgvDesparacitacion
+		'dataGridDesparacitaciones
 		'
-		Me.dgvDesparacitacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-		Me.dgvDesparacitacion.Location = New System.Drawing.Point(12, 92)
-		Me.dgvDesparacitacion.Name = "dgvDesparacitacion"
-		Me.dgvDesparacitacion.Size = New System.Drawing.Size(361, 291)
-		Me.dgvDesparacitacion.TabIndex = 39
+		Me.dataGridDesparacitaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+		Me.dataGridDesparacitaciones.Location = New System.Drawing.Point(19, 301)
+		Me.dataGridDesparacitaciones.Name = "dataGridDesparacitaciones"
+		Me.dataGridDesparacitaciones.Size = New System.Drawing.Size(555, 105)
+		Me.dataGridDesparacitaciones.TabIndex = 39
 		'
-		'desparacitación
+		'DesparacitacionForm
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
 		Me.BackColor = System.Drawing.SystemColors.ButtonHighlight
 		Me.ClientSize = New System.Drawing.Size(595, 464)
-		Me.Controls.Add(Me.dgvDesparacitacion)
-		Me.Controls.Add(Me.Panel3)
+		Me.Controls.Add(Me.dataGridDesparacitaciones)
 		Me.Controls.Add(Me.ComboBoxServicios)
 		Me.Controls.Add(Me.PictureBox1)
 		Me.Controls.Add(Me.Panel2)
 		Me.Controls.Add(Me.Panel1)
+		Me.Controls.Add(Me.Panel3)
 		Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
 		Me.Margin = New System.Windows.Forms.Padding(2)
-		Me.Name = "desparacitación"
+		Me.Name = "DesparacitacionForm"
 		Me.Text = "Desparacitación"
 		Me.Panel1.ResumeLayout(False)
+		CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
 		Me.Panel2.ResumeLayout(False)
 		CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
 		Me.Panel3.ResumeLayout(False)
 		Me.Panel3.PerformLayout()
-		CType(Me.dgvDesparacitacion, System.ComponentModel.ISupportInitialize).EndInit()
+		CType(Me.dataGridDesparacitaciones, System.ComponentModel.ISupportInitialize).EndInit()
 		Me.ResumeLayout(False)
 
 	End Sub
@@ -279,7 +297,8 @@ Partial Class DesparacitacionForm
 	Friend WithEvents Panel3 As Panel
 	Friend WithEvents Label4 As Label
 	Friend WithEvents Label3 As Label
-	Friend WithEvents dgvDesparacitacion As DataGridView
-	Friend WithEvents lblTipoDesparacitacion As Label
+	Friend WithEvents dataGridDesparacitaciones As DataGridView
 	Friend WithEvents cbDesparacitacion As ComboBox
+	Friend WithEvents PictureBox2 As PictureBox
+	Friend WithEvents Label6 As Label
 End Class
