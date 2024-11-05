@@ -116,12 +116,13 @@ Public Class Estética
                         esteticasSeleccionadas = True
 
                         ' Intentar insertar cada servicio seleccionado en la base de datos
-                        Using command As New MySqlCommand("INSERT INTO serviciosestetica (idMascota, idEstetica, horaEntrada, horaSalida, observaciones) VALUES (@idMascota, @idEstetica, @horaEntrada, @horaSalida, @observaciones)", connection)
+                        Using command As New MySqlCommand("INSERT INTO serviciosestetica (idMascota, idEstetica, horaEntrada, horaSalida, observaciones,costo) VALUES (@idMascota, @idEstetica, @horaEntrada, @horaSalida, @observaciones,@costo)", connection)
                             command.Parameters.AddWithValue("@idMascota", idMascota)
                             command.Parameters.AddWithValue("@idEstetica", idEstetica)
                             command.Parameters.AddWithValue("@horaEntrada", fechaEntrada)
                             command.Parameters.AddWithValue("@horaSalida", horaSalida)
                             command.Parameters.AddWithValue("@observaciones", observaciones)
+                            command.Parameters.AddWithValue("@costo", costoTotal)
 
                             Try
                                 command.ExecuteNonQuery()
