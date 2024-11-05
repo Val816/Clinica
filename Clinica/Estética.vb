@@ -112,7 +112,8 @@ Public Class Estética
                     Dim idEstetica As Integer = esteticas.Keys.ElementAt(i)
 
                     If costosEstetica.ContainsKey(servicio) AndAlso costosEstetica(servicio).ContainsKey(tallaMascota) Then
-                        costoTotal += costosEstetica(servicio)(tallaMascota)
+                        Dim costoServicio As Decimal = costosEstetica(servicio)(tallaMascota)
+                        costoTotal += costoServicio
                         esteticasSeleccionadas = True
 
                         ' Intentar insertar cada servicio seleccionado en la base de datos
@@ -122,7 +123,7 @@ Public Class Estética
                             command.Parameters.AddWithValue("@horaEntrada", fechaEntrada)
                             command.Parameters.AddWithValue("@horaSalida", horaSalida)
                             command.Parameters.AddWithValue("@observaciones", observaciones)
-                            command.Parameters.AddWithValue("@costo", costoTotal)
+                            command.Parameters.AddWithValue("@costo", costoServicio)
 
                             Try
                                 command.ExecuteNonQuery()
