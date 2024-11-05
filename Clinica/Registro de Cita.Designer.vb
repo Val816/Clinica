@@ -24,10 +24,13 @@ Partial Class Registro_de_Cita
 	Private Sub InitializeComponent()
 		Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Registro_de_Cita))
 		Me.Panel1 = New System.Windows.Forms.Panel()
+		Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+		Me.Label14 = New System.Windows.Forms.Label()
 		Me.btnMenuPrincipal = New System.Windows.Forms.Button()
 		Me.Label1 = New System.Windows.Forms.Label()
 		Me.Panel2 = New System.Windows.Forms.Panel()
 		Me.Panel3 = New System.Windows.Forms.Panel()
+		Me.PictureBox1 = New System.Windows.Forms.PictureBox()
 		Me.btnRegistrarCita = New System.Windows.Forms.Button()
 		Me.DateTimePickerFecha = New System.Windows.Forms.DateTimePicker()
 		Me.txtHora = New System.Windows.Forms.TextBox()
@@ -45,14 +48,11 @@ Partial Class Registro_de_Cita
 		Me.Label3 = New System.Windows.Forms.Label()
 		Me.Label2 = New System.Windows.Forms.Label()
 		Me.DataGridViewCitas = New System.Windows.Forms.DataGridView()
-		Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-		Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-		Me.Label14 = New System.Windows.Forms.Label()
 		Me.Panel1.SuspendLayout()
-		Me.Panel3.SuspendLayout()
-		CType(Me.DataGridViewCitas, System.ComponentModel.ISupportInitialize).BeginInit()
-		CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+		Me.Panel3.SuspendLayout()
+		CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+		CType(Me.DataGridViewCitas, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.SuspendLayout()
 		'
 		'Panel1
@@ -67,6 +67,29 @@ Partial Class Registro_de_Cita
 		Me.Panel1.Name = "Panel1"
 		Me.Panel1.Size = New System.Drawing.Size(855, 98)
 		Me.Panel1.TabIndex = 1
+		'
+		'PictureBox2
+		'
+		Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
+		Me.PictureBox2.Location = New System.Drawing.Point(2, 2)
+		Me.PictureBox2.Margin = New System.Windows.Forms.Padding(2)
+		Me.PictureBox2.Name = "PictureBox2"
+		Me.PictureBox2.Size = New System.Drawing.Size(60, 52)
+		Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+		Me.PictureBox2.TabIndex = 96
+		Me.PictureBox2.TabStop = False
+		'
+		'Label14
+		'
+		Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.Label14.ForeColor = System.Drawing.Color.Black
+		Me.Label14.Location = New System.Drawing.Point(-3, 54)
+		Me.Label14.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+		Me.Label14.Name = "Label14"
+		Me.Label14.Size = New System.Drawing.Size(83, 18)
+		Me.Label14.TabIndex = 95
+		Me.Label14.Text = "VETCARE"
+		Me.Label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
 		'
 		'btnMenuPrincipal
 		'
@@ -87,7 +110,7 @@ Partial Class Registro_de_Cita
 		Me.Label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
 		Me.Label1.Font = New System.Drawing.Font("Arial Narrow", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
 		Me.Label1.ForeColor = System.Drawing.SystemColors.ControlLightLight
-		Me.Label1.Location = New System.Drawing.Point(220, 29)
+		Me.Label1.Location = New System.Drawing.Point(197, 29)
 		Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
 		Me.Label1.Name = "Label1"
 		Me.Label1.Size = New System.Drawing.Size(229, 39)
@@ -129,6 +152,17 @@ Partial Class Registro_de_Cita
 		Me.Panel3.Name = "Panel3"
 		Me.Panel3.Size = New System.Drawing.Size(614, 176)
 		Me.Panel3.TabIndex = 3
+		'
+		'PictureBox1
+		'
+		Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+		Me.PictureBox1.Location = New System.Drawing.Point(0, 109)
+		Me.PictureBox1.Margin = New System.Windows.Forms.Padding(2)
+		Me.PictureBox1.Name = "PictureBox1"
+		Me.PictureBox1.Size = New System.Drawing.Size(134, 68)
+		Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+		Me.PictureBox1.TabIndex = 5
+		Me.PictureBox1.TabStop = False
 		'
 		'btnRegistrarCita
 		'
@@ -325,40 +359,6 @@ Partial Class Registro_de_Cita
 		Me.DataGridViewCitas.Size = New System.Drawing.Size(614, 128)
 		Me.DataGridViewCitas.TabIndex = 0
 		'
-		'PictureBox1
-		'
-		Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-		Me.PictureBox1.Location = New System.Drawing.Point(0, 109)
-		Me.PictureBox1.Margin = New System.Windows.Forms.Padding(2)
-		Me.PictureBox1.Name = "PictureBox1"
-		Me.PictureBox1.Size = New System.Drawing.Size(134, 68)
-		Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-		Me.PictureBox1.TabIndex = 5
-		Me.PictureBox1.TabStop = False
-		'
-		'PictureBox2
-		'
-		Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
-		Me.PictureBox2.Location = New System.Drawing.Point(2, 2)
-		Me.PictureBox2.Margin = New System.Windows.Forms.Padding(2)
-		Me.PictureBox2.Name = "PictureBox2"
-		Me.PictureBox2.Size = New System.Drawing.Size(60, 52)
-		Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-		Me.PictureBox2.TabIndex = 96
-		Me.PictureBox2.TabStop = False
-		'
-		'Label14
-		'
-		Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.Label14.ForeColor = System.Drawing.Color.Black
-		Me.Label14.Location = New System.Drawing.Point(-3, 54)
-		Me.Label14.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-		Me.Label14.Name = "Label14"
-		Me.Label14.Size = New System.Drawing.Size(83, 18)
-		Me.Label14.TabIndex = 95
-		Me.Label14.Text = "VETCARE"
-		Me.Label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-		'
 		'Registro_de_Cita
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -374,11 +374,11 @@ Partial Class Registro_de_Cita
 		Me.Name = "Registro_de_Cita"
 		Me.Text = "Registro de Cita"
 		Me.Panel1.ResumeLayout(False)
+		CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
 		Me.Panel3.ResumeLayout(False)
 		Me.Panel3.PerformLayout()
-		CType(Me.DataGridViewCitas, System.ComponentModel.ISupportInitialize).EndInit()
 		CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-		CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+		CType(Me.DataGridViewCitas, System.ComponentModel.ISupportInitialize).EndInit()
 		Me.ResumeLayout(False)
 
 	End Sub

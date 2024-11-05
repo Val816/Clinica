@@ -154,7 +154,7 @@ Partial Class Registro_de_Mascota
 		Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
 		Me.btnGuardar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
 		Me.btnGuardar.ForeColor = System.Drawing.SystemColors.ControlText
-		Me.btnGuardar.Location = New System.Drawing.Point(280, 241)
+		Me.btnGuardar.Location = New System.Drawing.Point(857, 242)
 		Me.btnGuardar.Margin = New System.Windows.Forms.Padding(2)
 		Me.btnGuardar.Name = "btnGuardar"
 		Me.btnGuardar.Size = New System.Drawing.Size(77, 25)
@@ -257,7 +257,7 @@ Partial Class Registro_de_Mascota
 		Me.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Popup
 		Me.btnEliminar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
 		Me.btnEliminar.ForeColor = System.Drawing.SystemColors.ControlText
-		Me.btnEliminar.Location = New System.Drawing.Point(28, 241)
+		Me.btnEliminar.Location = New System.Drawing.Point(605, 242)
 		Me.btnEliminar.Name = "btnEliminar"
 		Me.btnEliminar.Size = New System.Drawing.Size(75, 25)
 		Me.btnEliminar.TabIndex = 34
@@ -272,7 +272,7 @@ Partial Class Registro_de_Mascota
 		Me.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
 		Me.btnBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
 		Me.btnBuscar.ForeColor = System.Drawing.SystemColors.ControlText
-		Me.btnBuscar.Location = New System.Drawing.Point(157, 241)
+		Me.btnBuscar.Location = New System.Drawing.Point(734, 242)
 		Me.btnBuscar.Name = "btnBuscar"
 		Me.btnBuscar.Size = New System.Drawing.Size(75, 25)
 		Me.btnBuscar.TabIndex = 35
@@ -289,7 +289,7 @@ Partial Class Registro_de_Mascota
 		Me.Panel5.Controls.Add(Me.txtCelular)
 		Me.Panel5.Controls.Add(Me.Label11)
 		Me.Panel5.Controls.Add(Me.Label10)
-		Me.Panel5.Location = New System.Drawing.Point(28, 89)
+		Me.Panel5.Location = New System.Drawing.Point(605, 89)
 		Me.Panel5.Name = "Panel5"
 		Me.Panel5.Size = New System.Drawing.Size(329, 130)
 		Me.Panel5.TabIndex = 36
@@ -345,7 +345,7 @@ Partial Class Registro_de_Mascota
 		Me.Panel6.Controls.Add(Me.Label6)
 		Me.Panel6.Controls.Add(Me.Label5)
 		Me.Panel6.Controls.Add(Me.Label4)
-		Me.Panel6.Location = New System.Drawing.Point(378, 89)
+		Me.Panel6.Location = New System.Drawing.Point(28, 89)
 		Me.Panel6.Name = "Panel6"
 		Me.Panel6.Size = New System.Drawing.Size(556, 209)
 		Me.Panel6.TabIndex = 37
@@ -600,7 +600,7 @@ Partial Class Registro_de_Mascota
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
 		Me.BackColor = System.Drawing.SystemColors.ControlLightLight
-		Me.ClientSize = New System.Drawing.Size(969, 587)
+		Me.ClientSize = New System.Drawing.Size(961, 587)
 		Me.Controls.Add(Me.Panel6)
 		Me.Controls.Add(Me.Panel5)
 		Me.Controls.Add(Me.btnGuardar)
