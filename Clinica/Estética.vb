@@ -6,32 +6,32 @@ Public Class Estética
 
     Private costosEstetica As New Dictionary(Of String, Dictionary(Of String, Decimal)) From {
         {"Baño", New Dictionary(Of String, Decimal) From {
-            {"chica", 400},
+            {"pequeña", 400},
             {"mediana", 650},
             {"grande", 900}
         }},
-        {"Corte de pelo", New Dictionary(Of String, Decimal) From {
-            {"chico", 200},
-            {"mediano", 350},
+        {"Corte de Pelo", New Dictionary(Of String, Decimal) From {
+            {"pequeña", 200},
+            {"mediana", 350},
             {"grande", 700}
         }},
+        {"Corte de Uñas", New Dictionary(Of String, Decimal) From {
+            {"pequeña", 100},
+            {"mediana", 150},
+            {"grande", 200}
+            }},
         {"Cepillado", New Dictionary(Of String, Decimal) From {
-            {"chica", 150},
+            {"pequeña", 150},
             {"mediana", 250},
             {"grande", 350}
         }},
-        {"Corte de uñas", New Dictionary(Of String, Decimal) From {
-            {"chica", 100},
-            {"mediana", 150},
-            {"grande", 200}
-        }},
         {"Perfumado", New Dictionary(Of String, Decimal) From {
-            {"chica", 50},
+            {"pequeña", 50},
             {"mediana", 75},
             {"grande", 100}
         }},
         {"Spa", New Dictionary(Of String, Decimal) From {
-            {"chica", 350},
+            {"pequeña", 350},
             {"mediana", 425},
             {"grande", 570}
         }}
@@ -44,6 +44,7 @@ Public Class Estética
 
     Private Sub LoadEsteticas()
         CheckListEsteticas.Items.Clear()
+        txtTotalEstetica.Text = "0.00"
 
         Using connection As New MySqlConnection(connectionString)
             connection.Open()
@@ -59,8 +60,9 @@ Public Class Estética
         End Using
     End Sub
 
+
     Private Sub CheckListEsteticas_ItemCheck(sender As Object, e As ItemCheckEventArgs) Handles CheckListEsteticas.ItemCheck
-        ' Esperar a que se complete la verificación del ítem antes de calcular el total
+
         Me.BeginInvoke(Sub()
                            Dim totalPrecio As Decimal = 0
                            For i As Integer = 0 To CheckListEsteticas.Items.Count - 1
@@ -69,8 +71,8 @@ Public Class Estética
                                    totalPrecio += esteticas(idEstetica).Item2
                                End If
                            Next
-
                            txtTotalEstetica.Text = totalPrecio.ToString("C")
+
                        End Sub)
     End Sub
 
@@ -105,7 +107,7 @@ Public Class Estética
             Dim esteticasSeleccionadas As Boolean = False
             Dim serviciosNoRegistrados As New List(Of String)()
 
-            ' Iterar sobre las opciones del CheckedListBox
+            ' Recorre los servicios seleccionados
             For i As Integer = 0 To CheckListEsteticas.Items.Count - 1
                 If CheckListEsteticas.GetItemChecked(i) Then
                     Dim servicio As String = CheckListEsteticas.Items(i).ToString()
@@ -116,7 +118,7 @@ Public Class Estética
                         costoTotal += costoServicio
                         esteticasSeleccionadas = True
 
-                        ' Intentar insertar cada servicio seleccionado en la base de datos
+                        ' Guardar cada servicio seleccionado en la base de datos
                         Using command As New MySqlCommand("INSERT INTO serviciosestetica (idMascota, idEstetica, horaEntrada, horaSalida, observaciones,costo) VALUES (@idMascota, @idEstetica, @horaEntrada, @horaSalida, @observaciones,@costo)", connection)
                             command.Parameters.AddWithValue("@idMascota", idMascota)
                             command.Parameters.AddWithValue("@idEstetica", idEstetica)
@@ -128,18 +130,18 @@ Public Class Estética
                             Try
                                 command.ExecuteNonQuery()
                             Catch ex As MySqlException
-                                serviciosNoRegistrados.Add(servicio) ' Agrega el servicio a la lista de no registrados
+                                serviciosNoRegistrados.Add(servicio)
                             End Try
                         End Using
                     Else
-                        serviciosNoRegistrados.Add(servicio) ' Agrega el servicio a la lista de no registrados
+                        serviciosNoRegistrados.Add(servicio)
                     End If
                 End If
             Next
 
+            ' Mostrar el total y los mensajes correspondientes
             If esteticasSeleccionadas Then
-                ' Aquí muestra el costo total que se usó para el registro
-                txtTotalEstetica.Text = costoTotal.ToString("C") ' Asegúrate de que se muestre el mismo total
+                txtTotalEstetica.Text = costoTotal.ToString("C")
                 MessageBox.Show("El costo total de los servicios estéticos es: " & costoTotal.ToString("C2"))
                 If serviciosNoRegistrados.Count > 0 Then
                     MessageBox.Show("Los siguientes servicios no se pudieron registrar: " & String.Join(", ", serviciosNoRegistrados))
@@ -151,7 +153,6 @@ Public Class Estética
             End If
         End Using
     End Sub
-
 
 
     Private Function ObtenerUltimoIdMascota(connection As MySqlConnection) As Integer
@@ -188,7 +189,7 @@ Public Class Estética
     Private Function ObtenerNombreTalla(idTalla As Integer) As String
         Select Case idTalla
             Case 1
-                Return "chica"
+                Return "pequeña"
             Case 2
                 Return "mediana"
             Case 3
