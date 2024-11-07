@@ -3,20 +3,58 @@
 Public Class Consulta_Médica
     Private conexionString As String = "Server=localhost;Database=veterinaria;User Id=root;Password=root;"
     Private idMascota As Integer
-
-    Private Sub SeleccionarMascota(mascotaId As Integer)
-        idMascota = mascotaId
-    End Sub
+    Private idEstadoReprod As Integer
 
     Private Sub ConsultaMedicaForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Using conn As New MySqlConnection(conexionString)
+            conn.Open()
+            idMascota = ObtenerUltimoIdMascota(conn)
+            idEstadoReprod = ObtenerUltimoIdEstadoReprod(conn)
+        End Using
         LlenarComboBoxDesparacitacion()
         LlenarComboBoxVacunas()
         LlenarComboBoxEstadoReprod()
         LlenarComboBoxServicios()
+
+        ' Establecer el último valor de estado reproductivo en el ComboBox
+        ComboBoxEstadoReprod.SelectedValue = idEstadoReprod
     End Sub
+
+    Private Function ObtenerUltimoIdMascota(connection As MySqlConnection) As Integer
+        Dim idMascota As Integer = 0
+        Try
+            Dim query As String = "SELECT MAX(idMascota) FROM Mascota"
+            Using cmd As New MySqlCommand(query, connection)
+                Dim result = cmd.ExecuteScalar()
+                If result IsNot Nothing AndAlso Not IsDBNull(result) Then
+                    idMascota = Convert.ToInt32(result)
+                End If
+            End Using
+        Catch ex As Exception
+            MessageBox.Show("Error al obtener el ID de la mascota: " & ex.Message)
+        End Try
+        Return idMascota
+    End Function
+
+    Private Function ObtenerUltimoIdEstadoReprod(connection As MySqlConnection) As Integer
+        Dim idEstadoReprod As Integer = 0
+        Try
+            Dim query As String = "SELECT idEstadoReproductivo FROM Mascota ORDER BY idMascota DESC LIMIT 1"
+            Using cmd As New MySqlCommand(query, connection)
+                Dim result = cmd.ExecuteScalar()
+                If result IsNot Nothing AndAlso Not IsDBNull(result) Then
+                    idEstadoReprod = Convert.ToInt32(result)
+                End If
+            End Using
+        Catch ex As Exception
+            MessageBox.Show("Error al obtener el ID de estado reproductivo: " & ex.Message)
+        End Try
+        Return idEstadoReprod
+    End Function
 
     Private Sub LlenarComboBoxDesparacitacion()
         ComboBoxDesparacitacion.Items.Clear()
+        ComboBoxDesparacitacion.Items.Add(New KeyValuePair(Of Integer, String)(0, "No aplica")) ' Agregar "No aplica"
 
         Dim query As String = "SELECT idDesparacitacion, nombre FROM Desparacitacion"
         Using conn As New MySqlConnection(conexionString)
@@ -28,14 +66,13 @@ Public Class Consulta_Médica
                 End While
             End Using
         End Using
-
         ComboBoxDesparacitacion.DisplayMember = "Value"
         ComboBoxDesparacitacion.ValueMember = "Key"
     End Sub
 
-
     Private Sub LlenarComboBoxVacunas()
         ComboBoxVacunas.Items.Clear()
+        ComboBoxVacunas.Items.Add(New KeyValuePair(Of Integer, String)(0, "No aplica")) ' Agregar "No aplica"
 
         Dim query As String = "SELECT idVacuna, nombreVac FROM Vacuna"
         Using conn As New MySqlConnection(conexionString)
@@ -47,14 +84,12 @@ Public Class Consulta_Médica
                 End While
             End Using
         End Using
-
         ComboBoxVacunas.DisplayMember = "Value"
         ComboBoxVacunas.ValueMember = "Key"
     End Sub
 
     Private Sub LlenarComboBoxEstadoReprod()
         ComboBoxEstadoReprod.Items.Clear()
-
         Dim query As String = "SELECT idEstadoReproductivo, descripcion FROM EstadoReproductivo"
         Using conn As New MySqlConnection(conexionString)
             Using cmd As New MySqlCommand(query, conn)
@@ -65,7 +100,6 @@ Public Class Consulta_Médica
                 End While
             End Using
         End Using
-
         ComboBoxEstadoReprod.DisplayMember = "Value"
         ComboBoxEstadoReprod.ValueMember = "Key"
     End Sub
@@ -73,7 +107,7 @@ Public Class Consulta_Médica
     Private Sub LlenarComboBoxServicios()
         ComboBoxServicios.Items.Clear()
         Dim query As String = "SELECT DISTINCT idServicio, nombre FROM Servicio"
-        Using conn As New MySqlConnection("Server=localhost;Database=veterinaria;User Id=root;Password=root;")
+        Using conn As New MySqlConnection(conexionString)
             Using cmd As New MySqlCommand(query, conn)
                 conn.Open()
                 Dim reader As MySqlDataReader = cmd.ExecuteReader()
@@ -86,11 +120,9 @@ Public Class Consulta_Médica
         ComboBoxServicios.ValueMember = "Value"
     End Sub
 
-
-
     Private Sub GuardarConsulta()
         Dim query As String = "INSERT INTO Consulta (idMascota, idDesparacitacion, idVacuna, temperatura, pulso, TLLC, estadoRep, frecCardi, frecResp, enfermedad, receta, desparacitacion, costoCons, observaciones, fechaConsulta) " &
-                      "VALUES (@idMascota, @idDesparacitacion, @idVacuna, @idServicio, @temperatura, @pulso, @TLLC, @estadoRep, @frecCardi, @frecResp, @enfermedad, @receta, @desparacitacion, @costoCons, @observaciones, @fechaConsulta)"
+                      "VALUES (@idMascota, @idDesparacitacion, @idVacuna, @temperatura, @pulso, @TLLC, @estadoRep, @frecCardi, @frecResp, @enfermedad, @receta, @desparacitacion, @costoCons, @observaciones, @fechaConsulta)"
         Using conn As New MySqlConnection(conexionString)
             Using cmd As New MySqlCommand(query, conn)
                 cmd.Parameters.AddWithValue("@idMascota", idMascota)
@@ -99,7 +131,7 @@ Public Class Consulta_Médica
                 cmd.Parameters.AddWithValue("@temperatura", Convert.ToDouble(TextBoxTemperatura.Text))
                 cmd.Parameters.AddWithValue("@pulso", TextBoxPulso.Text)
                 cmd.Parameters.AddWithValue("@TLLC", TextBoxTLLC.Text)
-                cmd.Parameters.AddWithValue("@estadoRep", ComboBoxEstadoReprod.SelectedValue)
+                cmd.Parameters.AddWithValue("@estadoRep", idEstadoReprod)
                 cmd.Parameters.AddWithValue("@frecCardi", TextBoxFrecCardiaca.Text)
                 cmd.Parameters.AddWithValue("@frecResp", Convert.ToDouble(TextBoxFrecRespiratoria.Text))
                 cmd.Parameters.AddWithValue("@enfermedad", TextBoxEnfermedad.Text)
@@ -116,7 +148,6 @@ Public Class Consulta_Médica
         End Using
     End Sub
 
-
     Private Sub BtnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
         Try
             GuardarConsulta()
@@ -124,6 +155,9 @@ Public Class Consulta_Médica
             MessageBox.Show("Error al guardar la consulta: " & ex.Message)
         End Try
     End Sub
+
+
+
     Private Sub ComboBoxServicios_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBoxServicios.SelectedIndexChanged
 
         Dim servicioSeleccionado As Object = ComboBoxServicios.SelectedItem
