@@ -54,7 +54,6 @@ Public Class Consulta_Médica
 
     Private Sub LlenarComboBoxDesparacitacion()
         ComboBoxDesparacitacion.Items.Clear()
-        ComboBoxDesparacitacion.Items.Add(New KeyValuePair(Of Integer, String)(0, "No aplica")) ' Agregar "No aplica"
 
         Dim query As String = "SELECT idDesparacitacion, nombre FROM Desparacitacion"
         Using conn As New MySqlConnection(conexionString)
@@ -72,7 +71,6 @@ Public Class Consulta_Médica
 
     Private Sub LlenarComboBoxVacunas()
         ComboBoxVacunas.Items.Clear()
-        ComboBoxVacunas.Items.Add(New KeyValuePair(Of Integer, String)(0, "No aplica")) ' Agregar "No aplica"
 
         Dim query As String = "SELECT idVacuna, nombreVac FROM Vacuna"
         Using conn As New MySqlConnection(conexionString)
@@ -88,21 +86,34 @@ Public Class Consulta_Médica
         ComboBoxVacunas.ValueMember = "Key"
     End Sub
 
+
     Private Sub LlenarComboBoxEstadoReprod()
         ComboBoxEstadoReprod.Items.Clear()
-        Dim query As String = "SELECT idEstadoReproductivo, descripcion FROM EstadoReproductivo"
+
+        ' Consultar el nombre del estado reproductivo del último animal registrado
+        Dim query As String = "SELECT er.descripcion FROM EstadoReproductivo er " &
+                          "INNER JOIN Mascota m ON m.idEstadoReproductivo = er.idEstadoReproductivo " &
+                          "ORDER BY m.idMascota DESC LIMIT 1"
+
         Using conn As New MySqlConnection(conexionString)
-            Using cmd As New MySqlCommand(query, conn)
+            Try
                 conn.Open()
-                Dim reader As MySqlDataReader = cmd.ExecuteReader()
-                While reader.Read()
-                    ComboBoxEstadoReprod.Items.Add(New KeyValuePair(Of Integer, String)(reader("idEstadoReproductivo"), reader("descripcion")))
-                End While
-            End Using
+                Using cmd As New MySqlCommand(query, conn)
+                    Dim result = cmd.ExecuteScalar()
+                    If result IsNot Nothing AndAlso Not IsDBNull(result) Then
+                        ' Añadir el nombre del estado reproductivo al ComboBox y seleccionarlo
+                        ComboBoxEstadoReprod.Items.Add(result.ToString())
+                        ComboBoxEstadoReprod.SelectedIndex = 0 ' Seleccionar el primer y único elemento agregado
+                    Else
+                        MessageBox.Show("No se encontró un estado reproductivo para la última mascota registrada.")
+                    End If
+                End Using
+            Catch ex As Exception
+                MessageBox.Show("Error al llenar el ComboBox de estado reproductivo: " & ex.Message)
+            End Try
         End Using
-        ComboBoxEstadoReprod.DisplayMember = "Value"
-        ComboBoxEstadoReprod.ValueMember = "Key"
     End Sub
+
 
     Private Sub LlenarComboBoxServicios()
         ComboBoxServicios.Items.Clear()
