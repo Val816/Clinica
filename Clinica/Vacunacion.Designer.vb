@@ -252,9 +252,9 @@ Partial Class Vacunacion
 		'dgvRegistroVacunacion
 		'
 		Me.dgvRegistroVacunacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-		Me.dgvRegistroVacunacion.Location = New System.Drawing.Point(44, 280)
+		Me.dgvRegistroVacunacion.Location = New System.Drawing.Point(57, 279)
 		Me.dgvRegistroVacunacion.Name = "dgvRegistroVacunacion"
-		Me.dgvRegistroVacunacion.Size = New System.Drawing.Size(470, 150)
+		Me.dgvRegistroVacunacion.Size = New System.Drawing.Size(423, 150)
 		Me.dgvRegistroVacunacion.TabIndex = 41
 		'
 		'Vacunacion
