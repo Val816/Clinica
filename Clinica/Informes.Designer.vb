@@ -30,24 +30,26 @@ Partial Class Informes
 		Me.Label4 = New System.Windows.Forms.Label()
 		Me.Label6 = New System.Windows.Forms.Label()
 		Me.ComboBoxServicio = New System.Windows.Forms.ComboBox()
-		Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-		Me.btnGuardar = New System.Windows.Forms.Button()
+		Me.ComboBoxEspecie = New System.Windows.Forms.ComboBox()
+		Me.ButtonGenerarInforme = New System.Windows.Forms.Button()
 		Me.Label7 = New System.Windows.Forms.Label()
 		Me.Label8 = New System.Windows.Forms.Label()
-		Me.Label9 = New System.Windows.Forms.Label()
-		Me.Label10 = New System.Windows.Forms.Label()
 		Me.Label11 = New System.Windows.Forms.Label()
 		Me.Label12 = New System.Windows.Forms.Label()
-		Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
-		Me.DateTimePicker2 = New System.Windows.Forms.DateTimePicker()
-		Me.K = New System.Windows.Forms.ComboBox()
+		Me.DateTimePickerInicio = New System.Windows.Forms.DateTimePicker()
+		Me.DateTimePickerFin = New System.Windows.Forms.DateTimePicker()
+		Me.ComboBoxMascota = New System.Windows.Forms.ComboBox()
 		Me.Panel3 = New System.Windows.Forms.Panel()
-		Me.Button1 = New System.Windows.Forms.Button()
-		Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+		Me.ButtonImprimir = New System.Windows.Forms.Button()
+		Me.DataGridViewResultados = New System.Windows.Forms.DataGridView()
 		Me.Panel4 = New System.Windows.Forms.Panel()
+		Me.TextBoxTotalMascotas = New System.Windows.Forms.TextBox()
+		Me.TextBoxTotalEspecie = New System.Windows.Forms.TextBox()
+		Me.TextBoxServicioMasDado = New System.Windows.Forms.TextBox()
+		Me.TextBoxDineroRecaudado = New System.Windows.Forms.TextBox()
 		Me.Panel1.SuspendLayout()
 		Me.Panel3.SuspendLayout()
-		CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+		CType(Me.DataGridViewResultados, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.Panel4.SuspendLayout()
 		Me.SuspendLayout()
 		'
@@ -57,7 +59,7 @@ Partial Class Informes
 		Me.Panel1.Controls.Add(Me.btnMenuPrincipal)
 		Me.Panel1.Controls.Add(Me.Label1)
 		Me.Panel1.Location = New System.Drawing.Point(0, -3)
-		Me.Panel1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+		Me.Panel1.Margin = New System.Windows.Forms.Padding(2)
 		Me.Panel1.Name = "Panel1"
 		Me.Panel1.Size = New System.Drawing.Size(841, 89)
 		Me.Panel1.TabIndex = 15
@@ -68,7 +70,7 @@ Partial Class Informes
 		Me.btnMenuPrincipal.FlatStyle = System.Windows.Forms.FlatStyle.Flat
 		Me.btnMenuPrincipal.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
 		Me.btnMenuPrincipal.Location = New System.Drawing.Point(628, 43)
-		Me.btnMenuPrincipal.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+		Me.btnMenuPrincipal.Margin = New System.Windows.Forms.Padding(2)
 		Me.btnMenuPrincipal.Name = "btnMenuPrincipal"
 		Me.btnMenuPrincipal.Size = New System.Drawing.Size(105, 25)
 		Me.btnMenuPrincipal.TabIndex = 1
@@ -91,7 +93,7 @@ Partial Class Informes
 		'
 		Me.Panel2.BackColor = System.Drawing.Color.SteelBlue
 		Me.Panel2.Location = New System.Drawing.Point(0, 436)
-		Me.Panel2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+		Me.Panel2.Margin = New System.Windows.Forms.Padding(2)
 		Me.Panel2.Name = "Panel2"
 		Me.Panel2.Size = New System.Drawing.Size(841, 95)
 		Me.Panel2.TabIndex = 84
@@ -136,42 +138,42 @@ Partial Class Informes
 		Me.ComboBoxServicio.FormattingEnabled = True
 		Me.ComboBoxServicio.Items.AddRange(New Object() {"Consulta Médica", "Desparacitación", "Vacunación", "Eutanasia", "Cirugía", "Estética", "Pensión", "Castración", "Proaxis Dental"})
 		Me.ComboBoxServicio.Location = New System.Drawing.Point(11, 50)
-		Me.ComboBoxServicio.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+		Me.ComboBoxServicio.Margin = New System.Windows.Forms.Padding(2)
 		Me.ComboBoxServicio.Name = "ComboBoxServicio"
 		Me.ComboBoxServicio.Size = New System.Drawing.Size(101, 21)
 		Me.ComboBoxServicio.TabIndex = 99
 		Me.ComboBoxServicio.Text = "Servicio"
 		'
-		'ComboBox1
+		'ComboBoxEspecie
 		'
-		Me.ComboBox1.BackColor = System.Drawing.Color.White
-		Me.ComboBox1.ForeColor = System.Drawing.Color.Black
-		Me.ComboBox1.FormattingEnabled = True
-		Me.ComboBox1.Items.AddRange(New Object() {"Consulta Médica", "Desparacitación", "Vacunación", "Eutanasia", "Cirugía", "Estética", "Pensión", "Castración", "Proaxis Dental"})
-		Me.ComboBox1.Location = New System.Drawing.Point(11, 75)
-		Me.ComboBox1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
-		Me.ComboBox1.Name = "ComboBox1"
-		Me.ComboBox1.Size = New System.Drawing.Size(101, 21)
-		Me.ComboBox1.TabIndex = 100
-		Me.ComboBox1.Text = "Especie"
+		Me.ComboBoxEspecie.BackColor = System.Drawing.Color.White
+		Me.ComboBoxEspecie.ForeColor = System.Drawing.Color.Black
+		Me.ComboBoxEspecie.FormattingEnabled = True
+		Me.ComboBoxEspecie.Items.AddRange(New Object() {"Consulta Médica", "Desparacitación", "Vacunación", "Eutanasia", "Cirugía", "Estética", "Pensión", "Castración", "Proaxis Dental"})
+		Me.ComboBoxEspecie.Location = New System.Drawing.Point(11, 75)
+		Me.ComboBoxEspecie.Margin = New System.Windows.Forms.Padding(2)
+		Me.ComboBoxEspecie.Name = "ComboBoxEspecie"
+		Me.ComboBoxEspecie.Size = New System.Drawing.Size(101, 21)
+		Me.ComboBoxEspecie.TabIndex = 100
+		Me.ComboBoxEspecie.Text = "Especie"
 		'
-		'btnGuardar
+		'ButtonGenerarInforme
 		'
-		Me.btnGuardar.BackColor = System.Drawing.Color.FromArgb(CType(CType(174, Byte), Integer), CType(CType(214, Byte), Integer), CType(CType(241, Byte), Integer))
-		Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-		Me.btnGuardar.Location = New System.Drawing.Point(129, 24)
-		Me.btnGuardar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
-		Me.btnGuardar.Name = "btnGuardar"
-		Me.btnGuardar.Size = New System.Drawing.Size(93, 25)
-		Me.btnGuardar.TabIndex = 101
-		Me.btnGuardar.Text = "Aceptar"
-		Me.btnGuardar.UseVisualStyleBackColor = False
+		Me.ButtonGenerarInforme.BackColor = System.Drawing.Color.FromArgb(CType(CType(174, Byte), Integer), CType(CType(214, Byte), Integer), CType(CType(241, Byte), Integer))
+		Me.ButtonGenerarInforme.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+		Me.ButtonGenerarInforme.Location = New System.Drawing.Point(129, 24)
+		Me.ButtonGenerarInforme.Margin = New System.Windows.Forms.Padding(2)
+		Me.ButtonGenerarInforme.Name = "ButtonGenerarInforme"
+		Me.ButtonGenerarInforme.Size = New System.Drawing.Size(93, 25)
+		Me.ButtonGenerarInforme.TabIndex = 101
+		Me.ButtonGenerarInforme.Text = "Aceptar"
+		Me.ButtonGenerarInforme.UseVisualStyleBackColor = False
 		'
 		'Label7
 		'
 		Me.Label7.AutoSize = True
 		Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.Label7.Location = New System.Drawing.Point(48, 217)
+		Me.Label7.Location = New System.Drawing.Point(696, 267)
 		Me.Label7.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
 		Me.Label7.Name = "Label7"
 		Me.Label7.Size = New System.Drawing.Size(61, 17)
@@ -182,40 +184,18 @@ Partial Class Informes
 		'
 		Me.Label8.AutoSize = True
 		Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.Label8.Location = New System.Drawing.Point(189, 217)
+		Me.Label8.Location = New System.Drawing.Point(696, 373)
 		Me.Label8.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
 		Me.Label8.Name = "Label8"
 		Me.Label8.Size = New System.Drawing.Size(58, 17)
 		Me.Label8.TabIndex = 103
 		Me.Label8.Text = "Especie"
 		'
-		'Label9
-		'
-		Me.Label9.AutoSize = True
-		Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.Label9.Location = New System.Drawing.Point(331, 217)
-		Me.Label9.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-		Me.Label9.Name = "Label9"
-		Me.Label9.Size = New System.Drawing.Size(42, 17)
-		Me.Label9.TabIndex = 104
-		Me.Label9.Text = "Tutor"
-		'
-		'Label10
-		'
-		Me.Label10.AutoSize = True
-		Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.Label10.Location = New System.Drawing.Point(461, 217)
-		Me.Label10.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-		Me.Label10.Name = "Label10"
-		Me.Label10.Size = New System.Drawing.Size(64, 17)
-		Me.Label10.TabIndex = 105
-		Me.Label10.Text = "Teléfono"
-		'
 		'Label11
 		'
 		Me.Label11.AutoSize = True
 		Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.Label11.Location = New System.Drawing.Point(588, 217)
+		Me.Label11.Location = New System.Drawing.Point(696, 316)
 		Me.Label11.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
 		Me.Label11.Name = "Label11"
 		Me.Label11.Size = New System.Drawing.Size(65, 17)
@@ -226,43 +206,43 @@ Partial Class Informes
 		'
 		Me.Label12.AutoSize = True
 		Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.Label12.Location = New System.Drawing.Point(689, 217)
+		Me.Label12.Location = New System.Drawing.Point(712, 417)
 		Me.Label12.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
 		Me.Label12.Name = "Label12"
 		Me.Label12.Size = New System.Drawing.Size(44, 17)
 		Me.Label12.TabIndex = 107
 		Me.Label12.Text = "Costo"
 		'
-		'DateTimePicker1
+		'DateTimePickerInicio
 		'
-		Me.DateTimePicker1.Location = New System.Drawing.Point(86, 10)
-		Me.DateTimePicker1.Name = "DateTimePicker1"
-		Me.DateTimePicker1.Size = New System.Drawing.Size(200, 20)
-		Me.DateTimePicker1.TabIndex = 114
+		Me.DateTimePickerInicio.Location = New System.Drawing.Point(86, 10)
+		Me.DateTimePickerInicio.Name = "DateTimePickerInicio"
+		Me.DateTimePickerInicio.Size = New System.Drawing.Size(200, 20)
+		Me.DateTimePickerInicio.TabIndex = 114
 		'
-		'DateTimePicker2
+		'DateTimePickerFin
 		'
-		Me.DateTimePicker2.Location = New System.Drawing.Point(86, 45)
-		Me.DateTimePicker2.Name = "DateTimePicker2"
-		Me.DateTimePicker2.Size = New System.Drawing.Size(200, 20)
-		Me.DateTimePicker2.TabIndex = 115
+		Me.DateTimePickerFin.Location = New System.Drawing.Point(86, 45)
+		Me.DateTimePickerFin.Name = "DateTimePickerFin"
+		Me.DateTimePickerFin.Size = New System.Drawing.Size(200, 20)
+		Me.DateTimePickerFin.TabIndex = 115
 		'
-		'K
+		'ComboBoxMascota
 		'
-		Me.K.FormattingEnabled = True
-		Me.K.Location = New System.Drawing.Point(11, 24)
-		Me.K.Name = "K"
-		Me.K.Size = New System.Drawing.Size(101, 21)
-		Me.K.TabIndex = 116
-		Me.K.Text = "Mascota"
+		Me.ComboBoxMascota.FormattingEnabled = True
+		Me.ComboBoxMascota.Location = New System.Drawing.Point(11, 24)
+		Me.ComboBoxMascota.Name = "ComboBoxMascota"
+		Me.ComboBoxMascota.Size = New System.Drawing.Size(101, 21)
+		Me.ComboBoxMascota.TabIndex = 116
+		Me.ComboBoxMascota.Text = "Mascota"
 		'
 		'Panel3
 		'
 		Me.Panel3.BackColor = System.Drawing.Color.LightSteelBlue
-		Me.Panel3.Controls.Add(Me.K)
-		Me.Panel3.Controls.Add(Me.Button1)
-		Me.Panel3.Controls.Add(Me.btnGuardar)
-		Me.Panel3.Controls.Add(Me.ComboBox1)
+		Me.Panel3.Controls.Add(Me.ComboBoxMascota)
+		Me.Panel3.Controls.Add(Me.ButtonImprimir)
+		Me.Panel3.Controls.Add(Me.ButtonGenerarInforme)
+		Me.Panel3.Controls.Add(Me.ComboBoxEspecie)
 		Me.Panel3.Controls.Add(Me.ComboBoxServicio)
 		Me.Panel3.Controls.Add(Me.Label6)
 		Me.Panel3.Location = New System.Drawing.Point(443, 109)
@@ -270,31 +250,31 @@ Partial Class Informes
 		Me.Panel3.Size = New System.Drawing.Size(239, 105)
 		Me.Panel3.TabIndex = 117
 		'
-		'Button1
+		'ButtonImprimir
 		'
-		Me.Button1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-		Me.Button1.BackColor = System.Drawing.Color.LightBlue
-		Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-		Me.Button1.Location = New System.Drawing.Point(129, 73)
-		Me.Button1.Name = "Button1"
-		Me.Button1.Size = New System.Drawing.Size(93, 23)
-		Me.Button1.TabIndex = 118
-		Me.Button1.Text = "PDF"
-		Me.Button1.UseVisualStyleBackColor = False
+		Me.ButtonImprimir.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+		Me.ButtonImprimir.BackColor = System.Drawing.Color.LightBlue
+		Me.ButtonImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+		Me.ButtonImprimir.Location = New System.Drawing.Point(129, 73)
+		Me.ButtonImprimir.Name = "ButtonImprimir"
+		Me.ButtonImprimir.Size = New System.Drawing.Size(93, 23)
+		Me.ButtonImprimir.TabIndex = 118
+		Me.ButtonImprimir.Text = "PDF"
+		Me.ButtonImprimir.UseVisualStyleBackColor = False
 		'
-		'DataGridView1
+		'DataGridViewResultados
 		'
-		Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-		Me.DataGridView1.Location = New System.Drawing.Point(32, 244)
-		Me.DataGridView1.Name = "DataGridView1"
-		Me.DataGridView1.Size = New System.Drawing.Size(676, 182)
-		Me.DataGridView1.TabIndex = 119
+		Me.DataGridViewResultados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+		Me.DataGridViewResultados.Location = New System.Drawing.Point(32, 244)
+		Me.DataGridViewResultados.Name = "DataGridViewResultados"
+		Me.DataGridViewResultados.Size = New System.Drawing.Size(518, 182)
+		Me.DataGridViewResultados.TabIndex = 119
 		'
 		'Panel4
 		'
 		Me.Panel4.BackColor = System.Drawing.Color.LightSteelBlue
-		Me.Panel4.Controls.Add(Me.DateTimePicker2)
-		Me.Panel4.Controls.Add(Me.DateTimePicker1)
+		Me.Panel4.Controls.Add(Me.DateTimePickerFin)
+		Me.Panel4.Controls.Add(Me.DateTimePickerInicio)
 		Me.Panel4.Controls.Add(Me.Label4)
 		Me.Panel4.Controls.Add(Me.Label3)
 		Me.Panel4.Location = New System.Drawing.Point(51, 123)
@@ -302,31 +282,61 @@ Partial Class Informes
 		Me.Panel4.Size = New System.Drawing.Size(310, 73)
 		Me.Panel4.TabIndex = 120
 		'
+		'TextBoxTotalMascotas
+		'
+		Me.TextBoxTotalMascotas.Location = New System.Drawing.Point(591, 267)
+		Me.TextBoxTotalMascotas.Name = "TextBoxTotalMascotas"
+		Me.TextBoxTotalMascotas.Size = New System.Drawing.Size(100, 20)
+		Me.TextBoxTotalMascotas.TabIndex = 121
+		'
+		'TextBoxTotalEspecie
+		'
+		Me.TextBoxTotalEspecie.Location = New System.Drawing.Point(591, 316)
+		Me.TextBoxTotalEspecie.Name = "TextBoxTotalEspecie"
+		Me.TextBoxTotalEspecie.Size = New System.Drawing.Size(100, 20)
+		Me.TextBoxTotalEspecie.TabIndex = 122
+		'
+		'TextBoxServicioMasDado
+		'
+		Me.TextBoxServicioMasDado.Location = New System.Drawing.Point(591, 373)
+		Me.TextBoxServicioMasDado.Name = "TextBoxServicioMasDado"
+		Me.TextBoxServicioMasDado.Size = New System.Drawing.Size(100, 20)
+		Me.TextBoxServicioMasDado.TabIndex = 123
+		'
+		'TextBoxDineroRecaudado
+		'
+		Me.TextBoxDineroRecaudado.Location = New System.Drawing.Point(591, 411)
+		Me.TextBoxDineroRecaudado.Name = "TextBoxDineroRecaudado"
+		Me.TextBoxDineroRecaudado.Size = New System.Drawing.Size(100, 20)
+		Me.TextBoxDineroRecaudado.TabIndex = 124
+		'
 		'Informes
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
 		Me.BackColor = System.Drawing.SystemColors.ButtonHighlight
 		Me.ClientSize = New System.Drawing.Size(767, 487)
+		Me.Controls.Add(Me.TextBoxDineroRecaudado)
+		Me.Controls.Add(Me.TextBoxServicioMasDado)
+		Me.Controls.Add(Me.TextBoxTotalEspecie)
+		Me.Controls.Add(Me.TextBoxTotalMascotas)
 		Me.Controls.Add(Me.Panel4)
-		Me.Controls.Add(Me.DataGridView1)
+		Me.Controls.Add(Me.DataGridViewResultados)
 		Me.Controls.Add(Me.Panel3)
 		Me.Controls.Add(Me.Label12)
 		Me.Controls.Add(Me.Label11)
-		Me.Controls.Add(Me.Label10)
-		Me.Controls.Add(Me.Label9)
 		Me.Controls.Add(Me.Label8)
 		Me.Controls.Add(Me.Label7)
 		Me.Controls.Add(Me.Panel2)
 		Me.Controls.Add(Me.Panel1)
 		Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-		Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+		Me.Margin = New System.Windows.Forms.Padding(2)
 		Me.Name = "Informes"
 		Me.Text = "Informes"
 		Me.Panel1.ResumeLayout(False)
 		Me.Panel3.ResumeLayout(False)
 		Me.Panel3.PerformLayout()
-		CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+		CType(Me.DataGridViewResultados, System.ComponentModel.ISupportInitialize).EndInit()
 		Me.Panel4.ResumeLayout(False)
 		Me.Panel4.PerformLayout()
 		Me.ResumeLayout(False)
@@ -342,19 +352,21 @@ Partial Class Informes
 	Friend WithEvents Label4 As Label
 	Friend WithEvents Label6 As Label
 	Friend WithEvents ComboBoxServicio As ComboBox
-	Friend WithEvents ComboBox1 As ComboBox
-	Friend WithEvents btnGuardar As Button
+	Friend WithEvents ComboBoxEspecie As ComboBox
+	Friend WithEvents ButtonGenerarInforme As Button
 	Friend WithEvents Label7 As Label
 	Friend WithEvents Label8 As Label
-	Friend WithEvents Label9 As Label
-	Friend WithEvents Label10 As Label
 	Friend WithEvents Label11 As Label
 	Friend WithEvents Label12 As Label
-	Friend WithEvents DateTimePicker1 As DateTimePicker
-	Friend WithEvents DateTimePicker2 As DateTimePicker
-	Friend WithEvents K As ComboBox
+	Friend WithEvents DateTimePickerInicio As DateTimePicker
+	Friend WithEvents DateTimePickerFin As DateTimePicker
+	Friend WithEvents ComboBoxMascota As ComboBox
 	Friend WithEvents Panel3 As Panel
-	Friend WithEvents Button1 As Button
-	Friend WithEvents DataGridView1 As DataGridView
+	Friend WithEvents ButtonImprimir As Button
+	Friend WithEvents DataGridViewResultados As DataGridView
 	Friend WithEvents Panel4 As Panel
+	Friend WithEvents TextBoxTotalMascotas As TextBox
+	Friend WithEvents TextBoxTotalEspecie As TextBox
+	Friend WithEvents TextBoxServicioMasDado As TextBox
+	Friend WithEvents TextBoxDineroRecaudado As TextBox
 End Class
