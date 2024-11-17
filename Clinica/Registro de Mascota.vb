@@ -122,19 +122,42 @@ Public Class Registro_de_Mascota
 
     Private Sub LoadClients()
         Dim connString As String = "Server=localhost;Database=veterinaria;User Id=root;Password=root;"
-        Dim query As String = "SELECT m.idMascota, m.nomCliente, m.apCliente, m.celular, m.nomMasc, m.idEspecie, m.idRaza, m.peso, m.idTalla, m.edad, m.caracteristicas, m.idGenero, m.idEstadoReproductivo, m.fecha FROM Mascota m"
+        Dim query As String = "SELECT m.idMascota, m.nomCliente, m.apCliente, m.celular, m.nomMasc, e.nombreEspecie, r.nombreRaza, m.peso, t.descripcion, m.edad, m.caracteristicas, g.descripcion, er.descripcion, m.fecha " &
+                          "FROM Mascota m " &
+                          "JOIN Especie e ON m.idEspecie = e.idEspecie " &
+                          "JOIN Raza r ON m.idRaza = r.idRaza " &
+                          "JOIN Genero g ON m.idGenero = g.idGenero " &
+                          "JOIN EstadoReproductivo er ON m.idEstadoReproductivo = er.idEstadoReproductivo " &
+                          "JOIN Talla t ON m.idTalla = t.idTalla " &
+                          "ORDER BY m.idMascota ASC, e.nombreEspecie ASC, r.nombreRaza ASC;"
 
-        Using conn As New MySqlConnection(connString)
-            Dim cmd As New MySqlCommand(query, conn)
-            conn.Open()
-            Dim adapter As New MySqlDataAdapter(cmd)
-            Dim dt As New DataTable()
-            adapter.Fill(dt)
+        Try
+            Using conn As New MySqlConnection(connString)
+                Dim cmd As New MySqlCommand(query, conn)
+                conn.Open()
 
-            DataGridViewMascotas.DataSource = dt
-        End Using
+                Dim adapter As New MySqlDataAdapter(cmd)
+                Dim dt As New DataTable()
+
+                adapter.Fill(dt)
+
+                DataGridViewMascotas.DataSource = dt
+
+                ' Cambiar los encabezados de las columnas
+                DataGridViewMascotas.Columns("nombreEspecie").HeaderText = "Especie"
+                DataGridViewMascotas.Columns("nombreRaza").HeaderText = "Raza"
+                DataGridViewMascotas.Columns("descripcion").HeaderText = "Talla"
+                DataGridViewMascotas.Columns("descripcion1").HeaderText = "Genero"
+                DataGridViewMascotas.Columns("descripcion2").HeaderText = "Estado Reproductivo"
+                DataGridViewMascotas.Columns("fecha").HeaderText = "Fecha"
+
+            End Using
+        Catch ex As MySqlException
+            MessageBox.Show("Error de base de datos: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Catch ex As Exception
+            MessageBox.Show("Ocurrió un error: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
     End Sub
-
 
     Private Function MascotaExiste(nomMasc As String, idEspecie As Integer, idRaza As Integer, peso As Double, idTalla As Integer, edad As Integer, idGenero As Integer) As Boolean
         Dim query As String = "SELECT COUNT(*) FROM Mascota WHERE nomMasc = @nomMasc AND idEspecie = @idEspecie AND idRaza = @idRaza AND peso = @peso AND idTalla = @idTalla AND edad = @edad AND idGenero = @idGenero"
@@ -209,6 +232,7 @@ Public Class Registro_de_Mascota
             MessageBox.Show("Error al guardar los datos: " & ex.Message)
         End Try
     End Sub
+
     Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
         Dim nombreCliente As String = txtNomCliente.Text
         Dim apellidoCliente As String = txtApCliente.Text
@@ -347,43 +371,57 @@ Public Class Registro_de_Mascota
     End Sub
 
     Private Sub CargarDatosMascota()
-        ' Declaración correcta de la consulta SQL
-        Dim query As String = "SELECT * FROM Mascota WHERE nomCliente = @nombreCliente AND celular = @telefonoCliente AND apCliente = @apellidoCliente"
+        Dim query As String = "SELECT m.idMascota, m.nomCliente, m.apCliente, m.celular, m.nomMasc, " &
+                    "e.nombreEspecie AS Especie, " &
+                    "r.nombreRaza AS 'Tipo de Raza', " &
+                    "m.peso, " &
+                    "t.descripcion AS Talla, " &
+                    "m.edad, " &
+                    "m.caracteristicas, " &
+                    "g.descripcion AS Genero, " &
+                    "er.descripcion AS EstadoReproductivo, " &
+                    "m.fecha " &
+                    "FROM Mascota m " &
+                    "LEFT JOIN Especie e ON m.idEspecie = e.idEspecie " &
+                    "LEFT JOIN Raza r ON m.idRaza = r.idRaza " &
+                    "LEFT JOIN Talla t ON m.idTalla = t.idTalla " &
+                    "LEFT JOIN Genero g ON m.idGenero = g.idGenero " &
+                    "LEFT JOIN EstadoReproductivo er ON m.idEstadoReproductivo = er.idEstadoReproductivo " &
+                    "WHERE m.nomCliente = @nombreCliente AND m.celular = @telefonoCliente AND m.apCliente = @apellidoCliente"
 
-        ' Establecer conexión
         Using connection As New MySqlConnection("Server=localhost;Database=veterinaria;User Id=root;Password=root;")
-            ' Crear comando MySQL
             Using command As New MySqlCommand(query, connection)
-                ' Aquí debes agregar los valores para los parámetros
                 command.Parameters.AddWithValue("@nombreCliente", txtNomCliente.Text.Trim())
                 command.Parameters.AddWithValue("@telefonoCliente", txtCelular.Text.Trim())
                 command.Parameters.AddWithValue("@apellidoCliente", txtApCliente.Text.Trim())
 
                 Try
-                    ' Abrir conexión
                     connection.Open()
-
-                    ' Crear adaptador para cargar los datos en la tabla
                     Dim adapter As New MySqlDataAdapter(command)
                     Dim table As New DataTable()
                     adapter.Fill(table)
 
-                    ' Asignar la tabla al DataGridView
+                    ' Add a new column for age with unit
+                    table.Columns.Add("EdadConUnidad", GetType(String), "edad + ' ' + IIF(edad = 1, 'año', 'años')")
+
                     DataGridViewMascotas.DataSource = table
+
+                    ' Configure column headers
                     DataGridViewMascotas.Columns("idMascota").Visible = False
-                    DataGridViewMascotas.Columns("nomCliente").HeaderText = "Nombre"
-                    DataGridViewMascotas.Columns("apCliente").HeaderText = "Apellido"
+                    DataGridViewMascotas.Columns("nomCliente").HeaderText = "Nombre Cliente"
+                    DataGridViewMascotas.Columns("apCliente").HeaderText = "Apellido Cliente"
                     DataGridViewMascotas.Columns("celular").HeaderText = "Teléfono"
-                    DataGridViewMascotas.Columns("nomMasc").HeaderText = "Mascota"
-                    DataGridViewMascotas.Columns("idEspecie").HeaderText = "Especie"
-                    DataGridViewMascotas.Columns("idRaza").HeaderText = "Raza"
+                    DataGridViewMascotas.Columns("nomMasc").HeaderText = "Nombre Mascota"
+                    DataGridViewMascotas.Columns("Especie").HeaderText = "Nombre Especie"
+                    DataGridViewMascotas.Columns("Tipo de Raza").HeaderText = "Tipo de Raza"
                     DataGridViewMascotas.Columns("peso").HeaderText = "Peso"
-                    DataGridViewMascotas.Columns("idTalla").HeaderText = "Talla"
+                    DataGridViewMascotas.Columns("Talla").HeaderText = "Talla"
                     DataGridViewMascotas.Columns("edad").HeaderText = "Edad"
+                    DataGridViewMascotas.Columns("EdadConUnidad").Visible = False
                     DataGridViewMascotas.Columns("caracteristicas").HeaderText = "Características"
-                    DataGridViewMascotas.Columns("idGenero").HeaderText = "Género"
-                    DataGridViewMascotas.Columns("idEstadoReproductivo").HeaderText = "Estado Reproductivo"
-                    DataGridViewMascotas.Columns("fecha").HeaderText = "Fecha"
+                    DataGridViewMascotas.Columns("Genero").HeaderText = "Género"
+                    DataGridViewMascotas.Columns("EstadoReproductivo").HeaderText = "Estado Reproductivo"
+                    DataGridViewMascotas.Columns("fecha").HeaderText = "Fecha Registro"
 
                 Catch ex As Exception
                     MessageBox.Show("Error al cargar los datos: " & ex.Message)
@@ -392,6 +430,49 @@ Public Class Registro_de_Mascota
         End Using
     End Sub
 
+    Private Sub DataGridViewMascotas_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridViewMascotas.CellClick
+        If e.RowIndex >= 0 Then
+            Dim row As DataGridViewRow = DataGridViewMascotas.Rows(e.RowIndex)
+
+            ' Cargar los datos de las celdas en los controles
+            txtNomCliente.Text = GetCellValue(row, "nomCliente")
+            txtApCliente.Text = GetCellValue(row, "apCliente")
+            txtCelular.Text = GetCellValue(row, "celular")
+            txtNomMasc.Text = GetCellValue(row, "nomMasc")
+            txtPeso.Text = GetCellValue(row, "peso")
+            txtEdad.Text = GetCellValue(row, "edad")
+            txtCaracteristicas.Text = GetCellValue(row, "caracteristicas")
+
+            '' Llenar ComboBox con los datos de la base de datos
+            'SetComboBoxByText(ComboBoxEspecie, GetCellValue(row, "Especie"))
+            'SetComboBoxByText(ComboBoxRaza, GetCellValue(row, "Raza"))
+            'SetComboBoxByText(ComboBoxTalla, GetCellValue(row, "Talla"))
+            'SetComboBoxByText(ComboBoxGenero, GetCellValue(row, "Genero"))
+            'SetComboBoxByText(ComboBoxEstadoReproductivo, GetCellValue(row, "EstadoReproductivo"))
+
+            ' Establecer el ComboBox para la unidad de edad
+            Dim edadConUnidad As String = GetCellValue(row, "EdadConUnidad")
+            If edadConUnidad.EndsWith("año") Or edadConUnidad.EndsWith("años") Then
+                ComboBoxEdadUnidad.SelectedItem = "Años"
+            Else
+                ComboBoxEdadUnidad.SelectedItem = "Meses"
+            End If
+        End If
+    End Sub
+
+
+    Private Function GetCellValue(row As DataGridViewRow, columnName As String) As String
+        Return row.Cells(columnName).Value.ToString()
+    End Function
+
+    Private Sub SetComboBoxByText(comboBox As ComboBox, text As String)
+        For Each item As Object In comboBox.Items
+            If item.ToString() = text Then
+                comboBox.SelectedItem = item
+                Exit For
+            End If
+        Next
+    End Sub
 
     Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
         If DataGridViewMascotas.SelectedRows.Count = 0 Then
@@ -441,29 +522,6 @@ Public Class Registro_de_Mascota
             End Using
         End Using
     End Sub
-
-    Private Sub DataGridViewMascotas_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridViewMascotas.CellClick
-        If e.RowIndex >= 0 Then
-            Dim row As DataGridViewRow = DataGridViewMascotas.Rows(e.RowIndex)
-
-            txtNomCliente.Text = GetCellValue(row, "nomCliente")
-            txtApCliente.Text = GetCellValue(row, "apCliente")
-            txtCelular.Text = GetCellValue(row, "celular")
-            txtNomMasc.Text = GetCellValue(row, "nomMasc")
-            txtPeso.Text = GetCellValue(row, "peso")
-            txtEdad.Text = GetCellValue(row, "edad")
-
-            'SetComboBoxValue(ComboBoxEspecie, GetCellValue(row, "idEspecie"))
-            'SetComboBoxValue(ComboBoxRaza, GetCellValue(row, "idRaza"))
-            'SetComboBoxValue(ComboBoxTalla, GetCellValue(row, "idTalla"))
-            'SetComboBoxValue(ComboBoxEstadoReproductivo, GetCellValue(row, "idEstadoReproductivo"))
-            'SetComboBoxValue(ComboBoxGenero, GetCellValue(row, "idGenero"))
-        End If
-    End Sub
-
-    Private Function GetCellValue(row As DataGridViewRow, columnName As String) As String
-        Return If(IsDBNull(row.Cells(columnName).Value), "", row.Cells(columnName).Value.ToString())
-    End Function
 
     Private Sub SetComboBoxValue(comboBox As ComboBox, value As String)
         If Not String.IsNullOrEmpty(value) Then
