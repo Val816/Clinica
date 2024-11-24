@@ -34,7 +34,7 @@ Partial Class Informes
 		Me.DateTimePickerInicio = New System.Windows.Forms.DateTimePicker()
 		Me.DateTimePickerFin = New System.Windows.Forms.DateTimePicker()
 		Me.ComboBoxMulti = New System.Windows.Forms.ComboBox()
-		Me.ButtonImprimir = New System.Windows.Forms.Button()
+		Me.btnGenerarPDF = New System.Windows.Forms.Button()
 		Me.DataGridViewResultados = New System.Windows.Forms.DataGridView()
 		Me.Panel4 = New System.Windows.Forms.Panel()
 		Me.TextBoxTotalVisitas = New System.Windows.Forms.TextBox()
@@ -168,17 +168,17 @@ Partial Class Informes
 		Me.ComboBoxMulti.TabIndex = 116
 		Me.ComboBoxMulti.Text = "Mascota"
 		'
-		'ButtonImprimir
+		'btnGenerarPDF
 		'
-		Me.ButtonImprimir.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-		Me.ButtonImprimir.BackColor = System.Drawing.Color.LightBlue
-		Me.ButtonImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-		Me.ButtonImprimir.Location = New System.Drawing.Point(248, 108)
-		Me.ButtonImprimir.Name = "ButtonImprimir"
-		Me.ButtonImprimir.Size = New System.Drawing.Size(93, 23)
-		Me.ButtonImprimir.TabIndex = 118
-		Me.ButtonImprimir.Text = "PDF"
-		Me.ButtonImprimir.UseVisualStyleBackColor = False
+		Me.btnGenerarPDF.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+		Me.btnGenerarPDF.BackColor = System.Drawing.Color.LightBlue
+		Me.btnGenerarPDF.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+		Me.btnGenerarPDF.Location = New System.Drawing.Point(248, 108)
+		Me.btnGenerarPDF.Name = "btnGenerarPDF"
+		Me.btnGenerarPDF.Size = New System.Drawing.Size(93, 23)
+		Me.btnGenerarPDF.TabIndex = 118
+		Me.btnGenerarPDF.Text = "PDF"
+		Me.btnGenerarPDF.UseVisualStyleBackColor = False
 		'
 		'DataGridViewResultados
 		'
@@ -191,7 +191,7 @@ Partial Class Informes
 		'Panel4
 		'
 		Me.Panel4.BackColor = System.Drawing.Color.LightSteelBlue
-		Me.Panel4.Controls.Add(Me.ButtonImprimir)
+		Me.Panel4.Controls.Add(Me.btnGenerarPDF)
 		Me.Panel4.Controls.Add(Me.ComboBoxMulti)
 		Me.Panel4.Controls.Add(Me.btnCargarInforme)
 		Me.Panel4.Controls.Add(Me.DateTimePickerFin)
@@ -248,7 +248,7 @@ Partial Class Informes
 	Friend WithEvents DateTimePickerInicio As DateTimePicker
 	Friend WithEvents DateTimePickerFin As DateTimePicker
 	Friend WithEvents ComboBoxMulti As ComboBox
-	Friend WithEvents ButtonImprimir As Button
+	Friend WithEvents btnGenerarPDF As Button
 	Friend WithEvents DataGridViewResultados As DataGridView
 	Friend WithEvents Panel4 As Panel
 	Friend WithEvents TextBoxTotalVisitas As TextBox
