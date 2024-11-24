@@ -183,7 +183,8 @@ Public Class Proaxis_Dental
         Dim servicioSeleccionado As Object = ComboBoxServicios.SelectedItem
         If servicioSeleccionado Is Nothing Then
             MessageBox.Show("Por favor, selecciona un servicio.")
-            Return
+        Else
+            MessageBox.Show("No se ha seleccionado un servicio.")
         End If
 
         Dim idServicio As Integer = servicioSeleccionado.Value
