@@ -54,7 +54,7 @@ Public Class Recibo
 
         UNION ALL 
 
-        SELECT e.nombreServicio AS Servicio, e.precio AS Costo, e.nombreServicio AS Descripción 
+        SELECT 'Servicio Estético' AS Servicio, e.precio AS Costo, e.nombreServicio AS Descripción 
         FROM serviciosestetica se 
         JOIN estetica e ON se.idEstetica = e.idEstetica 
         WHERE se.idMascota = @idMascota AND DATE(se.horaEntrada) = CURDATE()
@@ -65,6 +65,45 @@ Public Class Recibo
         FROM registrodesparacitacion rd 
         JOIN desparacitacion d ON rd.idDesparacitacion = d.idDesparacitacion 
         WHERE rd.idMascota = @idMascota AND DATE(rd.fecha) = CURDATE()
+
+        UNION ALL 
+
+        SELECT 'Vacunación' AS Servicio, v.precio AS Costo, v.nombreVac AS Descripción 
+        FROM registrovacunacion rv 
+        JOIN vacuna v ON rv.idVacuna = v.idVacuna 
+        WHERE rv.idMascota = @idMascota AND rv.fecha = CURDATE()
+
+        UNION ALL 
+
+        SELECT 'Hospitalización' AS Servicio, h.costo AS Costo, h.tipoHospitalizacion AS Descripción 
+        FROM hospitalizacion h 
+        WHERE h.idMascota = @idMascota AND DATE(h.fechaEntrada) = CURDATE()
+
+        UNION ALL 
+
+        SELECT 'Pensión' AS Servicio, p.costoTotal AS Costo, 'Pensión' AS Descripción 
+        FROM pension p 
+        WHERE p.idMascota = @idMascota AND DATE(p.fechaEntrada) = CURDATE()
+
+        UNION ALL 
+
+        SELECT 'Profilaxis Dental' AS Servicio, pp.precio AS Costo, 'Profilaxis Dental' AS Descripción 
+        FROM profilaxisdental pd 
+        JOIN precioprofilaxis pp ON pd.idPrecioProfilaxis = pp.idPrecioProfilaxis 
+        WHERE pd.idMascota = @idMascota AND DATE(pd.fecha) = CURDATE()
+
+        UNION ALL 
+
+        SELECT 'Eutanasia' AS Servicio, e.costoFinal AS Costo, 'Eutanasia' AS Descripción 
+        FROM eutanasia e 
+        WHERE e.idMascota = @idMascota AND DATE(e.fecha) = CURDATE()
+
+        UNION ALL 
+
+        SELECT 'Esterilización' AS Servicio, est.costo AS Costo, te.nombreEsterilizacion AS Descripción 
+        FROM esterilizacion est 
+        JOIN tipoesterilizacion te ON est.idTipoEsterilizacion = te.idTipoEsterilizacion 
+        WHERE est.idMascota = @idMascota AND DATE(est.fecha) = CURDATE()
     "
 
         Dim command As New MySqlCommand(queryServicios, connection)
@@ -91,6 +130,7 @@ Public Class Recibo
             MessageBox.Show("Error al cargar los servicios realizados: " & ex.Message)
         End Try
     End Sub
+
 
     Private Sub BtnMenuPrincipal_Click(sender As Object, e As EventArgs) Handles btnMenuPrincipal.Click
         Dim menuPrincipal As New Menu_Principal()
