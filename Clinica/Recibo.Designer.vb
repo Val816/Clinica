@@ -32,20 +32,18 @@ Partial Class Recibo
 		Me.Label4 = New System.Windows.Forms.Label()
 		Me.Label5 = New System.Windows.Forms.Label()
 		Me.Label6 = New System.Windows.Forms.Label()
-		Me.Label7 = New System.Windows.Forms.Label()
 		Me.Label17 = New System.Windows.Forms.Label()
-		Me.TextBox15 = New System.Windows.Forms.TextBox()
+		Me.txtTotalPagar = New System.Windows.Forms.TextBox()
 		Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
-		Me.TextBox4 = New System.Windows.Forms.TextBox()
-		Me.TextBox19 = New System.Windows.Forms.TextBox()
-		Me.TextBox20 = New System.Windows.Forms.TextBox()
-		Me.TextBox21 = New System.Windows.Forms.TextBox()
-		Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-		Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+		Me.txtNombreCliente = New System.Windows.Forms.TextBox()
+		Me.txtNombreMascota = New System.Windows.Forms.TextBox()
+		Me.txtTelefono = New System.Windows.Forms.TextBox()
+		Me.txtApellidoCliente = New System.Windows.Forms.TextBox()
+		Me.dgvServicios = New System.Windows.Forms.DataGridView()
 		Me.Panel3 = New System.Windows.Forms.Panel()
 		Me.Panel1.SuspendLayout()
 		Me.Panel2.SuspendLayout()
-		CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+		CType(Me.dgvServicios, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.Panel3.SuspendLayout()
 		Me.SuspendLayout()
 		'
@@ -173,19 +171,6 @@ Partial Class Recibo
 		Me.Label6.Text = "Mascota:"
 		Me.Label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
 		'
-		'Label7
-		'
-		Me.Label7.BackColor = System.Drawing.Color.Transparent
-		Me.Label7.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-		Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.Label7.Location = New System.Drawing.Point(46, 226)
-		Me.Label7.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-		Me.Label7.Name = "Label7"
-		Me.Label7.Size = New System.Drawing.Size(68, 33)
-		Me.Label7.TabIndex = 83
-		Me.Label7.Text = "Especie:"
-		Me.Label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-		'
 		'Label17
 		'
 		Me.Label17.BackColor = System.Drawing.Color.White
@@ -199,17 +184,17 @@ Partial Class Recibo
 		Me.Label17.Text = "Costo Total:"
 		Me.Label17.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
 		'
-		'TextBox15
+		'txtTotalPagar
 		'
-		Me.TextBox15.BackColor = System.Drawing.Color.White
-		Me.TextBox15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-		Me.TextBox15.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.TextBox15.Location = New System.Drawing.Point(628, 379)
-		Me.TextBox15.Margin = New System.Windows.Forms.Padding(2)
-		Me.TextBox15.Multiline = True
-		Me.TextBox15.Name = "TextBox15"
-		Me.TextBox15.Size = New System.Drawing.Size(73, 19)
-		Me.TextBox15.TabIndex = 103
+		Me.txtTotalPagar.BackColor = System.Drawing.Color.White
+		Me.txtTotalPagar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+		Me.txtTotalPagar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.txtTotalPagar.Location = New System.Drawing.Point(628, 379)
+		Me.txtTotalPagar.Margin = New System.Windows.Forms.Padding(2)
+		Me.txtTotalPagar.Multiline = True
+		Me.txtTotalPagar.Name = "txtTotalPagar"
+		Me.txtTotalPagar.Size = New System.Drawing.Size(73, 19)
+		Me.txtTotalPagar.TabIndex = 103
 		'
 		'DateTimePicker1
 		'
@@ -218,60 +203,50 @@ Partial Class Recibo
 		Me.DateTimePicker1.Size = New System.Drawing.Size(200, 20)
 		Me.DateTimePicker1.TabIndex = 106
 		'
-		'TextBox4
+		'txtNombreCliente
 		'
-		Me.TextBox4.Location = New System.Drawing.Point(106, 57)
-		Me.TextBox4.Name = "TextBox4"
-		Me.TextBox4.Size = New System.Drawing.Size(128, 20)
-		Me.TextBox4.TabIndex = 107
+		Me.txtNombreCliente.Location = New System.Drawing.Point(106, 57)
+		Me.txtNombreCliente.Name = "txtNombreCliente"
+		Me.txtNombreCliente.Size = New System.Drawing.Size(128, 20)
+		Me.txtNombreCliente.TabIndex = 107
 		'
-		'TextBox19
+		'txtNombreMascota
 		'
-		Me.TextBox19.Location = New System.Drawing.Point(106, 189)
-		Me.TextBox19.Name = "TextBox19"
-		Me.TextBox19.Size = New System.Drawing.Size(100, 20)
-		Me.TextBox19.TabIndex = 111
+		Me.txtNombreMascota.Location = New System.Drawing.Point(106, 189)
+		Me.txtNombreMascota.Name = "txtNombreMascota"
+		Me.txtNombreMascota.Size = New System.Drawing.Size(100, 20)
+		Me.txtNombreMascota.TabIndex = 111
 		'
-		'TextBox20
+		'txtTelefono
 		'
-		Me.TextBox20.Location = New System.Drawing.Point(106, 141)
-		Me.TextBox20.Name = "TextBox20"
-		Me.TextBox20.Size = New System.Drawing.Size(100, 20)
-		Me.TextBox20.TabIndex = 112
+		Me.txtTelefono.Location = New System.Drawing.Point(106, 141)
+		Me.txtTelefono.Name = "txtTelefono"
+		Me.txtTelefono.Size = New System.Drawing.Size(100, 20)
+		Me.txtTelefono.TabIndex = 112
 		'
-		'TextBox21
+		'txtApellidoCliente
 		'
-		Me.TextBox21.Location = New System.Drawing.Point(106, 101)
-		Me.TextBox21.Name = "TextBox21"
-		Me.TextBox21.Size = New System.Drawing.Size(128, 20)
-		Me.TextBox21.TabIndex = 113
+		Me.txtApellidoCliente.Location = New System.Drawing.Point(106, 101)
+		Me.txtApellidoCliente.Name = "txtApellidoCliente"
+		Me.txtApellidoCliente.Size = New System.Drawing.Size(128, 20)
+		Me.txtApellidoCliente.TabIndex = 113
 		'
-		'ComboBox1
+		'dgvServicios
 		'
-		Me.ComboBox1.FormattingEnabled = True
-		Me.ComboBox1.Location = New System.Drawing.Point(106, 233)
-		Me.ComboBox1.Name = "ComboBox1"
-		Me.ComboBox1.Size = New System.Drawing.Size(121, 21)
-		Me.ComboBox1.TabIndex = 114
-		'
-		'DataGridView1
-		'
-		Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-		Me.DataGridView1.Location = New System.Drawing.Point(308, 124)
-		Me.DataGridView1.Name = "DataGridView1"
-		Me.DataGridView1.Size = New System.Drawing.Size(393, 235)
-		Me.DataGridView1.TabIndex = 115
+		Me.dgvServicios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+		Me.dgvServicios.Location = New System.Drawing.Point(308, 124)
+		Me.dgvServicios.Name = "dgvServicios"
+		Me.dgvServicios.Size = New System.Drawing.Size(393, 235)
+		Me.dgvServicios.TabIndex = 115
 		'
 		'Panel3
 		'
 		Me.Panel3.BackColor = System.Drawing.Color.LightSteelBlue
-		Me.Panel3.Controls.Add(Me.ComboBox1)
-		Me.Panel3.Controls.Add(Me.TextBox21)
-		Me.Panel3.Controls.Add(Me.TextBox20)
-		Me.Panel3.Controls.Add(Me.TextBox19)
-		Me.Panel3.Controls.Add(Me.TextBox4)
+		Me.Panel3.Controls.Add(Me.txtApellidoCliente)
+		Me.Panel3.Controls.Add(Me.txtTelefono)
+		Me.Panel3.Controls.Add(Me.txtNombreMascota)
+		Me.Panel3.Controls.Add(Me.txtNombreCliente)
 		Me.Panel3.Controls.Add(Me.DateTimePicker1)
-		Me.Panel3.Controls.Add(Me.Label7)
 		Me.Panel3.Controls.Add(Me.Label6)
 		Me.Panel3.Controls.Add(Me.Label5)
 		Me.Panel3.Controls.Add(Me.Label4)
@@ -279,7 +254,7 @@ Partial Class Recibo
 		Me.Panel3.Controls.Add(Me.Label2)
 		Me.Panel3.Location = New System.Drawing.Point(16, 120)
 		Me.Panel3.Name = "Panel3"
-		Me.Panel3.Size = New System.Drawing.Size(272, 266)
+		Me.Panel3.Size = New System.Drawing.Size(272, 239)
 		Me.Panel3.TabIndex = 116
 		'
 		'Recibo
@@ -289,8 +264,8 @@ Partial Class Recibo
 		Me.BackColor = System.Drawing.SystemColors.ButtonHighlight
 		Me.ClientSize = New System.Drawing.Size(729, 487)
 		Me.Controls.Add(Me.Panel3)
-		Me.Controls.Add(Me.DataGridView1)
-		Me.Controls.Add(Me.TextBox15)
+		Me.Controls.Add(Me.dgvServicios)
+		Me.Controls.Add(Me.txtTotalPagar)
 		Me.Controls.Add(Me.Label17)
 		Me.Controls.Add(Me.Panel2)
 		Me.Controls.Add(Me.Panel1)
@@ -301,7 +276,7 @@ Partial Class Recibo
 		Me.Text = "Recibo"
 		Me.Panel1.ResumeLayout(False)
 		Me.Panel2.ResumeLayout(False)
-		CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+		CType(Me.dgvServicios, System.ComponentModel.ISupportInitialize).EndInit()
 		Me.Panel3.ResumeLayout(False)
 		Me.Panel3.PerformLayout()
 		Me.ResumeLayout(False)
@@ -317,16 +292,14 @@ Partial Class Recibo
 	Friend WithEvents Label4 As Label
 	Friend WithEvents Label5 As Label
 	Friend WithEvents Label6 As Label
-	Friend WithEvents Label7 As Label
 	Friend WithEvents Label17 As Label
-	Friend WithEvents TextBox15 As TextBox
+	Friend WithEvents txtTotalPagar As TextBox
 	Friend WithEvents DateTimePicker1 As DateTimePicker
-	Friend WithEvents TextBox4 As TextBox
-	Friend WithEvents TextBox19 As TextBox
-	Friend WithEvents TextBox20 As TextBox
-	Friend WithEvents TextBox21 As TextBox
-	Friend WithEvents ComboBox1 As ComboBox
-	Friend WithEvents DataGridView1 As DataGridView
+	Friend WithEvents txtNombreCliente As TextBox
+	Friend WithEvents txtNombreMascota As TextBox
+	Friend WithEvents txtTelefono As TextBox
+	Friend WithEvents txtApellidoCliente As TextBox
+	Friend WithEvents dgvServicios As DataGridView
 	Friend WithEvents Panel3 As Panel
 	Friend WithEvents btnMenuPrincipal As Button
 	Friend WithEvents Button1 As Button
