@@ -9,153 +9,102 @@ Public Class Historial
             MessageBox.Show("Por favor, selecciona una mascota.")
             Return
         End If
-        MostrarHistorialProcedimientos()
+        MostrarHistorialCompleto()
     End Sub
 
-    Private Sub MostrarHistorialProcedimientos()
-        ' Validar que haya una mascota seleccionada en el ComboBox
+    Private Sub MostrarHistorialCompleto()
+        ' Validar que haya una mascota seleccionada
         If cmbMascotas.SelectedItem Is Nothing Then
             MessageBox.Show("Por favor, selecciona una mascota.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Return
         End If
 
-        ' Consulta SQL para obtener los procedimientos
-        Dim query As String = "SELECT " &
-                      "  c.fechaConsulta AS 'Fecha de Consulta', " &
-                      "  'Consulta Médica' AS 'Tipo de Procedimiento', " &
-                      "  c.costoCons AS 'Costo del Procedimiento', " &
-                      "  c.receta AS 'Detalles/Observaciones' " &
-                      "FROM consulta c " &
-                      "INNER JOIN mascota m ON c.idMascota = m.idMascota " &
-                      "WHERE m.nomMasc = @nombreMascota " &
-                      "UNION ALL " &
-                      "SELECT " &
-                      "  ci.fecha AS 'Fecha de Cirugía', " &
-                      "  'Cirugía' AS 'Tipo de Procedimiento', " &
-                      "  ci.costo AS 'Costo del Procedimiento', " &
-                      "  ci.observaciones AS 'Detalles/Observaciones' " &
-                      "FROM cirugia ci " &
-                      "INNER JOIN mascota m ON ci.idMascota = m.idMascota " &
-                      "WHERE m.nomMasc = @nombreMascota " &
-                      "UNION ALL " &
-                      "SELECT " &
-                      "  r.fecha AS 'Fecha de Desparacitación', " &
-                      "  'Desparacitación' AS 'Tipo de Procedimiento', " &
-                      "  d.costo AS 'Costo del Procedimiento', " &
-                      "  r.observaciones AS 'Detalles/Observaciones' " &
-                      "FROM registrodesparacitacion r " &
-                      "INNER JOIN desparacitacion d ON r.idDesparacitacion = d.idDesparacitacion " &
-                      "INNER JOIN mascota m ON r.idMascota = m.idMascota " &
-                      "WHERE m.nomMasc = @nombreMascota " &
-                      "UNION ALL " &
-                      "SELECT " &
-                      "  rv.fecha AS 'Fecha de Vacunación', " &
-                      "  CONCAT('Vacunación: ', v.nombreVac) AS 'Tipo de Procedimiento', " &
-                      "  v.precio AS 'Costo del Procedimiento', " &
-                      "  rv.observaciones AS 'Detalles/Observaciones' " &
-                      "FROM registrovacunacion rv " &
-                      "INNER JOIN vacuna v ON rv.idVacuna = v.idVacuna " &
-                      "INNER JOIN mascota m ON rv.idMascota = m.idMascota " &
-                      "WHERE m.nomMasc = @nombreMascota " &
-                      "UNION ALL " &
-                      "SELECT " &
-                      "  p.fechaEntrada AS 'Fecha de Entrada a Pensión', " &
-                      "  'Pensión' AS 'Tipo de Procedimiento', " &
-                      "  p.costoTotal AS 'Costo del Procedimiento', " &
-                      "  CONCAT('Desde: ', p.fechaEntrada, ' hasta: ', p.fechaSalida, '. ', p.observaciones) AS 'Detalles/Observaciones' " &
-                      "FROM pension p " &
-                      "INNER JOIN mascota m ON p.idMascota = m.idMascota " &
-                      "WHERE m.nomMasc = @nombreMascota " &
-                      "UNION ALL " &
-                      "SELECT " &
-                      "  e.fecha AS 'Fecha de Eutanasia', " &
-                      "  'Eutanasia' AS 'Tipo de Procedimiento', " &
-                      "  e.costoFinal AS 'Costo del Procedimiento', " &
-                      "  e.observaciones AS 'Detalles/Observaciones' " &
-                      "FROM eutanasia e " &
-                      "INNER JOIN mascota m ON e.idMascota = m.idMascota " &
-                      "WHERE m.nomMasc = @nombreMascota " &
-                      "UNION ALL " &
-                      "SELECT " &
-                      "  h.fechaEntrada AS 'Fecha de Hospitalización', " &
-                      "  'Hospitalización' AS 'Tipo de Procedimiento', " &
-                      "  h.costo AS 'Costo del Procedimiento', " &
-                      "  h.observaciones AS 'Detalles/Observaciones' " &
-                      "FROM hospitalizacion h " &
-                      "INNER JOIN mascota m ON h.idMascota = m.idMascota " &
-                      "WHERE m.nomMasc = @nombreMascota " &
-                      "UNION ALL " &
-                      "SELECT " &
-                      "  p.fecha AS 'Fecha de Profilaxis Dental', " &
-                      "  'Profilaxis Dental' AS 'Tipo de Procedimiento', " &
-                      "  pr.precio AS 'Costo del Procedimiento', " &
-                      "  p.observaciones AS 'Detalles/Observaciones' " &
-                      "FROM profilaxisdental p " &
-                      "INNER JOIN precioprofilaxis pr ON p.idPrecioProfilaxis = pr.idPrecioProfilaxis " &
-                      "INNER JOIN mascota m ON p.idMascota = m.idMascota " &
-                      "WHERE m.nomMasc = @nombreMascota " &
-                      "UNION ALL " &
-                      "SELECT " &
-                      "  s.horaEntrada AS 'Fecha de Servicio Estético', " &
-                      "  'Servicio Estético' AS 'Tipo de Procedimiento', " &
-                      "  s.costo AS 'Costo del Procedimiento', " &
-                      "  s.observaciones AS 'Detalles/Observaciones' " &
-                      "FROM serviciosestetica s " &
-                      "INNER JOIN mascota m ON s.idMascota = m.idMascota " &
-                      "WHERE m.nomMasc = @nombreMascota"
+        Dim queryHistorial As String = "SELECT 'Consulta' AS TipoServicio, c.fechaConsulta AS Fecha, c.costoCons AS Costo, c.receta AS Descripción " &
+                                       "FROM consulta c WHERE c.idMascota = @idMascota " &
+                                       "UNION ALL " &
+                                       "SELECT 'Cirugía' AS TipoServicio, ci.fecha AS Fecha, ci.costo AS Costo, tc.nombre AS Descripción " &
+                                       "FROM cirugia ci JOIN tipocirugia tc ON ci.idTipoCirugia = tc.idTipoCirugia WHERE ci.idMascota = @idMascota " &
+                                       "UNION ALL " &
+                                       "SELECT 'Servicio Estético' AS TipoServicio, se.horaEntrada AS Fecha, se.costo AS Costo, e.nombreServicio AS Descripción " &
+                                       "FROM serviciosestetica se JOIN estetica e ON se.idEstetica = e.idEstetica WHERE se.idMascota = @idMascota " &
+                                       "UNION ALL " &
+                                       "SELECT 'Desparasitación' AS TipoServicio, rd.fecha AS Fecha, d.costo AS Costo, d.nombre AS Descripción " &
+                                       "FROM registrodesparacitacion rd JOIN desparacitacion d ON rd.idDesparacitacion = d.idDesparacitacion WHERE rd.idMascota = @idMascota " &
+                                       "UNION ALL " &
+                                       "SELECT 'Vacunación' AS TipoServicio, rv.fecha AS Fecha, v.precio AS Costo, v.nombreVac AS Descripción " &
+                                       "FROM registrovacunacion rv JOIN vacuna v ON rv.idVacuna = v.idVacuna WHERE rv.idMascota = @idMascota " &
+                                       "UNION ALL " &
+                                       "SELECT 'Hospitalización' AS TipoServicio, h.fechaEntrada AS Fecha, h.costo AS Costo, h.tipoHospitalizacion AS Descripción " &
+                                       "FROM hospitalizacion h WHERE h.idMascota = @idMascota " &
+                                       "UNION ALL " &
+                                       "SELECT 'Pensión' AS TipoServicio, p.fechaEntrada AS Fecha, p.costoTotal AS Costo, CONCAT('Desde: ', p.fechaEntrada, ' hasta: ', p.fechaSalida) AS Descripción " &
+                                       "FROM pension p WHERE p.idMascota = @idMascota " &
+                                       "UNION ALL " &
+                                       "SELECT 'Profilaxis Dental' AS TipoServicio, pd.fecha AS Fecha, pp.precio AS Costo, 'Profilaxis Dental' AS Descripción " &
+                                       "FROM profilaxisdental pd JOIN precioprofilaxis pp ON pd.idPrecioProfilaxis = pp.idPrecioProfilaxis WHERE pd.idMascota = @idMascota " &
+                                       "UNION ALL " &
+                                       "SELECT 'Eutanasia' AS TipoServicio, e.fecha AS Fecha, e.costoFinal AS Costo, 'Eutanasia' AS Descripción " &
+                                       "FROM eutanasia e WHERE e.idMascota = @idMascota " &
+                                       "UNION ALL " &
+                                       "SELECT 'Esterilización' AS TipoServicio, est.fecha AS Fecha, est.costo AS Costo, te.nombreEsterilizacion AS Descripción " &
+                                       "FROM esterilizacion est JOIN tipoesterilizacion te ON est.idTipoEsterilizacion = te.idTipoEsterilizacion WHERE est.idMascota = @idMascota"
 
+        Try
+            Using conn As New MySqlConnection(connectionString)
+                conn.Open()
 
-        Using conn As New MySqlConnection(connectionString)
-            conn.Open()
+                Using cmd As New MySqlCommand(queryHistorial, conn)
+                    ' Asigna el valor del parámetro
+                    cmd.Parameters.AddWithValue("@idMascota", cmbMascotas.SelectedValue)
 
-            Using cmd As New MySqlCommand(query, conn)
+                    Using da As New MySqlDataAdapter(cmd)
+                        Dim dt As New DataTable()
+                        da.Fill(dt)
 
-                cmd.Parameters.AddWithValue("@nombreMascota", cmbMascotas.SelectedItem.ToString())
-
-                Using da As New MySqlDataAdapter(cmd)
-                    Dim dt As New DataTable()
-                    da.Fill(dt)
-
-                    If dt.Rows.Count = 0 Then
-                        MessageBox.Show("No se encontraron procedimientos para la mascota seleccionada.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                    End If
-                    dgvHistorial.DataSource = dt
+                        If dt.Rows.Count = 0 Then
+                            MessageBox.Show("No se encontraron procedimientos para la mascota seleccionada.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                        End If
+                        dgvHistorial.DataSource = dt
+                    End Using
                 End Using
             End Using
-        End Using
+        Catch ex As Exception
+            MessageBox.Show("Ocurrió un error: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
     End Sub
 
-
     Private Sub MostrarMascotasDelTutor()
-        Dim query As String = "SELECT m.nomMasc AS nombre_mascota " &
+        Dim query As String = "SELECT m.idMascota, m.nomMasc AS nombre_mascota " &
                               "FROM Mascota m " &
                               "WHERE m.nomCliente = @nombreCliente AND m.celular = @celularCliente"
 
-        Using conn As New MySqlConnection(connectionString)
-            conn.Open()
+        Try
+            Using conn As New MySqlConnection(connectionString)
+                conn.Open()
 
-            Using cmd As New MySqlCommand(query, conn)
-                cmd.Parameters.AddWithValue("@nombreCliente", txtNombreCliente.Text)
-                cmd.Parameters.AddWithValue("@celularCliente", txtCelularCliente.Text)
+                Using cmd As New MySqlCommand(query, conn)
+                    cmd.Parameters.AddWithValue("@nombreCliente", txtNombreCliente.Text)
+                    cmd.Parameters.AddWithValue("@celularCliente", txtCelularCliente.Text)
 
-                Using da As New MySqlDataAdapter(cmd)
-                    Dim dt As New DataTable()
-                    da.Fill(dt)
+                    Using da As New MySqlDataAdapter(cmd)
+                        Dim dt As New DataTable()
+                        da.Fill(dt)
 
-                    cmbMascotas.Items.Clear()
-                    For Each row As DataRow In dt.Rows
-                        cmbMascotas.Items.Add(row("nombre_mascota"))
-                    Next
+                        cmbMascotas.DataSource = dt
+                        cmbMascotas.DisplayMember = "nombre_mascota"
+                        cmbMascotas.ValueMember = "idMascota"
+                    End Using
                 End Using
             End Using
-        End Using
+        Catch ex As Exception
+            MessageBox.Show("Ocurrió un error: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
     End Sub
-
 
     Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
         MostrarMascotasDelTutor()
-        MostrarHistorialProcedimientos()
     End Sub
+
     Private Sub BtnMenuPrincipal_Click(sender As Object, e As EventArgs) Handles btnMenuPrincipal.Click
         Dim menuPrincipal As New Menu_Principal()
         menuPrincipal.Show()
