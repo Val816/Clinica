@@ -1,32 +1,31 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Recibo
-    Inherits System.Windows.Forms.Form
+	Inherits System.Windows.Forms.Form
 
-    'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()>
-    Protected Overrides Sub Dispose(ByVal disposing As Boolean)
-        Try
-            If disposing AndAlso components IsNot Nothing Then
-                components.Dispose()
-            End If
-        Finally
-            MyBase.Dispose(disposing)
-        End Try
-    End Sub
+	'Form reemplaza a Dispose para limpiar la lista de componentes.
+	<System.Diagnostics.DebuggerNonUserCode()>
+	Protected Overrides Sub Dispose(ByVal disposing As Boolean)
+		Try
+			If disposing AndAlso components IsNot Nothing Then
+				components.Dispose()
+			End If
+		Finally
+			MyBase.Dispose(disposing)
+		End Try
+	End Sub
 
-    'Requerido por el Diseñador de Windows Forms
-    Private components As System.ComponentModel.IContainer
+	'Requerido por el Diseñador de Windows Forms
+	Private components As System.ComponentModel.IContainer
 
-    'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
-    'Se puede modificar usando el Diseñador de Windows Forms.  
-    'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()>
-    Private Sub InitializeComponent()
+	'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
+	'Se puede modificar usando el Diseñador de Windows Forms.  
+	'No lo modifique con el editor de código.
+	<System.Diagnostics.DebuggerStepThrough()>
+	Private Sub InitializeComponent()
 		Me.Panel1 = New System.Windows.Forms.Panel()
 		Me.btnMenuPrincipal = New System.Windows.Forms.Button()
 		Me.Label1 = New System.Windows.Forms.Label()
 		Me.Panel2 = New System.Windows.Forms.Panel()
-		Me.Button1 = New System.Windows.Forms.Button()
 		Me.Label2 = New System.Windows.Forms.Label()
 		Me.Label3 = New System.Windows.Forms.Label()
 		Me.Label4 = New System.Windows.Forms.Label()
@@ -42,7 +41,6 @@ Partial Class Recibo
 		Me.dgvServicios = New System.Windows.Forms.DataGridView()
 		Me.Panel3 = New System.Windows.Forms.Panel()
 		Me.Panel1.SuspendLayout()
-		Me.Panel2.SuspendLayout()
 		CType(Me.dgvServicios, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.Panel3.SuspendLayout()
 		Me.SuspendLayout()
@@ -86,25 +84,11 @@ Partial Class Recibo
 		'Panel2
 		'
 		Me.Panel2.BackColor = System.Drawing.Color.SteelBlue
-		Me.Panel2.Controls.Add(Me.Button1)
 		Me.Panel2.Location = New System.Drawing.Point(-3, 419)
 		Me.Panel2.Margin = New System.Windows.Forms.Padding(2)
 		Me.Panel2.Name = "Panel2"
 		Me.Panel2.Size = New System.Drawing.Size(836, 112)
 		Me.Panel2.TabIndex = 14
-		'
-		'Button1
-		'
-		Me.Button1.BackColor = System.Drawing.Color.LightBlue
-		Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-		Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.Button1.Location = New System.Drawing.Point(597, 14)
-		Me.Button1.Margin = New System.Windows.Forms.Padding(2)
-		Me.Button1.Name = "Button1"
-		Me.Button1.Size = New System.Drawing.Size(107, 25)
-		Me.Button1.TabIndex = 2
-		Me.Button1.Text = "Menú Principal"
-		Me.Button1.UseVisualStyleBackColor = False
 		'
 		'Label2
 		'
@@ -275,7 +259,6 @@ Partial Class Recibo
 		Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
 		Me.Text = "Recibo"
 		Me.Panel1.ResumeLayout(False)
-		Me.Panel2.ResumeLayout(False)
 		CType(Me.dgvServicios, System.ComponentModel.ISupportInitialize).EndInit()
 		Me.Panel3.ResumeLayout(False)
 		Me.Panel3.PerformLayout()
@@ -302,5 +285,4 @@ Partial Class Recibo
 	Friend WithEvents dgvServicios As DataGridView
 	Friend WithEvents Panel3 As Panel
 	Friend WithEvents btnMenuPrincipal As Button
-	Friend WithEvents Button1 As Button
 End Class

@@ -27,20 +27,20 @@ Partial Class Menu_Principal
 		Me.Label1 = New System.Windows.Forms.Label()
 		Me.Panel2 = New System.Windows.Forms.Panel()
 		Me.btnCerrarSistema = New System.Windows.Forms.Button()
-		Me.Button2 = New System.Windows.Forms.Button()
+		Me.btnInformes = New System.Windows.Forms.Button()
 		Me.btnConsulta = New System.Windows.Forms.Button()
-		Me.Button3 = New System.Windows.Forms.Button()
+		Me.btnHistorial = New System.Windows.Forms.Button()
 		Me.btnRegistroCita = New System.Windows.Forms.Button()
 		Me.cmbServicios = New System.Windows.Forms.ComboBox()
 		Me.btnMascota = New System.Windows.Forms.Button()
 		Me.Label2 = New System.Windows.Forms.Label()
-		Me.Button1 = New System.Windows.Forms.Button()
+		Me.btnCirugia = New System.Windows.Forms.Button()
 		Me.Panel3 = New System.Windows.Forms.Panel()
 		Me.Panel4 = New System.Windows.Forms.Panel()
 		Me.Panel5 = New System.Windows.Forms.Panel()
+		Me.btnPension = New System.Windows.Forms.Button()
 		Me.PictureBox1 = New System.Windows.Forms.PictureBox()
 		Me.Label3 = New System.Windows.Forms.Label()
-		Me.Button4 = New System.Windows.Forms.Button()
 		Me.Panel1.SuspendLayout()
 		Me.Panel2.SuspendLayout()
 		Me.Panel3.SuspendLayout()
@@ -95,16 +95,16 @@ Partial Class Menu_Principal
 		Me.btnCerrarSistema.Text = "Cerrar Sesión"
 		Me.btnCerrarSistema.UseVisualStyleBackColor = False
 		'
-		'Button2
+		'btnInformes
 		'
-		Me.Button2.BackColor = System.Drawing.Color.LightBlue
-		Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.Button2.Location = New System.Drawing.Point(9, 49)
-		Me.Button2.Name = "Button2"
-		Me.Button2.Size = New System.Drawing.Size(228, 31)
-		Me.Button2.TabIndex = 9
-		Me.Button2.Text = "Informes"
-		Me.Button2.UseVisualStyleBackColor = False
+		Me.btnInformes.BackColor = System.Drawing.Color.LightBlue
+		Me.btnInformes.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.btnInformes.Location = New System.Drawing.Point(8, 49)
+		Me.btnInformes.Name = "btnInformes"
+		Me.btnInformes.Size = New System.Drawing.Size(228, 31)
+		Me.btnInformes.TabIndex = 9
+		Me.btnInformes.Text = "Informes"
+		Me.btnInformes.UseVisualStyleBackColor = False
 		'
 		'btnConsulta
 		'
@@ -117,16 +117,16 @@ Partial Class Menu_Principal
 		Me.btnConsulta.Text = "Consulta de Cita"
 		Me.btnConsulta.UseVisualStyleBackColor = False
 		'
-		'Button3
+		'btnHistorial
 		'
-		Me.Button3.BackColor = System.Drawing.Color.LightBlue
-		Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.Button3.Location = New System.Drawing.Point(9, 86)
-		Me.Button3.Name = "Button3"
-		Me.Button3.Size = New System.Drawing.Size(228, 31)
-		Me.Button3.TabIndex = 9
-		Me.Button3.Text = "Historial"
-		Me.Button3.UseVisualStyleBackColor = False
+		Me.btnHistorial.BackColor = System.Drawing.Color.LightBlue
+		Me.btnHistorial.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.btnHistorial.Location = New System.Drawing.Point(9, 86)
+		Me.btnHistorial.Name = "btnHistorial"
+		Me.btnHistorial.Size = New System.Drawing.Size(228, 31)
+		Me.btnHistorial.TabIndex = 9
+		Me.btnHistorial.Text = "Historial"
+		Me.btnHistorial.UseVisualStyleBackColor = False
 		'
 		'btnRegistroCita
 		'
@@ -171,16 +171,16 @@ Partial Class Menu_Principal
 		Me.Label2.TabIndex = 5
 		Me.Label2.Text = "¡Bienvenido!"
 		'
-		'Button1
+		'btnCirugia
 		'
-		Me.Button1.BackColor = System.Drawing.Color.LightBlue
-		Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.Button1.Location = New System.Drawing.Point(9, 51)
-		Me.Button1.Name = "Button1"
-		Me.Button1.Size = New System.Drawing.Size(228, 34)
-		Me.Button1.TabIndex = 10
-		Me.Button1.Text = "Cirugía"
-		Me.Button1.UseVisualStyleBackColor = False
+		Me.btnCirugia.BackColor = System.Drawing.Color.LightBlue
+		Me.btnCirugia.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.btnCirugia.Location = New System.Drawing.Point(9, 51)
+		Me.btnCirugia.Name = "btnCirugia"
+		Me.btnCirugia.Size = New System.Drawing.Size(228, 34)
+		Me.btnCirugia.TabIndex = 10
+		Me.btnCirugia.Text = "Cirugía"
+		Me.btnCirugia.UseVisualStyleBackColor = False
 		'
 		'Panel3
 		'
@@ -196,8 +196,8 @@ Partial Class Menu_Principal
 		'
 		Me.Panel4.BackColor = System.Drawing.Color.LightSteelBlue
 		Me.Panel4.Controls.Add(Me.btnConsulta)
-		Me.Panel4.Controls.Add(Me.Button3)
-		Me.Panel4.Controls.Add(Me.Button2)
+		Me.Panel4.Controls.Add(Me.btnHistorial)
+		Me.Panel4.Controls.Add(Me.btnInformes)
 		Me.Panel4.Location = New System.Drawing.Point(12, 199)
 		Me.Panel4.Name = "Panel4"
 		Me.Panel4.Size = New System.Drawing.Size(251, 131)
@@ -206,12 +206,23 @@ Partial Class Menu_Principal
 		'Panel5
 		'
 		Me.Panel5.BackColor = System.Drawing.Color.LightSteelBlue
-		Me.Panel5.Controls.Add(Me.Button4)
-		Me.Panel5.Controls.Add(Me.Button1)
+		Me.Panel5.Controls.Add(Me.btnPension)
+		Me.Panel5.Controls.Add(Me.btnCirugia)
 		Me.Panel5.Location = New System.Drawing.Point(12, 348)
 		Me.Panel5.Name = "Panel5"
 		Me.Panel5.Size = New System.Drawing.Size(250, 93)
 		Me.Panel5.TabIndex = 13
+		'
+		'btnPension
+		'
+		Me.btnPension.BackColor = System.Drawing.Color.LightBlue
+		Me.btnPension.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.btnPension.Location = New System.Drawing.Point(9, 11)
+		Me.btnPension.Name = "btnPension"
+		Me.btnPension.Size = New System.Drawing.Size(228, 34)
+		Me.btnPension.TabIndex = 11
+		Me.btnPension.Text = "Pensión"
+		Me.btnPension.UseVisualStyleBackColor = False
 		'
 		'PictureBox1
 		'
@@ -235,17 +246,6 @@ Partial Class Menu_Principal
 		Me.Label3.Size = New System.Drawing.Size(150, 31)
 		Me.Label3.TabIndex = 14
 		Me.Label3.Text = "VETCARE"
-		'
-		'Button4
-		'
-		Me.Button4.BackColor = System.Drawing.Color.LightBlue
-		Me.Button4.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.Button4.Location = New System.Drawing.Point(9, 11)
-		Me.Button4.Name = "Button4"
-		Me.Button4.Size = New System.Drawing.Size(228, 34)
-		Me.Button4.TabIndex = 11
-		Me.Button4.Text = "Pensión"
-		Me.Button4.UseVisualStyleBackColor = False
 		'
 		'Menu_Principal
 		'
@@ -284,15 +284,15 @@ Partial Class Menu_Principal
 	Friend WithEvents btnRegistroCita As Button
 	Friend WithEvents btnConsulta As Button
 	Friend WithEvents btnMascota As Button
-	Friend WithEvents Button3 As Button
+	Friend WithEvents btnHistorial As Button
 	Friend WithEvents cmbServicios As ComboBox
-	Friend WithEvents Button2 As Button
+	Friend WithEvents btnInformes As Button
 	Friend WithEvents Label2 As Label
-	Friend WithEvents Button1 As Button
+	Friend WithEvents btnCirugia As Button
 	Friend WithEvents Panel3 As Panel
 	Friend WithEvents Panel4 As Panel
 	Friend WithEvents Panel5 As Panel
 	Friend WithEvents PictureBox1 As PictureBox
 	Friend WithEvents Label3 As Label
-	Friend WithEvents Button4 As Button
+	Friend WithEvents btnPension As Button
 End Class

@@ -46,8 +46,9 @@ Public Class Historial
                                        "SELECT 'Eutanasia' AS TipoServicio, e.fecha AS Fecha, e.costoFinal AS Costo, 'Eutanasia' AS Descripción " &
                                        "FROM eutanasia e WHERE e.idMascota = @idMascota " &
                                        "UNION ALL " &
-                                       "SELECT 'Esterilización' AS TipoServicio, est.fecha AS Fecha, est.costo AS Costo, te.nombreEsterilizacion AS Descripción " &
-                                       "FROM esterilizacion est JOIN tipoesterilizacion te ON est.idTipoEsterilizacion = te.idTipoEsterilizacion WHERE est.idMascota = @idMascota"
+                                       "Select 'Esterilización' AS TipoServicio, rp.fecha AS Fecha, rp.costo AS Costo, rp.observaciones AS Descripción
+From registroprocedimiento rp
+Where rp.tipoProcedimiento = 'Esterilizacion' AND rp.idMascota = @idMascota"
 
         Try
             Using conn As New MySqlConnection(connectionString)

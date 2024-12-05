@@ -33,7 +33,7 @@ Partial Class Hospitalización
 		Me.ComboBoxServicios = New System.Windows.Forms.ComboBox()
 		Me.Label6 = New System.Windows.Forms.Label()
 		Me.Label12 = New System.Windows.Forms.Label()
-		Me.txtCosto = New System.Windows.Forms.TextBox()
+		Me.txtCostoConvertido = New System.Windows.Forms.TextBox()
 		Me.PictureBox1 = New System.Windows.Forms.PictureBox()
 		Me.cmbTipo = New System.Windows.Forms.ComboBox()
 		Me.Panel3 = New System.Windows.Forms.Panel()
@@ -181,17 +181,17 @@ Partial Class Hospitalización
 		Me.Label12.Text = "Costo:"
 		Me.Label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
 		'
-		'txtCosto
+		'txtCostoConvertido
 		'
-		Me.txtCosto.BackColor = System.Drawing.Color.White
-		Me.txtCosto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-		Me.txtCosto.Location = New System.Drawing.Point(58, 397)
-		Me.txtCosto.Margin = New System.Windows.Forms.Padding(2)
-		Me.txtCosto.Multiline = True
-		Me.txtCosto.Name = "txtCosto"
-		Me.txtCosto.Size = New System.Drawing.Size(73, 24)
-		Me.txtCosto.TabIndex = 71
-		Me.txtCosto.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+		Me.txtCostoConvertido.BackColor = System.Drawing.Color.White
+		Me.txtCostoConvertido.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+		Me.txtCostoConvertido.Location = New System.Drawing.Point(58, 397)
+		Me.txtCostoConvertido.Margin = New System.Windows.Forms.Padding(2)
+		Me.txtCostoConvertido.Multiline = True
+		Me.txtCostoConvertido.Name = "txtCostoConvertido"
+		Me.txtCostoConvertido.Size = New System.Drawing.Size(73, 24)
+		Me.txtCostoConvertido.TabIndex = 71
+		Me.txtCostoConvertido.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
 		'
 		'PictureBox1
 		'
@@ -394,7 +394,7 @@ Partial Class Hospitalización
 		Me.Controls.Add(Me.cmbTipo)
 		Me.Controls.Add(Me.Label12)
 		Me.Controls.Add(Me.PictureBox1)
-		Me.Controls.Add(Me.txtCosto)
+		Me.Controls.Add(Me.txtCostoConvertido)
 		Me.Controls.Add(Me.Label6)
 		Me.Controls.Add(Me.Panel2)
 		Me.Controls.Add(Me.Panel1)
@@ -422,7 +422,7 @@ Partial Class Hospitalización
 	Friend WithEvents ComboBoxServicios As ComboBox
 	Friend WithEvents Label6 As Label
 	Friend WithEvents Label12 As Label
-	Friend WithEvents txtCosto As TextBox
+	Friend WithEvents txtCostoConvertido As TextBox
 	Friend WithEvents PictureBox1 As PictureBox
 	Friend WithEvents cmbTipo As ComboBox
 	Friend WithEvents Panel3 As Panel

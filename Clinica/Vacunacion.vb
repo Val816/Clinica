@@ -19,7 +19,7 @@ Public Class Vacunacion
             While reader.Read()
                 Dim idVacuna As Integer = reader.GetInt32(0)
                 Dim nombreVac As String = reader.GetString(1)
-                Dim precio As Decimal = reader.GetDecimal(2)
+                Dim precio As Decimal = If(reader.IsDBNull(2), 0D, reader.GetDecimal(2)) ' Manejo de NULL para precio
                 vacunas.Add(idVacuna, New Tuple(Of String, Decimal)(nombreVac, precio))
 
                 CheckListVaccines.Items.Add(nombreVac)

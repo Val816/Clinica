@@ -100,10 +100,10 @@ Public Class Recibo
 
         UNION ALL 
 
-        SELECT 'Esterilización' AS Servicio, est.costo AS Costo, te.nombreEsterilizacion AS Descripción 
-        FROM esterilizacion est 
-        JOIN tipoesterilizacion te ON est.idTipoEsterilizacion = te.idTipoEsterilizacion 
-        WHERE est.idMascota = @idMascota AND DATE(est.fecha) = CURDATE()
+        SELECT 'Esterilización' AS Servicio, rp.costo AS Costo, rp.tipoProcedimiento AS Descripción 
+FROM registroprocedimiento rp 
+WHERE rp.idMascota = @idMascota AND rp.tipoProcedimiento = 'Esterilizacion' AND DATE(rp.fecha) = CURDATE()
+
     "
 
         Dim command As New MySqlCommand(queryServicios, connection)

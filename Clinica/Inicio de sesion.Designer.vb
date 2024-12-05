@@ -134,6 +134,7 @@ Partial Class Inicio_de_sesion
 		Me.txtContraseña.Name = "txtContraseña"
 		Me.txtContraseña.Size = New System.Drawing.Size(274, 20)
 		Me.txtContraseña.TabIndex = 10
+		Me.txtContraseña.UseSystemPasswordChar = True
 		'
 		'btnIngresar
 		'

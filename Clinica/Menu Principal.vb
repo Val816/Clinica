@@ -121,6 +121,30 @@ Public Class Menu_Principal
         Me.Hide()
         inicioSesion.Show()
     End Sub
+
+    Private Sub btnInformes_Click(sender As Object, e As EventArgs) Handles btnInformes.Click
+        Dim informes As New Informes()
+        Me.Hide()
+        informes.Show()
+    End Sub
+
+    Private Sub btnHistorial_Click(sender As Object, e As EventArgs) Handles btnHistorial.Click
+        Dim historial As New Historial()
+        Me.Hide()
+        historial.Show()
+    End Sub
+
+    Private Sub btnPension_Click(sender As Object, e As EventArgs) Handles btnPension.Click
+        Dim pension As New Pensión()
+        Me.Hide()
+        pension.Show()
+    End Sub
+
+    Private Sub btnCirugia_Click(sender As Object, e As EventArgs) Handles btnCirugia.Click
+        Dim cirugia As New Cirugía()
+        Me.Hide()
+        cirugia.Show()
+    End Sub
 End Class
 
 Public Class Servicio

@@ -180,11 +180,11 @@ Public Class Proaxis_Dental
 
 
     Private Sub ComboBoxServicios_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBoxServicios.SelectedIndexChanged
+
         Dim servicioSeleccionado As Object = ComboBoxServicios.SelectedItem
         If servicioSeleccionado Is Nothing Then
             MessageBox.Show("Por favor, selecciona un servicio.")
-        Else
-            MessageBox.Show("No se ha seleccionado un servicio.")
+            Return
         End If
 
         Dim idServicio As Integer = servicioSeleccionado.Value
@@ -219,7 +219,6 @@ Public Class Proaxis_Dental
                 Dim formGrooming As New Estética()
                 formGrooming.Show()
                 Me.Hide()
-
             Case 7
                 Dim formEutanasia As New Eutanasia()
                 formEutanasia.Show()
@@ -234,19 +233,17 @@ Public Class Proaxis_Dental
                 Dim formHospitalizacion As New Hospitalización()
                 formHospitalizacion.Show()
                 Me.Hide()
-
             Case 10
                 Dim formProfilaxis As New Proaxis_Dental()
                 formProfilaxis.Show()
                 Me.Hide()
-
             Case 11
                 Dim formmRecibo As New Recibo()
                 formmRecibo.Show()
                 Me.Hide()
-
             Case Else
                 MessageBox.Show("Servicio no reconocido. Por favor, selecciona un servicio válido.")
+
         End Select
     End Sub
 
