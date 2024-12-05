@@ -143,7 +143,7 @@ Partial Class Menu_Principal
 		'cmbServicios
 		'
 		Me.cmbServicios.FormattingEnabled = True
-		Me.cmbServicios.Location = New System.Drawing.Point(427, 393)
+		Me.cmbServicios.Location = New System.Drawing.Point(447, 420)
 		Me.cmbServicios.Name = "cmbServicios"
 		Me.cmbServicios.Size = New System.Drawing.Size(121, 21)
 		Me.cmbServicios.TabIndex = 7
